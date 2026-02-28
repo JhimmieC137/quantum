@@ -31,7 +31,7 @@ export default function CircleHoverButton(
                     ? 'before:bg-orange-600 hover:shadow-orange-600 hover:text-zinc-200'
                     : 'before:bg-transparent hover:shadow-none' }
                 ${props.style}
-                relative cursor-pointer flex justify-center items-center overflow-hidden px-6 py-4 rounded-2xl  text-xl font-medium transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:duration-500 before:ease-out hover:before:h-64 hover:before:w-64
+                relative cursor-pointer flex justify-center items-center overflow-hidden p-3 rounded-2xl  text-lg font-medium transition-all before:absolute before:h-0 before:w-0 before:rounded-full before:duration-500 before:ease-out hover:before:h-80 hover:before:w-80
         `}>
             <span className="relative z-10">{props.content}</span>
         </div>

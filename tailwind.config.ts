@@ -14,6 +14,18 @@ export default {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
       },
+      keyframes: {
+        fade: {
+          '0%': { opacity: '0' },
+          '5%': { opacity: '1' },
+          '45%': { opacity: '1' },
+          '50%': { opacity: '0' },
+          '100%': { opacity: '0' },
+        },
+      },
+      animation: {
+        fade: 'fade 30s infinite', // total = 60s × 3 images
+      },
     },
   },
   plugins: [],

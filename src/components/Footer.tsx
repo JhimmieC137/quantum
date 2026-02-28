@@ -30,7 +30,7 @@ export const socialLinks = [
 
 export default function Footer() {
     return (
-        <footer className="bg-[#36140a] flex justify-center items-center px-4">
+        <footer className="bg-black flex justify-center items-center px-4">
             <div className="max-w-[1440px] mx-auto">
                 <div className="w-3/6 text-center my-[8em] mx-auto">
                     <p className="text-lg font-bold text-orange-400 my-3">Become a Landlord</p>

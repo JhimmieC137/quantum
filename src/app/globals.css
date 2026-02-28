@@ -16,7 +16,6 @@
     --foreground: #171717;
     --primary: #f8bd3c;
     --secondary: #56190f;
-    
   }
 }
 
@@ -24,4 +23,33 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-pagination {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end !important;
+  align-items: center !important;
+}
+
+.swiper-pagination-bullet {
+  width: 48px !important;
+  height: 6px !important;
+
+
+  border-radius: 9999px !important;
+  background-color: rgba(105, 105, 105, 0.548) !important;
+
+
+  opacity: 1 !important;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: #b4b4b4 !important;
+  opacity: 1;
 }

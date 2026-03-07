@@ -3,22 +3,41 @@
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 import Services from "@/components/Services"
+import ScreenLoader from "@/ui/ScreenLoader";
+import {
+  Montserrat,
+} from "next/font/google";
+import { useEffect, useState } from "react";
+
+export const montserrat = Montserrat({
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+});
 
 export default function mainLayout({ children }: {children: React.ReactNode}) {
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    
+    const setDisplay = () => {
+        setTimeout(() => setIsLoading(false), 1000);
+    }
+
+    useEffect(() => {
+        setDisplay();
+    }, [])
+
     return (
-        <div className="size-full relative bg-[#0a0a0a]">
-            <div className="bg-[url('/wallpapers/mansion_b.png')] bg-cover bg-no-repeat bg-center w-full">
-                <div className="bg-gradient-to-b from-[#000000b4] from-50% via-[#0a0a0af8] via-80% to-[#0a0a0a] to-95% px-20 pt-20 pb-5 relative md:px-24">
-                {/* <div className="bg-gradient-to-b from-[#3f2e1b9c] from-50% via-[#945900f3] via-80% to-[#915700] to-95% px-20 pt-20 pb-5 relative md:px-56"> */}
+        <div>
+            <ScreenLoader loaded={!isLoading}/>
+            <div className={`${isLoading && 'hidden'} w-full`}>
+                <div className="size-full top-0 z-20">
                     <Header />
-                    <div className="size-full mx-auto">
-                        {children}
-                    </div>
                 </div>
+                {children}
+                <Footer />
             </div>
-
-
-            <div className="w-full md:px-24">
+            
+            {/* <div className="w-full md:px-24">
                 <div className="flex flex-row justify-between items-end w-full">
                     <div className="w-[45%]">
                         <p className="text-zinc-400/90 text-3xl font-medium leading-relaxed text-left">
@@ -52,13 +71,11 @@ export default function mainLayout({ children }: {children: React.ReactNode}) {
                     </div>
 
                 </div>
-            </div>
+            </div> */}
 
-            <div className="bg-zinc-300 my-32 md:px-24 w-full">
+            {/* <div className="bg-zinc-300 my-32 md:px-24 w-full">
                 <Services />
-            </div>
-
-            <Footer />
+            </div> */}
         </div>
     )
 }

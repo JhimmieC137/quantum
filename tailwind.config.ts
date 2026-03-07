@@ -15,16 +15,18 @@ export default {
         secondary: "var(--secondary)",
       },
       keyframes: {
-        fade: {
-          '0%': { opacity: '0' },
-          '5%': { opacity: '1' },
-          '45%': { opacity: '1' },
-          '50%': { opacity: '0' },
-          '100%': { opacity: '0' },
+        slideDown: {
+          from: { height: '0px' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        slideUp: {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0px' },
         },
       },
       animation: {
-        fade: 'fade 30s infinite', // total = 60s × 3 images
+        slideDown: 'slideDown 400ms cubic-bezier(0.87, 0, 0.13, 1)',
+        slideUp: 'slideUp 400ms cubic-bezier(0.87, 0, 0.13, 1)',
       },
     },
   },

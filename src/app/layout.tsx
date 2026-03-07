@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { 
   Inter,
-  // Montserrat,
-  // Orbitron 
+  Montserrat,
 } from "next/font/google";
 import "./globals.css";
 
@@ -11,12 +10,6 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
 });
-
-// const orbitron = Orbitron({
-//   weight: ['400', '500', '600', '700', '800', '900'],
-//   variable: "--font-orbitron",
-//   subsets: ["latin"],
-// });
 
 export const metadata: Metadata = {
   title: "Quantum Homes",
@@ -30,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased size-full`}>
+      <body className={`${inter.className} antialiased w-full`}>
         {children}
       </body>
     </html>

@@ -1,7 +1,11 @@
 'use client'
 
-import CoreServices from "@/components/CoreServices";
+import CoreValues from "@/components/CoreValues";
 import Hero from "@/components/Hero";
+import Introduction from "@/components/Introduction";
+import OurClients from "@/components/OurClients";
+import OurServices from "@/components/OurServices";
+import Projects from "@/components/Projects";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -18,7 +22,13 @@ export default function Home() {
   return (
     <div className={`w-full`}>
       <Hero />
-      <CoreServices />
+      <Introduction />
+      <OurClients />
+      <OurServices />
+      <div className="bg-[#F4F2EC]">
+        <CoreValues />
+        <Projects />
+      </div>
     </div>
   );
 }

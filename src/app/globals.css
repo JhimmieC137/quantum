@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #fef2d8;
+  --background: #dc2626;
   --foreground: #171717;
   --primary: #f8bd3c;
   --secondary: #56190f;
@@ -12,7 +12,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* --background: #0a0a0a; */
-    --background: #fef2d8;
+    --background: #dc2626;
     --foreground: #171717;
     --primary: #f8bd3c;
     --secondary: #56190f;
@@ -164,4 +164,35 @@ body {
     transform: translateY(100%);
     opacity: 0;
   }
+}
+
+@keyframes translateinfinite {
+  100% { transform: translateX(calc(-180px * 12)); }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Fade edge overlays */
+.highway-barrier::before,
+.highway-barrier::after {
+  content: " ";
+  position: absolute;
+  z-index: 9;
+  width: 200px;
+  height: 100%;
+}
+.highway-barrier::before {
+  top: 0; 
+  left: 0;
+}
+.highway-barrier::after {
+  top: 0; 
+  right: 0;
 }

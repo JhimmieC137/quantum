@@ -40,7 +40,7 @@ const orbitron = Orbitron({
 export default function Header() {
     return (
         <header className="relative z-20 w-full h-auto">
-            <nav className="bg-black relative">
+            <nav className="bg-zinc-950 relative">
                 <div className="py-5 w-full md:max-w-[1400px] mx-auto flex justify-between">
                     <img src="/logo.jpg" className="max-w-[8em] rounded-lg" alt="Logo" />
                     <div className="max-w-[45%] flex justify-between items-center w-full mx-auto px-5 py-3 rounded-full">

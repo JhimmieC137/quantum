@@ -1,7 +1,7 @@
 'use client'
 
 import { CgMenuGridO } from "react-icons/cg"
-import MainLayout, { montserrat } from "../(pages)/layout"
+import MainLayout from "../(pages)/layout"
 import FadeUp from "@/ui/FadeUp"
 import FadeRight from "@/ui/FadeRight"
 import InvestmentSection from "@/components/Investment"
@@ -9,8 +9,14 @@ import OurClients from "@/components/OurClients"
 import { useState } from "react"
 import ProjCard from "@/sections/ProjectCard"
 import { HiOutlineBuildingOffice } from "react-icons/hi2"
+import { Montserrat } from "next/font/google"
 
 export default function Services() {
+    const montserrat = Montserrat({
+        weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+        variable: "--font-montserrat",
+        subsets: ["latin"],
+    });
 
     return (
         <MainLayout>

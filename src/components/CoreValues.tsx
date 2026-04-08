@@ -1,5 +1,5 @@
 import FadeUp from "@/ui/FadeUp"
-import { montserrat } from "@/app/(pages)/layout";
+import { Montserrat } from "next/font/google";
 
 export default function CoreValues() {
     const VALUES = [
@@ -8,6 +8,12 @@ export default function CoreValues() {
     { num: "03", title: "Excellence", desc: "Every detail deliberate. Perfection from blueprint to final finish." },
     { num: "04", title: "Sustainability", desc: "Building for today without compromising the world of tomorrow." },
     ];
+
+    const montserrat = Montserrat({
+      weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+      variable: "--font-montserrat",
+      subsets: ["latin"],
+    });
 
     return (
         <div className="w-full py-24 relative">

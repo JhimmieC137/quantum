@@ -1,12 +1,19 @@
 import { HiPhone } from "react-icons/hi2";
-import MainLayout, { montserrat } from "../(pages)/layout";
+import MainLayout from "../(pages)/layout";
 import FadeUp from "@/ui/FadeUp";
 import { FiSend } from "react-icons/fi";
 import { MdOutlineMail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
+import { Montserrat } from "next/font/google";
 
 export default function ContactUs() {
+    const montserrat = Montserrat({
+      weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+      variable: "--font-montserrat",
+      subsets: ["latin"],
+    });
+
     return(
         <MainLayout>
             <div className="relative max-h-[23rem] overflow-hidden">

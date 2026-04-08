@@ -9,11 +9,6 @@ import {
 } from "next/font/google";
 import { useEffect, useState } from "react";
 
-export const montserrat = Montserrat({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-});
 
 export default function MainLayout({ children }: {children: React.ReactNode}) {
     const [isLoading, setIsLoading] = useState<boolean>(true);

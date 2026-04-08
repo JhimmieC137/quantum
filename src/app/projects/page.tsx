@@ -1,13 +1,14 @@
 'use client'
 
 import { CgMenuGridO } from "react-icons/cg"
-import MainLayout, { montserrat } from "../(pages)/layout"
+import MainLayout from "../(pages)/layout"
 import FadeUp from "@/ui/FadeUp"
 import FadeRight from "@/ui/FadeRight"
 import InvestmentSection from "@/components/Investment"
 import OurClients from "@/components/OurClients"
 import { useState } from "react"
 import ProjCard from "@/sections/ProjectCard"
+import { Montserrat } from "next/font/google"
 
 export default function About() {
     const [selectedCategory, setSelectedCategory] = useState<string>("All")
@@ -42,6 +43,12 @@ export default function About() {
         { title: "Sapphire Heights", type: "Penthouse", location: "Eko Atlantic", year: "2023", tag: "Luxury", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" },
         { title: "Coral Gardens", type: "Terrace Housing", location: "Magodo GRA", year: "2024", tag: "Residential", img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" },
     ];
+
+    const montserrat = Montserrat({
+        weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+        variable: "--font-montserrat",
+        subsets: ["latin"],
+    });
 
     return (
         <MainLayout>

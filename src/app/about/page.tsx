@@ -1,13 +1,21 @@
 'use client'
 
 import { CgMenuGridO } from "react-icons/cg"
-import MainLayout, { montserrat } from "../(pages)/layout"
 import FadeUp from "@/ui/FadeUp"
 import FadeRight from "@/ui/FadeRight"
 import InvestmentSection from "@/components/Investment"
 import OurClients from "@/components/OurClients"
+import { Montserrat } from "next/font/google"
+import MainLayout from "../(pages)/layout"
 
 export default function About() {
+    
+    const montserrat = Montserrat({
+      weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+      variable: "--font-montserrat",
+      subsets: ["latin"],
+    });
+    
     return (
         <MainLayout>
             <div className="relative max-h-[23rem] overflow-hidden">

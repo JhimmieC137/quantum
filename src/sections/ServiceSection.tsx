@@ -1,6 +1,6 @@
 'use client'
-import { montserrat } from "@/app/(pages)/layout";
 import FadeLeft from "@/ui/FadeLeft";
+import { Montserrat } from "next/font/google";
 import { ReactNode, useState } from "react";
 import { HiArrowRight } from "react-icons/hi2";
 
@@ -14,6 +14,12 @@ export default function SeviceSection(props: {
 }) {
 
     const [openDrawer, setOpenDrawer] = useState<boolean>(false);
+
+    const montserrat = Montserrat({
+        weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+        variable: "--font-montserrat",
+        subsets: ["latin"],
+    });
 
     return (
         <div 

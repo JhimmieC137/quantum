@@ -1,12 +1,18 @@
 'use client'
-import { montserrat } from "@/app/(pages)/layout"
 import SeviceSection from "@/sections/ServiceSection"
 import FadeLeft from "@/ui/FadeLeft"
 import FadeUp from "@/ui/FadeUp"
+import { Montserrat } from "next/font/google"
 import { CgMenuGridO } from "react-icons/cg"
 import { HiOutlineBuildingOffice } from "react-icons/hi2"
 
 export default function OurServices()  {
+
+    const montserrat = Montserrat({
+        weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+        variable: "--font-montserrat",
+        subsets: ["latin"],
+    });
 
     return (
         <div className="w-full pt-24 relative bg-zinc-950/5 z-50">

@@ -1,7 +1,6 @@
 'use client'
 
 import FadeUp from "@/ui/FadeUp";
-import { CgMenuGridO } from "react-icons/cg";
 
 export default function Introduction() {
     return (

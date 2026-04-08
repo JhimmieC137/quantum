@@ -6,13 +6,14 @@ import { CgMenuGridO } from "react-icons/cg";
 
 type Props = {};
 
+const montserrat = Montserrat({
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    variable: "--font-montserrat",
+    subsets: ["latin"],
+});
+
 const InvestmentSection: React.FC<Props> = () => {
     
-    const montserrat = Montserrat({
-        weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-        variable: "--font-montserrat",
-        subsets: ["latin"],
-    });
   return (
     <section className="relative overflow-hidden bg-[#F4F2EC] p-20 w-full">
       {/* Background GOLD text */}

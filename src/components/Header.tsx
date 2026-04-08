@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { Orbitron } from "next/font/google";
-import CircleHoverButton from "@/components/buttons/CircleHoverButton";
 
 const headerLinks = [
     {

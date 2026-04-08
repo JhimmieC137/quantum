@@ -11,12 +11,13 @@ import ProjCard from "@/sections/ProjectCard"
 import { HiOutlineBuildingOffice } from "react-icons/hi2"
 import { Montserrat } from "next/font/google"
 
+const montserrat = Montserrat({
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    variable: "--font-montserrat",
+    subsets: ["latin"],
+});
+
 export default function Services() {
-    const montserrat = Montserrat({
-        weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-        variable: "--font-montserrat",
-        subsets: ["latin"],
-    });
 
     return (
         <MainLayout>

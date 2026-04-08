@@ -1,8 +1,16 @@
 "use client"
 
-import { montserrat } from "@/app/(pages)/layout"
 import FadeUp from "@/ui/FadeUp"
+import { Montserrat } from "next/font/google";
 import { CgMenuGridO } from "react-icons/cg"
+
+
+const montserrat = Montserrat({
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    variable: "--font-montserrat",
+    subsets: ["latin"],
+});
+
 
 export default function ProjectSection(props: {
     label: string,

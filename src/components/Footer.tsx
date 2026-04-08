@@ -1,6 +1,5 @@
 'use client'
 
-import { montserrat } from "@/app/(pages)/layout";
 import React from "react";
 import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";

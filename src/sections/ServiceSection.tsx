@@ -4,6 +4,13 @@ import { Montserrat } from "next/font/google";
 import { ReactNode, useState } from "react";
 import { HiArrowRight } from "react-icons/hi2";
 
+
+const montserrat = Montserrat({
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    variable: "--font-montserrat",
+    subsets: ["latin"],
+});
+
 export default function SeviceSection(props: { 
     image: string,
     headerWhite: string,
@@ -14,12 +21,6 @@ export default function SeviceSection(props: {
 }) {
 
     const [openDrawer, setOpenDrawer] = useState<boolean>(false);
-
-    const montserrat = Montserrat({
-        weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-        variable: "--font-montserrat",
-        subsets: ["latin"],
-    });
 
     return (
         <div 

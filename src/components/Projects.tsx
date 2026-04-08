@@ -4,6 +4,14 @@ import FadeUp from "@/ui/FadeUp"
 import ProjCard from "@/sections/ProjectCard"
 import { Montserrat } from "next/font/google"
 
+
+const montserrat = Montserrat({
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    variable: "--font-montserrat",
+    subsets: ["latin"],
+});
+
+
 export default function Projects()  {
     const PROJECTS = [
         { title: "Emerald Residences", type: "Luxury Duplex", location: "Lekki Phase 1", year: "2024", tag: "Residential", img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80" },
@@ -12,12 +20,6 @@ export default function Projects()  {
         { title: "Sapphire Heights", type: "Penthouse", location: "Eko Atlantic", year: "2023", tag: "Luxury", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80" },
         { title: "Coral Gardens", type: "Terrace Housing", location: "Magodo GRA", year: "2024", tag: "Residential", img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80" },
     ];
-
-    const montserrat = Montserrat({
-        weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-        variable: "--font-montserrat",
-        subsets: ["latin"],
-    });
 
 
     return (

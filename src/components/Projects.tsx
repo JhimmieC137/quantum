@@ -18,7 +18,7 @@ export default function Projects()  {
 
 
     return (
-        <div className="w-full py-24 relative bg-black">
+        <div className="w-full py-24 relative ">
             {/* <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/80 to-zinc-950/50 z-10" /> */}
             {/* <img src="/wallpapers/dwg_img_2.png" className="absolute opacity-[0.07] -top-[40%] -left-[10%] scale-150" /> */}
 
@@ -41,19 +41,19 @@ export default function Projects()  {
                         </div> */}
 
                         <FadeUp>
-                            <p className={`${montserrat.className} text-zinc-200 text-left text-5xl font-semibold my-3`}>
-                                Our <span className="text-amber-500">Favourite Projects</span>
+                            <p className={`${montserrat.className} text-zinc-900 text-left text-5xl font-semibold my-3`}>
+                                Our <span className="text-amber-500 italic">Favourite Projects</span>
                             </p>
                         </FadeUp>
                         <FadeUp>
-                            <p className="text-zinc-200 text-left text-md pr-10 my-5 max-w-[40rem]">
+                            <p className="text-zinc-900 text-left text-md pr-10 my-5 max-w-[40rem]">
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, in aperiam assumenda nam earum vel deserunt?
                             </p>
                         </FadeUp>
                     </div>
                     <div className="w-full flex items-end justify-end">
                         {/* <FadeRight> */}
-                            <div className="max-w-fit py-2 px-4 rounded-lg bg-red-600 text-white text-md hover:bg-white hover:text-zinc-900 duration-150 ease-in-out shadow-md hover:shadow-none cursor-pointer">
+                            <div className="max-w-fit py-2 px-4 rounded-lg border border-transparent bg-red-600 text-white text-md hover:bg-transparent hover:border-zinc-200 hover:text-zinc-900 duration-150 ease-in-out shadow-md hover:shadow-none cursor-pointer shadow-lg">
                                 <p>
                                     See more
                                 </p>

@@ -1,6 +1,6 @@
 "use client"
 
-import Footer from "@/components/Footer"
+import Footer from "@/components/Footer";
 import Header from "@/components/Header"
 import Services from "@/components/Services"
 import ScreenLoader from "@/ui/ScreenLoader";
@@ -15,7 +15,7 @@ export const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-export default function mainLayout({ children }: {children: React.ReactNode}) {
+export default function MainLayout({ children }: {children: React.ReactNode}) {
     const [isLoading, setIsLoading] = useState<boolean>(true);
     
     const setDisplay = () => {

@@ -14,20 +14,8 @@ const headerLinks = [
         link: '/services',
     },
     {
-        name: 'Gallery',
-        link: '/services',
-    },
-    {
-        name: 'Portfolio',
-        link: '/services',
-    },
-    {
-        name: 'Agents',
-        link: '/services',
-    },
-    {
-        name: 'Properties',
-        link: '/properties',
+        name: 'Projects',
+        link: '/projects',
     },
 ]
 
@@ -41,8 +29,8 @@ export default function Header() {
     return (
         <header className="relative z-20 w-full h-auto">
             <nav className="bg-zinc-950 relative">
-                <div className="py-5 w-full md:max-w-[1400px] mx-auto flex justify-between">
-                    <img src="/logo.jpg" className="max-w-[8em] rounded-lg" alt="Logo" />
+                <div className="py-3 w-full md:max-w-[1400px] mx-auto flex justify-between">
+                    <a href="/"><img src="/logo.jpg" className="max-w-[8em] rounded-lg" alt="Logo" /></a>
                     <div className="max-w-[45%] flex justify-between items-center w-full mx-auto px-5 py-3 rounded-full">
                         {
                             headerLinks.map((link, index) => (
@@ -52,9 +40,9 @@ export default function Header() {
                             ))
                         }
                     </div>
-                    <a href="/" className="cursor-pointer bg-white/20 px-3 py-1 rounded-full flex justify-between items-center gap-2 ">
-                        <div className="size-4 bg-white rounded-full border-4 border-zinc-500" />
-                        <p className="text-lg text-zinc-100">Contact us</p>
+                    <a href="/contact" className="cursor-pointer bg-zinc-200 text-zinc-800 hover:text-zinc-200  hover:bg-red-700 ease-in-out duration-300 px-5 py-1 rounded-full flex justify-between items-center gap-2 ">
+                        {/* <div className="size-4 bg-white rounded-full border-4 border-zinc-500" /> */}
+                        <p className="text-lg">Contact us</p>
                     </a>
                     {/* <div className="max-w-[70%]">
                         <CircleHoverButton background="yellow" hoverBackground="brown" border="brown" content="Contact us" />

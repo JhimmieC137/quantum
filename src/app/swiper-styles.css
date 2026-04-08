@@ -1,0 +1,33 @@
+/* Container positioning (optional, if needed) */
+.swiper {
+  position: relative;
+  height: 100%;
+}
+
+/* Base arrow styles */
+.rewind .swiper-button-prev,
+.rewind .swiper-button-next {
+  color: #ffffff; /* arrow color */
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  /* z-index: 999; */
+  bottom: 1%;
+}
+
+/* Remove default circle background */
+.rewind .swiper-button-prev::after,
+.rewind .swiper-button-next::after {
+  font-size: 24px; /* arrow size */
+  font-weight: 600;
+}
+
+/* Positioning (left and right spacing like your image) */
+.rewind .swiper-button-prev {
+  left: 50%;
+  bottom: 1%;
+}
+
+.rewind .swiper-button-next {
+  right: 50%;
+}

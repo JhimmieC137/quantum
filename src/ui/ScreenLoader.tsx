@@ -9,13 +9,13 @@ export default function ScreenLoader({loaded} : {loaded?: boolean}) {
                     alt=""
                 />
                 <img
-                    className="w-[6px] m-auto loader-bounce"
+                    className="w-[10px] m-auto loader-bounce"
                     style={{ animationDelay: '100ms' }}
                     src="/part_hex_bolt.png"
                     alt=""
                 />
                 <img
-                    className="w-[6px] m-auto"
+                    className="w-full m-auto"
                     // style={{ animationDelay: '200ms' }}
                     src="/part_Q.png"
                     alt=""

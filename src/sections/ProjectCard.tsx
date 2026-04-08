@@ -22,7 +22,7 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
         <div
             className={`
                 group relative overflow-hidden rounded-2xl cursor-pointer
-                ${wide ? "h-[380px]" : "h-[260px]"}
+                ${wide ? "h-[480px] w-full" : "h-[460px] w-full"}
         `}
         >
         {/* Image */}
@@ -47,7 +47,7 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
 
         {/* Tag */}
         <div className="absolute top-4 left-4">
-            <span className={`bg-[var(--R)] text-white text-[11px] font-semibold tracking-[0.12em] uppercase px-3.5 py-1 rounded-full ${montserrat.className}`}>
+            <span className={`bg-red-700 text-white text-[11px] font-semibold tracking-[0.12em] uppercase px-3.5 py-1 rounded-full ${montserrat.className}`}>
                 {p.tag}
             </span>
         </div>
@@ -72,17 +72,17 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
             </p>
 
             {/* Hover-only CTA */}
-            {/* <div
-            className="
-                mt-2 opacity-0 translate-y-2
-                transition-all duration-300
-                group-hover:opacity-100 group-hover:translate-y-0
-            "
+            <div
+                className="
+                    mt-2 opacity-0 translate-y-2
+                    transition-all duration-300
+                    group-hover:opacity-100 group-hover:translate-y-0
+                "
             >
-                <span className="font-[Outfit] text-[12px] font-bold text-[var(--Y)] tracking-[0.1em] uppercase">
+                <span className={`${montserrat.className} text-[12px] font-bold text-amber-300 tracking-[0.1em] uppercase`}>
                     View Project →
                 </span>
-            </div> */}
+            </div>
         </div>
         </div>
     </FadeUp>

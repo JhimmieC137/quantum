@@ -3,7 +3,11 @@ import {
   Inter,
   Montserrat,
 } from "next/font/google";
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import "./globals.css";
+import "./swiper-styles.css";
 
 const inter = Inter({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],

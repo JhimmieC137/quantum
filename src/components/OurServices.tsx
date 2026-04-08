@@ -9,7 +9,7 @@ import { HiOutlineBuildingOffice } from "react-icons/hi2"
 export default function OurServices()  {
 
     return (
-        <div className="w-full pt-24 relative bg-zinc-950/5">
+        <div className="w-full pt-24 relative bg-zinc-950/5 z-50">
 
             <div className="w-full max-w-[1400px] relative m-auto mt-24 mb-10">
                 {/* <FadeUp>
@@ -32,7 +32,7 @@ export default function OurServices()  {
                     <div className="w-1/2">
                         <FadeUp>
                             <p className={`${montserrat.className} text-zinc-200 text-left text-5xl font-semibold my-3`}>
-                                Our <span className="text-amber-300">Services</span>
+                                Our <span className="text-amber-400 italic">Services</span>
                             </p>
                         </FadeUp>
                         <FadeUp>

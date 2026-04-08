@@ -12,7 +12,7 @@ export default function CoreValues() {
     return (
         <div className="w-full py-24 relative">
             {/* <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/80 to-zinc-950/50 z-10" /> */}
-            {/* <img src="/wallpapers/dwg_img_2.png" className="absolute opacity-[0.07] -top-[60%] -left-[10%]" /> */}
+            <img src="/wallpapers/dwg_img_2.png" className="absolute opacity-[0.07] -top-[110%] -left-[20%]" />
 
             <div className="w-full max-w-[1400px] relative z-20 m-auto mt-10">
                 <div className="w-full flex justify-between z-40">
@@ -25,7 +25,7 @@ export default function CoreValues() {
                         </FadeUp>
                         <FadeUp>
                             <p className={`${montserrat.className} text-zinc-800 text-left text-5xl font-semibold my-3`}>
-                                Our Core <span className="text-amber-500">Values</span>
+                                Our Core <span className="text-amber-500 italic">Values</span>
                             </p>
                         </FadeUp>
                         <FadeUp>

@@ -3,6 +3,7 @@
 import CoreValues from "@/components/CoreValues";
 import Hero from "@/components/Hero";
 import Introduction from "@/components/Introduction";
+import InvestmentSection from "@/components/Investment";
 import OurClients from "@/components/OurClients";
 import OurServices from "@/components/OurServices";
 import Projects from "@/components/Projects";
@@ -29,6 +30,7 @@ export default function Home() {
         <CoreValues />
         <Projects />
       </div>
+      <InvestmentSection />
     </div>
   );
 }

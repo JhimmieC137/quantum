@@ -19,7 +19,7 @@ export default function OurClients() {
 
             <FadeUp>
                 <p className={`${montserrat.className} text-zinc-200 text-center text-5xl font-semibold my-7`}>
-                    Esteemed Clients <span className="text-amber-300">Over the Years</span>
+                    Esteemed Clients <span className="text-amber-300 italic">Over the Years</span>
                 </p>
             </FadeUp>
 

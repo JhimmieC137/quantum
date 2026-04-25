@@ -245,7 +245,37 @@ export default function About() {
 
 
                     <div className="mt-16 grid grid-cols-[1fr_1fr_1fr] gap-14">
-                        <div className="w-full">
+                        <div className="w-full  flex flex-col items-center justify-center">
+                            <div className="rounded-[50%] size-[18rem] relative overflow-hidden flex justify-center items-center bg-red-700 p-[3px]">
+                                <div className="rounded-[50%] size-full relative overflow-hidden m-auto">
+                                    <img src="/team/engnr_1.jpg" className="absolute inset-0 bg-cover"/>
+                                </div>
+                            </div>
+                            <p className={`${montserrat.className} text-zinc-800 text-center text-3xl font-semibold mt-5`}>
+                                Engr. Sobowale <span className="text-amber-400 italic">Micheal</span>
+                            </p>
+
+                            <p className="text-zinc-800 text-center text-xl mt-2">
+                                General Manager
+                            </p>
+
+                        </div>
+                        <div className="w-full  flex flex-col items-center justify-center">
+                            <div className="rounded-[50%] size-[18rem] relative overflow-hidden flex justify-center items-center bg-red-700 p-[3px]">
+                                <div className="rounded-[50%] size-full relative overflow-hidden m-auto">
+                                    <img src="/team/engnr_1.jpg" className="absolute inset-0 bg-cover"/>
+                                </div>
+                            </div>
+                            <p className={`${montserrat.className} text-zinc-800 text-center text-3xl font-semibold mt-5`}>
+                                Engr. Sobowale <span className="text-amber-400 italic">Micheal</span>
+                            </p>
+
+                            <p className="text-zinc-800 text-center text-xl mt-2">
+                                General Manager
+                            </p>
+
+                        </div>
+                        <div className="w-full  flex flex-col items-center justify-center">
                             <div className="rounded-[50%] size-[18rem] relative overflow-hidden flex justify-center items-center bg-red-700 p-[3px]">
                                 <div className="rounded-[50%] size-full relative overflow-hidden m-auto">
                                     <img src="/team/engnr_1.jpg" className="absolute inset-0 bg-cover"/>
@@ -261,6 +291,38 @@ export default function About() {
 
                         </div>
 
+                    </div>
+                    <div className="mt-16 grid grid-cols-[1fr_1fr] gap-14">
+                        <div className="w-full  flex flex-col items-center justify-center">
+                            <div className="rounded-[50%] size-[18rem] relative overflow-hidden flex justify-center items-center bg-red-700 p-[3px]">
+                                <div className="rounded-[50%] size-full relative overflow-hidden m-auto">
+                                    <img src="/team/engnr_1.jpg" className="absolute inset-0 bg-cover"/>
+                                </div>
+                            </div>
+                            <p className={`${montserrat.className} text-zinc-800 text-center text-3xl font-semibold mt-5`}>
+                                Engr. Sobowale <span className="text-amber-400 italic">Micheal</span>
+                            </p>
+
+                            <p className="text-zinc-800 text-center text-xl mt-2">
+                                General Manager
+                            </p>
+
+                        </div>
+                        <div className="w-full flex flex-col items-center justify-center">
+                            <div className="rounded-[50%] size-[18rem] relative overflow-hidden flex justify-center items-center bg-red-700 p-[3px]">
+                                <div className="rounded-[50%] size-full relative overflow-hidden m-auto">
+                                    <img src="/team/engnr_1.jpg" className="absolute inset-0 bg-cover"/>
+                                </div>
+                            </div>
+                            <p className={`${montserrat.className} text-zinc-800 text-center text-3xl font-semibold mt-5`}>
+                                Engr. Sobowale <span className="text-amber-400 italic">Micheal</span>
+                            </p>
+
+                            <p className="text-zinc-800 text-center text-xl mt-2">
+                                General Manager
+                            </p>
+
+                        </div>
                     </div>
 
                 </div>

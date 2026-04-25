@@ -55,7 +55,7 @@ export default function SeviceSection(props: {
                         <div className="flex flex-col justify-center items-left w-full cursor-pointer">
                             {props.icon}
                             <p className={`${montserrat.className} text-zinc-200 text-xl font-semibold my-3`}>
-                                {props.headerWhite} <span className="text-amber-300">{props.headerAmber}</span>
+                                {props.headerWhite} <span className="text-amber-300 italic">{props.headerAmber}</span>
                             </p>
                             <p 
                                 style={{
@@ -70,15 +70,17 @@ export default function SeviceSection(props: {
                         <div
                             className={`w-1/3 flex items-center`}
                         >
-                            <div  
-                                style={{
-                                    opacity: openDrawer ? 1 : 0,
-                                    transitionDuration: "0.8s"
-                                }}
-                                className="bg-zinc-200 size-16 flex items-center justify-center rounded-full transition-all ease-in-out duration-300"
-                            >
-                                <HiArrowRight className="size-7 text-red-700 -rotate-45"/>
-                            </div>
+                            <a href={props.link}>
+                                <div  
+                                    style={{
+                                        opacity: openDrawer ? 1 : 0,
+                                        transitionDuration: "0.8s"
+                                    }}
+                                    className="bg-zinc-200 size-16 flex items-center justify-center rounded-full border border-transparent transition-all ease-out duration-75 group hover:bg-transparent hover:border-zinc-200/20 hover:shadow-xl"
+                                >
+                                    <HiArrowRight className="size-7 text-red-700 -rotate-45 group-hover:text-zinc-200"/>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </FadeLeft>

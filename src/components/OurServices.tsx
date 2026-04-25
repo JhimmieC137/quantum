@@ -4,7 +4,10 @@ import FadeLeft from "@/ui/FadeLeft"
 import FadeUp from "@/ui/FadeUp"
 import { Montserrat } from "next/font/google"
 import { CgMenuGridO } from "react-icons/cg"
-import { HiOutlineBuildingOffice } from "react-icons/hi2"
+import { CiEdit } from "react-icons/ci"
+import { GrUserManager } from "react-icons/gr"
+import { HiOutlineBuildingOffice, HiOutlineDocument } from "react-icons/hi2"
+import { LuLandPlot } from "react-icons/lu"
 
 
 const montserrat = Montserrat({
@@ -55,46 +58,50 @@ export default function OurServices()  {
             <div className="w-full flex flex-col">
                 <div className="w-full">
                     <SeviceSection 
-                        image={"https://cdn.prod.website-files.com/67f4e51e5c8ae21dfb2629b0/67f5f20bb625038a6599e49c_image-p-800.png"}
-                        headerWhite={"Urban"}
-                        headerAmber={"Planning"}
+                        image={"/services/land_sales_narrow.jpg"}
+                        headerWhite={"Land"}
+                        headerAmber={"Sales"}
                         icon={
-                            <HiOutlineBuildingOffice className="size-12 text-zinc-300 mb-3"/>
+                            <LuLandPlot className="size-12 text-zinc-300 mb-3"/>
                         }
-                        description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quasi animi, et fugit nam illum nulla quos magni quae architecto iusto vero. Dignissimos illum placeat provident libero laborum, vero totam."}
+                        description={"Our land sales service focuses on providing clients with genuine, well-verified lands inboth prime and fast-developing locations."}
+                        link="/services/land-sales"
                     />
                 </div>
                 <div className="w-full">
                     <SeviceSection 
-                        image={"https://cdn.prod.website-files.com/67f4e51e5c8ae21dfb2629b0/67f5f20bb625038a6599e49c_image-p-800.png"}
-                        headerWhite={"Urban"}
-                        headerAmber={"Planning"}
+                        image={"/services/signing-papers.jpg"}
+                        headerWhite={"Title Documentation and"}
+                        headerAmber={"Legal Support"}
                         icon={
-                            <HiOutlineBuildingOffice className="size-12 text-zinc-300 mb-3"/>
+                            <CiEdit className="size-12 text-zinc-300 mb-3"/>
                         }
-                        description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quasi animi, et fugit nam illum nulla quos magni quae architecto iusto vero. Dignissimos illum placeat provident libero laborum, vero totam."}
+                        description={"Our Title Documentation & Legal Support service is designed to protect our clients by ensuring that every property acquired is authentic, legally compliant, and properly registered."}
+                        link="/services/legal-support"
                     />
                 </div>
                 <div className="w-full">
                     <SeviceSection 
-                        image={"https://cdn.prod.website-files.com/67f4e51e5c8ae21dfb2629b0/67f5f20bb625038a6599e49c_image-p-800.png"}
-                        headerWhite={"Urban"}
-                        headerAmber={"Planning"}
+                        image={"/services/new-building.jpg"}
+                        headerWhite={"Construction and"}
+                        headerAmber={"Development"}
                         icon={
                             <HiOutlineBuildingOffice className="size-12 text-zinc-300 mb-3"/>
                         }
-                        description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quasi animi, et fugit nam illum nulla quos magni quae architecto iusto vero. Dignissimos illum placeat provident libero laborum, vero totam."}
+                        description={"Our Construction and Development service is tailored for individuals, families, investors, and organizations who want to bring their real estate visions to life."}
+                        link="/services/legal-support"
                     />
                 </div>
                 <div className="w-full">
                     <SeviceSection 
-                        image={"https://cdn.prod.website-files.com/67f4e51e5c8ae21dfb2629b0/67f5f20bb625038a6599e49c_image-p-800.png"}
-                        headerWhite={"Urban"}
-                        headerAmber={"Planning"}
+                        image={"/services/agents-in-meeting.jpg"}
+                        headerWhite={"Real Estate"}
+                        headerAmber={"Investment Advisory"}
                         icon={
-                            <HiOutlineBuildingOffice className="size-12 text-zinc-300 mb-3"/>
+                            <GrUserManager className="size-12 text-zinc-300 mb-3"/>
                         }
-                        description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, quasi animi, et fugit nam illum nulla quos magni quae architecto iusto vero. Dignissimos illum placeat provident libero laborum, vero totam."}
+                        description={"Our Investment Advisory service is designed to guide individuals, families, and corporate organizations in identifying, analyzing, and investing in high-value real estate opportunities that yield long-term returns."}
+                        link="/services/real-estate-investment-advisory"
                     />
                 </div>
 

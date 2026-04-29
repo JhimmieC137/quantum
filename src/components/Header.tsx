@@ -28,7 +28,7 @@ export default function Header() {
     return (
         <header className="relative z-20 w-full h-auto">
             <nav className="bg-zinc-950 relative">
-                <div className="py-3 w-full md:max-w-[1400px] mx-auto flex justify-between">
+                <div className="py-3 w-full 2xl:max-w-[1400px] xl:max-w-[1000px] lg:max-w-[800px]  mx-auto flex justify-between">
                     <a href="/"><img src="/logo.jpg" className="max-w-[8em] rounded-lg" alt="Logo" /></a>
                     <div className="max-w-[45%] flex justify-between items-center w-full mx-auto px-5 py-3 rounded-full">
                         {

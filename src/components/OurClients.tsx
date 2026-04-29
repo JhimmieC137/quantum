@@ -14,7 +14,7 @@ const montserrat = Montserrat({
 export default function OurClients() {
 
     const logos = Array.from({ length: 12 }, (_, i) => `/clients/client_${i + 1}.png`);
-    const doubled = [...logos, ...logos];
+    const doubled = [...logos, ...logos, ...logos];
 
 
     return (
@@ -25,13 +25,13 @@ export default function OurClients() {
             </div>
 
             <FadeUp>
-                <p className={`${montserrat.className} text-zinc-200 text-center text-5xl font-semibold my-7`}>
+                <p className={`${montserrat.className} text-zinc-200 text-center text-3xl sm:text-4xl md:text-5xl lg:max-w-full px-2 lg:m-0 m-auto font-semibold lg:my-7 my-3`}>
                     Esteemed Clients <span className="text-amber-300 italic">Over the Years</span>
                 </p>
             </FadeUp>
 
             <FadeUp>
-                <p className="text-zinc-200 text-center text-md pr-10 my-5 max-w-[50rem] m-auto">
+                <p className="text-zinc-200 text-center text-md lg:pr-10 px-2 my-5 lg:max-w-[50rem] w-full m-auto">
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, vitae assumenda voluptas at quisquam error. Quibusdam, iure? Consequatur sunt, in aperiam assumenda nam earum vel deserunt?
                 </p>
             </FadeUp>

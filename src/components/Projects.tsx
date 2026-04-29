@@ -1,7 +1,7 @@
 "use client"
 
 import FadeUp from "@/ui/FadeUp"
-import ProjCard from "@/sections/ProjectCard"
+import ProjCard from "@/sections/projects/ProjectCard"
 import { Montserrat } from "next/font/google"
 
 
@@ -27,38 +27,31 @@ export default function Projects()  {
             {/* <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/80 to-zinc-950/50 z-10" /> */}
             {/* <img src="/wallpapers/dwg_img_2.png" className="absolute opacity-[0.07] -top-[40%] -left-[10%] scale-150" /> */}
 
-            <div className="w-full max-w-[1400px] relative z-20 m-auto mt-24 mb-10">
-                <div className="w-full flex justify-between z-40">
-                    <div className="w-full">
+            <div className="w-full 2xl:max-w-[1400px] xl:max-w-[1200px] lg:max-w-[1000px] px-2 relative z-20 m-auto mt-24 mb-10">
+                <div className="w-full flex lg:flex-row flex-col justify-between z-40">
+                    <div className="lg:w-[80%] w-full">
                         <FadeUp>
                             <div className={`${montserrat.className} flex justify-start gap-4 items-center mb-2 pl-1`}>
-                                <div className="h-px w-16 bg-red-500"/>
+                                <div className="h-px xl:w-16 lg:w-10 w-7 bg-red-500"/>
                                 <p className={`${montserrat.className} text-xs font-bold text-amber-500 tracking-widest`}>PROJECTS</p>
                             </div>
                         </FadeUp>
-                        {/* <div className="w-1/2">
-                            <FadeLeft>
-                                <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-md">
-                                    <CgMenuGridO className="size-4 text-zinc-200"/>
-                                    <p className="text-zinc-100/80 text-sm">Our Services</p>
-                                </div>
-                            </FadeLeft>
-                        </div> */}
 
                         <FadeUp>
-                            <p className={`${montserrat.className} text-zinc-900 text-left text-5xl font-semibold my-3`}>
+                            <p className={`${montserrat.className} text-zinc-900 text-left lg:text-5xl text-3xl font-semibold my-3`}>
                                 Our <span className="text-amber-500 italic">Favourite Projects</span>
                             </p>
                         </FadeUp>
+                        
                         <FadeUp>
-                            <p className="text-zinc-900 text-left text-md pr-10 my-5 max-w-[40rem]">
+                            <p className="text-zinc-900 text-left lg:text-md text-sm lg:pr-10 pr-5 my-5 xl:max-w-[40rem] lg:max-w-[60rem] w-full">
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, in aperiam assumenda nam earum vel deserunt?
                             </p>
                         </FadeUp>
                     </div>
-                    <div className="w-full flex items-end justify-end">
+                    <div className="lg:w-[20%] w-full flex items-end lg:justify-end justify-start ">
                         {/* <FadeRight> */}
-                            <div className="max-w-fit py-2 px-4 rounded-lg border border-transparent bg-red-600 text-white text-md hover:bg-transparent hover:border-zinc-200 hover:text-zinc-900 duration-150 ease-in-out shadow-md hover:shadow-none cursor-pointer shadow-lg">
+                            <div className="max-w-fit lg:py-2 lg:px-4 px-2 py-2 rounded-lg border border-transparent bg-red-600 text-white lg:text-md text-[0.85rem] hover:bg-transparent hover:border-zinc-200 hover:text-zinc-900 duration-150 ease-in-out hover:shadow-none cursor-pointer shadow-lg">
                                 <p>
                                     See more
                                 </p>
@@ -69,15 +62,15 @@ export default function Projects()  {
             </div>
 
 
-            <div className={`w-full max-w-[1400px] m-auto`}>
+            <div className={`w-full 2xl:max-w-[1400px] xl:max-w-[1200px] lg:max-w-[1000px] m-auto px-2`}>
                 {/* Top row (2 columns, wide cards) */}
-                <div className="grid grid-cols-2 gap-10 mb-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
                     <ProjCard p={PROJECTS[0]} wide />
                     <ProjCard p={PROJECTS[1]} wide />
                 </div>
 
                 {/* Bottom row (3 columns) */}
-                <div className="grid grid-cols-3 gap-10">
+                <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-10">
                     <ProjCard p={PROJECTS[2]} />
                     <ProjCard p={PROJECTS[3]} />
                     <ProjCard p={PROJECTS[4]} />

@@ -15,18 +15,18 @@ const montserrat = Montserrat({
 const InvestmentSection: React.FC<Props> = () => {
     
   return (
-    <section className="relative overflow-hidden bg-[#F4F2EC] p-20 w-full">
+    <section className="relative overflow-hidden bg-[#F4F2EC] xl:p-20 md:p-5 p-2 w-full">
       {/* Background GOLD text */}
       <FadeUp>
-        <div className="max-w-[85%] m-auto px-20 py-11 my-20 bg-red-700 rounded-[2rem] overflow-hidden relative">
+        <div className="max-w-[1500px] m-auto xl:px-20 md:px-10 px-5 py-11 my-20 bg-red-700 rounded-[2rem] overflow-hidden relative">
             {/* <FadeLeft>
                 <div className={`absolute -bottom-10 -right-10 ${montserrat.className} text-[clamp(120px,16vw,220px)] font-extrabold leading-none text-black/10`}>
                     GOLD
                 </div>
             </FadeLeft> */}
 
-            <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[32%] -right-[10%] -rotate-[38deg] w-[33rem]"/>
-            <img src="/quantum_logo.png" className="absolute opacity-10 -top-[28%] -left-[18%] rotate-[138deg] w-[33rem]"/>
+            <img src="/quantum_logo.png" className="absolute opacity-10 lg:-bottom-[32%] -bottom-[50%] lg:-right-[10%] -right-[30%] -rotate-[38deg] w-[33rem]"/>
+            <img src="/quantum_logo.png" className="absolute opacity-10 lg:-top-[28%] -top-[35%] lg:-left-[18%] -left-[34%] rotate-[138deg] w-[33rem]"/>
 
             {/* Content */}
             <div className="relative w-full">
@@ -40,14 +40,14 @@ const InvestmentSection: React.FC<Props> = () => {
                     </FadeUp>
 
                 {/* Heading */}
-                <h2 className={`my-6 ${montserrat.className} text-center text-6xl font-semibold leading-[1.05] text-white`}>
+                <h2 className={`my-6 ${montserrat.className} text-center lg:text-6xl md:text-5xl text-4xl font-semibold leading-[1.05] text-white`}>
                     A piece of land is
                     <br />
                     more<span className="text-amber-300 italic">than gold.</span>
                 </h2>
 
                 {/* Description */}
-                <p className="mb-11 max-w-[70%] m-auto text-md text-center leading-[1.65] text-white/75">
+                <p className="mb-11 xl:max-w-[70%] max-w-[90%] m-auto md:text-md text-sm text-center md:leading-[1.65] text-white/75">
                     Real estate isn't just property. it's legacy. We help you invest in
                     spaces that appreciate in value, culture, and meaning for generations
                     to come.

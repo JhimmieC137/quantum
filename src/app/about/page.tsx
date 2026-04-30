@@ -157,7 +157,7 @@ export default function About() {
                     Our Impact over <br />
                     <span className="text-amber-500 italic">The Years</span>
                 </p>
-                <div className="mb-5 py-8 xl:max-w-[1000px] max-w-[800px] max-w-full m-auto flex sm:flex-row flex-col justify-between  w-full lg:gap-14 gap-8 px-3">
+                <div className="mb-5 py-8 xl:max-w-[1000px] max-w-full m-auto flex sm:flex-row flex-col justify-between  w-full lg:gap-14 gap-8 px-3">
 
 
                     {/* <div className="flex flex-col divide-y-2 divide-amber-500">

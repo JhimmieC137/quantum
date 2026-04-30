@@ -27,8 +27,8 @@ export default function SeviceSection(props: {
             style={{
                 maxHeight: openDrawer ? "70rem" : "14rem",
                 transitionDuration: "0.5s",
-                transform: "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                transformStyle: "preserve-3d",
+                // transform: "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
+                // transformStyle: "preserve-3d",
             }}
             className="w-full cursor-pointer hover:bg-zinc-950/10 border-t border-zinc-950/20 py-14 transition-all ease-in-out duration-300"
         >

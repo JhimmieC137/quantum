@@ -78,7 +78,7 @@ export default function ContactUs() {
 
                     {/* Contact form */}
                     <form className="lg:w-1/2 w-full p-8 sm:p-10 lg:p-12 bg-red-700 rounded-2xl overflow-hidden relative" action="">
-                        <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[32%] -right-[17%] -rotate-[38deg] w-[33rem]"/>
+                        <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[32%] -right-[17%] -rotate-[38deg] w-[33rem] z-0"/>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-4">
                             <div className="flex flex-col gap-y-[2px]">
@@ -125,7 +125,7 @@ export default function ContactUs() {
                             </div>
                         </div>
 
-                        <button type="submit" className="rounded-lg p-3 text-red-700 bg-white w-full flex justify-center items-center gap-2 hover:bg-zinc-100 ease-in-out duration-300 font-medium">
+                        <button type="submit" className="relative rounded-lg p-3 z-20 text-red-700 border border-transparent bg-white w-full flex justify-center items-center gap-2 hover:bg-transparent hover:text-zinc-200 hover:border-zinc-200/60 ease-in-out duration-300 font-medium cursor-pointer">
                             Send Message
                             <FiSend className="size-4" />
                         </button>

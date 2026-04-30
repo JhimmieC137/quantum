@@ -55,7 +55,7 @@ export default function Hero() {
             {/* Content */}
             <div className="relative z-10 min-h-screen flex justify-center items-center">
                 <div className="xl:max-w-[1200px] 2xl:max-w-[1400px] lg:max-w-[1000px] px-2 w-full">
-                    <div className="flex -mt-24">
+                    <div className="flex">
                         <div className="w-full">
                             <FadeUp>
                                 <div className={`${montserrat.className} sm:flex justify-start gap-4 items-center mb-5 pl-1 hidden `}>

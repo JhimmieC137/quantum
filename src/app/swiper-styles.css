@@ -1,3 +1,7 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
 /* Container positioning (optional, if needed) */
 .swiper {
   position: relative;

@@ -19,6 +19,7 @@ export default function ProjectSection(props: {
     titleWhite: string,
     titleAmber: string,
     description: string,
+    slideShow: string,
     link?: string,
  }) {
 

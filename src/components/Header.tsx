@@ -58,14 +58,14 @@ export default function Header() {
                 <div className="max-w-[600px] mx-auto">
 
                     {/* Main pill */}
-                    <div className="bg-black rounded-full px-4 sm:px-2 py-2.5 flex justify-between items-center shadow-xl">
+                    <div className="bg-black rounded-full px-4 sm:px-2 py-2 flex justify-between items-center shadow-xl">
 
                         {/* Logo */}
                         <a href="/" className="text-zinc-100 font-bold text-lg shrink-0">
                             <div className="bg-red-700 rounded-full p-[2px]">
-                                <img src="/quantum_logo.png" className="hidden md:block max-w-[2rem] rounded-lg" alt="Logo" />
-                                <img src="/logo.jpg" className="md:hidden max-w-[6rem] rounded-[10%]" alt="Logo" />
+                                <img src="/quantum_logo.png" className="max-w-[2rem] rounded-lg" alt="Logo" />
                             </div>
+                            {/* <img src="/logo.jpg" className="md:hidden max-w-[6rem] rounded-[20%]" alt="Logo" /> */}
                         </a>
 
                         {/* Desktop links */}
@@ -108,8 +108,8 @@ export default function Header() {
                             href="/contact"
                             className="hidden md:flex items-center gap-2 bg-zinc-300 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-1.5 rounded-full text-sm lg:text-base font-medium shrink-0"
                         >
-                            <div className="size-2 bg-amber-400 rounded-full border-3 border-amber-300/80 pr-2 text-zinc-900" />
-                            Contact
+                            {/* <div className="size-2 bg-amber-400 rounded-full border-3 border-amber-300/80 pr-2 text-zinc-900/80" /> */}
+                            Contact Us
                         </a>
 
                         {/* Mobile hamburger */}
@@ -132,11 +132,11 @@ export default function Header() {
                                     <Link
                                         href={link.link}
                                         onClick={() => setMobileOpen(false)}
-                                        className="block text-sm font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 px-3 py-2.5 rounded-xl ease-in-out duration-150"
+                                        className="block text-sm text-center font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 px-3 py-3 rounded-xl ease-in-out duration-150"
                                     >
                                         {link.name}
                                     </Link>
-                                    {link.children && (
+                                    {/* {link.children && (
                                         <div className="ml-4 mt-1 flex flex-col gap-1 border-l border-zinc-800 pl-3">
                                             {link.children.map((child) => (
                                                 <Link
@@ -149,7 +149,7 @@ export default function Header() {
                                                 </Link>
                                             ))}
                                         </div>
-                                    )}
+                                    )} */}
                                 </div>
                             ))}
                             <a
@@ -157,7 +157,6 @@ export default function Header() {
                                 onClick={() => setMobileOpen(false)}
                                 className="mt-3 flex items-center justify-center gap-2 bg-zinc-100 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-2.5 rounded-full text-sm font-medium"
                             >
-                                <div className="size-2 bg-red-500 rounded-full" />
                                 Contact Us
                             </a>
                         </div>

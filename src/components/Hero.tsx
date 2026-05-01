@@ -81,12 +81,12 @@ export default function Hero() {
 
                             <FadeUp>
                                 <div className="flex gap-5 mt-10 justify-start sm:flex-row flex-col w-full">
-                                    <div className="sm:py-3 py-2 sm:px-8 px-4 bg-red-600 text-zinc-100 rounded-xl hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-300 cursor-pointer">
-                                        <p className="text-md text-center">Explore properties</p>
-                                    </div>
-                                    <div className="sm:py-3 py-2 sm:px-8 px-4 border border-zinc-200 rounded-xl hover:bg-zinc-200 hover:text-zinc-900 text-zinc-300 ease-in-out duration-300 cursor-pointer">
+                                    <a href="/projects" className="sm:py-3 py-2 sm:px-8 px-4 bg-red-700 text-zinc-100 rounded-xl hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-300 cursor-pointer">
+                                        <p className="text-md text-center">Explore projects</p>
+                                    </a>
+                                    <a href="/projects" className="sm:py-3 py-2 sm:px-8 px-4 border border-zinc-200/60 rounded-xl hover:bg-zinc-200 hover:text-zinc-900 text-zinc-200 ease-in-out duration-300 cursor-pointer">
                                         <p className="text-md text-center">Our services</p>
-                                    </div>
+                                    </a>
                                 </div>
                             </FadeUp>
 

@@ -38,7 +38,7 @@ export default function Properties()  {
                         
                         <FadeUp>
                             <p className="text-zinc-900 text-left text-md lg:pr-10 pr-5 my-5 xl:max-w-[60rem] lg:max-w-[60rem] w-full">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, in aperiam assumenda nam earum vel deserunt?
+                                Step into our finest real estate offerings, where each property reflects superior construction standards, contemporary design, and carefully chosen locations, creating spaces that support quality living while delivering consistent long-term investment returns.
                             </p>
                         </FadeUp>
                     </div>
@@ -60,14 +60,14 @@ export default function Properties()  {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
                     <ProjCard p={availableProjects[0]} wide />
                     <ProjCard p={availableProjects[1]} wide />
+                    <ProjCard p={availableProjects[2]} wide/>
                 </div>
 
                 {/* Bottom row (3 columns) */}
-                <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-10">
-                    <ProjCard p={availableProjects[2]} />
+                {/* <div className="grid xl:grid-cols-3 lg:grid-cols-2 gap-10">
                     <ProjCard p={availableProjects[3]} />
                     <ProjCard p={availableProjects[4]} />
-                </div>
+                </div> */}
             </div>
 
 

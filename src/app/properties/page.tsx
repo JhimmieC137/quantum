@@ -172,7 +172,7 @@ export default function Projects() {
                             {/* Image container */}
                             <div className="relative rounded-[1.5rem] overflow-hidden w-full h-full min-h-[30rem]">
                             <img
-                                src="/wallpapers/planners.png"
+                                src="/services/residential_estate.png"
                                 className="absolute inset-0 md:scale-110 scale-125 w-full h-full object-cover"
                             />
                             {/* Red transparent film — covers only the image */}
@@ -258,7 +258,7 @@ export default function Projects() {
                             {/* Image container */}
                             <div className="relative rounded-[1.5rem] overflow-hidden w-full h-full min-h-[30rem]">
                             <img
-                                src="/wallpapers/planners.png"
+                                src="/services/commercial_estate.png"
                                 className="absolute inset-0 md:scale-110 scale-125 w-full h-full object-cover"
                             />
                             {/* Red transparent film — covers only the image */}

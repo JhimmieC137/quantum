@@ -34,7 +34,7 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
 
-    const slides = p.slideShow?.length ? p.slideShow : [p.img];
+    const slides = p?.slideShow?.length ? p?.slideShow : [p?.img];
 
     useEffect(() => {
         document.body.style.overflow = modalOpen ? "hidden" : "";
@@ -50,26 +50,26 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                     className={`group relative overflow-hidden rounded-2xl cursor-pointer ${wide ? "h-[480px] w-full" : "h-[460px] w-full"}`}
                 >
                     <img
-                        src={p.img}
-                        alt={p.title}
+                        src={p?.img}
+                        alt={p?.title}
                         className="w-full h-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(.25,.46,.45,.94)] group-hover:scale-105"
                     />
                     <div className="absolute inset-0 transition-all duration-300 bg-gradient-to-t from-black/75 via-black/20 to-black/5 group-hover:from-black/90 group-hover:via-black/40 group-hover:to-black/15" />
 
-                    <div className="absolute top-4 left-4">
+                    {/* <div className="absolute top-4 left-4">
                         <span className={`bg-red-700 text-white text-[11px] font-semibold tracking-[0.12em] uppercase px-3.5 py-1 rounded-full ${montserrat.className}`}>
-                            {p.tag}
+                            {p?.tag}
                         </span>
-                    </div>
+                    </div> */}
 
                     <div className="absolute bottom-0 left-0 right-0 px-5 py-5">
                         <p className={`${montserrat.className} text-[11px] text-white/50 tracking-[0.12em] mb-1`}>
-                            {p.location} · {p.year}
+                            {p?.location} · {p?.year}
                         </p>
                         <h3 className={`${montserrat.className} font-bold text-white mb-1 ${wide ? "text-[26px]" : "text-[20px]"}`}>
-                            {p.title}
+                            {p?.title}
                         </h3>
-                        <p className={`${montserrat.className} text-[13px] text-white/60`}>{p.type}</p>
+                        <p className={`${montserrat.className} text-[13px] text-white/60`}>{p?.type}</p>
                         {/* <div className="mt-2 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                             <span className={`${montserrat.className} text-[10px] font-semibold text-amber-300 tracking-[0.1em] uppercase`}>
                                 Click to view Project
@@ -103,16 +103,16 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                                 <div className="lg:w-[35%] w-full p-6 sm:p-8 flex flex-col justify-between overflow-y-auto shrink-0 lg:h-full">
                                     <div>
                                         <h2 className={`${montserrat.className} text-white text-2xl sm:text-3xl font-bold mt-4 mb-1`}>
-                                            {p.title.split(" ").slice(0, -1).join(" ")}{" "}
+                                            {p?.title.split(" ").slice(0, -1).join(" ")}{" "}
                                             <span className="text-amber-400 italic">
-                                                {p.title.split(" ").at(-1)}
+                                                {p?.title.split(" ").at(-1)}
                                             </span>
                                         </h2>
                                         <p className={`${montserrat.className} text-zinc-400 text-sm mb-4`}>
-                                            {p.location} · {p.year} · {p.type}
+                                            {p?.location} · {p?.year} · {p?.type}
                                         </p>
                                         <p className="text-zinc-300 text-sm sm:text-base leading-relaxed whitespace-pre-line">
-                                            {p.description ?? "No description available for this project."}
+                                            {p?.description ?? "No description available for this project."}
                                         </p>
                                     </div>
 
@@ -140,7 +140,7 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                                                     <div className="w-full h-full">
                                                         <img
                                                             src={src}
-                                                            alt={`${p.title} slide ${i + 1}`}
+                                                            alt={`${p?.title} slide ${i + 1}`}
                                                             className="w-full h-full object-cover"
                                                         />
                                                     </div>

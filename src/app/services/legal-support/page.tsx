@@ -30,13 +30,13 @@ const features = [
         icon: <LuLandPlot />,
         titleWhite: "Excision and",
         titleAmber: "Gazette Processing",
-        description: "We provide outright purchase, installment plans, and in some cases, cooperative purchase structures to make land ownership accessible to all.",
+        description: "Assisting clients in securing government recognition for community lands released for private ownership.",
     },
     {
         icon: <MdOutlineVerified />,
         titleWhite: "Building Approvals",
         titleAmber: "And Permits",
-        description: "Whether for residential, commercial or investment purposes, we help clients secure the right parcel of land that meets their needs.",
+        description: "Supporting clients in securing necessary building permits before construction begins",
     },
 ]
 
@@ -48,7 +48,12 @@ export default function TitleDocAndLegalSupport() {
                 category="Legal Support"
                 titleWhite="Standardized Title Documentation and"
                 titleAmber="Legal Support"
-                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, vitae assumenda voluptas at quisquam error."
+                description="At Quantum Homes, we understand that proper documentation is the foundation of secure
+                    property ownership. Many buyers fall victim to fraudulent sales or future disputes because
+                    of incomplete or invalid paperwork. Our Title Documentation & Legal Support service is
+                    designed to protect our clients by ensuring that every property acquired is authentic,
+                    legally compliant, and properly registered.
+                "
             />
 
             <div className="pb-16 sm:pb-20 pt-16 sm:pt-24 lg:pt-36 bg-[#F4F2EC] w-full">

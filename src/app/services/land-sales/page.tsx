@@ -63,7 +63,11 @@ export default function LandSales() {
                 category="Land Sales"
                 titleWhite="From Vision to Value, Excellence in"
                 titleAmber="Land Sales"
-                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, vitae assumenda voluptas at quisquam error."
+                description="Our land sales service focuses on providing clients with genuine, well-verified lands in
+                    both prime and fast-developing locations. We understand that buying land is one of the
+                    most significant investments an individual or business can make, so we ensure that every
+                    property we offer is authentic, secure, and properly documented.
+                "
             />
 
             <div className="pb-16 sm:pb-20 pt-16 sm:pt-24 lg:pt-36 bg-[#F4F2EC] w-full">

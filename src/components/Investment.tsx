@@ -18,7 +18,7 @@ const InvestmentSection: React.FC<Props> = () => {
     <section className="relative overflow-hidden bg-[#F4F2EC] xl:p-20 md:p-5 p-2 w-full">
       {/* Background GOLD text */}
       <FadeUp>
-        <div className="max-w-[1500px] m-auto xl:px-20 md:px-10 px-5 py-11 my-20 bg-red-700 rounded-[2rem] overflow-hidden relative">
+        <div className="max-w-[1400px] m-auto xl:px-20 md:px-10 px-5 py-11 my-20 bg-red-700 rounded-[2rem] overflow-hidden relative">
             {/* <FadeLeft>
                 <div className={`absolute -bottom-10 -right-10 ${montserrat.className} text-[clamp(120px,16vw,220px)] font-extrabold leading-none text-black/10`}>
                     GOLD

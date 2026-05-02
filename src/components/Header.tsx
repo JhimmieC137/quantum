@@ -1,22 +1,23 @@
 "use client"
 
+import { pageRoutes } from "@/data/routes";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { HiMenu, HiX, HiChevronDown } from "react-icons/hi";
 
 const headerLinks = [
-    { name: 'About', link: '/about' },
+    { name: 'About', link: pageRoutes.aboutUs },
     {
         name: 'Services',
-        link: '/services',
+        link: pageRoutes.services.base,
         children: [
-            { name: 'Land Sales', link: '/services/land-sales' },
-            { name: 'Legal Support', link: '/services/legal-support' },
-            { name: 'Construction & Dev', link: '/services/construction-and-development' },
-            { name: 'Investment Advisory', link: '/services/real-estate-investment-advisory' },
+            { name: 'Land Sales', link: pageRoutes.services.landSales},
+            { name: 'Legal Support', link: pageRoutes.services.legalSupport },
+            { name: 'Construction & Dev', link: pageRoutes.services.construction},
+            { name: 'Investment Advisory', link: pageRoutes.services.realEstateAdvisory},
         ]
     },
-    { name: 'Projects', link: '/projects' },
+    { name: 'Properties', link: pageRoutes.properties},
 ]
 
 export default function Header() {

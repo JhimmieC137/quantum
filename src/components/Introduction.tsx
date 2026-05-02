@@ -17,10 +17,10 @@ export default function Introduction() {
 
                         <FadeUp>
                             <p className="text-zinc-400/90 2xl:text-4xl xl:text-3xl text-3xl font-medium 2xl:leading-relaxed xl:leading-[3rem] lg:leading-relaxed text-left">
-                                <span className="text-amber-400">For years, architecture has been stuck in the past. </span> 
-                                It’s time to redefine the future. <br/><br/>
-                                At Quantum Homes, we don’t just design buildings, we craft experiences. Our innovative, human-centered approach blends aesthetics, sustainability, and functionality to shape spaces that inspire and endure. <br/><br/>
-                                Design without limits. Cities without compromise. Welcome to the future of architecture.
+                                <span className="text-amber-400">For years, real estate has been driven by speed over substance. </span> 
+                                It's time to build with intention. <br/><br/>
+                                At Quantum Homes & Property, we don't just erect structures, we create landmarks. Our disciplined, client-first approach weaves craftsmanship, durability, and intelligent design into spaces that hold their value and their meaning. <br/><br/>
+                                Develop without compromise. Deliver without shortcuts. Welcome to the future of construction.
                             </p>
                         </FadeUp>
 
@@ -29,8 +29,8 @@ export default function Introduction() {
                     <div className="lg:w-[40%] w-full lg:mt-0 mt-16">
                         <FadeUp>
                             <p className="text-zinc-400/90 text-lg">
-                                We merge innovation with timeless design to create spaces that inspire and endure. Our architecture balances aesthetics, functionality, and sustainability for a better future.<br /><br />
-                                With a passion for pushing boundaries, we embrace cutting-edge technology and visionary thinking. Every project we design transforms the way people live, work, and connect.
+                                We blend modern construction expertise with enduring real estate vision to deliver spaces that stand the test of time. Our developments unite design, functionality, and sustainability to create lasting value for communities and investors.<br /><br />
+                                Driven by a commitment to excellence, we adopt advanced building techniques and forward-thinking planning. Every project we deliver reshapes how people live, invest, and experience the built environment.
                             </p>
                         </FadeUp>
                     </div>

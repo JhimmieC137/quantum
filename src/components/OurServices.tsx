@@ -22,12 +22,6 @@ export default function OurServices()  {
         <div className="w-full lg:pt-24 pt-5 relative bg-zinc-950/5 z-50">
 
             <div className="w-full 2xl:max-w-[1400px] lg:max-w-[1200px] relative m-auto lg:mt-24 mt-5 mb-10">
-                {/* <FadeUp>
-                    <div className={`${montserrat.className} flex justify-start gap-4 items-center mb-2 pl-1`}>
-                        <div className="h-px w-16 bg-zinc-200"/>
-                        <p className={`${montserrat.className} text-xs font-bold text-amber-300 tracking-widest`}>WHAT WE OFFER</p>
-                    </div>
-                </FadeUp> */}
 
                 <div className="flex xl:w-full xl:px-2 px-4 gap-1.5 md:flex-row flex-col ">
                     <div className="xl:w-1/2 lg:w-[20%] w-full">
@@ -47,7 +41,7 @@ export default function OurServices()  {
                         </FadeUp>
                         <FadeUp>
                             <p className="text-zinc-200 text-left lg:text-md text-sm xl:pr-10 pr-2 my-5 lg:max-w-[50rem] max-w-full">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, vitae assumenda voluptas at quisquam error. Quibusdam, iure? Consequatur sunt, in aperiam assumenda nam earum vel deserunt?
+                                We handle the full lifecycle from the first survey peg in the ground to the final key handover. Our teams bring deep technical expertise to every discipline, so your project moves as one coordinated effort rather than a chain of disconnected contractors.
                             </p>
                         </FadeUp>
                     </div>

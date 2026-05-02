@@ -30,23 +30,27 @@ export default function About() {
                     <p className="text-zinc-100/80 text-sm">About Us</p>
                 </div>
 
-                <FadeUp>
+                {/* <FadeUp>
                     <p className={`${montserrat.className} text-zinc-200 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-semibold my-7`}>
                         Innovative Designs, <br/>Urban <span className="text-amber-300 italic">Excellence</span>
                     </p>
-                </FadeUp>
+                </FadeUp> */}
 
-                <div className="flex lg:gap-x-5 gap-x-3 mb-10">
+                <div className="flex lg:gap-x-5 gap-x-3 my-10">
                     <div className="bg-amber-400 lg:p-[3px] p-[2px] lg:max-w-[10px] max-w-[5px] z-20" />
                     {/* <div className="max-w-[5px]">
                     </div> */}
 
                     <FadeRight>
                         <p className="text-zinc-200/90 lg:text-3xl md:text-2xl text-md lg:pr-10 p-0 mb-5 max-w-[80rem]">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, vitae assumenda voluptas at quisquam error. Quibusdam, iure? Consequatur sunt, in aperiam assumenda nam earum vel deserunt?
+                            Quantum Homes & Property is a trusted real estate company committed to bridging the gap between property ownership dreams and reality. Since our inception, we have helped
+                            hundreds of individuals, families, and organizations acquire genuine properties with peace
+                            of mind.
                         </p>
                         <p className="text-zinc-200/90 lg:text-3xl md:text-2xl text-md lg:pr-10 p-0 my-10 max-w-[80rem]">
-                            Consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, vitae assumenda voluptas at quisquam error. Quibusdam, iure? Consequatur sunt, in aperiam assumenda nam earum vel deserunt?
+                            We pride ourselves on integrity, professionalism, and innovation in the real estate
+                            sector. At Quantum Homes, we don’t just sell properties we build trust, create
+                            value, and ensure long-term satisfaction
                         </p>
                     </FadeRight>         
                 </div>
@@ -109,23 +113,24 @@ export default function About() {
                                 creations with a unique and captivating essence.
                             </p>
 
-                            <div className="mt-8 py-4 px-10 bg-red-700 text-zinc-100 rounded-2xl hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-300 cursor-pointer w-fit">
-                            <p className="text-xl text-center">Explore properties</p>
-                            </div>
+                            <a href="/projects" className="mt-8 py-4 px-10 bg-red-700 text-zinc-200 rounded-2xl hover:bg-red-600 hover:shadow-xl ease-in-out duration-300 cursor-pointer w-fit">
+                                <p className="text-xl text-center">Explore projects</p>
+                            </a>
                         </div>
                     </div>
                         
                     <div className="w-full flex md:flex-row flex-col gap-8 mb-10 mt-14">
                         
-                        <div className="p-[2px] bg-gradient-to-br from-red-700 via-amber-400 to-transparent rounded-[1.7rem] overflow-hidden relative">
+                        <div className="w-full p-[2px] bg-gradient-to-br from-red-700 via-amber-400 to-transparent rounded-[1.7rem] overflow-hidden relative">
                             <div className="bg-[#F4F2EC] p-10 rounded-[1.5rem] relative">
                                 <p className={`${montserrat.className} text-3xl font-semibold text-zinc-900 mb-12`}>
-                                    Our <span className="text-amber-400">Mision.</span>
+                                    Our <span className="text-amber-400">Mision</span>
                                 </p>
 
                                 <p className="text-xl mt-px text-zinc-900">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt repellat, laudantium 
-                                    doloremque, similique dolores inventore incidunt eveniet quae iure dicta, pariatur aut.
+                                    At Quantum Homes, our mission is to deliver magnificent real estate services that make
+                                    homeownership and property investment achievable for everyone, irrespective of class or
+                                    background.
                                 </p>
 
                                 {/* <p className={`absolute bottom-0 -right-2 text-zinc-400/10 font-semibold text-[6.4rem] leading-4 ${montserrat.className} italic`}>
@@ -135,15 +140,15 @@ export default function About() {
                             </div>
                         </div>
 
-                        <div className="p-[2px] bg-gradient-to-br from-red-700 via-amber-400 to-transparent rounded-[1.7rem] overflow-hidden relative">
+                        <div className="w-full p-[2px] bg-gradient-to-br from-red-700 via-amber-400 to-transparent rounded-[1.7rem] overflow-hidden relative">
                             <div className="bg-[#F4F2EC] p-10 rounded-[1.5rem] relative">
                                 <p className={`${montserrat.className} text-3xl font-semibold text-zinc-900 mb-12`}>
-                                    Our <span className="text-amber-400">Vision.</span>
+                                    Our <span className="text-amber-400">Vision</span>
                                 </p>
 
                                 <p className="text-xl mt-px text-zinc-900">
-                                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt repellat, laudantium 
-                                    doloremque, similique dolores inventore incidunt eveniet quae iure dicta, pariatur aut.
+                                    To be the undisputed, prime, and dominant real estate development firm in the world,
+                                    setting global standards in innovation, excellence, and customer satisfaction.
                                 </p>
                             </div>
                         </div>
@@ -195,11 +200,11 @@ export default function About() {
                                 20+
                             </p>
 
-                            <p className="text-zinc-900 text-xl font-semibold">
+                            <p className="text-zinc-900 text-xl font-semibold mb-1">
                                 Years <span className="text-amber-500 italic">Experience</span>
                             </p>
 
-                            <p className="text-zinc-900/80 ">
+                            <p className="text-zinc-900/80 text-md">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, cumque nisi fugit ipsum ducimus, magnam maxime esse ex hic dolorum, ut velit saepe ratione! 
                             </p>
                         </div>
@@ -208,11 +213,11 @@ export default function About() {
                                 20+
                             </p>
 
-                            <p className="text-zinc-900 text-xl font-semibold">
+                            <p className="text-zinc-900 text-xl font-semibold mb-1">
                                 Years <span className="text-amber-500 italic">Experience</span>
                             </p>
 
-                            <p className="text-zinc-900/80 ">
+                            <p className="text-zinc-900/80 text-md">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, cumque nisi fugit ipsum ducimus, magnam maxime esse ex hic dolorum, ut velit saepe ratione!
                             </p>
                         </div>
@@ -226,11 +231,11 @@ export default function About() {
                                 20+
                             </p>
 
-                            <p className="text-zinc-900 text-xl font-semibold">
+                            <p className="text-zinc-900 text-xl font-semibold mb-1">
                                 Years <span className="text-amber-500 italic">Experience</span>
                             </p>
 
-                            <p className="text-zinc-900/80 ">
+                            <p className="text-zinc-900/80 text-md">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, cumque nisi fugit ipsum ducimus, magnam maxime esse ex hic dolorum, ut velit saepe ratione!
                             </p>
                         </div>
@@ -239,11 +244,11 @@ export default function About() {
                                 20+
                             </p>
 
-                            <p className="text-zinc-900 text-xl font-semibold">
+                            <p className="text-zinc-900 text-xl font-semibold mb-1">
                                 Years <span className="text-amber-500 italic">Experience</span>
                             </p>
 
-                            <p className="text-zinc-900/80 ">
+                            <p className="text-zinc-900/80 text-md">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, cumque nisi fugit ipsum ducimus, magnam maxime esse ex hic dolorum, ut velit saepe ratione!
                             </p>
                         </div>
@@ -256,12 +261,6 @@ export default function About() {
 
             <div className="bg-[#F4F2EC] py-10 w-full">
                 <div className="max-w-[1400px] m-auto">
-                    {/* <FadeUp>
-                        <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-md m-auto">
-                            <CgMenuGridO className="size-4 text-zinc-200"/>
-                            <p className="text-zinc-100/80 text-sm">Our Team</p>
-                        </div>
-                    </FadeUp> */}
 
                     <FadeUp>
                         <p className={`${montserrat.className} text-zinc-800 text-center text-5xl font-semibold mt-14`}>

@@ -62,7 +62,12 @@ export default function RealEstateAdvisory() {
                 category="Real Estate Investment Advisory"
                 titleWhite="Guiding investors on"
                 titleAmber="high-return properties"
-                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, vitae assumenda voluptas at quisquam error."
+                description="At Quantum Homes & Property, we understand that real estate is not just about buying
+                    and selling properties — it’s about making profitable, well-informed investment decisions.
+                    Our Investment Advisory service is designed to guide individuals, families, and corporate
+                    organizations in identifying, analyzing, and investing in high-value real estate opportunities
+                    that yield long-term returns.
+                "
             />
 
             <div className="pb-16 sm:pb-20 pt-16 sm:pt-24 lg:pt-36 bg-[#F4F2EC] w-full">

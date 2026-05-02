@@ -45,7 +45,7 @@ const features = [
         icon: <GrUserManager />,
         titleWhite: "Project",
         titleAmber: "Management",
-        description: "Coordinating every stage of development — from architectural design and budgeting to construction and finishing — ensuring projects are completed on time and within budget.",
+        description: "Coordinating every stage of development from architectural design and budgeting to construction and finishing ensuring projects are completed on time and within budget.",
     },
     {
         icon: <SiRenovate />,
@@ -63,7 +63,11 @@ export default function ConstructionAndDev() {
                 category="Construction And Development"
                 titleWhite="Designing, Building, and"
                 titleAmber="Managing Projects"
-                description="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, vitae assumenda voluptas at quisquam error."
+                description="We don’t just sell Landed properties, we also design, build, and deliver modern
+                    residential and commercial projects that meet the highest standards of quality and
+                    functionality. Our Construction & Development service is tailored for individuals, families,
+                    investors, and organizations who want to bring their real estate visions to life.
+                "
             />
 
             <div className="pb-16 sm:pb-20 pt-16 sm:pt-24 lg:pt-36 bg-[#F4F2EC] w-full">

@@ -32,7 +32,7 @@ export default function OurClients() {
 
             <FadeUp>
                 <p className="text-zinc-200 text-center text-md lg:pr-10 px-2 my-5 lg:max-w-[50rem] w-full m-auto">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, vitae assumenda voluptas at quisquam error. Quibusdam, iure? Consequatur sunt, in aperiam assumenda nam earum vel deserunt?
+                    From residential estates and commercial towers to government infrastructure and industrial facilities, we have had the privilege of bringing ambitious visions to life for some of Nigeria's most respected organisations. Every structure we raise carries the weight of those relationships and the standard they demand.
                 </p>
             </FadeUp>
 

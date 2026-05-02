@@ -6,7 +6,7 @@ import Introduction from "@/components/Introduction";
 import InvestmentSection from "@/components/Investment";
 import OurClients from "@/components/OurClients";
 import OurServices from "@/components/OurServices";
-import Projects from "@/components/Projects";
+import Properties from "@/components/Properties";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -28,7 +28,7 @@ export default function Home() {
       <OurServices />
       <div className="bg-[#F4F2EC]">
         <CoreValues />
-        <Projects />
+        <Properties />
       </div>
       <InvestmentSection />
     </div>

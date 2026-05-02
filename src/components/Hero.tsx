@@ -71,7 +71,7 @@ export default function Hero() {
                             </FadeUp>
 
                             <FadeUp>
-                                <div className="flex-row text-left items-end">
+                                <div className="text-left items-end hidden md:block">
                                     <p className="sm:text-[15px] text-sm xl:max-w-[50rem] lg:max-w-[40rem] max-w-[35rem] sm:m-0 m-auto text-zinc-200 sm:text-left text-center">
                                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt repellat, laudantium 
                                         doloremque, similique dolores inventore incidunt eveniet quae iure dicta, pariatur aut.
@@ -81,8 +81,8 @@ export default function Hero() {
 
                             <FadeUp>
                                 <div className="flex gap-5 mt-10 justify-start sm:flex-row flex-col w-full">
-                                    <a href="/projects" className="sm:py-3 py-2 sm:px-8 px-4 bg-red-700 text-zinc-100 rounded-xl hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-300 cursor-pointer">
-                                        <p className="text-md text-center">Explore projects</p>
+                                    <a href="/properties" className="sm:py-3 py-2 sm:px-8 px-4 bg-red-700 text-zinc-100 rounded-xl hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-300 cursor-pointer">
+                                        <p className="text-md text-center">Explore properties</p>
                                     </a>
                                     <a href="/projects" className="sm:py-3 py-2 sm:px-8 px-4 border border-zinc-200/60 rounded-xl hover:bg-zinc-200 hover:text-zinc-900 text-zinc-200 ease-in-out duration-300 cursor-pointer">
                                         <p className="text-md text-center">Our services</p>

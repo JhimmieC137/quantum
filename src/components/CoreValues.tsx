@@ -9,10 +9,10 @@ const montserrat = Montserrat({
 
 export default function CoreValues() {
     const VALUES = [
-    { num: "01", title: "Integrity", desc: "Transparent dealings and unwavering ethical standards in every project." },
-    { num: "02", title: "Innovation", desc: "Cutting-edge design and technology that redefines what's possible." },
-    { num: "03", title: "Excellence", desc: "Every detail deliberate. Perfection from blueprint to final finish." },
-    { num: "04", title: "Sustainability", desc: "Building for today without compromising the world of tomorrow." },
+    { num: "01", title: "Transparency", desc: "Every transaction we handle is clear, straightforward, and honest. We provide clients with accurate information, verified properties, and open communication at every stage." },
+    { num: "02", title: "Integrity", desc: "We uphold the highest ethical standards in our dealings, ensuring that our clients’ trust is never compromised. Integrity is the foundation on which we build lasting relationships." },
+    { num: "03", title: "Reliability", desc: "Our clients can count on us to consistently deliver on our promises. We ensure that every commitment made is fulfilled with professionalism, dedication, and excellence." },
+    // { num: "04", title: "Sustainability", desc: "Building for today without compromising the world of tomorrow." },
     ];
 
 
@@ -36,14 +36,17 @@ export default function CoreValues() {
                             </p>
                         </FadeUp>
                         <FadeUp>
-                            <p className="text-zinc-600 text-left lg:text-md text-sm pr-10 my-5 max-w-[40rem]">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, in aperiam assumenda nam earum vel deserunt?
+                            <p className="text-zinc-600 text-left pr-10 my-5 max-w-[60rem]">
+                                Through these values, we are committed to making the dream of homeownership a reality
+                                by providing affordable, secure, and sustainable housing solutions. Whether it’s land
+                                acquisition or investment opportunities, we strive to serve as a trusted partner in every
+                                client’s journey to owning their dream home.
                             </p>
                         </FadeUp>
                     </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8">
                     {VALUES.map((v, i) => (
                         <div key={v.title}>
                             <div
@@ -63,7 +66,7 @@ export default function CoreValues() {
                                 </h3>
 
                                 {/* Description */}
-                                <p className={`${montserrat.className} text-sm leading-[1.7] text-zinc-200`}>
+                                <p className={`text-md leading-[1.7] text-zinc-200`}>
                                     {v.desc}
                                 </p>
 

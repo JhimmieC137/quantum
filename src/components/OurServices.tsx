@@ -19,7 +19,8 @@ const montserrat = Montserrat({
 export default function OurServices()  {
 
     return (
-        <div className="w-full lg:pt-24 pt-5 relative bg-zinc-950/5 z-50">
+        <div className="w-full lg:pt-24 pt-5 relative bg-red-700 z-50">
+            {/* <div className="absolute inset-0 bg-zinc-950/10 z-10" /> */}
 
             <div className="w-full 2xl:max-w-[1400px] lg:max-w-[1200px] relative m-auto lg:mt-24 mt-5 mb-10">
 

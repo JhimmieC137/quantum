@@ -26,7 +26,7 @@ export default function Properties()  {
                         <FadeUp>
                             <div className={`${montserrat.className} flex justify-start gap-4 items-center mb-2 pl-1`}>
                                 <div className="h-px xl:w-16 lg:w-10 w-7 bg-red-500"/>
-                                <p className={`${montserrat.className} text-xs font-bold text-amber-500 tracking-widest`}>PROPERTIES</p>
+                                <p className={`${montserrat.className} text-xs font-bold text-amber-500 tracking-widest`}>PORTFOLIO</p>
                             </div>
                         </FadeUp>
 

@@ -137,20 +137,6 @@ export default function Header() {
                                     >
                                         {link.name}
                                     </Link>
-                                    {/* {link.children && (
-                                        <div className="ml-4 mt-1 flex flex-col gap-1 border-l border-zinc-800 pl-3">
-                                            {link.children.map((child) => (
-                                                <Link
-                                                    key={child.name}
-                                                    href={child.link}
-                                                    onClick={() => setMobileOpen(false)}
-                                                    className="block text-sm text-zinc-500 hover:text-zinc-200 py-1.5 ease-in-out duration-150"
-                                                >
-                                                    {child.name}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    )} */}
                                 </div>
                             ))}
                             <a

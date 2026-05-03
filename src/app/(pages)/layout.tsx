@@ -2,11 +2,7 @@
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header"
-import Services from "@/components/Services"
 import ScreenLoader from "@/ui/ScreenLoader";
-import {
-  Montserrat,
-} from "next/font/google";
 import { useEffect, useState } from "react";
 
 

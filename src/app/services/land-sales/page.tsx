@@ -36,12 +36,6 @@ const features = [
         description: "We offer lands in areas with high appreciation value, ensuring clients benefit from long-term returns on investment.",
     },
     {
-        icon: <IoCash />,
-        titleWhite: "Flexible Payment",
-        titleAmber: "Options",
-        description: "We provide outright purchase, installment plans, and in some cases, cooperative purchase structures to make land ownership accessible to all.",
-    },
-    {
         icon: <PiFediverseLogo />,
         titleWhite: "Diverse",
         titleAmber: "Purposes",
@@ -52,6 +46,12 @@ const features = [
         titleWhite: "Future",
         titleAmber: "Development",
         description: "Our lands are often located in regions earmarked for infrastructural growth (roads, schools, businesses, housing estates), guaranteeing increased value over time.",
+    },
+    {
+        icon: <IoCash />,
+        titleWhite: "Flexible Payment",
+        titleAmber: "Options",
+        description: "We provide outright purchase, installment plans, and in some cases, cooperative purchase structures to make land ownership accessible to all.",
     },
 ]
 
@@ -89,7 +89,7 @@ export default function LandSales() {
                 />
 
                 <div className="w-full mt-10 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-[1600px] m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-[60px] pt-10 pb-16 sm:pb-20">
+                    <div className="max-w-[1400px] m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-[60px] pt-10 pb-16 sm:pb-20">
                         {features.map((f) => (
                             <FeatureCard key={f.titleWhite} {...f} />
                         ))}

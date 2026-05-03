@@ -5,6 +5,7 @@ import { FiSend } from "react-icons/fi";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
 import { Montserrat } from "next/font/google";
+import HeroBanner from "@/components/HeroBanner";
 
 const montserrat = Montserrat({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -15,14 +16,11 @@ const montserrat = Montserrat({
 export default function ContactUs() {
     return (
         <MainLayout>
-            {/* Hero banner */}
-            <div className="relative h-[14rem] sm:h-[18rem] lg:h-[23rem] overflow-hidden">
-                <div className="absolute inset-0 bg-black/70 z-10"/>
-                <img src="/wallpapers/construction_1.jpg" className="absolute inset-0 object-cover object-center w-full h-full"/>
-                <p className="absolute inset-0 flex items-center justify-center text-zinc-200 text-5xl sm:text-7xl lg:text-[7.5rem] font-semibold z-20">
-                    Contact <span className="text-amber-500 italic ml-4">Us</span>
-                </p>
-            </div>
+            <HeroBanner
+                image="/wallpapers/construction_1.jpg"
+                title="Contact"
+                titleAccent="Us"
+            />
 
             <div className="bg-[#F4F2EC]">
                 <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 w-full flex lg:flex-row flex-col gap-y-12 gap-x-8">

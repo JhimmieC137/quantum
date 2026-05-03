@@ -1,6 +1,7 @@
 'use client'
 
 import CoreValues from "@/components/CoreValues";
+import FAQAccordion from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import Introduction from "@/components/Introduction";
 import InvestmentSection from "@/components/Investment";
@@ -29,6 +30,7 @@ export default function Home() {
       <div className="bg-[#F4F2EC]">
         <CoreValues />
         <Properties />
+        <FAQAccordion />
       </div>
       <InvestmentSection />
     </div>

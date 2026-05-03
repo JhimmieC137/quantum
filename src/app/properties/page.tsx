@@ -15,6 +15,8 @@ import ServiceIntro from "@/sections/services/ServiceIntro"
 import ServiceSectionHeading from "@/sections/services/ServiceSectionHeading"
 import FeatureCard from "@/sections/services/FeatureCard"
 import ServiceCTA from "@/sections/services/ServiceCTA"
+import HeroBanner from "@/components/HeroBanner"
+import PageHero from "@/components/PageHero"
 
 const montserrat = Montserrat({
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -101,67 +103,34 @@ const commercialFeatures = [
 ]
 
 export default function Projects() {
+    const paragraphList = [
+        "\
+            At Quantum Homes, every project is a testament to our commitment to quality, integrity, \
+            and innovation. From serviced residential estates to prime commercial plots, we develop \
+            spaces that inspire growth and stand the test of time. \
+        ",
+        "\
+            Our projects are carefully planned, fully documented, and strategically located to \
+            deliver maximum value — whether you're building your dream home or growing a thriving business. \
+        "
+    ]
+
     return (
         <MainLayout>
-
-            {/* Hero */}
-            <div className="relative h-[14rem] sm:h-[18rem] lg:h-[23rem] overflow-hidden">
-                <div className="absolute inset-0 bg-black/70 z-10"/>
-                <img
-                    src="/wallpapers/construction_1.jpg"
-                    className="absolute inset-0 object-cover object-center w-full h-full"
-                />
-                <p className="absolute inset-0 flex items-center justify-center text-zinc-200 text-5xl sm:text-7xl lg:text-[7.5rem] font-semibold z-20">
-                    Our <span className="text-amber-500 italic ml-4">Properties</span>
-                </p>
-            </div>
-
-            {/* Intro banner */}
-            <div className="bg-red-700 relative overflow-hidden">
-                <img src="/quantum_logo.png" className="absolute opacity-10 -top-[2%] -right-[12%] rotate-[228deg] w-[33rem]"/>
-                <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[20%] -left-[8%] rotate-[38deg] w-[33rem]"/>
-                <div className="max-w-[1400px] m-auto py-20 px-4 sm:px-6 lg:px-8 relative">
-                    <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-md">
-                        <CgMenuGridO className="size-4 text-zinc-200"/>
-                        <p className="text-zinc-100/80 text-sm">Our Properties</p>
-                    </div>
-
-                    <FadeUp>
-                        <p className={`${montserrat.className} text-zinc-200 text-2xl sm:text-4xl lg:text-5xl font-semibold my-7`}>
-                            Where Vision Meets <span className="text-amber-300 italic">Excellence</span>
-                        </p>
-                    </FadeUp>
-
-                    <div className="flex gap-x-5 mb-10">
-                        <div className="bg-amber-400 p-[3px] max-w-[10px] shrink-0 z-20"/>
-                        <FadeRight>
-                            <p className="text-zinc-200/90 text-base sm:text-lg lg:text-2xl mb-5 max-w-[80rem]">
-                                At Quantum Homes, every project is a testament to our commitment to quality, integrity,
-                                and innovation. From serviced residential estates to prime commercial plots, we develop
-                                spaces that inspire growth and stand the test of time.
-                            </p>
-                            <p className="text-zinc-200/90 text-base sm:text-lg lg:text-2xl max-w-[80rem]">
-                                Our projects are carefully planned, fully documented, and strategically located to
-                                deliver maximum value — whether you're building your dream home or growing a thriving business.
-                            </p>
-                        </FadeRight>
-                    </div>
-                </div>
-            </div>
+            <HeroBanner 
+                image="/wallpapers/construction_1.jpg"
+                title="Our"
+                titleAccent="Properties"
+            />
+            
+            <PageHero
+                CTAMain="Where Vision Meets"
+                CTAAccent="Excellence"
+                paragraphs={paragraphList}
+            />
 
             {/* Residential section */}
             <div className="bg-[#F4F2EC] pt-8 sm:pt-24 lg:pt-36 pb-10">
-                {/* <div className="max-w-[1400px] m-auto px-4 sm:px-6 lg:px-8 mb-12">
-                    <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-400/40 rounded-lg bg-transparent shadow-sm mb-6">
-                        <CgMenuGridO className="size-4 text-zinc-600"/>
-                        <p className="text-zinc-600/80 text-sm">Residential</p>
-                    </div>
-                </div>
-
-                <ServiceIntro
-                    image="/services/land_sales_narrow.jpg"
-                    text="At Quantum Homes, we develop and sell serviced plots within well-planned residential estates, designed to provide clients with a safe, comfortable, and future-ready environment for building their dream homes. Unlike raw, unplanned lands, our serviced plots are properly laid out, documented, and equipped with essential infrastructure."
-                /> */}
                 <div className="relative max-w-[1000px] m-auto z-50">
                     <div className="w-full flex md:flex-row flex-col gap-12 relative mt-16 items-stretch">
                         {/* Image + red accent block wrapper */}

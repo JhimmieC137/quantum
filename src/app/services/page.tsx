@@ -12,6 +12,9 @@ import { HiDocument, HiOutlineBuildingOffice } from "react-icons/hi2"
 import { Montserrat } from "next/font/google"
 import { LuLandPlot } from "react-icons/lu"
 import { GrUserManager } from "react-icons/gr"
+import HeroBanner from "@/components/HeroBanner"
+import PageHero from "@/components/PageHero"
+import FAQAccordion from "@/components/FAQ"
 
 const montserrat = Montserrat({
     weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -20,46 +23,30 @@ const montserrat = Montserrat({
 });
 
 export default function Services() {
+    const paragraphList=[
+        "\
+            We deliver end-to-end real estate and construction solutions from architectural design to final handover built on precision, integrity, and a relentless commitment to exceeding every client's expectations.\
+        ",
+        "\
+            Every structure we raise is a statement of purpose. We blend intelligent design with durable craftsmanship to create spaces that serve communities, stand the test of time, and define skylines.\
+        ",
+    ]
 
     return (
         <MainLayout>
-            <div className="relative h-[14rem] sm:h-[18rem] lg:h-[23rem] overflow-hidden">
-                <div className="absolute inset-0 bg-black/70 z-10"/>
-                <img src="/wallpapers/construction_1.jpg" className="absolute inset-0 object-cover object-center w-full h-full"/>
-                <p className="absolute inset-0 flex items-center justify-center text-zinc-200 text-5xl sm:text-7xl lg:text-[7.5rem] font-semibold z-20">
-                    Our <span className="text-amber-500 italic ml-4">Services</span>
-                </p>
-            </div>
-            <div className="bg-red-700">
-                <div className="xl:max-w-[1400px] lg:max-w-[1200px] md:max-w-full m-auto py-20 px-2">
-                    <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-md">
-                        <CgMenuGridO className="size-4 text-zinc-200"/>
-                        <p className="text-zinc-100/80 text-sm">About Us</p>
-                    </div>
-    
-                    <FadeUp>
-                        <p className={`${montserrat.className} text-zinc-200 xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-semibold my-7`}>
-                            Innovative Designs, <br/>Urban <span className="text-amber-300 italic">Excellence</span>
-                        </p>
-                    </FadeUp>
-    
-                    <div className="flex lg:gap-x-5 gap-x-3 mb-10">
-                        <div className="bg-amber-400 lg:p-[3px] p-[2px] lg:max-w-[10px] max-w-[5px] z-20" />
-                        {/* <div className="max-w-[5px]">
-                        </div> */}
-    
-                        <FadeRight>
-                            <p className="text-zinc-200/90 lg:text-3xl md:text-2xl text-md lg:pr-10 p-0 mb-5 max-w-[80rem]">
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, vitae assumenda voluptas at quisquam error. Quibusdam, iure? Consequatur sunt, in aperiam assumenda nam earum vel deserunt?
-                            </p>
-                            <p className="text-zinc-200/90 lg:text-3xl md:text-2xl text-md lg:pr-10 p-0 my-10 max-w-[80rem]">
-                                Consectetur adipisicing elit. Adipisci corrupti repellendus fugit exercitationem, vitae assumenda voluptas at quisquam error. Quibusdam, iure? Consequatur sunt, in aperiam assumenda nam earum vel deserunt?
-                            </p>
-                        </FadeRight>         
-                    </div>
-    
-                </div>
+            <HeroBanner
+                image="/wallpapers/construction_1.jpg"
+                title="Our"
+                titleAccent="Services"
+            />
 
+            <PageHero
+                CTAMain="Innovative Designs "
+                CTAAccent="Urban Excellence"
+                paragraphs={paragraphList}
+            />
+
+            <div className="bg-red-700">
                 <div className="bg-[#F4F2EC]">
                     <div className="max-w-[1400px] m-auto py-[12rem] px-2">
                         <div className="flex lg:flex-row flex-col w-full lg:min-h-[25rem] gap-y-8 lg:gap-y-0 lg:gap-x-20">
@@ -198,6 +185,7 @@ export default function Services() {
                 </div>
 
             </div>
+            <FAQAccordion />
             <InvestmentSection />
         </MainLayout>
     ) 

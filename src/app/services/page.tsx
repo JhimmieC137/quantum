@@ -1,17 +1,8 @@
 'use client'
 
-import { CgMenuGridO } from "react-icons/cg"
 import MainLayout from "../(pages)/layout"
-import FadeUp from "@/ui/FadeUp"
-import FadeRight from "@/ui/FadeRight"
 import InvestmentSection from "@/components/Investment"
-import OurClients from "@/components/OurClients"
-import { useState } from "react"
-import ProjCard from "@/sections/projects/ProjectCard"
-import { HiDocument, HiOutlineBuildingOffice } from "react-icons/hi2"
 import { Montserrat } from "next/font/google"
-import { LuLandPlot } from "react-icons/lu"
-import { GrUserManager } from "react-icons/gr"
 import HeroBanner from "@/components/HeroBanner"
 import PageHero from "@/components/PageHero"
 import FAQAccordion from "@/components/FAQ"
@@ -87,7 +78,7 @@ export default function Services() {
                         <div className="flex lg:flex-row-reverse flex-col w-full lg:min-h-[25rem] gap-y-12 lg:gap-y-0 lg:gap-x-20">
 
                         {/* Image side */}
-                        <div className="lg:w-1/2 w-full relative pt-3 pl-3">
+                        <div className="lg:w-1/2 w-full relative">
                             {/* <div className="bg-zinc-200/20 absolute top-0 left-0 bottom-3 right-3 rounded-[1.7rem] z-0" /> */}
                             <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
                             <img className="absolute inset-0 object-cover size-full" src="/services/signing-papers.jpg" />
@@ -155,7 +146,7 @@ export default function Services() {
                         <div className="flex lg:flex-row-reverse flex-col w-full lg:min-h-[25rem] gap-y-12 lg:gap-y-0 lg:gap-x-20">
 
                         {/* Image side */}
-                        <div className="lg:w-[47%] w-full relative pt-3 pl-3">
+                        <div className="lg:w-[47%] w-full relative">
                             {/* <div className="bg-zinc-200/30 absolute top-0 left-0 bottom-3 right-3 rounded-[1.7rem] z-0" /> */}
                             <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
                             <img className="absolute inset-0 object-cover size-full" src="/services/agents-in-meeting.jpg" />

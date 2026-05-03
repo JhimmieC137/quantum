@@ -51,10 +51,10 @@ export default function Hero() {
             />
 
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/60 via-zinc-950/70 to-zinc-950" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/50 to-zinc-950" />
 
             {/* Content */}
-            <div className="relative z-10 min-h-screen flex justify-center items-center">
+            <div className="relative z-10 min-h-screen flex justify-center md:items-center md:pb-0 items-end pb-[6rem]">
                 <div className="xl:max-w-[1200px] 2xl:max-w-[1400px] lg:max-w-[1000px] px-2 w-full">
                     <div className="flex">
                         <div className="w-full">
@@ -81,7 +81,7 @@ export default function Hero() {
                             </FadeUp>
 
                             <FadeUp>
-                                <div className="flex gap-5 mt-10 justify-start sm:flex-row flex-col w-full">
+                                <div className="flex gap-5 mt-10 justify-start sm:flex-row flex-col md:w-full w-[70%] mx-auto">
                                     <a href={pageRoutes.properties} className="sm:py-3 py-2 sm:px-8 px-4 bg-red-700 text-zinc-100 rounded-xl hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-300 cursor-pointer">
                                         <p className="text-md text-center">Explore properties</p>
                                     </a>

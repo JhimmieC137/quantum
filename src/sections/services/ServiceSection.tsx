@@ -33,7 +33,7 @@ export default function SeviceSection(props: {
             className="w-full cursor-pointer hover:bg-zinc-950/10 border-t border-zinc-950/20 py-14 transition-all ease-in-out duration-300"
         >
             <div className={`flex lg:flex-row flex-col items-center justify-between gap-7 xl:max-w-[1400px] lg:max-w-[1000px] m-auto ${openDrawer ? 'max-h-[40rem]' : 'max-h-[6rem]'} transition-all ease-in-out duration-300 h-full px-5`}>
-                <div className="flex xl:justify-end lg:justify-start items-center w-full">
+                <div className={`${openDrawer ? "sm:flex flex" : "sm:flex hidden" } xl:justify-end lg:justify-start items-center w-full`}>
                     <img
                         style={{
                             opacity: openDrawer ? 1 : 0,

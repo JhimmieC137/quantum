@@ -29,7 +29,7 @@ export default function PageHero({
         {
             (CTAMain || CTAAccent ) &&
             <FadeUp>
-                <p className={`${montserrat.className} text-zinc-200 text-2xl sm:text-4xl lg:text-5xl font-semibold my-7`}>
+                <p className={`${montserrat.className} text-zinc-200 text-4xl lg:text-5xl font-semibold md:my-7 my-px`}>
                   {CTAMain} <span className="text-amber-300 italic">{CTAAccent}</span>
                 </p>
             </FadeUp>

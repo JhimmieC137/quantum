@@ -82,11 +82,11 @@ function FAQRow({ item, index, open, onToggle }: {
         className="w-full flex items-center gap-4 py-5 px-1 text-left group cursor-pointer"
         aria-expanded={open}
       >
-        <span className="text-lg font-semibold text-amber-300 min-w-[28px] tabular-nums">
+        <span className="text-lg text-amber-300/60 min-w-[28px] tabular-nums">
           {String(index + 1).padStart(2, "0")}
         </span>
         <span
-          className={`flex-1 text-lg font-semibold transition-colors duration-200 text-amber-300`}
+          className={`flex-1 text-lg transition-colors duration-200 text-amber-300`}
         >
           {item.question}
         </span>
@@ -116,7 +116,7 @@ export default function FAQAccordion() {
 
   return (
     <FadeUp>
-      <section className="w-full max-w-[1400px] mx-auto px-6 py-[16rem]">
+      <section className="w-full max-w-[1400px] mx-auto px-2 py-[16rem]">
         {/* Header */}
         <div className="flex items-end justify-between gap-8 mb-10">
           <div className="flex-1">

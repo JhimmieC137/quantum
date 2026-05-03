@@ -51,7 +51,7 @@ export default function Hero() {
             />
 
             {/* Dark overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent md:from-zinc-950/50 via-zinc-950/50 md:via-zinc-950/70 to-zinc-950" />
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent md:from-zinc-950/50 via-zinc-950/50 md:via-zinc-950/70 to-zinc-950 md:to-zinc-950" />
 
             {/* Content */}
             <div className="relative z-10 min-h-screen flex justify-center md:items-center md:pb-0 items-end pb-[6rem]">

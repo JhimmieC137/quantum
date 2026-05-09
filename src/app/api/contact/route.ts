@@ -25,9 +25,12 @@ async function createAssessment(token: string): Promise<AssessmentResult> {
             event: {
                 token,
                 siteKey: process.env.RECAPTCHA_SITE_KEY,
+                expectedAction: RECAPTCHA_ACTION,
             },
         },
     });
+    console.log('response')
+    console.error(response)
 
     if (!response.tokenProperties?.valid) {
         return { label: 'BAD', reason: 'INVALID_TOKEN' };
@@ -37,7 +40,7 @@ async function createAssessment(token: string): Promise<AssessmentResult> {
         return { label: 'BAD', reason: 'ACTION_MISMATCH' };
     }
 
-    const score = response.riskAnalysis?.score ?? 0;
+    const score: number = response.riskAnalysis?.score ?? 0;
     if (score <= SCORE_THRESHOLD) {
         return { label: 'BAD', reason: 'SCORE_TOO_LOW' };
     }
@@ -65,6 +68,7 @@ export async function POST(req: NextRequest) {
 
         const assessment = await createAssessment(recaptchaToken);
         if (assessment.label === 'BAD') {
+            console.log('BAD')
             return NextResponse.json({ error: 'Bot verification failed. Please try again.' }, { status: 403 });
         }
 

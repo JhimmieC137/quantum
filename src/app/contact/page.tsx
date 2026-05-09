@@ -32,8 +32,8 @@ export default function ContactUs() {
 
         try {
             const recaptchaToken = await new Promise<string>((resolve, reject) => {
-                (window as any).grecaptcha.ready(() => {
-                    (window as any).grecaptcha
+                (window as any).grecaptcha.enterprise.ready(() => {
+                    (window as any).grecaptcha.enterprise
                         .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: 'contact' })
                         .then(resolve)
                         .catch(reject);
@@ -63,7 +63,7 @@ export default function ContactUs() {
     return (
         <MainLayout>
             <Script
-                src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+                src={`https://www.google.com/recaptcha/enterprise.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
                 strategy="afterInteractive"
             />
             <HeroBanner

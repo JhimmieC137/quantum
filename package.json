@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@google-cloud/recaptcha-enterprise": "^6.4.1",
     "motion": "^12.34.3",
     "next": "15.1.9",
     "node-mailjet": "^6.0.11",

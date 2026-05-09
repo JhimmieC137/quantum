@@ -1,20 +1,48 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Mailjet from 'node-mailjet';
+import { RecaptchaEnterpriseServiceClient } from '@google-cloud/recaptcha-enterprise';
+
+const RECAPTCHA_ACTION = 'contact';
+const SCORE_THRESHOLD = 0.5;
 
 const mailjet = Mailjet.apiConnect(
     process.env.MJ_APIKEY_PUBLIC!,
     process.env.MJ_APIKEY_PRIVATE!,
 );
 
-async function verifyRecaptcha(token: string): Promise<boolean> {
-    const res = await fetch('https://www.google.com/recaptcha/api/siteverify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`,
+const recaptchaClient = new RecaptchaEnterpriseServiceClient();
+
+type AssessmentResult =
+    | { label: 'NOT_BAD' }
+    | { label: 'BAD'; reason: 'INVALID_TOKEN' | 'ACTION_MISMATCH' | 'SCORE_TOO_LOW' };
+
+async function createAssessment(token: string): Promise<AssessmentResult> {
+    const projectPath = recaptchaClient.projectPath(process.env.GOOGLE_CLOUD_PROJECT!);
+
+    const [response] = await recaptchaClient.createAssessment({
+        parent: projectPath,
+        assessment: {
+            event: {
+                token,
+                siteKey: process.env.RECAPTCHA_SITE_KEY,
+            },
+        },
     });
 
-    const data = await res.json();
-    return data.success && data.score >= 0.5;
+    if (!response.tokenProperties?.valid) {
+        return { label: 'BAD', reason: 'INVALID_TOKEN' };
+    }
+
+    if (response.tokenProperties.action !== RECAPTCHA_ACTION) {
+        return { label: 'BAD', reason: 'ACTION_MISMATCH' };
+    }
+
+    const score = response.riskAnalysis?.score ?? 0;
+    if (score <= SCORE_THRESHOLD) {
+        return { label: 'BAD', reason: 'SCORE_TOO_LOW' };
+    }
+
+    return { label: 'NOT_BAD' };
 }
 
 export async function POST(req: NextRequest) {
@@ -31,11 +59,11 @@ export async function POST(req: NextRequest) {
     }
 
     if (!recaptchaToken) {
-        return NextResponse.json({ error: 'reCAPTCHA verification missing.' }, { status: 400 });
+        return NextResponse.json({ error: 'reCAPTCHA token missing.' }, { status: 400 });
     }
 
-    const isHuman = await verifyRecaptcha(recaptchaToken);
-    if (!isHuman) {
+    const assessment = await createAssessment(recaptchaToken);
+    if (assessment.label === 'BAD') {
         return NextResponse.json({ error: 'Bot verification failed. Please try again.' }, { status: 403 });
     }
 

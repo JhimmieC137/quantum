@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Script from "next/script";
+import { toast } from "sonner";
 import { HiPhone } from "react-icons/hi2";
 import MainLayout from "../(pages)/layout";
 import FadeUp from "@/ui/FadeUp";
@@ -17,12 +18,9 @@ const montserrat = Montserrat({
   subsets: ["latin"],
 });
 
-type Status = 'idle' | 'loading' | 'success' | 'error';
-
 export default function ContactUs() {
     const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
-    const [status, setStatus] = useState<Status>('idle');
-    const [errorMsg, setErrorMsg] = useState('');
+    const [loading, setLoading] = useState(false);
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -30,8 +28,7 @@ export default function ContactUs() {
 
     async function handleSubmit(e: React.FormEvent) {
         e.preventDefault();
-        setStatus('loading');
-        setErrorMsg('');
+        setLoading(true);
 
         try {
             const recaptchaToken = await new Promise<string>((resolve, reject) => {
@@ -54,11 +51,12 @@ export default function ContactUs() {
                 throw new Error(data.error || 'Something went wrong.');
             }
 
-            setStatus('success');
+            toast.success('Message sent! We\'ll get back to you shortly.');
             setForm({ name: '', email: '', phone: '', message: '' });
         } catch (err: any) {
-            setStatus('error');
-            setErrorMsg(err.message || 'Failed to send message. Please try again.');
+            toast.error(err.message || 'Failed to send message. Please try again.');
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -66,7 +64,7 @@ export default function ContactUs() {
         <MainLayout>
             <Script
                 src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-                strategy="beforeInteractive"
+                strategy="afterInteractive"
             />
             <HeroBanner
                 image="/wallpapers/construction_1.jpg"
@@ -216,24 +214,12 @@ export default function ContactUs() {
                             </div>
                         </div>
 
-                        {status === 'error' && (
-                            <p className="text-zinc-200 bg-white/10 rounded-lg px-4 py-2 text-sm mb-4">
-                                {errorMsg}
-                            </p>
-                        )}
-
-                        {status === 'success' && (
-                            <p className="text-zinc-200 bg-white/10 rounded-lg px-4 py-2 text-sm mb-4">
-                                Message sent! We'll get back to you shortly.
-                            </p>
-                        )}
-
                         <button
                             type="submit"
-                            disabled={status === 'loading'}
+                            disabled={loading}
                             className="relative rounded-lg p-3 z-20 text-red-700 border border-transparent bg-white w-full flex justify-center items-center gap-2 hover:bg-transparent hover:text-zinc-200 hover:border-zinc-200/60 ease-in-out duration-300 font-medium cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                         >
-                            {status === 'loading' ? 'Sending...' : 'Send Message'}
+                            {loading ? 'Sending...' : 'Send Message'}
                             <FiSend className="size-4" />
                         </button>
                     </form>

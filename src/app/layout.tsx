@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { 
-  Inter,
-  Montserrat,
-} from "next/font/google";
+import { Toaster } from "sonner";
+import { Inter } from "next/font/google";
 // import 'swiper/css';
 // import 'swiper/css/navigation';
 // import 'swiper/css/pagination';
@@ -29,6 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased w-full`}>
         {children}
+        <Toaster position="bottom-right" richColors />
       </body>
     </html>
   );

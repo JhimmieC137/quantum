@@ -1,16 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
-import Mailjet from 'node-mailjet';
 import { RecaptchaEnterpriseServiceClient } from '@google-cloud/recaptcha-enterprise';
+import { buildContactEmail } from './emailTemplate';
 
 const RECAPTCHA_ACTION = 'contact';
 const SCORE_THRESHOLD = 0.5;
 
-const mailjet = Mailjet.apiConnect(
-    process.env.MJ_APIKEY_PUBLIC!,
-    process.env.MJ_APIKEY_PRIVATE!,
-);
-
-const recaptchaClient = new RecaptchaEnterpriseServiceClient();
+const recaptchaClient = new RecaptchaEnterpriseServiceClient({
+    fallback: true,
+    projectId: process.env.GOOGLE_CLOUD_PROJECT,
+});
 
 type AssessmentResult =
     | { label: 'NOT_BAD' }
@@ -29,8 +27,6 @@ async function createAssessment(token: string): Promise<AssessmentResult> {
             },
         },
     });
-    console.log('response')
-    console.error(response)
 
     if (!response.tokenProperties?.valid) {
         return { label: 'BAD', reason: 'INVALID_TOKEN' };
@@ -46,6 +42,39 @@ async function createAssessment(token: string): Promise<AssessmentResult> {
     }
 
     return { label: 'NOT_BAD' };
+}
+
+async function sendEmail(name: string, email: string, phone: string, message: string) {
+    const credentials = Buffer.from(
+        `${process.env.MJ_APIKEY_PUBLIC}:${process.env.MJ_APIKEY_PRIVATE}`
+    ).toString('base64');
+
+    const res = await fetch('https://api.mailjet.com/v3.1/send', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Basic ${credentials}`,
+        },
+        body: JSON.stringify({
+            Messages: [
+                {
+                    From: { Email: process.env.MJ_SENDER_EMAIL, Name: name },
+                    To: [{ Email: process.env.MJ_RECIPIENT_EMAIL, Name: 'Quantum Homes' }],
+                    ReplyTo: { Email: email, Name: name },
+                    Subject: `New enquiry from ${name}`,
+                    HTMLPart: buildContactEmail(name, email, phone, message),
+                },
+            ],
+        }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok || data.Messages?.[0]?.Status !== 'success') {
+        throw new Error(`Mailjet error: ${JSON.stringify(data)}`);
+    }
+
+    return data;
 }
 
 export async function POST(req: NextRequest) {
@@ -68,40 +97,10 @@ export async function POST(req: NextRequest) {
 
         const assessment = await createAssessment(recaptchaToken);
         if (assessment.label === 'BAD') {
-            console.log('BAD')
             return NextResponse.json({ error: 'Bot verification failed. Please try again.' }, { status: 403 });
         }
 
-        await mailjet.post('send', { version: 'v3.1' }).request({
-            Messages: [
-                {
-                    From: {
-                        Email: email,
-                        Name: name,
-                    },
-                    To: [
-                        {
-                            Email: process.env.MJ_RECIPIENT_EMAIL,
-                            Name: 'Quantum Homes',
-                        },
-                    ],
-                    ReplyTo: {
-                        Email: email,
-                        Name: name,
-                    },
-                    Subject: `New enquiry from ${name}`,
-                    HTMLPart: `
-                        <h2 style="color:#b91c1c;">New Contact Form Submission</h2>
-                        <p><strong>Name:</strong> ${name}</p>
-                        <p><strong>Email:</strong> ${email}</p>
-                        <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-                        <hr />
-                        <p><strong>Message:</strong></p>
-                        <p>${message.replace(/\n/g, '<br />')}</p>
-                    `,
-                },
-            ],
-        });
+        const response = await sendEmail(name, email, phone, message);
 
         return NextResponse.json({ success: true });
     } catch (error: any) {

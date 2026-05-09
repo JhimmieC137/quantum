@@ -1,5 +1,6 @@
 'use client'
 
+import { pageRoutes } from "@/data/routes";
 import React from "react";
 import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
@@ -10,42 +11,76 @@ const Footer: React.FC = () => {
     const columns = [
         {
             label: "Company",
-            links: ["About Us", "Our Team", "Careers", "Press"],
+            links: [
+              {
+                name: "About Us",
+                link: "/about",
+              }, 
+              {
+                name: "Services",
+                link: "/services",
+              },
+              {
+                name: "Properties",
+                link: "/properties",
+              },
+            ],
         },
         {
-            label: "Projects",
-            links: ["Residential", "Commercial", "Urban Planning", "Interior"],
+            label: "Services",
+            links: [
+             {
+                name: "Land Sales",
+                link: pageRoutes.services.landSales,
+             },
+             {
+                name: "Legal Support",
+                link: pageRoutes.services.legalSupport,
+             },
+             {
+                name: "Construction",
+                link: pageRoutes.services.construction,
+             },
+             {
+                name: "Investment Advisory",
+                link: pageRoutes.services.realEstateAdvisory,
+             },
+            ],
         },
         {
             label: "Contact",
             links: [
-            "Lagos HQ",
-            "+234 800 000 0000",
-            "hello@quantum.ng",
-            "Get a Quote",
+              {
+                name: "+234 816 248 3372",
+                link: "tel:+2348162483372",
+              },
+              {
+                name: "quantumhomes28@gmail.com",
+                link: "mailto:quantumhomes28@gmail.com",
+              },
             ],
         },
     ];
 
     const socialLinks = [
         {
-            link: 'https://www.instagram.com',
+            link: 'https://www.instagram.com/quantumhomesofficial/',
             icon: (key: number) => <FaInstagram key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
         },
         {
-            link: 'https://www.instagram.com',
+            link: 'https://www.tiktok.com/@quantum_homes?_t=ZS-8ze1aq6o50a&_r=1',
             icon: (key: number) => <FaTiktok key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
         },
         {
             link: 'https://www.instagram.com',
             icon: (key: number) => <FaWhatsapp key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
         },
+        // {
+        //     link: 'https://www.instagram.com',
+        //     icon: (key: number) => <FaXTwitter  key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
+        // },
         {
-            link: 'https://www.instagram.com',
-            icon: (key: number) => <FaXTwitter  key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
-        },
-        {
-            link: 'https:mailto:example@mail.com',
+            link: 'https:mailto:quantumhomes28@gmail.com',
             icon: (key: number) => <VscMail key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
         },
     ]
@@ -76,22 +111,22 @@ const Footer: React.FC = () => {
           {/* Columns */}
           {columns.map((col) => (
             <div key={col.label}>
-              <p className="text-[11px] font-semibold tracking-[0.22em] text-[var(--Y)] uppercase mb-5">
+              <p className="text-[11px] font-semibold tracking-[0.22em] text-zinc-200/30 uppercase mb-5">
                 {col.label}
               </p>
 
               <ul className="flex flex-col gap-3">
-                {col.links.map((link) => (
-                  <li key={link}>
+                {col.links.map((link, idx) => (
+                  <li key={idx}>
                     <a
-                      href="#"
+                      href={link?.link}
                       className="
                         text-white/40 text-sm
                         transition-colors duration-200
                         hover:text-white
                       "
                     >
-                      {link}
+                      {link?.name}
                     </a>
                   </li>
                 ))}

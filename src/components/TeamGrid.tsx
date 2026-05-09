@@ -23,16 +23,16 @@ const members: TeamMember[] = [
     role: "General Manager",
   },
   {
-    image: "/team/engnr_2.jpg",
-    firstName: "Engr. Sobowale",
-    lastName: "Micheal",
-    role: "General Manager",
+    image: "/agents/agent_1.png",
+    firstName: "Titilayo",
+    lastName: "Ronke",
+    role: "Quantity Surveyor",
   },
   {
-    image: "/team/engnr_3.jpg",
-    firstName: "Engr. Sobowale",
-    lastName: "Micheal",
-    role: "General Manager",
+    image: "/agents/agent_2.png",
+    firstName: "Mr. Gbenga",
+    lastName: "Daniels",
+    role: "Sales Manager",
   },
 ];
 
@@ -44,7 +44,7 @@ function TeamCard({ member }: { member: TeamMember }) {
           <img
             src={member.image}
             alt={`${member.firstName} ${member.lastName}`}
-            className="absolute inset-0 bg-cover"
+            className="absolute inset-0 object-cover object-center w-full h-full"
           />
         </div>
       </div>

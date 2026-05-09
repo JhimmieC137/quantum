@@ -26,7 +26,7 @@ export default function ServiceHero({
     description: string
 }) {
     return (
-        <div className="relative h-[22rem] sm:h-[32rem] lg:h-[47rem] max-h-[47rem] overflow-hidden">
+        <div className="relative h-[30rem] sm:h-[32rem] lg:h-[47rem] max-h-[47rem] overflow-hidden">
             <div className="absolute inset-0 bg-black/70 z-10"/>
             <img
                 src={image}

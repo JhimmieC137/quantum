@@ -43,40 +43,63 @@ export default function ContactUs() {
 
                         {[
                             {
-                                icon: <HiPhone className="text-amber-300 size-5" />,
-                                label: "Phone",
-                                value: "+234800000000",
-                            },
-                            {
                                 icon: <IoMdMail className="text-amber-300 size-7" />,
                                 label: "Email",
-                                value: "support@quantum.com",
+                                value: "quantumhomes28@gmail.com",
+                            },
+                            {
+                                icon: <HiPhone className="text-amber-300 size-5" />,
+                                label: "Phone",
+                                value: "+2348162483372, +2348128549125, +2348072577012",
                             },
                             {
                                 icon: <FaLocationDot className="text-amber-300 size-5" />,
                                 label: "Offices",
-                                value: "Molete, Ibadan",
+                                value: [
+                                    "C9, Mokola ICT Hub, Beside NNPC Filling Station, Cele Bus-Stop, Mokola Ibaadan,",
+                                    "Km2, Green HOuse Building, Beside ASVON Hospital, Ile-Eja Bus-Stop, Gbagi New IFe"
+                                ],                            
                             },
-                        ].map((item) => (
-                            <div key={item.label} className="flex gap-6 w-full items-center mt-8">
-                                <div className="bg-red-700 shrink-0 size-12 flex justify-center items-center rounded-full">
-                                    {item.icon}
+                        ].map((item: any) => (
+                            item.label === "Offices" ? (
+                                <div key={item.label} className="flex flex-col w-full mt-8 gap-0">
+                                    <div className="flex gap-6 items-center">
+                                        <div className="bg-red-700 shrink-0 size-12 flex justify-center items-center rounded-full">
+                                            {item.icon}
+                                        </div>
+                                        <p className="text-zinc-600/40 font-semibold text-sm">
+                                            {item.label}
+                                        </p>
+                                    </div>
+                                    <div className="pl-[72px] pr-8 -mt-2">
+                                        {item.value.map((office: string) => (
+                                            <p key={office} className="text-zinc-800 text-base sm:text-lg mb-2">
+                                                {office}
+                                            </p>
+                                        ))}
+                                    </div>
                                 </div>
-                                <div>
-                                    <p className="text-zinc-600/40 font-semibold text-sm">
-                                        {item.label}
-                                    </p>
-                                    <p className="text-zinc-800 text-base sm:text-lg">
-                                        {item.value}
-                                    </p>
+                            ) : (
+                                <div key={item.label} className="flex gap-6 w-full items-center mt-8">
+                                    <div className="bg-red-700 shrink-0 size-12 flex justify-center items-center rounded-full">
+                                        {item.icon}
+                                    </div>
+                                    <div>
+                                        <p className="text-zinc-600/40 font-semibold text-sm">
+                                            {item.label}
+                                        </p>
+                                        <p className="text-zinc-800 text-base sm:text-lg">
+                                            {item.value}
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            )
                         ))}
                     </div>
 
                     {/* Contact form */}
                     <form className="lg:w-1/2 w-full p-8 sm:p-10 lg:p-12 bg-red-700 rounded-2xl overflow-hidden relative" action="">
-                        <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[32%] -right-[17%] -rotate-[38deg] w-[33rem] z-0"/>
+                        <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[32%] -right-[17%] -rotate-[38deg] w-[33rem] z-0 pointer-events-none"/>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-4">
                             <div className="flex flex-col gap-y-[2px]">

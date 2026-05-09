@@ -1,15 +1,9 @@
 'use client'
 
 import FadeUp from "@/ui/FadeUp"
-import { Montserrat } from "next/font/google";
 import { CgMenuGridO } from "react-icons/cg"
-
-
-const montserrat = Montserrat({
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-    variable: "--font-montserrat",
-    subsets: ["latin"],
-});
+import { montserrat } from "@/lib/fonts";
+import { brand } from "@/lib/constants";
 
 export default function OurClients() {
 
@@ -18,7 +12,7 @@ export default function OurClients() {
 
 
     return (
-        <div className="w-full relative py-20 bg-red-700">
+        <div className={`w-full relative py-20 ${brand.redBg}`}>
             <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-md m-auto">
                 <CgMenuGridO className="size-4 text-zinc-200"/>
                 <p className="text-zinc-100/80 text-sm">Our Clients</p>
@@ -26,7 +20,7 @@ export default function OurClients() {
 
             <FadeUp>
                 <p className={`${montserrat.className} text-zinc-200 text-center text-3xl sm:text-4xl md:text-5xl lg:max-w-full px-2 lg:m-0 m-auto font-semibold lg:my-7 my-3`}>
-                    Esteemed Clients <span className="text-amber-300 italic">Over the Years</span>
+                    Esteemed Clients <span className={`${brand.amberLightText} italic`}>Over the Years</span>
                 </p>
             </FadeUp>
 

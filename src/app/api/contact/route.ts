@@ -101,6 +101,7 @@ export async function POST(req: NextRequest) {
         }
 
         const response = await sendEmail(name, email, phone, message);
+        console.log(response)
 
         return NextResponse.json({ success: true });
     } catch (error: any) {

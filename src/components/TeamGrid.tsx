@@ -1,11 +1,6 @@
-import { Montserrat } from "next/font/google";
+import { montserrat } from "@/lib/fonts";
+import { brand } from "@/lib/constants";
 import FadeUp from "@/ui/FadeUp"
-
-const montserrat = Montserrat({
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-    variable: "--font-montserrat",
-    subsets: ["latin"],
-});
 
 
 interface TeamMember {
@@ -39,7 +34,7 @@ const members: TeamMember[] = [
 function TeamCard({ member }: { member: TeamMember }) {
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <div className="rounded-[50%] size-[18rem] relative overflow-hidden flex justify-center items-center bg-red-700 p-[3px]">
+      <div className={`rounded-[50%] size-[18rem] relative overflow-hidden flex justify-center items-center ${brand.redBg} p-[3px]`}>
         <div className="rounded-[50%] size-full relative overflow-hidden m-auto">
           <img
             src={member.image}
@@ -53,7 +48,7 @@ function TeamCard({ member }: { member: TeamMember }) {
         className={`${montserrat.className} text-zinc-800 text-center text-3xl font-semibold mt-5`}
       >
         {member.firstName}{" "}
-        <span className="text-amber-400 italic">{member.lastName}</span>
+        <span className={`${brand.amberText} italic`}>{member.lastName}</span>
       </p>
 
       <p className="text-zinc-800 text-center text-xl mt-2">{member.role}</p>
@@ -63,11 +58,11 @@ function TeamCard({ member }: { member: TeamMember }) {
 
 export default function TeamGrid() {
   return (
-    <div className="bg-[#F4F2EC] py-10 w-full">
+    <div className={`${brand.pageBg} py-10 w-full`}>
       <div className="max-w-[1400px] m-auto">
         <FadeUp>
             <p className={`${montserrat.className} text-zinc-800 text-center text-5xl font-semibold mt-14`}>
-                Meet Our <span className="text-amber-300 italic">Team</span>
+                Meet Our <span className={`${brand.amberLightText} italic`}>Team</span>
             </p>
         </FadeUp>
 

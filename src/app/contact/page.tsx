@@ -9,14 +9,9 @@ import FadeUp from "@/ui/FadeUp";
 import { FiSend } from "react-icons/fi";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoMdMail } from "react-icons/io";
-import { Montserrat } from "next/font/google";
+import { montserrat } from "@/lib/fonts";
+import { brand, layout } from "@/lib/constants";
 import HeroBanner from "@/components/HeroBanner";
-
-const montserrat = Montserrat({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-});
 
 export default function ContactUs() {
     const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
@@ -76,20 +71,20 @@ export default function ContactUs() {
                 titleAccent="Us"
             />
 
-            <div className="bg-[#F4F2EC]">
-                <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 w-full flex lg:flex-row flex-col gap-y-12 gap-x-8">
+            <div className={brand.pageBg}>
+                <div className={`${layout.container} ${layout.sectionPy} w-full flex lg:flex-row flex-col gap-y-12 gap-x-8`}>
 
                     {/* Contact info */}
                     <div className="lg:w-1/2 w-full">
                         <FadeUp>
                             <div className={`${montserrat.className} flex justify-start gap-4 items-center mb-2 pl-1`}>
                                 <div className="h-px w-16 bg-red-500"/>
-                                <p className="text-xs font-bold text-amber-500 tracking-widest">GET IN TOUCH</p>
+                                <p className={`text-xs font-bold ${brand.amberAltText} tracking-widest`}>GET IN TOUCH</p>
                             </div>
                         </FadeUp>
 
                         <p className={`${montserrat.className} text-zinc-800 text-4xl sm:text-5xl font-semibold mb-3`}>
-                            Reach out <span className="text-amber-500 italic">to us</span>
+                            Reach out <span className={`${brand.amberAltText} italic`}>to us</span>
                         </p>
                         <p className="text-zinc-800 text-base sm:text-lg mb-5 max-w-[85%]">
                             Whether you're interested in buying land, building your dream home, or simply want to learn more about our services — our team is ready to help.
@@ -97,17 +92,17 @@ export default function ContactUs() {
 
                         {[
                             {
-                                icon: <IoMdMail className="text-amber-300 size-7" />,
+                                icon: <IoMdMail className={`${brand.amberLightText} size-7`} />,
                                 label: "Email",
                                 value: "quantumhomes28@gmail.com",
                             },
                             {
-                                icon: <HiPhone className="text-amber-300 size-5" />,
+                                icon: <HiPhone className={`${brand.amberLightText} size-5`} />,
                                 label: "Phone",
                                 value: "+2348162483372, +2348128549125, +2348072577012",
                             },
                             {
-                                icon: <FaLocationDot className="text-amber-300 size-5" />,
+                                icon: <FaLocationDot className={`${brand.amberLightText} size-5`} />,
                                 label: "Offices",
                                 value: [
                                     "C9, Mokola ICT Hub, Beside NNPC Filling Station, Cele Bus-Stop, Mokola Ibaadan,",
@@ -118,7 +113,7 @@ export default function ContactUs() {
                             item.label === "Offices" ? (
                                 <div key={item.label} className="flex flex-col w-full mt-8 gap-0">
                                     <div className="flex gap-6 items-center">
-                                        <div className="bg-red-700 shrink-0 size-12 flex justify-center items-center rounded-full">
+                                        <div className={`${brand.redBg} shrink-0 size-12 flex justify-center items-center rounded-full`}>
                                             {item.icon}
                                         </div>
                                         <p className="text-zinc-600/40 font-semibold text-sm">
@@ -135,7 +130,7 @@ export default function ContactUs() {
                                 </div>
                             ) : (
                                 <div key={item.label} className="flex gap-6 w-full items-center mt-8">
-                                    <div className="bg-red-700 shrink-0 size-12 flex justify-center items-center rounded-full">
+                                    <div className={`${brand.redBg} shrink-0 size-12 flex justify-center items-center rounded-full`}>
                                         {item.icon}
                                     </div>
                                     <div>
@@ -154,7 +149,7 @@ export default function ContactUs() {
                     {/* Contact form */}
                     <form
                         onSubmit={handleSubmit}
-                        className="lg:w-1/2 w-full p-8 sm:p-10 lg:p-12 bg-red-700 rounded-2xl overflow-hidden relative"
+                        className={`lg:w-1/2 w-full p-8 sm:p-10 lg:p-12 ${brand.redBg} rounded-2xl overflow-hidden relative`}
                     >
                         <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[32%] -right-[17%] -rotate-[38deg] w-[33rem] z-0 pointer-events-none"/>
 

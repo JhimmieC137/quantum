@@ -2,29 +2,21 @@
 import SeviceSection from "@/sections/services/ServiceSection"
 import FadeLeft from "@/ui/FadeLeft"
 import FadeUp from "@/ui/FadeUp"
-import { Montserrat } from "next/font/google"
+import { montserrat } from "@/lib/fonts"
+import { brand } from "@/lib/constants"
+import { pageRoutes } from "@/data/routes"
 import { CgMenuGridO } from "react-icons/cg"
 import { CiEdit } from "react-icons/ci"
 import { GrUserManager } from "react-icons/gr"
-import { HiOutlineBuildingOffice, HiOutlineDocument } from "react-icons/hi2"
+import { HiOutlineBuildingOffice } from "react-icons/hi2"
 import { LuLandPlot } from "react-icons/lu"
 
-
-const montserrat = Montserrat({
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-    variable: "--font-montserrat",
-    subsets: ["latin"],
-});
-
-export default function OurServices()  {
-
+export default function OurServices() {
     return (
-        <div className="w-full lg:pt-24 pt-5 relative bg-red-700 z-50">
-            {/* <div className="absolute inset-0 bg-zinc-950/10 z-10" /> */}
-
+        <div className={`w-full lg:pt-24 pt-5 relative ${brand.redBg} z-50`}>
             <div className="w-full 2xl:max-w-[1400px] lg:max-w-[1200px] relative m-auto lg:mt-24 mt-5 mb-10">
 
-                <div className="flex xl:w-full xl:px-2 px-4 gap-1.5 md:flex-row flex-col ">
+                <div className="flex xl:w-full xl:px-2 px-4 gap-1.5 md:flex-row flex-col">
                     <div className="xl:w-1/2 lg:w-[20%] w-full">
                         <FadeLeft>
                             <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-md">
@@ -37,7 +29,7 @@ export default function OurServices()  {
                     <div className="xl:w-1/2 lg:w-[80%] w-full">
                         <FadeUp>
                             <p className={`${montserrat.className} text-zinc-200 text-left xl:text-5xl text-4xl font-semibold lg:m-0 mt-3 leading-9`}>
-                                Our <span className="text-amber-400 italic">Services</span>
+                                Our <span className={`${brand.amberText} italic`}>Services</span>
                             </p>
                         </FadeUp>
                         <FadeUp>
@@ -47,61 +39,51 @@ export default function OurServices()  {
                         </FadeUp>
                     </div>
                 </div>
-                
+
             </div>
 
             <div className="w-full flex flex-col">
                 <div className="w-full">
-                    <SeviceSection 
-                        image={"/services/land_sales_narrow.jpg"}
-                        headerWhite={"Land"}
-                        headerAmber={"Sales"}
-                        icon={
-                            <LuLandPlot className="size-12 text-zinc-300 mb-3"/>
-                        }
-                        description={"Our land sales service focuses on providing clients with genuine, well-verified lands inboth prime and fast-developing locations."}
-                        link="/services/land-sales"
+                    <SeviceSection
+                        image="/services/land_sales_narrow.jpg"
+                        headerWhite="Land"
+                        headerAmber="Sales"
+                        icon={<LuLandPlot className="size-12 text-zinc-300 mb-3"/>}
+                        description="Our land sales service focuses on providing clients with genuine, well-verified lands in both prime and fast-developing locations."
+                        link={pageRoutes.services.landSales}
                     />
                 </div>
                 <div className="w-full">
-                    <SeviceSection 
-                        image={"/services/signing-papers.jpg"}
-                        headerWhite={"Title Documentation and"}
-                        headerAmber={"Legal Support"}
-                        icon={
-                            <CiEdit className="size-12 text-zinc-300 mb-3"/>
-                        }
-                        description={"Our Title Documentation & Legal Support service is designed to protect our clients by ensuring that every property acquired is authentic, legally compliant, and properly registered."}
-                        link="/services/legal-support"
+                    <SeviceSection
+                        image="/services/signing-papers.jpg"
+                        headerWhite="Title Documentation and"
+                        headerAmber="Legal Support"
+                        icon={<CiEdit className="size-12 text-zinc-300 mb-3"/>}
+                        description="Our Title Documentation & Legal Support service is designed to protect our clients by ensuring that every property acquired is authentic, legally compliant, and properly registered."
+                        link={pageRoutes.services.legalSupport}
                     />
                 </div>
                 <div className="w-full">
-                    <SeviceSection 
-                        image={"/services/new-building.jpg"}
-                        headerWhite={"Construction and"}
-                        headerAmber={"Development"}
-                        icon={
-                            <HiOutlineBuildingOffice className="size-12 text-zinc-300 mb-3"/>
-                        }
-                        description={"Our Construction and Development service is tailored for individuals, families, investors, and organizations who want to bring their real estate visions to life."}
-                        link="/services/legal-support"
+                    <SeviceSection
+                        image="/services/new-building.jpg"
+                        headerWhite="Construction and"
+                        headerAmber="Development"
+                        icon={<HiOutlineBuildingOffice className="size-12 text-zinc-300 mb-3"/>}
+                        description="Our Construction and Development service is tailored for individuals, families, investors, and organizations who want to bring their real estate visions to life."
+                        link={pageRoutes.services.construction}
                     />
                 </div>
                 <div className="w-full">
-                    <SeviceSection 
-                        image={"/services/agents-in-meeting.jpg"}
-                        headerWhite={"Real Estate"}
-                        headerAmber={"Investment Advisory"}
-                        icon={
-                            <GrUserManager className="size-12 text-zinc-300 mb-3"/>
-                        }
-                        description={"Our Investment Advisory service is designed to guide individuals, families, and corporate organizations in identifying, analyzing, and investing in high-value real estate opportunities that yield long-term returns."}
-                        link="/services/real-estate-investment-advisory"
+                    <SeviceSection
+                        image="/services/agents-in-meeting.jpg"
+                        headerWhite="Real Estate"
+                        headerAmber="Investment Advisory"
+                        icon={<GrUserManager className="size-12 text-zinc-300 mb-3"/>}
+                        description="Our Investment Advisory service is designed to guide individuals, families, and corporate organizations in identifying, analyzing, and investing in high-value real estate opportunities that yield long-term returns."
+                        link={pageRoutes.services.realEstateAdvisory}
                     />
                 </div>
-
             </div>
-
         </div>
     )
 }

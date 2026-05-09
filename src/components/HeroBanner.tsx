@@ -1,5 +1,6 @@
 'use client'
 
+import { brand } from "@/lib/constants";
 
 interface HeroBannerProps {
   /** Background image path e.g. "/wallpapers/construction_1.jpg" */
@@ -27,7 +28,7 @@ export default function HeroBanner({
             />
             <p className="absolute inset-0 flex items-center justify-center text-zinc-200 text-5xl sm:text-7xl lg:text-[7.5rem] font-semibold z-20">
                 {title}
-                <span className="text-amber-500 italic ml-4">{titleAccent}</span>
+                <span className={`${brand.amberAltText} italic ml-4`}>{titleAccent}</span>
             </p>
         </div>
     )

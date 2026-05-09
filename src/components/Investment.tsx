@@ -1,24 +1,19 @@
 import FadeLeft from "@/ui/FadeLeft";
 import FadeUp from "@/ui/FadeUp";
-import { Montserrat } from "next/font/google";
 import React from "react";
 import { CgMenuGridO } from "react-icons/cg";
+import { montserrat } from "@/lib/fonts";
+import { brand } from "@/lib/constants";
 
 type Props = {};
-
-const montserrat = Montserrat({
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-    variable: "--font-montserrat",
-    subsets: ["latin"],
-});
 
 const InvestmentSection: React.FC<Props> = () => {
     
   return (
-    <section className="relative overflow-hidden bg-[#F4F2EC] xl:p-20 md:p-5 p-2 w-full">
+    <section className={`relative overflow-hidden ${brand.pageBg} xl:p-20 md:p-5 p-2 w-full`}>
       {/* Background GOLD text */}
       <FadeUp>
-        <div className="max-w-[1400px] m-auto xl:px-20 md:px-10 px-5 py-11 my-20 bg-red-700 rounded-[2rem] overflow-hidden relative">
+        <div className={`max-w-[1400px] m-auto xl:px-20 md:px-10 px-5 py-11 my-20 ${brand.redBg} rounded-[2rem] overflow-hidden relative`}>
             {/* <FadeLeft>
                 <div className={`absolute -bottom-10 -right-10 ${montserrat.className} text-[clamp(120px,16vw,220px)] font-extrabold leading-none text-black/10`}>
                     GOLD
@@ -43,7 +38,7 @@ const InvestmentSection: React.FC<Props> = () => {
                 <h2 className={`my-6 ${montserrat.className} text-center lg:text-6xl md:text-5xl text-4xl font-semibold leading-[1.05] text-white`}>
                     A piece of land is
                     <br />
-                    more<span className="text-amber-300 italic">than gold.</span>
+                    more<span className={`${brand.amberLightText} italic`}>than gold.</span>
                 </h2>
 
                 {/* Description */}
@@ -55,7 +50,7 @@ const InvestmentSection: React.FC<Props> = () => {
 
                 {/* Buttons */}
                 <div className="flex gap-4">
-                    <div className="max-w-fit m-auto py-2 px-4 rounded-lg border border-transparent bg-zinc-200 text-red-700 text-md hover:bg-transparent hover:border-zinc-200/20 hover:text-zinc-200 duration-150 ease-in-out hover:shadow-xl cursor-pointer shadow-lg">
+                    <div className={`max-w-fit m-auto py-2 px-4 rounded-lg border border-transparent bg-zinc-200 ${brand.redText} text-md hover:bg-transparent hover:border-zinc-200/20 hover:text-zinc-200 duration-150 ease-in-out hover:shadow-xl cursor-pointer shadow-lg`}>
                         <p>
                             Start Your Journey
                         </p>

@@ -4,13 +4,8 @@
 import { CgMenuGridO } from "react-icons/cg"
 import FadeUp from "@/ui/FadeUp"
 import FadeRight from "@/ui/FadeRight"
-import { Montserrat } from "next/font/google"
-
-const montserrat = Montserrat({
-    weight: ['400', '600', '700'],
-    variable: "--font-montserrat",
-    subsets: ["latin"],
-});
+import { montserrat } from "@/lib/fonts"
+import { brand } from "@/lib/constants"
 
 export default function ServiceHero({
     image,
@@ -44,12 +39,12 @@ export default function ServiceHero({
                     <FadeUp>
                         <p className={`${montserrat.className} text-zinc-200 text-3xl sm:text-5xl lg:text-7xl font-semibold my-4 sm:my-7 max-w-[58rem] leading-tight`}>
                             {titleWhite}<br/>
-                            <span className="text-amber-300 italic">{titleAmber}</span>
+                            <span className={`${brand.amberLightText} italic`}>{titleAmber}</span>
                         </p>
                     </FadeUp>
 
                     <div className="flex gap-x-5">
-                        <div className="bg-amber-400 p-[3px] max-w-[10px] shrink-0 z-20"/>
+                        <div className={`${brand.amberBg} p-[3px] max-w-[10px] shrink-0 z-20`}/>
                         <FadeRight>
                             <p className="text-zinc-200/90 text-sm sm:text-base lg:text-lg mb-5 max-w-[45rem]">
                                 {description}

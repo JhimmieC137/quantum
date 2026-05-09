@@ -1,14 +1,9 @@
 "use client";
 
 import FadeUp from "@/ui/FadeUp";
-import { Montserrat } from "next/font/google";
 import { useState } from "react";
-
-const montserrat = Montserrat({
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-    variable: "--font-montserrat",
-    subsets: ["latin"],
-});
+import { montserrat } from "@/lib/fonts";
+import { brand } from "@/lib/constants";
 
 interface FAQItem {
   question: string;
@@ -76,7 +71,7 @@ function FAQRow({ item, index, open, onToggle }: {
   onToggle: () => void;
 }) {
   return (
-    <div className="bg-red-700 my-3 rounded-xl px-3">
+    <div className={`${brand.redBg} my-3 rounded-xl px-3`}>
       <button
         onClick={onToggle}
         className="w-full flex items-center gap-4 py-5 px-1 text-left group cursor-pointer"
@@ -86,11 +81,11 @@ function FAQRow({ item, index, open, onToggle }: {
           {String(index + 1).padStart(2, "0")}
         </span>
         <span
-          className={`flex-1 text-lg transition-colors duration-200 text-amber-300`}
+          className={`flex-1 text-lg transition-colors duration-200 ${brand.amberLightText}`}
         >
           {item.question}
         </span>
-        <span className="text-amber-300 flex-shrink-0">
+        <span className={`${brand.amberLightText} flex-shrink-0`}>
           <ChevronIcon open={open} />
         </span>
       </button>
@@ -122,10 +117,10 @@ export default function FAQAccordion() {
           <div className="flex-1">
             <div className={`${montserrat.className} flex justify-start gap-4 items-center mb-2 pl-1`}>
               <div className="h-px xl:w-16 lg:w-10 w-7 bg-red-500"/>
-              <p className={`${montserrat.className} text-xs font-bold text-amber-400 tracking-widest`}>FAQ</p>
+              <p className={`${montserrat.className} text-xs font-bold ${brand.amberText} tracking-widest`}>FAQ</p>
             </div>
             <p className={`${montserrat.className} text-zinc-900 text-left lg:text-5xl text-3xl font-semibold my-3`}>
-                Frequently Asked<span className="text-amber-500 italic">Questions</span>
+                Frequently Asked<span className={`${brand.amberAltText} italic`}>Questions</span>
             </p>
               
             <p className="text-md text-zinc-900 leading-relaxed max-w-[50rem]">

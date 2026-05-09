@@ -1,11 +1,6 @@
 import FadeUp from "@/ui/FadeUp"
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-});
+import { montserrat } from "@/lib/fonts";
+import { brand } from "@/lib/constants";
 
 export default function CoreValues() {
     const VALUES = [
@@ -27,12 +22,12 @@ export default function CoreValues() {
                         <FadeUp>
                             <div className={`${montserrat.className} flex justify-start gap-4 items-center mb-2 pl-1`}>
                                 <div className="h-px xl:w-16 lg:w-10 w-7 bg-red-500"/>
-                                <p className={`${montserrat.className} text-xs font-bold text-amber-500 tracking-widest`}>WHAT WE OFFER</p>
+                                <p className={`${montserrat.className} text-xs font-bold ${brand.amberAltText} tracking-widest`}>WHAT WE OFFER</p>
                             </div>
                         </FadeUp>
                         <FadeUp>
                             <p className={`${montserrat.className} text-zinc-800 text-left lg:text-5xl text-3xl font-semibold my-3`}>
-                                Our Core <span className="text-amber-500 italic">Values</span>
+                                Our Core <span className={`${brand.amberAltText} italic`}>Values</span>
                             </p>
                         </FadeUp>
                         <FadeUp>
@@ -50,7 +45,7 @@ export default function CoreValues() {
                     {VALUES.map((v, i) => (
                         <div key={v.title}>
                             <div
-                                className="relative overflow-hidden cursor-pointer rounded-xl border border-amber-400 bg-red-700 px-7 py-9 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl h-full"
+                                className={`relative overflow-hidden cursor-pointer rounded-xl border border-amber-400 ${brand.redBg} px-7 py-9 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl h-full`}
                             >
                                 {/* Top gradient bar */}
                                 {/* <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-red-600 to-amber-300 z-50" /> */}
@@ -61,7 +56,7 @@ export default function CoreValues() {
                                 </span> */}
 
                                 {/* Title */}
-                                <h3 className={`${montserrat.className} mt-3 mb-3 text-2xl font-semibold text-amber-300 italic`}>
+                                <h3 className={`${montserrat.className} mt-3 mb-3 text-2xl font-semibold ${brand.amberLightText} italic`}>
                                     {v.title}
                                 </h3>
 

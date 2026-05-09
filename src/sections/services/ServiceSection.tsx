@@ -1,14 +1,9 @@
 'use client'
 import FadeLeft from "@/ui/FadeLeft";
-import { Montserrat } from "next/font/google";
 import { ReactNode, useState } from "react";
 import { HiArrowRight } from "react-icons/hi2";
-
-const montserrat = Montserrat({
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-    variable: "--font-montserrat",
-    subsets: ["latin"],
-});
+import { montserrat } from "@/lib/fonts";
+import { brand } from "@/lib/constants";
 
 export default function SeviceSection(props: { 
     image: string,
@@ -49,7 +44,7 @@ export default function SeviceSection(props: {
                         <div className="flex flex-col justify-center items-left w-full cursor-pointer">
                             {props.icon}
                             <p className={`${montserrat.className} text-zinc-200 lg:text-xl text-md font-semibold my-3`}>
-                                {props.headerWhite} <span className="text-amber-300 italic">{props.headerAmber}</span>
+                                {props.headerWhite} <span className={`${brand.amberLightText} italic`}>{props.headerAmber}</span>
                             </p>
                             <div
                                 style={{
@@ -77,7 +72,7 @@ export default function SeviceSection(props: {
                                     }}
                                     className="bg-zinc-200 lg:size-16 size-12 flex items-center justify-center rounded-full border border-transparent transition-all ease-out duration-75 group hover:shadow-xl"
                                 >
-                                    <HiArrowRight className="lg:size-7 size-5 text-red-700 -rotate-45"/>
+                                    <HiArrowRight className={`lg:size-7 size-5 ${brand.redText} -rotate-45`}/>
                                 </div>
                             </a>
                         </div>

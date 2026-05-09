@@ -47,8 +47,12 @@ export default function ContactUs() {
             });
 
             if (!res.ok) {
-                const data = await res.json();
-                throw new Error(data.error || 'Something went wrong.');
+                let errorMsg = 'Something went wrong. Please try again.';
+                try {
+                    const data = await res.json();
+                    if (data?.error) errorMsg = data.error;
+                } catch {}
+                throw new Error(errorMsg);
             }
 
             toast.success('Message sent! We\'ll get back to you shortly.');

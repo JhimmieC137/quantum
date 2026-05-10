@@ -7,16 +7,16 @@ const SCORE_THRESHOLD = 0.5;
 
 const credentialsEnv = process.env.GOOGLE_APPLICATION_CREDENTIALS;
 
+// Determine if we should parse as JSON (Production/Vercel) or use as a path (Local)
+const isJsonString = credentialsEnv?.trim().startsWith('{');
+
 const recaptchaClient = new RecaptchaEnterpriseServiceClient({
     fallback: true,
     projectId: process.env.GOOGLE_CLOUD_PROJECT,
-    credentials: (credentialsEnv && credentialsEnv.startsWith('{'))
-    ? JSON.parse(credentialsEnv) 
-    : undefined,
-    // If it's a file path, the library uses 'keyFilename' internally.
-    keyFilename: (credentialsEnv && !credentialsEnv.startsWith('{'))
-        ? credentialsEnv
-        : undefined,
+    // Use the JSON object if provided as a string (Vercel)
+    credentials: isJsonString ? JSON.parse(credentialsEnv!) : undefined,
+    // Use the file path if it's not a JSON string (Local)
+    keyFilename: !isJsonString ? credentialsEnv : undefined,
 });
 
 type AssessmentResult =

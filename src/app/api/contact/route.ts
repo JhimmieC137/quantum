@@ -5,9 +5,18 @@ import { buildContactEmail } from './emailTemplate';
 const RECAPTCHA_ACTION = 'contact';
 const SCORE_THRESHOLD = 0.5;
 
+const credentialsEnv = process.env.GOOGLE_APPLICATION_CREDENTIALS;
+
 const recaptchaClient = new RecaptchaEnterpriseServiceClient({
     fallback: true,
     projectId: process.env.GOOGLE_CLOUD_PROJECT,
+    credentials: (credentialsEnv && credentialsEnv.startsWith('{'))
+    ? JSON.parse(credentialsEnv) 
+    : undefined,
+    // If it's a file path, the library uses 'keyFilename' internally.
+    keyFilename: (credentialsEnv && !credentialsEnv.startsWith('{'))
+        ? credentialsEnv
+        : undefined,
 });
 
 type AssessmentResult =

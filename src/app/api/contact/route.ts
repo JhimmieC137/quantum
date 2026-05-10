@@ -78,37 +78,53 @@ async function sendEmail(name: string, email: string, phone: string, message: st
 }
 
 export async function POST(req: NextRequest) {
+    // ── Parse ────────────────────────────────────────────────────────────────
+    const body = await req.json().catch(() => null);
+    if (!body) {
+        return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
+    }
+
+    const { name, email, phone, message, recaptchaToken } = body;
+
+    if (!name || !email || !message) {
+        return NextResponse.json({ error: 'Name, email, and message are required.' }, { status: 400 });
+    }
+
+    if (!recaptchaToken) {
+        return NextResponse.json({ error: 'reCAPTCHA token missing.' }, { status: 400 });
+    }
+
+    // ── reCAPTCHA ────────────────────────────────────────────────────────────
+    let assessment: AssessmentResult;
     try {
-        const body = await req.json().catch(() => null);
-
-        if (!body) {
-            return NextResponse.json({ error: 'Invalid request body.' }, { status: 400 });
-        }
-
-        const { name, email, phone, message, recaptchaToken } = body;
-
-        if (!name || !email || !message) {
-            return NextResponse.json({ error: 'Name, email, and message are required.' }, { status: 400 });
-        }
-
-        if (!recaptchaToken) {
-            return NextResponse.json({ error: 'reCAPTCHA token missing.' }, { status: 400 });
-        }
-
-        const assessment = await createAssessment(recaptchaToken);
-        if (assessment.label === 'BAD') {
-            return NextResponse.json({ error: 'Bot verification failed. Please try again.' }, { status: 403 });
-        }
-
-        const response = await sendEmail(name, email, phone, message);
-        console.log(response)
-
-        return NextResponse.json({ success: true });
-    } catch (error: any) {
-        console.error('[contact] API error:', error?.message ?? error);
+        assessment = await createAssessment(recaptchaToken);
+    } catch (err: any) {
+        console.error('[contact][recaptcha] Assessment call failed:', err?.message ?? err);
         return NextResponse.json(
-            { error: 'An unexpected error occurred. Please try again later.' },
-            { status: 500 }
+            { error: 'Bot verification service is unavailable. Please try again later.' },
+            { status: 503 }
         );
     }
+
+    if (assessment.label === 'BAD') {
+        console.warn('[contact][recaptcha] Blocked — reason:', assessment.reason);
+        return NextResponse.json(
+            { error: 'Bot verification failed. Please refresh and try again.' },
+            { status: 403 }
+        );
+    }
+
+    // ── Email ─────────────────────────────────────────────────────────────────
+    try {
+        const result = await sendEmail(name, email, phone, message);
+        console.log('[contact][email] Sent — status:', result?.Messages?.[0]?.Status);
+    } catch (err: any) {
+        console.error('[contact][email] Mailjet error:', err?.message ?? err);
+        return NextResponse.json(
+            { error: 'Your message could not be delivered. Please try again or email us directly.' },
+            { status: 502 }
+        );
+    }
+
+    return NextResponse.json({ success: true });
 }

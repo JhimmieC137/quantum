@@ -8,6 +8,6 @@ export const pageRoutes = {
         realEstateAdvisory:    '/services/real-estate-investment-advisory',
         construction:          '/services/construction-and-development',
     },
-    properties: '/properties',
+    projects: '/projects',
     contact:    '/contact',
 } as const;

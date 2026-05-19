@@ -51,11 +51,11 @@ export default function ExFooter() {
                             <p>About</p>
                             <p>Sevices</p>
                             <p>Gallery</p>
-                            <p>Properties</p>
+                            <p>Projects</p>
                             <p>Gallery</p>
                         </div>
                         <div className="w-full flex flex-col justify-center items-center gap-5">
-                            <h3 className="font-semibold mb-3 text-zinc-200">Properties</h3>
+                            <h3 className="font-semibold mb-3 text-zinc-200">Projects</h3>
                             <p>About</p>
                             <p>About</p>
                             <p>About</p>

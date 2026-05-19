@@ -61,7 +61,7 @@ export default function Hero() {
 
                             <FadeUp>
                                 <p className={`${montserrat.className} 2xl:text-[6rem] xl:text-[5.2rem] sm:text-[4rem] text-[3rem] 2xl:leading-[7.5rem] xl:leading-[6rem] sm:leading-[4.5rem] leading-[3rem] font-semibold 2xl:max-w-[55rem] xl:max-w-[42rem] lg:max-w-[36rem] max-w-[30rem] text-zinc-200 mb-5 sm:text-left text-center sm:m-0 m-auto`}>
-                                    Where Land Meets <span className={brand.amberText}>Legacy.</span>
+                                    A Call To Your <span className={`${brand.amberText} `}>Dream Home</span>
                                 </p>
                             </FadeUp>
 
@@ -76,8 +76,8 @@ export default function Hero() {
 
                             <FadeUp>
                                 <div className="flex gap-5 mt-10 justify-start sm:flex-row flex-col md:w-full w-[70%] mx-auto">
-                                    <a href={pageRoutes.properties} className={`sm:py-3 py-2 sm:px-8 px-4 ${brand.redBg} text-zinc-100 rounded-xl hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-300 cursor-pointer`}>
-                                        <p className="text-md text-center">Explore properties</p>
+                                    <a href={pageRoutes.projects} className={`sm:py-3 py-2 sm:px-8 px-4 ${brand.redBg} text-zinc-100 rounded-xl hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-300 cursor-pointer`}>
+                                        <p className="text-md text-center">Explore projects</p>
                                     </a>
                                     <a href={pageRoutes.services.base} className="sm:py-3 py-2 sm:px-8 px-4 border border-zinc-200/60 rounded-xl hover:bg-zinc-200 hover:text-zinc-900 text-zinc-200 ease-in-out duration-300 cursor-pointer">
                                         <p className="text-md text-center">Our services</p>

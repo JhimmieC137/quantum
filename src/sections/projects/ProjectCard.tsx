@@ -56,11 +56,16 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                     />
                     <div className="absolute inset-0 transition-all duration-300 bg-gradient-to-t from-black/75 via-black/20 to-black/5 group-hover:from-black/90 group-hover:via-black/40 group-hover:to-black/15" />
 
-                    {/* <div className="absolute top-4 left-4">
-                        <span className={`bg-red-700 text-white text-[11px] font-semibold tracking-[0.12em] uppercase px-3.5 py-1 rounded-full ${montserrat.className}`}>
+                    <div className="absolute top-4 left-4">
+                        <span className={`text-[11px] font-semibold tracking-[0.12em] uppercase px-3.5 py-1 rounded-full ${montserrat.className} ${
+                            p?.tag === "Completed" ? "bg-emerald-500 text-white" :
+                            p?.tag === "Ongoing"   ? "bg-amber-400 text-zinc-900" :
+                            p?.tag === "Incoming"  ? "bg-blue-500 text-white" :
+                            "bg-red-700 text-white"
+                        }`}>
                             {p?.tag}
                         </span>
-                    </div> */}
+                    </div>
 
                     <div className="absolute bottom-0 left-0 right-0 px-5 py-5">
                         <p className={`${montserrat.className} text-[11px] text-white/50 tracking-[0.12em] mb-1`}>
@@ -70,11 +75,11 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                             {p?.title}
                         </h3>
                         <p className={`${montserrat.className} text-[13px] text-white/60`}>{p?.type}</p>
-                        {/* <div className="mt-2 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <div className="mt-2 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                             <span className={`${montserrat.className} text-[10px] font-semibold text-amber-300 tracking-[0.1em] uppercase`}>
                                 Click to view Project
                             </span>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </FadeUp>

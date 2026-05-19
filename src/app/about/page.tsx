@@ -15,7 +15,7 @@ const PLACEHOLDER_DESC = "Lorem ipsum dolor sit amet consectetur adipisicing eli
 
 const stats = [
   { value: "20+",   label: "Years",      accent: "Experience", description: PLACEHOLDER_DESC },
-  { value: "500+",  label: "Properties", accent: "Delivered",  description: PLACEHOLDER_DESC },
+  { value: "500+",  label: "Projects", accent: "Delivered",  description: PLACEHOLDER_DESC },
   { value: "1K+",   label: "Happy",      accent: "Clients",    description: PLACEHOLDER_DESC },
   { value: "10+",   label: "Cities",     accent: "Covered",    description: PLACEHOLDER_DESC },
 ];
@@ -122,7 +122,7 @@ export default function About() {
                                 creations with a unique and captivating essence.
                             </p>
 
-                            <a href={pageRoutes.properties} className="mt-8 py-4 px-10 bg-red-700 text-zinc-200 rounded-2xl hover:bg-red-600 hover:shadow-xl ease-in-out duration-300 cursor-pointer w-fit">
+                            <a href={pageRoutes.projects} className="mt-8 py-4 px-10 bg-red-700 text-zinc-200 rounded-2xl hover:bg-red-600 hover:shadow-xl ease-in-out duration-300 cursor-pointer w-fit">
                                 <p className="text-xl text-center">Explore projects</p>
                             </a>
                         </div>

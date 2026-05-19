@@ -21,8 +21,8 @@ const Footer: React.FC = () => {
                 link: "/services",
               },
               {
-                name: "Properties",
-                link: "/properties",
+                name: "Projects",
+                link: "/projects",
               },
             ],
         },

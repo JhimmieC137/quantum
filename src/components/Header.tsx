@@ -17,7 +17,7 @@ const headerLinks = [
             { name: 'Investment Advisory', link: pageRoutes.services.realEstateAdvisory},
         ]
     },
-    { name: 'Properties', link: pageRoutes.properties},
+    { name: 'Projects', link: pageRoutes.projects},
 ]
 
 export default function Header() {

@@ -1,17 +1,14 @@
 'use client'
 
-import { CgMenuGridO } from "react-icons/cg"
 import FadeUp from "@/ui/FadeUp"
-import FadeRight from "@/ui/FadeRight"
 import MainLayout from "../(pages)/layout"
 import InvestmentSection from "@/components/Investment"
 import ProjectGrid from "@/sections/projects/ProjectGrid"
 import { availableProjects, projectCategories } from "@/data/projects"
 import { Montserrat } from "next/font/google"
 import { MdOutlineVerified } from "react-icons/md"
-import { FaRoad, FaTree, FaBolt, FaShieldAlt, FaMoneyBillWave, FaMapMarkerAlt, FaChartLine, FaBuilding, FaFileContract } from "react-icons/fa"
+import { FaRoad, FaTree, FaBolt, FaShieldAlt, FaMapMarkerAlt, FaChartLine, FaBuilding, FaFileContract } from "react-icons/fa"
 import { BsLayoutTextWindowReverse } from "react-icons/bs"
-import ServiceIntro from "@/sections/services/ServiceIntro"
 import ServiceSectionHeading from "@/sections/services/ServiceSectionHeading"
 import FeatureCard from "@/sections/services/FeatureCard"
 import ServiceCTA from "@/sections/services/ServiceCTA"
@@ -117,50 +114,47 @@ export default function Projects() {
 
     return (
         <MainLayout>
-            <HeroBanner 
+            <HeroBanner
                 image="/wallpapers/construction_1.jpg"
                 title="Our"
                 titleAccent="Projects"
             />
-            
+
             <PageHero
                 CTAMain="Where Vision Meets"
                 CTAAccent="Excellence"
                 paragraphs={paragraphList}
             />
 
-            {/* Residential section */}
+            {/* ── Residential section ─────────────────────────────────── */}
             <div className="bg-[#F4F2EC] pt-8 sm:pt-24 lg:pt-36 pb-10">
-                <div className="relative max-w-[1000px] m-auto z-50">
-                    <div className="w-full flex md:flex-row flex-col gap-12 relative mt-16 items-stretch">
-                        {/* Image + red accent block wrapper */}
-                        <div className="md:w-1/2 w-full relative">
-                            {/* Red offset background — positioned behind image, top-right offset */}
-                            <div className="absolute bg-red-700 -z-10 inset-0 md:-translate-x-3 translate-x-[3px] md:-translate-y-3 -translate-y-[3px] rounded-[1.5rem]" />
 
-                            {/* Image container */}
-                            <div className="relative rounded-[1.5rem] overflow-hidden w-full h-full min-h-[30rem]">
-                            <img
-                                src="/services/residential_estate.png"
-                                className="absolute inset-0 md:scale-110 scale-125 w-full h-full object-cover"
-                            />
-                            {/* Red transparent film — covers only the image */}
-                            <div className="absolute inset-0 bg-red-700/30 z-20" />
+                {/* Image + text — mirrors ServiceIntro layout */}
+                <div className="max-w-[1400px] m-auto flex lg:flex-row flex-col gap-y-8 lg:gap-x-20 px-4 sm:px-6 lg:px-8">
+                    {/* Image side */}
+                    <FadeUp>
+                        <div className="lg:w-1/2 w-full relative pt-3 pr-3">
+                            <div className="bg-red-700 absolute top-0 right-0 bottom-3 left-3 rounded-[1.7rem] z-0" />
+                            <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[28rem]">
+                                <img
+                                    src="/services/residential_estate.png"
+                                    className="absolute inset-0 object-cover size-full"
+                                />
+                                <div className="absolute inset-0 bg-red-700/30 z-20" />
                             </div>
                         </div>
+                    </FadeUp>
 
-                        {/* Text content */}
-                        <div className="md:w-1/2 w-full flex flex-col justify-between">
-                            <p className="text-zinc-900 xl:text-4xl lg:text-3xl text-2xl xl:leading-[3rem] lg:leading-[2.5rem] md:leading-[2.3rem]">
+                    {/* Text side */}
+                    <FadeUp>
+                        <div className="lg:w-1/2 w-full flex flex-col justify-center">
+                            <p className="text-zinc-900 text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-relaxed xl:leading-[3rem] lg:leading-[2.5rem]">
                                 At Quantum Homes, we develop and sell serviced plots within well-planned residential
                                 estates, designed to provide clients with a safe, comfortable, and future-ready
-                                environment for building their dream homes. 
-                                {/* Unlike raw, unplanned lands, serviced plots
-                                are properly laid out, documented, and equipped with essential infrastructure that
-                                guarantees both convenience and value appreciation. */}
+                                environment for building their dream homes.
                             </p>
                         </div>
-                    </div>
+                    </FadeUp>
                 </div>
 
                 <ServiceSectionHeading
@@ -175,87 +169,42 @@ export default function Projects() {
                         ))}
                     </div>
                 </div>
-
-                {/* <ServiceCTA
-                    headingWhite="Ready to secure your"
-                    headingAmber="serviced plot?"
-                    subtext="Immediate possession available — commence building as soon as payments and documentation are completed."
-                    buttonLabel="Get Started"
-                /> */}
             </div>
 
-            {/* Commercial section */}
-            <div className="bg-[#F4F2EC] relative overflow-hidden pt-8 sm:pt-24 lg:pt-36 pb-10">
-                {/* <img src="/quantum_logo.png" className="absolute opacity-10 -top-[2%] -right-[12%] rotate-[228deg] w-[33rem]"/>
-                <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[20%] -left-[8%] rotate-[38deg] w-[33rem]"/>
+            {/* ── Commercial section ──────────────────────────────────── */}
+            <div className="bg-[#F4F2EC] pt-8 sm:pt-24 lg:pt-36 pb-10">
 
-                <div className="max-w-[1400px] m-auto px-4 sm:px-6 lg:px-8 mb-12 relative">
-                    <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-sm mb-6">
-                        <CgMenuGridO className="size-4 text-zinc-200"/>
-                        <p className="text-zinc-200/80 text-sm">Commercial</p>
-                    </div>
-                </div>
-
-                <div className="max-w-[1400px] m-auto flex lg:flex-row-reverse flex-col gap-y-8 lg:gap-x-20 relative px-4 sm:px-6 lg:px-8">
-                    <div className="lg:w-1/2 w-full relative pt-3 pl-3">
-                        <div className="bg-zinc-200/30 absolute top-0 left-0 bottom-3 right-3 rounded-[1.7rem] z-0"/>
-                        <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[28rem]">
-                            <img
-                                src="/services/signing-papers.jpg"
-                                className="absolute inset-0 object-cover size-full"
-                            />
-                            <div className="absolute bg-red-700/30 inset-0"/>
-                        </div>
-                    </div>
-                    <div className="lg:w-1/2 w-full flex flex-col justify-center">
-                        <p className="text-base sm:text-xl lg:text-2xl text-zinc-200 leading-relaxed">
-                            We recognize the growing demand for strategically located commercial spaces that drive
-                            business growth and economic activity. Our commercial plots are carefully selected and
-                            developed to suit a wide range of purposes — from shopping complexes and office buildings
-                            to large-scale mixed-use developments.
-                        </p>
-                    </div>
-                </div> */}
-
-                <div className="relative max-w-[1000px] m-auto z-50">
-                    <div className="w-full flex md:flex-row flex-col gap-12 relative mt-16 items-stretch">
-                        {/* Image + red accent block wrapper */}
-                        <div className="md:w-1/2 w-full relative">
-                            {/* Red offset background — positioned behind image, top-right offset */}
-                            <div className="absolute bg-red-700 -z-10 inset-0 md:-translate-x-3 translate-x-[3px] md:-translate-y-3 -translate-y-[3px] rounded-[1.5rem]" />
-
-                            {/* Image container */}
-                            <div className="relative rounded-[1.5rem] overflow-hidden w-full h-full min-h-[30rem]">
-                            <img
-                                src="/services/commercial_estate.png"
-                                className="absolute inset-0 md:scale-110 scale-125 w-full h-full object-cover"
-                            />
-                            {/* Red transparent film — covers only the image */}
-                            <div className="absolute inset-0 bg-red-700/30 z-20" />
+                {/* Image + text — reversed */}
+                <div className="max-w-[1400px] m-auto flex lg:flex-row-reverse flex-col gap-y-8 lg:gap-x-20 px-4 sm:px-6 lg:px-8">
+                    {/* Image side */}
+                    <FadeUp>
+                        <div className="lg:w-1/2 w-full relative pt-3 pl-3">
+                            <div className="bg-red-700 absolute top-0 left-0 bottom-3 right-3 rounded-[1.7rem] z-0" />
+                            <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[28rem]">
+                                <img
+                                    src="/services/commercial_estate.png"
+                                    className="absolute inset-0 object-cover size-full"
+                                />
+                                <div className="absolute inset-0 bg-red-700/30 z-20" />
                             </div>
                         </div>
+                    </FadeUp>
 
-                        {/* Text content */}
-                        <div className="md:w-1/2 w-full flex flex-col justify-between">
-                            <p className="text-zinc-900 xl:text-4xl lg:text-3xl text-2xl xl:leading-[3rem] lg:leading-[2.5rem] md:leading-[2.3rem]">
-                                Our commercial plots are carefully selected and developed to suit a wide range of commercial purposes,
-                                including shopping complexes, office buildings, and mixed-use projects. 
-                                {/* Unlike raw, unplanned lands, serviced plots
-                                are properly laid out, documented, and equipped with essential infrastructure that
-                                guarantees both convenience and value appreciation. */}
+                    {/* Text side */}
+                    <FadeUp>
+                        <div className="lg:w-1/2 w-full flex flex-col justify-center">
+                            <p className="text-zinc-900 text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-relaxed xl:leading-[3rem] lg:leading-[2.5rem]">
+                                Our commercial plots are carefully selected and developed to suit a wide range of
+                                commercial purposes, including shopping complexes, office buildings, and mixed-use projects.
                             </p>
                         </div>
-                    </div>
+                    </FadeUp>
                 </div>
 
-                
-
-                <div className="relative">
-                    <ServiceSectionHeading
-                        white="What Our Commercial"
-                        amber="Plots Offer"
-                    />
-                </div>
+                <ServiceSectionHeading
+                    white="What Our Commercial"
+                    amber="Plots Offer"
+                />
 
                 <div className="w-full mt-10 px-4 sm:px-6 lg:px-8">
                     <div className="max-w-[1400px] m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-[60px] pt-10 pb-16 sm:pb-20">
@@ -268,14 +217,13 @@ export default function Projects() {
                 <ServiceCTA
                     headingWhite="Residential or"
                     headingAmber="Commercial, get yours"
-                    subtext="Immediate possession available, commence building as soon as want and have your documentation and all documentation completed by our experts."
+                    subtext="Immediate possession available — commence building as soon as you're ready, with all documentation completed by our experts."
                     buttonLabel="Get Started"
                 />
             </div>
-            
 
-            {/* Project grid */}
-            <ProjectGrid categories={projectCategories} projects={availableProjects}/>
+            {/* ── Project grid ────────────────────────────────────────── */}
+            <ProjectGrid categories={projectCategories} projects={availableProjects} />
 
             <InvestmentSection />
         </MainLayout>

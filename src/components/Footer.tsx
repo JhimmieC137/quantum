@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
             icon: (key: number) => <FaTiktok key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
         },
         {
-            link: 'https://www.instagram.com',
+            link: 'https://wa.me/2348162483372',
             icon: (key: number) => <FaWhatsapp key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
         },
         // {
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
         //     icon: (key: number) => <FaXTwitter  key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
         // },
         {
-            link: 'https:mailto:quantumhomes28@gmail.com',
+            link: 'mailto:quantumhomes28@gmail.com',
             icon: (key: number) => <VscMail key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
         },
     ]
@@ -93,7 +93,7 @@ const Footer: React.FC = () => {
         <div className="w-full">
           <div className="w-full gap-2.5 md:mb-5 m-0">
             <div className="w-full">
-                <img className="w-[15em] rounded-lg" src="/logo.jpg" alt="logo" />
+                <img className="w-[8rem] rounded-lg" src="/logo.png" alt="logo" />
                 <p className="text-base font-semibold text-primary mt-3 mb-5">...a call to your dream home</p>
             </div>
           </div >
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-full grid sm:grid-cols-[1fr_1fr_1fr] grid-cols-[1fr_1fr] sm:gap-14 sm:mt-0 mt-10 gap-10 text-center">
+        <div className="w-full grid sm:grid-cols-[1fr_1fr_1fr] grid-cols-1 sm:gap-14 sm:mt-0 mt-10 gap-8 text-left">
           {/* Columns */}
           {columns.map((col) => (
             <div key={col.label}>

@@ -52,7 +52,7 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                     <img
                         src={p?.img}
                         alt={p?.title}
-                        className="w-full h-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(.25,.46,.45,.94)] group-hover:scale-105"
+                        className={`w-full h-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(.25,.46,.45,.94)] group-hover:scale-105 ${p?.tag === "Completed" ? "grayscale" : ""}`}
                     />
                     <div className="absolute inset-0 transition-all duration-300 bg-gradient-to-t from-black/75 via-black/20 to-black/5 group-hover:from-black/90 group-hover:via-black/40 group-hover:to-black/15" />
 
@@ -71,7 +71,7 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                         <p className={`${montserrat.className} text-[11px] text-white/50 tracking-[0.12em] mb-1`}>
                             {p?.location} · {p?.year}
                         </p>
-                        <h3 className={`${montserrat.className} font-bold text-white mb-1 ${wide ? "text-[26px]" : "text-[20px]"}`}>
+                        <h3 className={`${montserrat.className} font-bold text-white mb-1 ${wide ? "text-[20px] sm:text-[24px] md:text-[26px]" : "text-[18px] sm:text-[20px]"}`}>
                             {p?.title}
                         </h3>
                         <p className={`${montserrat.className} text-[13px] text-white/60`}>{p?.type}</p>
@@ -105,9 +105,9 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                                 </button>
 
                                 {/* Description */}
-                                <div className="lg:w-[35%] w-full p-6 sm:p-8 flex flex-col justify-between overflow-y-auto shrink-0 lg:h-full">
+                                <div className="lg:w-[35%] w-full p-5 sm:p-8 flex flex-col justify-between overflow-y-auto lg:h-full">
                                     <div>
-                                        <h2 className={`${montserrat.className} text-white text-2xl sm:text-3xl font-bold mt-4 mb-1`}>
+                                        <h2 className={`${montserrat.className} text-white text-xl sm:text-2xl lg:text-3xl font-bold mt-4 mb-1`}>
                                             {p?.title.split(" ").slice(0, -1).join(" ")}{" "}
                                             <span className="text-amber-400 italic">
                                                 {p?.title.split(" ").at(-1)}
@@ -123,16 +123,16 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
 
                                     <a
                                         href="/contact"
-                                        className="mt-8 py-3 px-6 bg-red-700 text-zinc-100 rounded-xl text-md font-semibold text-center hover:bg-red-600 ease-in-out duration-300 shrink-0 w-[80%]"
+                                        className="mt-6 sm:mt-8 py-3 px-6 bg-red-700 text-zinc-100 rounded-xl text-md font-semibold text-center hover:bg-red-600 ease-in-out duration-300 shrink-0 w-full sm:w-[80%]"
                                     >
                                         Contact Us
                                     </a>
                                 </div>
 
                                 {/* Slideshow */}
-                                <div className="lg:w-3/5 w-full flex flex-col items-center justify-center lg:h-full min-h-[16rem] sm:min-h-[22rem] px-4 py-4 gap-6">
+                                <div className="lg:w-3/5 w-full flex flex-col items-center justify-center lg:h-full px-4 py-4 gap-4">
 
-                                    <div className="w-full rounded-xl overflow-hidden" style={{ height: "70%" }}>
+                                    <div className="w-full rounded-xl overflow-hidden h-[220px] sm:h-[280px] lg:h-[80%]">
                                         <Swiper
                                             modules={[Navigation, Autoplay]}
                                             onSwiper={setSwiperInstance}

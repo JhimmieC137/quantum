@@ -29,8 +29,8 @@ export default function Introduction() {
                     <div className="lg:w-[40%] w-full lg:mt-0 mt-16">
                         <FadeUp>
                             <p className="text-zinc-400/90 text-lg">
-                                We blend modern construction expertise with enduring real estate vision to deliver spaces that stand the test of time. Our developments unite design, functionality, and sustainability to create lasting value for communities and investors.<br /><br />
-                                Driven by a commitment to excellence, we adopt advanced building techniques and forward-thinking planning. Every project we deliver reshapes how people live, invest, and experience the built environment.
+                                Driven by a passion for exceptional real estate, we create homes and developments that blend elegance, comfort, and lasting value into one seamless experience. Every project is approached with intention, from the first sketch to the final detail, ensuring each space feels timeless, refined, and truly extraordinary.<br/><br/>
+                                We believe exceptional real estate should do more than fill spaces, it should spark emotion, create opportunity, and leave a lasting impression. From beautifully crafted homes to high-value investment properties, every development is designed to feel timeless, refined, and deeply connected to modern living.
                             </p>
                         </FadeUp>
                     </div>

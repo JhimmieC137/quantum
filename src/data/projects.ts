@@ -119,12 +119,11 @@ export const availableProjects = [
         location: "Ayegun Olomi, Oluyole, Ibadan",
         year: "2025",
         tag: "Ongoing",
-        // Green trees overlooking open landscape — Nigeria (Ovinuchi Ejiohuo)
-        img: "https://images.unsplash.com/photo-1551781638-feaaf665eba1?w=800&q=80",
+        img: "/moon2/slide_01.png",
         slideShow: [
-            "https://images.unsplash.com/photo-1551781638-feaaf665eba1?w=800&q=80",
-            "https://images.unsplash.com/photo-1551781638-feaaf665eba1?w=800&q=80",
-            "https://images.unsplash.com/photo-1551781638-feaaf665eba1?w=800&q=80",
+            "/moon2/slide_01.png",
+            "/moon2/slide_02.png",
+            "/moon2/slide_03.png",
         ],
         description:
             "Moon Township Phase 2 opens a new chapter in the Ayegun Olomi corridor, building on the strong foundation laid by Phase 1. Located in Oluyole LGA right by the roadside, the estate benefits from the ongoing circular road project that connects the area back to Ijebu Igbo in Ogun State.\n\nWith growing infrastructure and high ROI potential, Phase 2 is an ideal pick for investors seeking both security and upside in a rapidly developing area."
@@ -148,12 +147,11 @@ export const availableProjects = [
         location: "Egbeda Ajia, Ibadan",
         year: "2024",
         tag: "Completed",
-        // Aerial view of open rural green grass land
-        img: "https://images.unsplash.com/photo-1619719826894-89d6c4fd5739?w=800&q=80",
+        img: "/oreofe/slide_01.png",
         slideShow: [
-            "https://images.unsplash.com/photo-1619719826894-89d6c4fd5739?w=800&q=80",
-            "https://images.unsplash.com/photo-1619719826894-89d6c4fd5739?w=800&q=80",
-            "https://images.unsplash.com/photo-1619719826894-89d6c4fd5739?w=800&q=80",
+            "/oreofe/slide_01.png",
+            "/oreofe/slide_02.png",
+            "/oreofe/slide_03.png",
         ],
         description:
             "Oreofe Garden Estate is located at Egbeda Ajia, a fast-growing area with significant development momentum. It is a buy-and-build estate, meaning buyers could immediately begin construction after purchase.\n\nThe estate is within 10 minutes of the circular road, placing it in a well-connected location that has since seen strong appreciation — a testament to Quantum Homes' ability to identify and deliver high-value opportunities."

@@ -88,12 +88,11 @@ export const availableProjects = [
         location: "Akanran, Ibadan",
         year: "2025",
         tag: "Ongoing",
-        // Green trees on brown field — aerial land view
-        img: "https://images.unsplash.com/photo-1629460455571-c943339c4f23?w=800&q=80",
+        img: "/bidemi2/slide_01.png",
         slideShow: [
-            "https://images.unsplash.com/photo-1629460455571-c943339c4f23?w=800&q=80",
-            "https://images.unsplash.com/photo-1629460455571-c943339c4f23?w=800&q=80",
-            "https://images.unsplash.com/photo-1629460455571-c943339c4f23?w=800&q=80",
+            "/bidemi2/slide_01.png",
+            "/bidemi2/slide_02.png",
+            "/bidemi2/slide_03.png",
         ],
         description:
             "Bidem's Court Phase 2 extends the opportunity deeper into one of Ibadan's emerging land banking frontiers at Akanran. Located specifically at Araromi, after Ilaji Resort, this phase offers additional plots as the surrounding area gains momentum.\n\nWith major proposed projects beginning to take shape nearby, Phase 2 is a strategic buy for investors who understand the value of early positioning in a developing corridor."

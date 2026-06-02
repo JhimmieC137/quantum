@@ -99,11 +99,17 @@ const Footer: React.FC = () => {
           </div >
 
           <div className="w-full flex gap-10 text-zinc-200 mt-5">
-              {
-                  socialLinks.map((link, index) => (
-                      link.icon(index)
-                  ))
-              }
+              {socialLinks.map((link, index) => (
+                  <a
+                      key={index}
+                      href={link.link}
+                      target={link.link.startsWith('mailto') ? '_self' : '_blank'}
+                      rel="noopener noreferrer"
+                      className="hover:text-amber-400 ease-in-out duration-150"
+                  >
+                      {link.icon(index)}
+                  </a>
+              ))}
           </div>
         </div>
 

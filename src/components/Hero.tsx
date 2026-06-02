@@ -55,7 +55,7 @@ export default function Hero() {
                             <FadeUp>
                                 <div className={`${montserrat.className} sm:flex justify-start gap-4 items-center mb-5 pl-1 hidden `}>
                                     <div className="h-px xl:w-16 lg:w-10 sm:w-7 w-0 bg-[#C4161C]"/>
-                                    <p className={`${montserrat.className} text-xs font-bold ${brand.amberText} tracking-widest`}>PREMIUM REAL ESTATE · LAGOS · IBADAN</p>
+                                    <p className={`${montserrat.className} text-xs font-bold ${brand.amberText} tracking-widest`}>PREMIUM REAL ESTATE · IBADAN</p>
                                 </div>
                             </FadeUp>
 
@@ -68,9 +68,9 @@ export default function Hero() {
                             <FadeUp>
                                 <div className="text-left items-end hidden md:block">
                                     <p className="sm:text-[15px] text-sm xl:max-w-[50rem] lg:max-w-[40rem] max-w-[35rem] sm:m-0 m-auto text-zinc-200 sm:text-left text-center">
-                                        We develop verified, well-located estates across Nigeria's fastest-growing
-                                        corridors. Every property is properly documented and built to deliver
-                                        real, lasting value.
+                                        We develop verified, well-located estates across Ibadan's
+                                        fastest-growing corridors. Every property is properly documented
+                                        and built to deliver real, lasting value.
                                     </p>
                                 </div>
                             </FadeUp>

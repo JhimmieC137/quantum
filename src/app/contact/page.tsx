@@ -161,17 +161,19 @@ export default function ContactUs() {
                                 </div>
                                 <div>
                                     <p className={`${montserrat.className} text-zinc-400 text-xs font-semibold tracking-wider uppercase mb-1`}>Phone</p>
-                                    <div className="flex flex-col gap-1">
-                                        {office.phones.map((p) => (
-                                            <a
-                                                key={p}
-                                                href={`tel:${p.replace(/\s/g, '')}`}
-                                                className="text-zinc-800 text-base sm:text-lg hover:text-red-700 transition-colors duration-150"
-                                            >
-                                                {p}
-                                            </a>
+                                    <p className="text-zinc-800 text-sm sm:text-base leading-relaxed">
+                                        {office.phones.map((p, i) => (
+                                            <span key={p}>
+                                                <a
+                                                    href={`tel:${p.replace(/\s/g, '')}`}
+                                                    className="hover:text-red-700 transition-colors duration-150 whitespace-nowrap"
+                                                >
+                                                    {p}
+                                                </a>
+                                                {i < office.phones.length - 1 && <span className="text-zinc-400">,{" "}</span>}
+                                            </span>
                                         ))}
-                                    </div>
+                                    </p>
                                 </div>
                             </div>
 

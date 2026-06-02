@@ -87,7 +87,7 @@ export default function ContactUs() {
                             Reach out <span className={`${brand.amberAltText} italic`}>to us</span>
                         </p>
                         <p className="text-zinc-800 text-base sm:text-lg mb-5 max-w-[85%]">
-                            Whether you're interested in buying land, building your dream home, or simply want to learn more about our services — our team is ready to help.
+                            Whether you're interested in buying land, building your dream home, or simply want to learn more about our services, our team is ready to help.
                         </p>
 
                         {[

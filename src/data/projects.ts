@@ -17,7 +17,7 @@ export const projectCategories = [
     {
         id: 4,
         name: "Incoming",
-        description: "Coming soon — not yet open for sale"
+        description: "Coming soon, not yet open for sale"
     },
 ]
 
@@ -35,7 +35,7 @@ export const availableProjects = [
             "/vienna/slide_02.png",
         ],
         description:
-            "Vienna City Estate is located at Olorunda Amuloko, just 7 minutes' drive from the circular road project. It is a buy-and-build property with visible development already underway, making it one of the more established options in the portfolio.\n\nThe estate is close to Ilaji Resort, one of the largest resorts in Oyo State, and has road connectivity leading towards Ijebu Igbo in Ogun State — a solid choice for both living and investment."
+            "Vienna City Estate is located at Olorunda Amuloko, just 7 minutes' drive from the circular road project. It is a buy-and-build property with visible development already underway, making it one of the more established options in the portfolio.\n\nThe estate is close to Ilaji Resort, one of the largest resorts in Oyo State, and has road connectivity leading towards Ijebu Igbo in Ogun State, a solid choice for both living and investment."
     },
     {
         title: "Atlanta City Estate Phase 1",
@@ -80,7 +80,7 @@ export const availableProjects = [
             "/bidemi/slide_03.png",
         ],
         description:
-            "Bidem's Court is located in Akanran, after Ilaji Resort, specifically at Araromi. It is an excellent choice for land banking as the area is in its early stages of development, with several major surrounding projects still in the proposal stage.\n\nOnce development in the area fully unfolds, this estate is positioned to become a massive investment win — ideal for those looking to get in early."
+            "Bidem's Court is located in Akanran, after Ilaji Resort, specifically at Araromi. It is an excellent choice for land banking as the area is in its early stages of development, with several major surrounding projects still in the proposal stage.\n\nOnce development in the area fully unfolds, this estate is positioned to become a massive investment win, ideal for those looking to get in early."
     },
     {
         title: "Bidem's Court Phase 2",
@@ -153,6 +153,6 @@ export const availableProjects = [
             "/oreofe/slide_03.png",
         ],
         description:
-            "Oreofe Garden Estate is located at Egbeda Ajia, a fast-growing area with significant development momentum. It is a buy-and-build estate, meaning buyers could immediately begin construction after purchase.\n\nThe estate is within 10 minutes of the circular road, placing it in a well-connected location that has since seen strong appreciation — a testament to Quantum Homes' ability to identify and deliver high-value opportunities."
+            "Oreofe Garden Estate is located at Egbeda Ajia, a fast-growing area with significant development momentum. It is a buy-and-build estate, meaning buyers could immediately begin construction after purchase.\n\nThe estate is within 10 minutes of the circular road, placing it in a well-connected location that has since seen strong appreciation, a testament to Quantum Homes' ability to identify and deliver high-value opportunities."
     },
 ];

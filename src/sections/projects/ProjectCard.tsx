@@ -1,7 +1,7 @@
 'use client'
 
 import FadeUp from "@/ui/FadeUp";
-import { Montserrat } from "next/font/google";
+import { montserrat } from "@/lib/fonts";
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
@@ -24,12 +24,6 @@ type ProjCardProps = {
     wide?: boolean;
 };
 
-const montserrat = Montserrat({
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-    variable: "--font-montserrat",
-    subsets: ["latin"],
-});
-
 const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
@@ -47,7 +41,7 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
             <FadeUp>
                 <div
                     onClick={() => setModalOpen(true)}
-                    className={`group relative overflow-hidden rounded-2xl cursor-pointer ${wide ? "h-[480px] w-full" : "h-[460px] w-full"}`}
+                    className={`group relative overflow-hidden rounded-2xl cursor-pointer w-full ${wide ? "h-[420px] sm:h-[460px] lg:h-[500px]" : "h-[380px] sm:h-[420px] lg:h-[460px]"}`}
                 >
                     <img
                         src={p?.img}
@@ -56,6 +50,7 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                     />
                     <div className="absolute inset-0 transition-all duration-300 bg-gradient-to-t from-black/75 via-black/20 to-black/5 group-hover:from-black/90 group-hover:via-black/40 group-hover:to-black/15" />
 
+                    {/* Tag badge */}
                     <div className="absolute top-4 left-4">
                         <span className={`text-[11px] font-semibold tracking-[0.12em] uppercase px-3.5 py-1 rounded-full ${montserrat.className} ${
                             p?.tag === "Completed" ? "bg-emerald-500 text-white" :
@@ -67,14 +62,15 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                         </span>
                     </div>
 
+                    {/* Card footer */}
                     <div className="absolute bottom-0 left-0 right-0 px-5 py-5">
                         <p className={`${montserrat.className} text-[11px] text-white/50 tracking-[0.12em] mb-1`}>
                             {p?.location} · {p?.year}
                         </p>
-                        <h3 className={`${montserrat.className} font-bold text-white mb-1 ${wide ? "text-[20px] sm:text-[24px] md:text-[26px]" : "text-[18px] sm:text-[20px]"}`}>
+                        <h3 className={`${montserrat.className} font-bold text-white mb-1 ${wide ? "text-lg sm:text-[22px] lg:text-[26px]" : "text-base sm:text-lg lg:text-[22px]"}`}>
                             {p?.title}
                         </h3>
-                        <p className={`${montserrat.className} text-[13px] text-white/60`}>{p?.type}</p>
+                        <p className={`${montserrat.className} text-xs sm:text-[13px] text-white/60`}>{p?.type}</p>
                         <div className="mt-2 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                             <span className={`${montserrat.className} text-[10px] font-semibold text-amber-300 tracking-[0.1em] uppercase`}>
                                 Click to view Project
@@ -87,25 +83,25 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
             {/* Modal */}
             {modalOpen && (
                 <div
-                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-4 sm:p-6"
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 backdrop-blur-sm p-3 sm:p-6"
                     onClick={() => setModalOpen(false)}
                 >
                     <FadeUp>
                         <div className="w-full flex justify-center">
                             <div
-                                className="relative bg-black rounded-3xl overflow-scroll md:overflow-hidden w-full max-w-[77rem] h-[80vh] lg:h-[70vh] flex flex-col lg:flex-row"
+                                className="relative bg-zinc-950 rounded-2xl sm:rounded-3xl overflow-y-auto lg:overflow-hidden w-full max-w-5xl h-[85vh] lg:h-[72vh] flex flex-col lg:flex-row"
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 {/* Close button */}
                                 <button
                                     onClick={() => setModalOpen(false)}
-                                    className="absolute top-4 right-4 z-20 size-9 flex items-center justify-center rounded-full border border-zinc-200/50 text-zinc-200 hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-200"
+                                    className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 size-8 sm:size-9 flex items-center justify-center rounded-full border border-zinc-200/50 text-zinc-200 hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-200"
                                 >
-                                    <HiX className="size-4" />
+                                    <HiX className="size-3.5 sm:size-4" />
                                 </button>
 
-                                {/* Description */}
-                                <div className="lg:w-[35%] w-full p-5 sm:p-8 flex flex-col justify-between overflow-y-auto lg:h-full">
+                                {/* Description panel */}
+                                <div className="lg:w-2/5 w-full p-5 sm:p-8 flex flex-col justify-between lg:overflow-y-auto lg:h-full shrink-0">
                                     <div>
                                         <h2 className={`${montserrat.className} text-white text-xl sm:text-2xl lg:text-3xl font-bold mt-4 mb-1`}>
                                             {p?.title.split(" ").slice(0, -1).join(" ")}{" "}
@@ -113,7 +109,7 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                                                 {p?.title.split(" ").at(-1)}
                                             </span>
                                         </h2>
-                                        <p className={`${montserrat.className} text-zinc-400 text-sm mb-4`}>
+                                        <p className={`${montserrat.className} text-zinc-400 text-xs sm:text-sm mb-4`}>
                                             {p?.location} · {p?.year} · {p?.type}
                                         </p>
                                         <p className="text-zinc-300 text-sm sm:text-base leading-relaxed whitespace-pre-line">
@@ -123,16 +119,15 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
 
                                     <a
                                         href="/contact"
-                                        className="mt-6 sm:mt-8 py-3 px-6 bg-red-700 text-zinc-100 rounded-xl text-md font-semibold text-center hover:bg-red-600 ease-in-out duration-300 shrink-0 w-full sm:w-[80%]"
+                                        className="mt-6 sm:mt-8 py-3 px-6 bg-red-700 text-zinc-100 rounded-xl text-sm sm:text-base font-semibold text-center hover:bg-red-600 ease-in-out duration-300 shrink-0 w-full sm:w-4/5"
                                     >
                                         Contact Us
                                     </a>
                                 </div>
 
-                                {/* Slideshow */}
-                                <div className="lg:w-3/5 w-full flex flex-col items-center justify-center lg:h-full px-4 py-4 gap-4">
-
-                                    <div className="w-full rounded-xl overflow-hidden h-[220px] sm:h-[280px] lg:h-[80%]">
+                                {/* Slideshow panel */}
+                                <div className="lg:w-3/5 w-full flex flex-col items-center justify-center lg:h-full px-4 py-4 gap-4 shrink-0">
+                                    <div className="w-full rounded-xl overflow-hidden h-[200px] sm:h-[260px] lg:h-[78%]">
                                         <Swiper
                                             modules={[Navigation, Autoplay]}
                                             onSwiper={setSwiperInstance}
@@ -154,20 +149,19 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                                         </Swiper>
                                     </div>
 
-                                    {/* Arrows call swiper instance directly */}
                                     {slides.length > 1 && (
                                         <div className="flex justify-center items-center gap-3 shrink-0">
                                             <button
                                                 onClick={() => swiperInstance?.slidePrev()}
-                                                className="size-10 flex items-center justify-center rounded-full border border-zinc-200/50 bg-transparent text-zinc-200 hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-200"
+                                                className="size-9 sm:size-10 flex items-center justify-center rounded-full border border-zinc-200/50 bg-transparent text-zinc-200 hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-200"
                                             >
-                                                <HiChevronLeft className="size-5" />
+                                                <HiChevronLeft className="size-4 sm:size-5" />
                                             </button>
                                             <button
                                                 onClick={() => swiperInstance?.slideNext()}
-                                                className="size-10 flex items-center justify-center rounded-full border border-zinc-200/50 bg-transparent text-zinc-200 hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-200"
+                                                className="size-9 sm:size-10 flex items-center justify-center rounded-full border border-zinc-200/50 bg-transparent text-zinc-200 hover:bg-zinc-200 hover:text-zinc-900 ease-in-out duration-200"
                                             >
-                                                <HiChevronRight className="size-5" />
+                                                <HiChevronRight className="size-4 sm:size-5" />
                                             </button>
                                         </div>
                                     )}

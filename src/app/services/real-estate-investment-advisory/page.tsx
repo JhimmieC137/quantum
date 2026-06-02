@@ -63,7 +63,7 @@ export default function RealEstateAdvisory() {
                 titleWhite="Guiding investors on"
                 titleAmber="high-return properties"
                 description="At Quantum Homes & Property, we understand that real estate is not just about buying
-                    and selling properties — it’s about making profitable, well-informed investment decisions.
+                    and selling properties. It’s about making profitable, well-informed investment decisions.
                     Our Investment Advisory service is designed to guide individuals, families, and corporate
                     organizations in identifying, analyzing, and investing in high-value real estate opportunities
                     that yield long-term returns.
@@ -73,7 +73,7 @@ export default function RealEstateAdvisory() {
             <div className="pb-16 sm:pb-20 pt-16 sm:pt-24 lg:pt-36 bg-[#F4F2EC] w-full">
                 <ServiceIntro
                     image="/services/agents-in-meeting.jpg"
-                    text="For years, architecture has been stuck in the past. It's time to redefine the future. At Urbanex+, we don't just design buildings—we craft experiences. Our innovative, human-centered approach blends aesthetics, sustainability, and functionality to shape spaces that inspire and endure."
+                    text="For years, architecture has been stuck in the past. It's time to redefine the future. At Urbanex+, we don't just design buildings, we craft experiences. Our innovative, human-centered approach blends aesthetics, sustainability, and functionality to shape spaces that inspire and endure."
                 />
 
                 <ServiceCTA

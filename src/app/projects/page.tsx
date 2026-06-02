@@ -5,7 +5,7 @@ import MainLayout from "../(pages)/layout"
 import InvestmentSection from "@/components/Investment"
 import ProjectGrid from "@/sections/projects/ProjectGrid"
 import { availableProjects, projectCategories } from "@/data/projects"
-import { Montserrat } from "next/font/google"
+import { layout } from "@/lib/constants"
 import { MdOutlineVerified } from "react-icons/md"
 import { FaRoad, FaTree, FaBolt, FaShieldAlt, FaMapMarkerAlt, FaChartLine, FaBuilding, FaFileContract } from "react-icons/fa"
 import { BsLayoutTextWindowReverse } from "react-icons/bs"
@@ -14,12 +14,6 @@ import FeatureCard from "@/sections/services/FeatureCard"
 import ServiceCTA from "@/sections/services/ServiceCTA"
 import HeroBanner from "@/components/HeroBanner"
 import PageHero from "@/components/PageHero"
-
-const montserrat = Montserrat({
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-    variable: "--font-montserrat",
-    subsets: ["latin"],
-});
 
 const residentialFeatures = [
     {
@@ -108,7 +102,7 @@ export default function Projects() {
         ",
         "\
             Our projects are carefully planned, fully documented, and strategically located to \
-            deliver maximum value — whether you're building your dream home or growing a thriving business. \
+            deliver maximum value, whether you're building your dream home or growing a thriving business. \
         "
     ]
 
@@ -130,9 +124,9 @@ export default function Projects() {
             <div className="bg-[#F4F2EC] pt-8 sm:pt-24 lg:pt-36 pb-10">
 
                 {/* Image + text — mirrors ServiceIntro layout */}
-                <div className="max-w-[1400px] m-auto flex lg:flex-row flex-col gap-y-8 lg:gap-x-20 px-4 sm:px-6 lg:px-8">
-                    {/* Image side */}
-                    <FadeUp>
+                <FadeUp>
+                    <div className={`${layout.container} flex lg:flex-row flex-col gap-y-8 lg:gap-x-20`}>
+                        {/* Image side */}
                         <div className="lg:w-1/2 w-full relative pt-3 pr-3">
                             <div className="bg-red-700 absolute top-0 right-0 bottom-3 left-3 rounded-[1.7rem] z-0" />
                             <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[28rem]">
@@ -143,10 +137,8 @@ export default function Projects() {
                                 <div className="absolute inset-0 bg-red-700/30 z-20" />
                             </div>
                         </div>
-                    </FadeUp>
 
-                    {/* Text side */}
-                    <FadeUp>
+                        {/* Text side */}
                         <div className="lg:w-1/2 w-full flex flex-col justify-center">
                             <p className="text-zinc-900 text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-relaxed xl:leading-[3rem] lg:leading-[2.5rem]">
                                 At Quantum Homes, we develop and sell serviced plots within well-planned residential
@@ -154,16 +146,16 @@ export default function Projects() {
                                 environment for building their dream homes.
                             </p>
                         </div>
-                    </FadeUp>
-                </div>
+                    </div>
+                </FadeUp>
 
                 <ServiceSectionHeading
                     white="What Our Residential"
                     amber="Plots Offer"
                 />
 
-                <div className="w-full mt-10 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-[1400px] m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-[60px] pt-10 pb-16 sm:pb-20">
+                <div className="w-full mt-10">
+                    <div className={`${layout.container} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-[60px] pt-10 pb-16 sm:pb-20`}>
                         {residentialFeatures.map((f) => (
                             <FeatureCard key={f.titleWhite} {...f} />
                         ))}
@@ -175,9 +167,9 @@ export default function Projects() {
             <div className="bg-[#F4F2EC] pt-8 sm:pt-24 lg:pt-36 pb-10">
 
                 {/* Image + text — reversed */}
-                <div className="max-w-[1400px] m-auto flex lg:flex-row-reverse flex-col gap-y-8 lg:gap-x-20 px-4 sm:px-6 lg:px-8">
-                    {/* Image side */}
-                    <FadeUp>
+                <FadeUp>
+                    <div className={`${layout.container} flex lg:flex-row-reverse flex-col gap-y-8 lg:gap-x-20`}>
+                        {/* Image side */}
                         <div className="lg:w-1/2 w-full relative pt-3 pl-3">
                             <div className="bg-red-700 absolute top-0 left-0 bottom-3 right-3 rounded-[1.7rem] z-0" />
                             <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[28rem]">
@@ -188,26 +180,24 @@ export default function Projects() {
                                 <div className="absolute inset-0 bg-red-700/30 z-20" />
                             </div>
                         </div>
-                    </FadeUp>
 
-                    {/* Text side */}
-                    <FadeUp>
+                        {/* Text side */}
                         <div className="lg:w-1/2 w-full flex flex-col justify-center">
                             <p className="text-zinc-900 text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-relaxed xl:leading-[3rem] lg:leading-[2.5rem]">
                                 Our commercial plots are carefully selected and developed to suit a wide range of
                                 commercial purposes, including shopping complexes, office buildings, and mixed-use projects.
                             </p>
                         </div>
-                    </FadeUp>
-                </div>
+                    </div>
+                </FadeUp>
 
                 <ServiceSectionHeading
                     white="What Our Commercial"
                     amber="Plots Offer"
                 />
 
-                <div className="w-full mt-10 px-4 sm:px-6 lg:px-8">
-                    <div className="max-w-[1400px] m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-[60px] pt-10 pb-16 sm:pb-20">
+                <div className="w-full mt-10">
+                    <div className={`${layout.container} grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-[60px] pt-10 pb-16 sm:pb-20`}>
                         {commercialFeatures.map((f) => (
                             <FeatureCard key={f.titleWhite} {...f} />
                         ))}
@@ -217,7 +207,7 @@ export default function Projects() {
                 <ServiceCTA
                     headingWhite="Residential or"
                     headingAmber="Commercial, get yours"
-                    subtext="Immediate possession available — commence building as soon as you're ready, with all documentation completed by our experts."
+                    subtext="Immediate possession available. Commence building as soon as you're ready, with all documentation completed by our experts."
                     buttonLabel="Get Started"
                 />
             </div>

@@ -119,7 +119,7 @@ export function buildContactEmail(
             <td style="background-color:#27272a;padding:24px 40px;text-align:center;">
               <p style="margin:0;font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6;">
                 This email was generated automatically from the Quantum Homes &amp; Property website contact form.<br/>
-                Please do not reply directly to this email — use the button above instead.
+                Please do not reply directly to this email. Use the button above instead.
               </p>
             </td>
           </tr>

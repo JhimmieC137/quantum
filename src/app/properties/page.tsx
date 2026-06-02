@@ -111,7 +111,7 @@ export default function Projects() {
         ",
         "\
             Our projects are carefully planned, fully documented, and strategically located to \
-            deliver maximum value — whether you're building your dream home or growing a thriving business. \
+            deliver maximum value, whether you're building your dream home or growing a thriving business. \
         "
     ]
 
@@ -179,7 +179,7 @@ export default function Projects() {
                 {/* <ServiceCTA
                     headingWhite="Ready to secure your"
                     headingAmber="serviced plot?"
-                    subtext="Immediate possession available — commence building as soon as payments and documentation are completed."
+                    subtext="Immediate possession available. Commence building as soon as payments and documentation are completed."
                     buttonLabel="Get Started"
                 /> */}
             </div>
@@ -211,7 +211,7 @@ export default function Projects() {
                         <p className="text-base sm:text-xl lg:text-2xl text-zinc-200 leading-relaxed">
                             We recognize the growing demand for strategically located commercial spaces that drive
                             business growth and economic activity. Our commercial plots are carefully selected and
-                            developed to suit a wide range of purposes — from shopping complexes and office buildings
+                            developed to suit a wide range of purposes, from shopping complexes and office buildings
                             to large-scale mixed-use developments.
                         </p>
                     </div>

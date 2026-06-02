@@ -19,7 +19,7 @@ const faqs: FAQItem[] = [
   {
     question: "What services does your firm offer?",
     answer:
-      "Our services span real estate development, building construction, civil and infrastructure works, architectural and design consultancy, project management, and property sales and lettings — covering the full lifecycle of any project from conception to handover.",
+      "Our services span real estate development, building construction, civil and infrastructure works, architectural and design consultancy, project management, and property sales and lettings, covering the full lifecycle of any project from conception to handover.",
   },
   {
     question: "How do you handle project timelines and delivery?",

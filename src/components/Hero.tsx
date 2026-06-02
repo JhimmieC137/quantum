@@ -68,8 +68,9 @@ export default function Hero() {
                             <FadeUp>
                                 <div className="text-left items-end hidden md:block">
                                     <p className="sm:text-[15px] text-sm xl:max-w-[50rem] lg:max-w-[40rem] max-w-[35rem] sm:m-0 m-auto text-zinc-200 sm:text-left text-center">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt repellat, laudantium 
-                                        doloremque, similique dolores inventore incidunt eveniet quae iure dicta, pariatur aut.
+                                        We develop verified, well-located estates across Nigeria's fastest-growing
+                                        corridors. Every property is properly documented and built to deliver
+                                        real, lasting value.
                                     </p>
                                 </div>
                             </FadeUp>

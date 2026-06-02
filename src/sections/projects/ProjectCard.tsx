@@ -89,7 +89,7 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                     <FadeUp>
                         <div className="w-full flex justify-center">
                             <div
-                                className="relative bg-zinc-950 rounded-2xl sm:rounded-3xl overflow-y-auto lg:overflow-hidden w-full max-w-5xl h-[85vh] lg:h-[72vh] flex flex-col lg:flex-row"
+                                className="relative bg-zinc-950 rounded-2xl sm:rounded-3xl overflow-y-auto lg:overflow-hidden w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl h-[85vh] lg:h-[75vh] flex flex-col lg:flex-row"
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 {/* Close button */}

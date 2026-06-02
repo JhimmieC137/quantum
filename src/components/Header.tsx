@@ -13,7 +13,7 @@ const headerLinks = [
         children: [
             { name: 'Land Sales', link: pageRoutes.services.landSales},
             { name: 'Legal Support', link: pageRoutes.services.legalSupport },
-            { name: 'Construction & Dev', link: pageRoutes.services.construction},
+            { name: 'Construction & Development', link: pageRoutes.services.construction},
             { name: 'Investment Advisory', link: pageRoutes.services.realEstateAdvisory},
         ]
     },

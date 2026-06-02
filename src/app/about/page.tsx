@@ -11,13 +11,31 @@ import TeamGrid from "@/components/TeamGrid"
 import PageHero from "@/components/PageHero"
 import HeroBanner from "@/components/HeroBanner"
 
-const PLACEHOLDER_DESC = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, cumque nisi fugit ipsum ducimus, magnam maxime esse ex hic dolorum, ut velit saepe ratione!";
-
 const stats = [
-  { value: "20+",   label: "Years",      accent: "Experience", description: PLACEHOLDER_DESC },
-  { value: "500+",  label: "Projects", accent: "Delivered",  description: PLACEHOLDER_DESC },
-  { value: "1K+",   label: "Happy",      accent: "Clients",    description: PLACEHOLDER_DESC },
-  { value: "10+",   label: "Cities",     accent: "Covered",    description: PLACEHOLDER_DESC },
+  {
+    value: "2+",
+    label: "Years of",
+    accent: "Experience",
+    description: "In just over two years, Quantum Homes has established itself as one of Ibadan's most trusted names in real estate, delivering on every commitment with speed, integrity, and professionalism.",
+  },
+  {
+    value: "50+",
+    label: "Satisfied",
+    accent: "Clients",
+    description: "Our clients are our strongest endorsement. Over 50 individuals, families, and investors have trusted us to guide them through one of the most significant decisions of their lives, and we haven't let them down.",
+  },
+  {
+    value: "60+",
+    label: "Plots",
+    accent: "Sold",
+    description: "Over 60 plots have been successfully sold across our active estates in Ibadan, reflecting the confidence buyers place in our documentation, locations, and long-term value proposition.",
+  },
+  {
+    value: "8+",
+    label: "Successful",
+    accent: "Projects",
+    description: "From land banking estates to buy-and-build communities, every project we've launched has been carefully planned, properly documented, and delivered with clear value for investors and homeowners alike.",
+  },
 ];
 
 const missionVision = [

@@ -90,17 +90,17 @@ export default function Hero() {
                             <FadeUp>
                                 <div className="hidden sm:flex divide-x divide-amber-400 divide-opacity-50 mt-10 tracking-widest justify-start text-left">
                                     <div className="pr-8">
-                                        <p className={`${montserrat.className} xl:text-5xl text-4xl mb-px ${brand.amberText} font-semibold`}>500+</p>
+                                        <p className={`${montserrat.className} xl:text-5xl text-4xl mb-px ${brand.amberText} font-semibold`}>58+</p>
                                         <p className="text-sm text-zinc-100/60">Land plots sold</p>
                                     </div>
 
                                     <div className="px-8">
-                                        <p className={`${montserrat.className} xl:text-5xl text-4xl mb-px ${brand.amberText} font-semibold`}>120+</p>
+                                        <p className={`${montserrat.className} xl:text-5xl text-4xl mb-px ${brand.amberText} font-semibold`}>17+</p>
                                         <p className="text-sm text-zinc-100/60">Structures built</p>
                                     </div>
 
                                     <div className="pl-8">
-                                        <p className={`${montserrat.className} xl:text-5xl text-4xl mb-px ${brand.amberText} font-semibold`}>10+</p>
+                                        <p className={`${montserrat.className} xl:text-5xl text-4xl mb-px ${brand.amberText} font-semibold`}>2+</p>
                                         <p className="text-sm text-zinc-100/60">Years experience</p>
                                     </div>
                                 </div>

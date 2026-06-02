@@ -50,11 +50,11 @@ const InvestmentSection: React.FC<Props> = () => {
 
                 {/* Buttons */}
                 <div className="flex gap-4">
-                    <div className={`max-w-fit m-auto py-2 px-4 rounded-lg border border-transparent bg-zinc-200 ${brand.redText} text-md hover:bg-transparent hover:border-zinc-200/20 hover:text-zinc-200 duration-150 ease-in-out hover:shadow-xl cursor-pointer shadow-lg`}>
+                    <a href="/contact" className={`max-w-fit m-auto py-2 px-4 rounded-lg border border-transparent bg-zinc-200 ${brand.redText} text-md hover:bg-transparent hover:border-zinc-200/20 hover:text-zinc-200 duration-150 ease-in-out hover:shadow-xl cursor-pointer shadow-lg`}>
                         <p>
                             Start Your Journey
                         </p>
-                    </div>
+                    </a>
                 </div>
                 </div>
             </div>

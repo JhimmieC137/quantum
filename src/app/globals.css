@@ -31,7 +31,19 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   /* Push page content clear of the home-indicator bar at the bottom */
-  padding-bottom: var(--safe-bottom);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Stable safe-area top padding for the fixed nav — pure CSS so it
+   never flickers during React re-renders caused by scroll events. */
+.safe-nav-top {
+  padding-top: max(12px, env(safe-area-inset-top, 0px));
+  padding-bottom: 12px;
+}
+
+/* Stable safe-area bottom padding for the footer */
+.safe-footer-bottom {
+  padding-bottom: max(40px, calc(40px + env(safe-area-inset-bottom, 0px)));
 }
 
 

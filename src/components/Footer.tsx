@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
     ]
 
   return (
-    <footer className="bg-[#0D0D0C] pt-20" style={{ paddingBottom: "max(40px, calc(40px + env(safe-area-inset-bottom)))" }}>
+    <footer className="bg-[#0D0D0C] pt-20 safe-footer-bottom">
       {/* Top Section */}
       <div className="flex md:flex-row flex-col pb-14 border-b border-white/10 max-w-[1400px] m-auto px-2">
         {/* Brand */}

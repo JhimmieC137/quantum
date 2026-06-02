@@ -55,10 +55,7 @@ export default function Header() {
                 visible ? "translate-y-0" : "-translate-y-full"
             }`}
         >
-            <nav
-                className="px-4 pb-3"
-                style={{ paddingTop: "max(12px, env(safe-area-inset-top))" }}
-            >
+            <nav className="px-4 py-3 safe-nav-top">
                 <div className="max-w-[600px] mx-auto">
 
                     {/* Main pill */}

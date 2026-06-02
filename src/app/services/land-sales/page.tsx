@@ -99,7 +99,7 @@ export default function LandSales() {
 
             <div className="w-full bg-[#F4F2EC]">
                 <div className="max-w-[1600px] m-auto">
-                    <ProjectGrid categories={projectCategories} projects={availableProjects} maxWidth="1600px"/>
+                    <ProjectGrid categories={projectCategories} projects={availableProjects} />
                 </div>
             </div>
 

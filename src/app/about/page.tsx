@@ -19,10 +19,10 @@ const stats = [
     description: "In just over two years, Quantum Homes has established itself as one of Ibadan's most trusted names in real estate, delivering on every commitment with speed, integrity, and professionalism.",
   },
   {
-    value: "50+",
+    value: "5K+",
     label: "Satisfied",
     accent: "Clients",
-    description: "Our clients are our strongest endorsement. Over 50 individuals, families, and investors have trusted us to guide them through one of the most significant decisions of their lives, and we haven't let them down.",
+    description: "Over 5,000 individuals, families, and investors have trusted Quantum Homes to guide them through one of the most significant decisions of their lives. Their confidence is our greatest endorsement.",
   },
   {
     value: "60+",
@@ -84,7 +84,7 @@ export default function About() {
     const paragraphList = [
         "\
             Quantum Homes & Property is a trusted real estate company committed to bridging the gap between property ownership dreams and reality. Since our inception, we have helped\
-            hundreds of individuals, families, and organizations acquire genuine properties with peace\
+            thousands of individuals, families, and organizations acquire genuine properties with peace\
             of mind.\
         ",
         "\

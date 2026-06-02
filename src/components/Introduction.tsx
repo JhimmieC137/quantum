@@ -17,10 +17,9 @@ export default function Introduction() {
 
                         <FadeUp>
                             <p className="text-zinc-400/90 2xl:text-4xl xl:text-3xl md:text-3xl text-lg font-medium 2xl:leading-relaxed xl:leading-[3rem] lg:leading-relaxed text-left">
-                                <span className="text-amber-400">For years, real estate has been driven by speed over substance. </span> 
-                                It's time to build with intention. <br/><br/>
-                                At Quantum Homes & Property, we don't just erect structures, we create landmarks. Our disciplined, client-first approach weaves craftsmanship, durability, and intelligent design into spaces that hold their value and their meaning. <br/><br/>
-                                Develop without compromise. Deliver without shortcuts. Welcome to the future of construction.
+                                There is something unforgettable about watching a vision rise from the ground up.<br/><br/>
+                                The excitement of possibility. The beauty of thoughtful design. The confidence that comes from knowing every detail was created with intention.<br/><br/>
+                                That feeling is what defines <span className="text-amber-400 font-semibold">QUANTUM HOMES & PROPERTY.</span>
                             </p>
                         </FadeUp>
 
@@ -28,9 +27,10 @@ export default function Introduction() {
 
                     <div className="lg:w-[40%] w-full lg:mt-0 mt-16">
                         <FadeUp>
-                            <p className="text-zinc-400/90 text-lg">
-                                Driven by a passion for exceptional real estate, we create homes and developments that blend elegance, comfort, and lasting value into one seamless experience. Every project is approached with intention, from the first sketch to the final detail, ensuring each space feels timeless, refined, and truly extraordinary.<br/><br/>
-                                We believe exceptional real estate should do more than fill spaces, it should spark emotion, create opportunity, and leave a lasting impression. From beautifully crafted homes to high-value investment properties, every development is designed to feel timeless, refined, and deeply connected to modern living.
+                            <p className="text-zinc-400/90 text-lg leading-relaxed">
+                                We believe exceptional real estate should do more than fill spaces, it should spark emotion, create opportunity, and leave a lasting impression.<br/><br/>
+                                From beautifully crafted homes to high-value investment properties, every development is designed to feel timeless, refined, and deeply connected to modern living.<br/><br/>
+                                With a passion for excellence and an eye for enduring value, we create spaces where luxury meets purpose, where comfort meets sophistication, and where every corner reflects quality without compromise.
                             </p>
                         </FadeUp>
                     </div>

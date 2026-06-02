@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
             icon: (key: number) => <FaTiktok key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
         },
         {
-            link: 'https://wa.me/2348162483372',
+            link: 'https://wa.me/2348128549125',
             icon: (key: number) => <FaWhatsapp key={key} className="w-6 h-auto hover:text-primary ease-in-out duration-150" />,
         },
         // {

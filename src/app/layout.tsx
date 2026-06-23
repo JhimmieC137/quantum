@@ -1,14 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Toaster } from "sonner";
-import { Inter } from "next/font/google";
+import { garamond } from "@/lib/fonts";
 import "./globals.css";
 import "./swiper-styles.css";
-
-const inter = Inter({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Quantum Homes",
@@ -28,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased w-full`}>
+      <body className={`${garamond.className} antialiased w-full`}>
         {children}
         <Toaster position="bottom-right" richColors />
       </body>

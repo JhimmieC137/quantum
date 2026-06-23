@@ -29,7 +29,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "EB Garamond", Georgia, serif;
   /* Push page content clear of the home-indicator bar at the bottom */
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }

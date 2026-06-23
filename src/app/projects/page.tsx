@@ -121,7 +121,7 @@ export default function Projects() {
             />
 
             {/* ── Residential section ─────────────────────────────────── */}
-            <div className="bg-[#F4F2EC] pt-8 sm:pt-24 lg:pt-36 pb-10">
+            <div className="bg-[#F4F2EC] pt-8 sm:pt-12 lg:pt-16 pb-10">
 
                 {/* Image + text — mirrors ServiceIntro layout */}
                 <FadeUp>

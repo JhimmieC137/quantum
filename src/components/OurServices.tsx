@@ -14,7 +14,7 @@ import { LuLandPlot } from "react-icons/lu"
 export default function OurServices() {
     return (
         <div className={`w-full lg:pt-24 pt-5 relative ${brand.redBg} z-50`}>
-            <div className="w-full 2xl:max-w-[1400px] lg:max-w-[1200px] relative m-auto lg:mt-24 mt-5 mb-10">
+            <div className="w-full 2xl:max-w-[1400px] lg:max-w-[1200px] relative m-auto mb-10">
 
                 <div className="flex xl:w-full xl:px-2 px-4 gap-1.5 md:flex-row flex-col">
                     <div className="xl:w-1/2 lg:w-[20%] w-full">

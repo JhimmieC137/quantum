@@ -111,7 +111,7 @@ export default function FAQAccordion() {
 
   return (
     <FadeUp>
-      <section className="w-full max-w-[1400px] mx-auto px-2 py-[16rem]">
+      <section className="w-full max-w-[1400px] mx-auto px-2 py-16 sm:py-24 lg:py-32">
         {/* Header */}
         <div className="flex items-end justify-between gap-8 mb-10">
           <div className="flex-1">

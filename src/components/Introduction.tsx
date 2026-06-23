@@ -7,7 +7,7 @@ export default function Introduction() {
         <div>
             <div className="w-full py-28 bg-zinc-950">
                 <FadeUp>
-                    <div className="w-full 2xl:max-w-[1400px] xl:max-w-[1200px] lg:max-w-[1000px] flex flex-col items-center m-auto relative lg:py-20 py-7 px-5">
+                    <div className="w-full 2xl:max-w-[1400px] xl:max-w-[1200px] lg:max-w-[1000px] flex flex-col items-center m-auto relative lg:py-10 py-6 px-5">
                         <div className="h-px bg-red-600 w-full m-auto rounded-lg"/>
                     </div>
                 </FadeUp>
@@ -36,14 +36,6 @@ export default function Introduction() {
                     </div>
 
                 </div>
-
-                <FadeUp>
-                    <div className="w-full max-w-[1400px] flex flex-col items-center m-auto relative py-20">
-                        {/* <div className="h-px bg-red-600 w-full m-auto rounded-lg"/> */}
-                    </div>
-                </FadeUp>
-            </div> 
-            <div className="">
 
             </div>
         </div>

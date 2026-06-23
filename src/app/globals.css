@@ -34,6 +34,10 @@ body {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-montserrat), Montserrat, sans-serif;
+}
+
 /* Stable safe-area top padding for the fixed nav — pure CSS so it
    never flickers during React re-renders caused by scroll events. */
 .safe-nav-top {

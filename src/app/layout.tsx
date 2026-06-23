@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Toaster } from "sonner";
-import { garamond } from "@/lib/fonts";
+import { garamond, montserrat } from "@/lib/fonts";
 import "./globals.css";
 import "./swiper-styles.css";
 
@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${garamond.className} antialiased w-full`}>
+      <body className={`${garamond.className} ${montserrat.variable} antialiased w-full`}>
         {children}
         <Toaster position="bottom-right" richColors />
       </body>

@@ -20,31 +20,24 @@ export default function OurClients() {
 
             <FadeUp>
                 <p className={`${montserrat.className} text-zinc-200 text-center text-3xl sm:text-4xl md:text-5xl lg:max-w-full px-2 lg:m-0 m-auto font-semibold lg:my-7 my-3`}>
-                    Esteemed Clients <span className={`${brand.amberLightText} italic`}>Over the Years</span>
-                </p>
-            </FadeUp>
-
-            <FadeUp>
-                <p className="text-zinc-200 text-center text-md lg:pr-10 px-2 my-5 lg:max-w-[50rem] w-full m-auto">
-                    From residential estates and commercial towers to government infrastructure and industrial facilities, we have had the privilege of bringing ambitious visions to life for some of Nigeria's most respected organisations. Every structure we raise carries the weight of those relationships and the standard they demand.
+                    Esteemed Clients<br className="sm:hidden" /> <span className={`${brand.amberLightText} italic`}>Over the Years</span>
                 </p>
             </FadeUp>
 
             <FadeUp>
                 <section className="mt-10">
-                    <div id="infinite" className="flex justify-center w-full h-[80px] relative">
+                    <div id="infinite" className="flex justify-center w-full h-[110px] relative">
                         <div className="highway-barrier overflow-hidden relative w-full bg-transparent">
                             <ul className="animate-marquee flex h-full w-max" style={{ willChange: "transform", transform: "translateZ(0)" }}>
                                 {doubled.map((logo, i) => (
-                                    <li 
-                                        key={i} 
-                                        className="flex justify-center items-center w-[180px] shrink-0"
+                                    <li
+                                        key={i}
+                                        className="flex justify-center items-center w-[230px] shrink-0"
                                     >
-                                        <img 
-                                            src={logo} 
-                                            alt={`client ${i % 12 + 1}`} 
-                                            // className="w-[170px]" 
-                                            className="w-[170px] grayscale hover:grayscale-0 transition-all duration-500 ease-in-out opacity-60 hover:opacity-100"
+                                        <img
+                                            src={logo}
+                                            alt={`client ${i % 12 + 1}`}
+                                            className="w-[220px] grayscale hover:grayscale-0 transition-all duration-500 ease-in-out opacity-60 hover:opacity-100"
                                         />
                                     </li>
                                 ))}

@@ -39,7 +39,7 @@ export default function Services() {
 
             <div className="bg-red-700">
                 <div className="bg-[#F4F2EC]">
-                    <div className="max-w-[1400px] m-auto py-[12rem] px-2">
+                    <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2">
                         <div className="flex lg:flex-row flex-col w-full lg:min-h-[25rem] gap-y-8 lg:gap-y-0 lg:gap-x-20">
 
                         {/* Image side */}
@@ -74,7 +74,7 @@ export default function Services() {
                     <div className="bg-red-700 relative overflow-hidden">
                     <img src="/quantum_logo.png" className="absolute opacity-10 -top-[2%] -right-[12%] rotate-[228deg] w-[33rem]" />
                     <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[20%] -left-[8%] rotate-[38deg] w-[33rem]" />
-                    <div className="max-w-[1400px] m-auto lg:py-[12rem] py-[6rem] px-2 relative">
+                    <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2 relative">
                         <div className="flex lg:flex-row-reverse flex-col w-full lg:min-h-[25rem] gap-y-12 lg:gap-y-0 lg:gap-x-20">
 
                         {/* Image side */}
@@ -107,7 +107,7 @@ export default function Services() {
                     </div>
 
                     <div className="bg-[#F4F2EC]">
-                    <div className="max-w-[1400px] m-auto py-[12rem] px-2">
+                    <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2">
                         <div className="flex lg:flex-row flex-col w-full lg:min-h-[25rem] gap-y-8 lg:gap-y-0 lg:gap-x-20">
 
                         {/* Image side */}
@@ -142,7 +142,7 @@ export default function Services() {
                     <div className="bg-red-700 relative overflow-hidden">
                     <img src="/quantum_logo.png" className="absolute opacity-10 -top-[2%] -right-[12%] rotate-[228deg] w-[33rem]" />
                     <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[20%] -left-[8%] rotate-[38deg] w-[33rem]" />
-                    <div className="max-w-[1400px] m-auto lg:py-[12rem] py-[6rem] px-2 relative">
+                    <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2 relative">
                         <div className="flex lg:flex-row-reverse flex-col w-full lg:min-h-[25rem] gap-y-12 lg:gap-y-0 lg:gap-x-20">
 
                         {/* Image side */}

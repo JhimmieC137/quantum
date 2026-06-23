@@ -20,7 +20,7 @@ export default function Projects()  {
             {/* <div className="absolute inset-0 bg-gradient-to-b from-zinc-950 via-zinc-950/80 to-zinc-950/50 z-10" /> */}
             {/* <img src="/wallpapers/dwg_img_2.png" className="absolute opacity-[0.07] -top-[40%] -left-[10%] scale-150" /> */}
 
-            <div className="w-full 2xl:max-w-[1400px] xl:max-w-[1200px] lg:max-w-[1000px] px-2 relative z-20 m-auto mt-24 mb-10">
+            <div className="w-full 2xl:max-w-[1400px] xl:max-w-[1200px] lg:max-w-[1000px] px-2 relative z-20 m-auto mb-10">
                 <div className="w-full flex lg:flex-row flex-col justify-between z-40">
                     <div className="lg:w-[80%] w-full">
                         <FadeUp>

@@ -1,11 +1,11 @@
 'use client'
 import FadeLeft from "@/ui/FadeLeft";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { HiArrowRight } from "react-icons/hi2";
 import { montserrat } from "@/lib/fonts";
 import { brand } from "@/lib/constants";
 
-export default function SeviceSection(props: { 
+export default function SeviceSection(props: {
     image: string,
     headerWhite: string,
     headerAmber: string,
@@ -15,27 +15,39 @@ export default function SeviceSection(props: {
 }) {
 
     const [openDrawer, setOpenDrawer] = useState<boolean>(false);
+    const [isMobile, setIsMobile] = useState<boolean>(false);
+
+    useEffect(() => {
+        const query = window.matchMedia("(max-width: 639px)");
+        setIsMobile(query.matches);
+        const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+        query.addEventListener("change", handler);
+        return () => query.removeEventListener("change", handler);
+    }, []);
+
+    // On mobile, service items stay expanded; clicking only toggles the drawer on sm+ screens.
+    const isOpen = isMobile || openDrawer;
 
     return (
-        <div 
-            onClick={() => setOpenDrawer(!openDrawer)}
+        <div
+            onClick={() => !isMobile && setOpenDrawer(!openDrawer)}
             style={{
-                maxHeight: openDrawer ? "70rem" : "14rem",
+                maxHeight: isOpen ? "70rem" : "14rem",
                 transitionDuration: "0.5s",
                 // transform: "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
                 // transformStyle: "preserve-3d",
             }}
             className="w-full cursor-pointer hover:bg-zinc-950/10 border-t border-zinc-950/20 py-14 transition-all ease-in-out duration-300"
         >
-            <div className={`flex lg:flex-row flex-col items-center justify-between gap-7 xl:max-w-[1400px] lg:max-w-[1000px] m-auto ${openDrawer ? 'max-h-[40rem]' : 'max-h-[6rem]'} transition-all ease-in-out duration-300 h-full px-5`}>
-                <div className={`${openDrawer ? "sm:flex flex" : "sm:flex hidden" } xl:justify-end lg:justify-start items-center w-full`}>
+            <div className={`flex lg:flex-row flex-col items-center justify-between gap-7 xl:max-w-[1400px] lg:max-w-[1000px] m-auto ${isOpen ? 'max-h-[40rem]' : 'max-h-[6rem]'} transition-all ease-in-out duration-300 h-full px-5`}>
+                <div className={`${isOpen ? "sm:flex flex" : "sm:flex hidden" } xl:justify-end lg:justify-start items-center w-full`}>
                     <img
                         style={{
-                            opacity: openDrawer ? 1 : 0,
+                            opacity: isOpen ? 1 : 0,
                             transitionDuration: "0.8s"
-                        }} 
-                        src={props.image} 
-                        className={`rounded-2xl transition-all ease-in-out duration-300 overflow-hidden w-full lg:max-w-[27em] ${openDrawer ? '' : 'hidden'}`} 
+                        }}
+                        src={props.image}
+                        className={`rounded-2xl transition-all ease-in-out duration-300 overflow-hidden w-full lg:max-w-[27em] ${isOpen ? '' : 'hidden'}`}
                     />
                 </div>
 
@@ -48,9 +60,9 @@ export default function SeviceSection(props: {
                             </p>
                             <div
                                 style={{
-                                    opacity: openDrawer ? 1 : 0,
+                                    opacity: isOpen ? 1 : 0,
                                     transitionDuration: "0.5s",
-                                    maxHeight: openDrawer ? "24rem" : "0rem"
+                                    maxHeight: isOpen ? "24rem" : "0rem"
                                 }}
                                 className="transition-all ease-in-out duration-300"
                             >
@@ -65,9 +77,9 @@ export default function SeviceSection(props: {
                                 href={props.link}
                                 onClick={(e) => e.stopPropagation()}
                             >
-                                <div  
+                                <div
                                     style={{
-                                        opacity: openDrawer ? 1 : 0,
+                                        opacity: isOpen ? 1 : 0,
                                         transitionDuration: "0.8s"
                                     }}
                                     className="bg-zinc-200 lg:size-16 size-12 flex items-center justify-center rounded-full border border-transparent transition-all ease-out duration-75 group hover:shadow-xl"

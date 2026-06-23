@@ -153,7 +153,7 @@ export default function About() {
                     </div>
                 </div>
 
-                <p className={`${montserrat.className} text-center text-zinc-900 text-5xl font-semibold mt-[17rem] max-w-[40rem] m-auto`}>
+                <p className={`${montserrat.className} text-center text-zinc-900 text-5xl font-semibold mt-20 sm:mt-28 lg:mt-32 max-w-[40rem] m-auto`}>
                     Our Impact over <br />
                     <span className={`${brand.amberAltText} italic`}>The Years</span>
                 </p>

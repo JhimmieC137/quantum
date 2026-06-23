@@ -23,7 +23,7 @@ export default function ServiceCTA({
     href?: string
 }) {
     return (
-        <div className="w-full mt-24 sm:mt-32 lg:mt-[15rem] px-4 sm:px-6 lg:px-8">
+        <div className="w-full mt-16 sm:mt-20 lg:mt-28 px-4 sm:px-6 lg:px-8">
             <div className="max-w-[1400px] m-auto flex flex-col sm:flex-row justify-between items-start sm:items-center bg-red-700 px-6 sm:px-10 lg:px-14 py-8 sm:py-10 rounded-2xl sm:rounded-3xl gap-8 sm:gap-6">
                 <div className="w-full sm:max-w-[60%]">
                     <p className={`${montserrat.className} text-zinc-200 text-2xl sm:text-4xl lg:text-[3rem] font-semibold leading-tight sm:leading-[3.5rem] mb-3 sm:mb-4`}>

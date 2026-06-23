@@ -130,7 +130,7 @@ export default function Projects() {
             />
 
             {/* Residential section */}
-            <div className="bg-[#F4F2EC] pt-8 sm:pt-24 lg:pt-36 pb-10">
+            <div className="bg-[#F4F2EC] pt-8 sm:pt-12 lg:pt-16 pb-10">
                 <div className="relative max-w-[1000px] m-auto z-50">
                     <div className="w-full flex md:flex-row flex-col gap-12 relative mt-16 items-stretch">
                         {/* Image + red accent block wrapper */}

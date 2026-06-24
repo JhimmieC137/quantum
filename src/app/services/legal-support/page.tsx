@@ -3,10 +3,7 @@
 
 import InvestmentSection from "@/components/Investment"
 import MainLayout from "@/app/(pages)/layout"
-import { HiDocument } from "react-icons/hi2"
-import { RiCompassDiscoverLine } from "react-icons/ri"
-import { LuLandPlot } from "react-icons/lu"
-import { MdOutlineVerified } from "react-icons/md"
+import { FileText, Compass, LayoutList, CheckSquare } from "lucide-react"
 import ServiceHero from "@/sections/services/ServiceHero"
 import ServiceIntro from "@/sections/services/ServiceIntro"
 import ServiceCTA from "@/sections/services/ServiceCTA"
@@ -15,28 +12,28 @@ import FeatureCard from "@/sections/services/FeatureCard"
 
 const features = [
     {
-        icon: <RiCompassDiscoverLine />,
+        icon: <Compass />,
         titleWhite: "Survey",
         titleAmber: "Plans",
         description: "Preparation and verification of survey documents to establish the exact boundaries and size of the land.",
     },
     {
-        icon: <HiDocument />,
+        icon: <FileText />,
         titleWhite: "Deeds of",
         titleAmber: "Assignment/Conveyance",
         description: "Legal transfer of ownership from seller to buyer, duly signed and registered.",
     },
     {
-        icon: <LuLandPlot />,
+        icon: <LayoutList />,
         titleWhite: "Excision and",
         titleAmber: "Gazette Processing",
         description: "Assisting clients in securing government recognition for community lands released for private ownership.",
     },
     {
-        icon: <MdOutlineVerified />,
+        icon: <CheckSquare />,
         titleWhite: "Building Approvals",
         titleAmber: "And Permits",
-        description: "Supporting clients in securing necessary building permits before construction begins",
+        description: "Supporting clients in securing necessary building permits before construction begins.",
     },
 ]
 
@@ -48,7 +45,7 @@ export default function TitleDocAndLegalSupport() {
                 category="Legal Support"
                 titleWhite="Standardized Title Documentation and"
                 titleAmber="Legal Support"
-                description="At Quantum Homes, we understand that proper documentation is the foundation of secure
+                description="At Oyo Realty & Construction, we understand that proper documentation is the foundation of secure
                     property ownership. Many buyers fall victim to fraudulent sales or future disputes because
                     of incomplete or invalid paperwork. Our Title Documentation & Legal Support service is
                     designed to protect our clients by ensuring that every property acquired is authentic,
@@ -56,10 +53,10 @@ export default function TitleDocAndLegalSupport() {
                 "
             />
 
-            <div className="pb-16 sm:pb-20 pt-16 sm:pt-24 lg:pt-36 bg-[#F4F2EC] w-full">
+            <div className="pb-16 sm:pb-20 pt-16 sm:pt-24 lg:pt-36 bg-zinc-950 w-full">
                 <ServiceIntro
                     image="/services/consultation.jpg"
-                    text="For years, architecture has been stuck in the past. It's time to redefine the future. At Urbanex+, we don't just design buildings, we craft experiences. Our innovative, human-centered approach blends aesthetics, sustainability, and functionality to shape spaces that inspire and endure."
+                    text="At Oyo Realty & Construction, we don't just process paperwork — we protect your investment. Our legal support team ensures every title is authentic, every transfer is compliant, and every client can build on their land with full confidence."
                 />
 
                 <ServiceCTA

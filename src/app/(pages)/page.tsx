@@ -27,7 +27,7 @@ export default function Home() {
       <Introduction />
       <OurClients />
       <OurServices />
-      <div className="bg-[#F4F2EC]">
+      <div className="bg-zinc-950">
         <CoreValues />
         <Projects />
         <FAQAccordion />

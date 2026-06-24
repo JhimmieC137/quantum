@@ -8,7 +8,7 @@ export default function Introduction() {
             <div className="w-full py-28 bg-zinc-950">
                 <FadeUp>
                     <div className="w-full 2xl:max-w-[1400px] xl:max-w-[1200px] lg:max-w-[1000px] flex flex-col items-center m-auto relative lg:py-10 py-6 px-5">
-                        <div className="h-px bg-red-600 w-full m-auto rounded-lg"/>
+                        <div className="h-px bg-[#b91c1c] w-full m-auto rounded-lg"/>
                     </div>
                 </FadeUp>
 
@@ -19,7 +19,7 @@ export default function Introduction() {
                             <p className="text-zinc-400/90 2xl:text-4xl xl:text-3xl md:text-3xl text-lg font-medium 2xl:leading-relaxed xl:leading-[3rem] lg:leading-relaxed text-left">
                                 There is something unforgettable about watching a vision rise from the ground up.<br/><br/>
                                 The excitement of possibility. The beauty of thoughtful design. The confidence that comes from knowing every detail was created with intention.<br/><br/>
-                                That feeling is what defines <span className="text-amber-400 font-semibold">QUANTUM HOMES & PROPERTY.</span>
+                                That feeling is what defines <span className="text-amber-400 font-semibold">OYO REALTY &amp; CONSTRUCTION.</span>
                             </p>
                         </FadeUp>
 

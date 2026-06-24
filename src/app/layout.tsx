@@ -5,8 +5,8 @@ import "./globals.css";
 import "./swiper-styles.css";
 
 export const metadata: Metadata = {
-  title: "Oyo Realty & Construction",
-  description: "Premium real estate and construction across Oyo State since 2009. Build Beyond Boundaries.",
+  title: "Quantum Homes & Property",
+  description: "Premium real estate across Ibadan's fastest-growing corridors. Verified estates, serviced plots, and quality builds.",
 };
 
 export const viewport: Viewport = {
@@ -25,7 +25,4 @@ export default function RootLayout({
       <body className={`${garamond.className} ${montserrat.variable} antialiased w-full`}>
         {children}
         <Toaster position="bottom-right" richColors />
-      </body>
-    </html>
-  );
-}
+      </body

@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(timeout 60 bash -c 'until curl -sf http://localhost:3000 >/dev/null; do sleep 1; done')",
-      "Read(//tmp/**)"
-    ]
-  }
-}

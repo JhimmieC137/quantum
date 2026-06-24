@@ -45,7 +45,7 @@ export default function TitleDocAndLegalSupport() {
                 category="Legal Support"
                 titleWhite="Standardized Title Documentation and"
                 titleAmber="Legal Support"
-                description="At Oyo Realty & Construction, we understand that proper documentation is the foundation of secure
+                description="At Quantum Homes & Property, we understand that proper documentation is the foundation of secure
                     property ownership. Many buyers fall victim to fraudulent sales or future disputes because
                     of incomplete or invalid paperwork. Our Title Documentation & Legal Support service is
                     designed to protect our clients by ensuring that every property acquired is authentic,
@@ -56,7 +56,7 @@ export default function TitleDocAndLegalSupport() {
             <div className="pb-16 sm:pb-20 pt-16 sm:pt-24 lg:pt-36 bg-zinc-950 w-full">
                 <ServiceIntro
                     image="/services/consultation.jpg"
-                    text="At Oyo Realty & Construction, we don't just process paperwork — we protect your investment. Our legal support team ensures every title is authentic, every transfer is compliant, and every client can build on their land with full confidence."
+                    text="At Quantum Homes & Property, we don't just process paperwork — we protect your investment. Our legal support team ensures every title is authentic, every transfer is compliant, and every client can build on their land with full confidence."
                 />
 
                 <ServiceCTA

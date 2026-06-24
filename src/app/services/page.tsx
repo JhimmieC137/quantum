@@ -2,10 +2,16 @@
 
 import MainLayout from "../(pages)/layout"
 import InvestmentSection from "@/components/Investment"
+import { Montserrat } from "next/font/google"
 import HeroBanner from "@/components/HeroBanner"
 import PageHero from "@/components/PageHero"
 import FAQAccordion from "@/components/FAQ"
-import { montserrat, garamond } from "@/lib/fonts"
+
+const montserrat = Montserrat({
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    variable: "--font-montserrat",
+    subsets: ["latin"],
+});
 
 export default function Services() {
     const paragraphList=[
@@ -31,114 +37,120 @@ export default function Services() {
                 paragraphs={paragraphList}
             />
 
-            <div className="bg-zinc-950">
-                <div className="bg-zinc-950">
-                    <div className="max-w-7xl m-auto py-16 sm:py-24 lg:py-32 px-6">
+            <div className="bg-red-700">
+                <div className="bg-[#F4F2EC]">
+                    <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2">
                         <div className="flex lg:flex-row flex-col w-full lg:min-h-[25rem] gap-y-8 lg:gap-y-0 lg:gap-x-20">
 
                         {/* Image side */}
                         <div className="lg:w-1/2 w-full relative pt-3 pr-3">
-                            <div className="bg-[#b91c1c] absolute top-0 right-0 bottom-3 left-3 rounded-sm z-0" />
-                            <div className="rounded-sm overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
-                            <img className="absolute inset-0 object-cover size-full" src="/services/land_sales_narrow.jpg" alt="Land Sales" />
-                            <div className="absolute bg-[#b91c1c]/10 inset-0" />
+                            <div className="bg-red-700 absolute top-0 right-0 bottom-3 left-3 rounded-[1.7rem] z-0" />
+                            <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
+                            <img className="absolute inset-0 object-cover size-full" src="/services/land_sales_narrow.jpg" />
+                            <div className="absolute bg-red-700/10 inset-0" />
                             </div>
                         </div>
 
                         {/* Text side */}
                         <div className="lg:w-1/2 w-full flex flex-col justify-center">
-                            <p className={`${montserrat.className} text-zinc-200 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
-                            Land <span className="text-amber-400 italic">Sales</span>
+                            <p className={`${montserrat.className} text-zinc-800 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
+                            Land <span className="text-amber-500 italic">Sales</span>
                             </p>
-                            <p className={`${garamond.className} text-zinc-400 text-base sm:text-lg xl:text-xl`}>
+                            <p className="text-base sm:text-lg xl:text-xl">
                             Our land sales service focuses on providing clients with genuine,
                             well-verified lands in both prime and fast-developing locations.
                             </p>
                             <a href="/services/land-sales">
-                            <div className={`${montserrat.className} mt-8 py-3 px-8 bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-sm transition-colors duration-200 cursor-pointer w-fit text-[10px] tracking-[0.25em] uppercase font-semibold`}>
-                                Learn more
+                            <div className="mt-8 py-3 px-8 bg-red-700 text-zinc-100 shadow-md hover:bg-red-600 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
+                                <p className="text-base sm:text-lg text-center">Learn more</p>
                             </div>
                             </a>
                         </div>
 
                         </div>
                     </div>
-                </div>
+                    </div>
 
-                <div className="bg-zinc-900 relative overflow-hidden">
-                    <div className="max-w-7xl m-auto py-16 sm:py-24 lg:py-32 px-6 relative">
+                    <div className="bg-red-700 relative overflow-hidden">
+                    <img src="/quantum_logo.png" className="absolute opacity-10 -top-[2%] -right-[12%] rotate-[228deg] w-[33rem]" />
+                    <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[20%] -left-[8%] rotate-[38deg] w-[33rem]" />
+                    <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2 relative">
                         <div className="flex lg:flex-row-reverse flex-col w-full lg:min-h-[25rem] gap-y-12 lg:gap-y-0 lg:gap-x-20">
 
                         {/* Image side */}
                         <div className="lg:w-1/2 w-full relative">
-                            <div className="rounded-sm overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
-                            <img className="absolute inset-0 object-cover size-full" src="/services/signing-papers.jpg" alt="Legal Support" />
-                            <div className="absolute bg-[#b91c1c]/10 inset-0 z-10" />
+                            {/* <div className="bg-zinc-200/20 absolute top-0 left-0 bottom-3 right-3 rounded-[1.7rem] z-0" /> */}
+                            <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
+                            <img className="absolute inset-0 object-cover size-full" src="/services/signing-papers.jpg" />
+                            <div className="absolute bg-red-800/10 inset-0 z-10" />
                             </div>
                         </div>
 
                         {/* Text side */}
                         <div className="lg:w-1/2 w-full flex flex-col justify-center">
                             <p className={`${montserrat.className} text-zinc-200 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
-                            Title Documentation and <span className="text-amber-400 italic">Legal Support</span>
+                            Title Documentation and <span className="text-amber-300">Legal Support</span>
                             </p>
-                            <p className={`${garamond.className} text-base sm:text-lg xl:text-xl text-zinc-400`}>
-                            Our Title Documentation &amp; Legal Support service is designed to protect our clients by ensuring
+                            <p className="text-base sm:text-lg xl:text-xl text-zinc-200">
+                            Our Title Documentation & Legal Support service is designed to protect our clients by ensuring
                             that every property acquired is authentic, legally compliant, and properly registered.
                             </p>
                             <a href="/services/legal-support">
-                            <div className={`${montserrat.className} mt-8 py-3 px-8 bg-white/5 border border-white/20 hover:bg-white/10 text-zinc-200 rounded-sm transition-colors duration-200 cursor-pointer w-fit text-[10px] tracking-[0.25em] uppercase font-semibold`}>
-                                Learn more
+                            <div className="mt-8 py-3 px-8 bg-zinc-200 border border-transparent text-red-700 hover:border-zinc-200/50 hover:bg-transparent hover:text-zinc-200 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
+                                <p className="text-base sm:text-lg text-center">Learn more</p>
                             </div>
                             </a>
                         </div>
 
                         </div>
                     </div>
-                </div>
+                    </div>
 
-                <div className="bg-zinc-950">
-                    <div className="max-w-7xl m-auto py-16 sm:py-24 lg:py-32 px-6">
+                    <div className="bg-[#F4F2EC]">
+                    <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2">
                         <div className="flex lg:flex-row flex-col w-full lg:min-h-[25rem] gap-y-8 lg:gap-y-0 lg:gap-x-20">
 
                         {/* Image side */}
                         <div className="lg:w-1/2 w-full relative pt-3 pr-3">
-                            <div className="bg-[#b91c1c] absolute top-0 right-0 bottom-3 left-3 rounded-sm z-0" />
-                            <div className="rounded-sm overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
-                            <img className="absolute inset-0 object-cover size-full" src="/services/new-building.jpg" alt="Construction" />
-                            <div className="absolute bg-[#b91c1c]/10 inset-0" />
+                            <div className="bg-red-700 absolute top-0 right-0 bottom-3 left-3 rounded-[1.7rem] z-0" />
+                            <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
+                            <img className="absolute inset-0 object-cover size-full" src="/services/new-building.jpg" />
+                            <div className="absolute bg-red-700/10 inset-0" />
                             </div>
                         </div>
 
                         {/* Text side */}
                         <div className="lg:w-1/2 w-full flex flex-col justify-center">
-                            <p className={`${montserrat.className} text-zinc-200 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
+                            <p className={`${montserrat.className} text-zinc-800 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
                             Construction and <span className="text-amber-400 italic">Development</span>
                             </p>
-                            <p className={`${garamond.className} text-zinc-400 text-base sm:text-lg xl:text-xl`}>
+                            <p className="text-base sm:text-lg xl:text-xl">
                             Our Construction and Development service is tailored for individuals, families, investors,
                             and organizations who want to bring their real estate visions to life.
                             </p>
                             <a href="/services/construction-and-development">
-                            <div className={`${montserrat.className} mt-8 py-3 px-8 bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-sm transition-colors duration-200 cursor-pointer w-fit text-[10px] tracking-[0.25em] uppercase font-semibold`}>
-                                Learn more
+                            <div className="mt-8 py-3 px-8 bg-red-700 text-zinc-100 shadow-md hover:bg-red-600 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
+                                <p className="text-base sm:text-lg text-center">Learn more</p>
                             </div>
                             </a>
                         </div>
 
                         </div>
                     </div>
-                </div>
+                    </div>
 
-                <div className="bg-zinc-900 relative overflow-hidden">
-                    <div className="max-w-7xl m-auto py-16 sm:py-24 lg:py-32 px-6 relative">
+                    <div className="bg-red-700 relative overflow-hidden">
+                    <img src="/quantum_logo.png" className="absolute opacity-10 -top-[2%] -right-[12%] rotate-[228deg] w-[33rem]" />
+                    <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[20%] -left-[8%] rotate-[38deg] w-[33rem]" />
+                    <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2 relative">
                         <div className="flex lg:flex-row-reverse flex-col w-full lg:min-h-[25rem] gap-y-12 lg:gap-y-0 lg:gap-x-20">
 
                         {/* Image side */}
                         <div className="lg:w-[47%] w-full relative">
-                            <div className="rounded-sm overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
-                            <img className="absolute inset-0 object-cover size-full" src="/services/agents-in-meeting.jpg" alt="Investment Advisory" />
-                            <div className="absolute bg-[#b91c1c]/10 inset-0 z-10" />
+                            {/* <div className="bg-zinc-200/30 absolute top-0 left-0 bottom-3 right-3 rounded-[1.7rem] z-0" /> */}
+                            <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
+                            <img className="absolute inset-0 object-cover size-full" src="/services/agents-in-meeting.jpg" />
+                            <div className="absolute bg-red-700/10 inset-0 z-10" />
                             </div>
                         </div>
 
@@ -147,14 +159,14 @@ export default function Services() {
                             <p className={`${montserrat.className} text-zinc-200 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
                             Real Estate <span className="text-amber-400 italic">Investment Advisory</span>
                             </p>
-                            <p className={`${garamond.className} text-base sm:text-lg xl:text-xl text-zinc-400`}>
+                            <p className="text-base sm:text-lg xl:text-xl text-zinc-200">
                             Our Investment Advisory service is designed to guide individuals, families, and corporate
                             organizations in identifying, analyzing, and investing in high-value real estate opportunities
                             that yield long-term returns.
                             </p>
                             <a href="/services/real-estate-investment-advisory">
-                            <div className={`${montserrat.className} mt-8 py-3 px-8 bg-white/5 border border-white/20 hover:bg-white/10 text-zinc-200 rounded-sm transition-colors duration-200 cursor-pointer w-fit text-[10px] tracking-[0.25em] uppercase font-semibold`}>
-                                Learn more
+                            <div className="mt-8 py-3 px-8 bg-zinc-200 border border-transparent text-red-700 hover:border-zinc-200/50 hover:bg-transparent hover:text-zinc-200 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
+                                <p className="text-base sm:text-lg text-center">Learn more</p>
                             </div>
                             </a>
                         </div>
@@ -167,5 +179,5 @@ export default function Services() {
             <FAQAccordion />
             <InvestmentSection />
         </MainLayout>
-    )
+    ) 
 }

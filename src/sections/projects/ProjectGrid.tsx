@@ -3,8 +3,8 @@
 import { useState } from "react"
 import ProjCard from "@/sections/projects/ProjectCard"
 import FadeUp from "@/ui/FadeUp"
-import { montserrat, garamond } from "@/lib/fonts"
-import { layout } from "@/lib/constants"
+import { montserrat } from "@/lib/fonts"
+import { brand, layout } from "@/lib/constants"
 
 type Category = {
   id: number;
@@ -25,41 +25,29 @@ export default function ProjectGrid({ categories, projects }: { categories: Cate
     const [selectedCategory, setSelectedCategory] = useState<string>("All")
 
     return (
-        <div className="bg-zinc-950">
+        <div className={brand.pageBg}>
             <div className={`${layout.container} ${layout.sectionPy}`}>
-
-                {/* Section heading */}
-                <FadeUp>
-                    <p className={`${montserrat.className} text-[10px] font-bold tracking-[0.3em] uppercase text-amber-400 mb-4`}>
-                        Our Portfolio
-                    </p>
-                    <h2 className={`${montserrat.className} text-zinc-200 text-3xl sm:text-4xl lg:text-5xl font-semibold mb-10`}>
-                        All Projects
-                    </h2>
-                </FadeUp>
 
                 {/* Category filter — scrollable on mobile */}
                 <FadeUp>
-                    <div className="w-full flex gap-x-2 sm:gap-x-3 overflow-x-auto pb-2 scrollbar-hide mb-2">
+                    <div className="w-full flex gap-x-3 sm:gap-x-4 overflow-x-auto pb-2 scrollbar-hide">
                         {categories.map((el) => (
-                            <button
+                            <div
                                 key={el.id}
                                 onClick={() => setSelectedCategory(el.name)}
-                                className={`flex-shrink-0 px-4 py-2 border-b-2 transition-all duration-200 whitespace-nowrap
-                                    ${el.name === selectedCategory
-                                        ? "border-[#b91c1c] text-zinc-100"
-                                        : "border-transparent text-zinc-500 hover:text-zinc-300"
-                                    }`}
+                                className={`flex-shrink-0 px-3 sm:px-4 py-2 border border-zinc-400/50 hover:border-transparent hover:bg-red-700 hover:text-zinc-200
+                                    ${el.name === selectedCategory ? "bg-red-700 text-zinc-200 border-transparent" : "bg-transparent text-zinc-800"}
+                                    rounded-xl cursor-pointer ease-in-out duration-300 text-sm sm:text-base whitespace-nowrap`}
                             >
-                                <p className={`${montserrat.className} font-semibold text-sm sm:text-base`}>{el.name}</p>
-                            </button>
+                                <p className={`${montserrat.className} font-semibold`}>{el.name}</p>
+                            </div>
                         ))}
                     </div>
 
                     {/* Active category description */}
                     <p
                         key={selectedCategory}
-                        className={`${garamond.className} mt-2 text-sm text-zinc-400 tracking-wide min-h-[1.25rem]`}
+                        className={`${montserrat.className} mt-4 text-sm text-zinc-500 tracking-wide min-h-[1.25rem]`}
                         style={{ animation: "fadeIn 0.35s ease" }}
                     >
                         {categories.find(c => c.name === selectedCategory)?.description ?? ""}

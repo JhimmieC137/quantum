@@ -61,7 +61,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
         >
-          Ibadan · Oyo State · Nigeria
+          Premium Real Estate · Ibadan
         </motion.p>
 
         {/* Headline — 3 staggered lines */}
@@ -72,7 +72,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            Build
+            A Call To
           </motion.h1>
         </div>
         <div className="overflow-hidden mb-2">
@@ -82,7 +82,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
           >
-            Beyond
+            Your Dream
           </motion.h1>
         </div>
         <div className="overflow-hidden mb-10">
@@ -92,7 +92,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.0, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            Boundaries.
+            Home.
           </motion.h1>
         </div>
 
@@ -104,8 +104,9 @@ export default function Hero() {
           transition={{ duration: 0.9, delay: 1.2, ease: "easeOut" }}
         >
           <p className={`${garamond.className} text-zinc-300 text-base sm:text-lg leading-relaxed mb-6`}>
-            Premium real estate and construction across Oyo State since 2009.
-            We deliver verified estates, serviced plots, and quality builds.
+            We develop verified, well-located estates across Ibadan&apos;s
+            fastest-growing corridors. Every property is properly documented
+            and built to deliver real, lasting value.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
@@ -137,8 +138,4 @@ export default function Hero() {
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
         >
           <ChevronDown size={16} className="text-zinc-500" />
-        </motion.div>
-      </motion.div>
-    </div>
-  )
-}
+       

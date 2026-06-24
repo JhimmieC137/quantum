@@ -69,7 +69,7 @@ export default function ConstructionAndDev() {
             <div className="pb-16 sm:pb-20 pt-16 sm:pt-24 lg:pt-36 bg-zinc-950 w-full">
                 <ServiceIntro
                     image="/services/working-project.jpg"
-                    text="At Oyo Realty & Construction, we don't just design buildings — we craft experiences. Our innovative, human-centered approach blends aesthetics, sustainability, and functionality to shape spaces that inspire and endure."
+                    text="At Quantum Homes & Property, we don't just design buildings — we craft experiences. Our innovative, human-centered approach blends aesthetics, sustainability, and functionality to shape spaces that inspire and endure."
                 />
 
                 <ServiceCTA

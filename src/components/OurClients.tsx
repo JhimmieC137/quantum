@@ -1,7 +1,7 @@
 'use client'
 
 import FadeUp from "@/ui/FadeUp"
-import { LayoutGrid } from "lucide-react"
+import { CgMenuGridO } from "react-icons/cg"
 import { montserrat } from "@/lib/fonts";
 import { brand } from "@/lib/constants";
 
@@ -13,9 +13,9 @@ export default function OurClients() {
 
     return (
         <div className={`w-full relative py-20 ${brand.redBg}`}>
-            <div className={`${montserrat.className} w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-sm bg-transparent shadow-md m-auto`}>
-                <LayoutGrid size={14} className="text-zinc-200"/>
-                <p className="text-zinc-100/80 text-[10px] tracking-[0.2em] uppercase">Our Clients</p>
+            <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-md m-auto">
+                <CgMenuGridO className="size-4 text-zinc-200"/>
+                <p className="text-zinc-100/80 text-sm">Our Clients</p>
             </div>
 
             <FadeUp>

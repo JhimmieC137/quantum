@@ -63,7 +63,7 @@ export default function LandSales() {
             <div className="pb-16 sm:pb-20 pt-16 sm:pt-24 lg:pt-36 bg-zinc-950 w-full">
                 <ServiceIntro
                     image="/services/land_sales_2.jpg"
-                    text="At Oyo Realty & Construction, we don't just sell land — we craft opportunities. Our innovative, client-centered approach blends location intelligence, legal security, and flexible access to shape investments that inspire and endure."
+                    text="At Quantum Homes & Property, we don't just sell land — we craft opportunities. Our innovative, client-centered approach blends location intelligence, legal security, and flexible access to shape investments that inspire and endure."
                 />
 
                 <ServiceCTA

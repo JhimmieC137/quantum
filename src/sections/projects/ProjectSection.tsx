@@ -1,8 +1,15 @@
 "use client"
 
 import FadeUp from "@/ui/FadeUp"
-import { montserrat } from "@/lib/fonts";
-import { LayoutGrid } from "lucide-react"
+import { Montserrat } from "next/font/google";
+import { CgMenuGridO } from "react-icons/cg"
+
+
+const montserrat = Montserrat({
+    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    variable: "--font-montserrat",
+    subsets: ["latin"],
+});
 
 
 export default function ProjectSection(props: {
@@ -24,8 +31,8 @@ export default function ProjectSection(props: {
             <div className="w-full flex justify-start">
                 <div className="w-[31%] bg-red-700 rounded-2xl p-6 z-30">
                     <div className="w-full flex justify-between items-center my-3">
-                        <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-sm bg-transparent shadow-md">
-                            <LayoutGrid size={14} className="text-zinc-200"/>
+                        <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-md">
+                            <CgMenuGridO className="size-4 text-zinc-200"/>
                             <p className="text-zinc-100/80 text-sm">{props.label}</p>
                         </div>
                         <p className="text-amber-300">

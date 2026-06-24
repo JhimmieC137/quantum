@@ -57,7 +57,7 @@ export default function RealEstateAdvisory() {
                 category="Real Estate Investment Advisory"
                 titleWhite="Guiding investors on"
                 titleAmber="high-return properties"
-                description="At Oyo Realty & Construction, we understand that real estate is not just about buying
+                description="At Quantum Homes & Property, we understand that real estate is not just about buying
                     and selling properties. It's about making profitable, well-informed investment decisions.
                     Our Investment Advisory service is designed to guide individuals, families, and corporate
                     organizations in identifying, analyzing, and investing in high-value real estate opportunities
@@ -68,7 +68,7 @@ export default function RealEstateAdvisory() {
             <div className="pb-16 sm:pb-20 pt-16 sm:pt-24 lg:pt-36 bg-zinc-950 w-full">
                 <ServiceIntro
                     image="/services/agents-in-meeting.jpg"
-                    text="At Oyo Realty & Construction, we go beyond transactions. Our expert advisors study the market, identify emerging corridors, and create personalized strategies that turn your capital into lasting wealth."
+                    text="At Quantum Homes & Property, we go beyond transactions. Our expert advisors study the market, identify emerging corridors, and create personalized strategies that turn your capital into lasting wealth."
                 />
 
                 <ServiceCTA

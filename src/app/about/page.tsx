@@ -16,13 +16,13 @@ const stats = [
     value: "2+",
     label: "Years of",
     accent: "Experience",
-    description: "Since 2009, Oyo Realty & Construction has established itself as one of Ibadan's most trusted names in real estate, delivering on every commitment with speed, integrity, and professionalism.",
+    description: "In just over two years, Quantum Homes & Property has established itself as one of Ibadan's most trusted names in real estate, delivering on every commitment with speed, integrity, and professionalism.",
   },
   {
     value: "5K+",
     label: "Satisfied",
     accent: "Clients",
-    description: "Over 5,000 individuals, families, and investors have trusted Oyo Realty & Construction to guide them through one of the most significant decisions of their lives. Their confidence is our greatest endorsement.",
+    description: "Over 5,000 individuals, families, and investors have trusted Quantum Homes & Property to guide them through one of the most significant decisions of their lives. Their confidence is our greatest endorsement.",
   },
   {
     value: "60+",
@@ -41,7 +41,7 @@ const stats = [
 const missionVision = [
   {
     accent: "Mission",
-    content: "At Oyo Realty & Construction, our mission is to deliver magnificent real estate services that make homeownership and property investment achievable for everyone, irrespective of class or background.",
+    content: "At Quantum Homes & Property, our mission is to deliver magnificent real estate services that make homeownership and property investment achievable for everyone, irrespective of class or background.",
   },
   {
     accent: "Vision",
@@ -83,13 +83,13 @@ function MissionVisionCard({ accent, content }: { accent: string; content: strin
 export default function About() {
     const paragraphList = [
         "\
-            Oyo Realty & Construction is a trusted real estate company committed to bridging the gap between property ownership dreams and reality. Since our inception in 2009, we have helped\
+            Quantum Homes & Property is a trusted real estate company committed to bridging the gap between property ownership dreams and reality. Since our founding, we have helped\
             thousands of individuals, families, and organizations acquire genuine properties with peace\
             of mind.\
         ",
         "\
             We pride ourselves on integrity, professionalism, and innovation in the real estate \
-            sector. At Oyo Realty & Construction, we don't just sell properties — we build trust, create \
+            sector. At Quantum Homes & Property, we don't just sell properties — we build trust, create \
             value, and ensure long-term satisfaction. \
         ",
     ]
@@ -182,4 +182,3 @@ export default function About() {
             <InvestmentSection />
         </MainLayout>
     )
-}

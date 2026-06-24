@@ -71,7 +71,7 @@ function FAQRow({ item, index, open, onToggle }: {
   onToggle: () => void;
 }) {
   return (
-    <div className={`${brand.redBg} my-3 rounded-sm px-3`}>
+    <div className={`${brand.redBg} my-3 rounded-xl px-3`}>
       <button
         onClick={onToggle}
         className="w-full flex items-center gap-4 py-5 px-1 text-left group cursor-pointer"
@@ -119,11 +119,11 @@ export default function FAQAccordion() {
               <div className="h-px xl:w-16 lg:w-10 w-7 bg-red-500"/>
               <p className={`${montserrat.className} text-xs font-bold ${brand.amberText} tracking-widest`}>FAQ</p>
             </div>
-            <p className={`${montserrat.className} text-zinc-200 text-left lg:text-5xl text-3xl font-semibold my-3`}>
-                Frequently Asked <span className={`${brand.amberAltText} italic`}>Questions</span>
+            <p className={`${montserrat.className} text-zinc-900 text-left lg:text-5xl text-3xl font-semibold my-3`}>
+                Frequently Asked<span className={`${brand.amberAltText} italic`}>Questions</span>
             </p>
-
-            <p className="text-md text-zinc-400 leading-relaxed max-w-[50rem]">
+              
+            <p className="text-md text-zinc-900 leading-relaxed max-w-[50rem]">
               Find answers to common questions about our services, construction
               process, property options, project timelines, and real estate
               expertise.

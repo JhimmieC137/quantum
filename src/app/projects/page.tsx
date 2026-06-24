@@ -95,7 +95,7 @@ const commercialFeatures = [
 export default function Projects() {
     const paragraphList = [
         "\
-            At Oyo Realty & Construction, every project is a testament to our commitment to quality, integrity, \
+            At Quantum Homes & Property, every project is a testament to our commitment to quality, integrity, \
             and innovation. From serviced residential estates to prime commercial plots, we develop \
             spaces that inspire growth and stand the test of time. \
         ",
@@ -141,7 +141,7 @@ export default function Projects() {
                         {/* Text side */}
                         <div className="lg:w-1/2 w-full flex flex-col justify-center">
                             <p className={`${garamond.className} text-zinc-300 text-xl sm:text-2xl lg:text-3xl xl:text-4xl leading-relaxed xl:leading-[3rem] lg:leading-[2.5rem]`}>
-                                At Oyo Realty &amp; Construction, we develop and sell serviced plots within well-planned residential
+                                At Quantum Homes &amp; Property, we develop and sell serviced plots within well-planned residential
                                 estates, designed to provide clients with a safe, comfortable, and future-ready
                                 environment for building their dream homes.
                             </p>

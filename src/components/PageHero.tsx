@@ -1,11 +1,13 @@
 import FadeRight from "@/ui/FadeRight";
 import FadeUp from "@/ui/FadeUp";
-import { montserrat, garamond } from "@/lib/fonts";
+import { CgMenuGridO } from "react-icons/cg";
+import { montserrat } from "@/lib/fonts";
+import { brand } from "@/lib/constants";
 
 interface PageHeroProps {
     CTAMain?: string
     CTAAccent?: string
-    paragraphs: string[];
+  paragraphs: string[];
 }
 
 export default function PageHero({
@@ -14,29 +16,29 @@ export default function PageHero({
   paragraphs,
 }: PageHeroProps) {
   return (
-    <div className="bg-zinc-950">
+    <div className={brand.redBg}>
 
       {/* ── Body content ────────────────────────────────────────── */}
-      <div className="xl:max-w-[1400px] lg:max-w-[1200px] md:max-w-full m-auto py-20 px-6">
+      <div className="xl:max-w-[1400px] lg:max-w-[1200px] md:max-w-full m-auto py-20 px-2">
 
         {
-            (CTAMain || CTAAccent) &&
+            (CTAMain || CTAAccent ) &&
             <FadeUp>
                 <p className={`${montserrat.className} text-zinc-200 text-4xl lg:text-5xl font-semibold md:my-7 my-px`}>
-                  {CTAMain} <span className="text-amber-400 italic">{CTAAccent}</span>
+                  {CTAMain} <span className={`${brand.amberLightText} italic`}>{CTAAccent}</span>
                 </p>
             </FadeUp>
         }
 
         {/* Amber bar + paragraphs */}
         <div className="flex lg:gap-x-5 gap-x-3 my-10">
-          <div className="bg-amber-400 lg:p-[3px] p-[2px] lg:max-w-[10px] max-w-[5px] z-20 flex-shrink-0" />
+          <div className={`${brand.amberBg} lg:p-[3px] p-[2px] lg:max-w-[10px] max-w-[5px] z-20 flex-shrink-0`} />
 
           <FadeRight>
             {paragraphs.map((text, i) => (
               <p
                 key={i}
-                className={`${garamond.className} text-zinc-300/90 lg:text-3xl md:text-2xl text-md lg:pr-10 p-0 mb-5 max-w-[80rem]`}
+                className="text-zinc-200/90 lg:text-3xl md:text-2xl text-md lg:pr-10 p-0 mb-5 max-w-[80rem]"
               >
                 {text}
               </p>

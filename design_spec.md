@@ -1,16 +1,18 @@
 # Quantum Homes — UI Design Specification
-**Version:** 1.0  
-**Scope:** Desktop Web (min-width: 1100px)  
-**Stack:** React + Inline Styles (Tailwind-compatible)  
-**Last Updated:** 2024
+**Version:** 2.0
+**Scope:** Fully responsive web (mobile-first, tested down to 375px)
+**Stack:** Next.js 14 (App Router) · TypeScript · Tailwind CSS · Framer Motion
+**Last Updated:** June 2026
 
 ---
 
 ## 1. Brand & Design Principles
 
-Quantum Homes positions itself as a premium African real estate brand. The design language is editorial and luxury-forward — combining serif display type with clean sans-serif body text, generous whitespace, and strong brand colour hits used as deliberate accents rather than fills.
+Quantum Homes is a premium Nigerian real estate brand based in Ibadan. The design language is editorial and luxury-forward — warm, bold, and trustworthy. Two typefaces split the work: **Montserrat** anchors all display headings with geometric confidence; **EB Garamond** carries body copy with serif elegance. Brand red (`#b91c1c`) is used as a deliberate power accent — not a fill — and amber gold acts as a secondary typographic highlight on dark and red backgrounds.
 
-**Core Aesthetic:** Refined luxury with bold typographic moments. Dark backgrounds anchor premium sections; warm stone tones ground the informational sections.
+**Core aesthetic:** Refined luxury. Alternating dark, warm-stone, and red section backgrounds create visual rhythm. Generous whitespace, strong typographic hierarchy, and scroll-triggered fade animations give the site an editorial feel.
+
+**Section rhythm (home page):** Dark → Stone → Red → Dark → Stone → Red → Dark → Red → Dark
 
 ---
 
@@ -18,317 +20,249 @@ Quantum Homes positions itself as a premium African real estate brand. The desig
 
 ### 2.1 Colour Palette
 
-| Token | Value | Usage |
-|---|---|---|
-| `brand-red` | `#dc2626` | Primary CTA buttons, section accents, tag badges, icon backgrounds |
-| `brand-yellow` | `#fbbf24` | Eyebrow labels, hover states on dark backgrounds, decorative accents |
-| `white` | `#FFFFFF` | Text on dark/red backgrounds, card backgrounds, button fills |
-| `dark` | `#111110` | Primary dark background (Hero, Projects section) |
-| `dark-2` | `#1A1916` | Secondary dark background (Services section) |
-| `stone` | `#F4F2EC` | Light section background (About, Core Values) |
-| `footer-bg` | `#0D0D0C` | Footer background |
-| `body-text-muted` | `#555555` | Body copy on light backgrounds |
-| `body-text-dim` | `rgba(255,255,255,0.50)` | Body copy on dark backgrounds |
-| `border-light` | `#E0DDD4` | Card borders on stone background |
-| `border-dark` | `rgba(255,255,255,0.06)` | Subtle borders on dark backgrounds |
-| `ghost-number` | `#F0ECE4` | Decorative oversized numbers in value cards |
+| Token | Tailwind Class | Hex | Usage |
+|---|---|---|---|
+| `brand-red` | `bg-red-700` / `text-red-700` | `#b91c1c` | Primary buttons, section backgrounds, card accents, icon fills |
+| `brand-red-hover` | `hover:bg-red-600` | `#dc2626` | Button hover states |
+| `brand-amber` | `text-amber-400` | `#fbbf24` | Accent text on dark backgrounds, stats numbers, dividers |
+| `brand-amber-alt` | `text-amber-500` | `#f59e0b` | Accent text on light/stone backgrounds |
+| `brand-amber-light` | `text-amber-300` | `#fcd34d` | Accent text on red backgrounds |
+| `page-bg` | `bg-[#F4F2EC]` | `#F4F2EC` | Warm stone — light section backgrounds (About, Core Values, FAQ) |
+| `zinc-900` | `bg-zinc-900` | `#18181b` | Dark section backgrounds |
+| `zinc-800` | `bg-zinc-800` | `#27272a` | Secondary dark surfaces |
+| `zinc-200` | `text-zinc-200` | `#e4e4e7` | Body text on dark/red backgrounds |
+| `zinc-900 text` | `text-zinc-900` | `#18181b` | Body text on light backgrounds |
 
 ### 2.2 Typography
 
-| Role | Font | Weight | Size | Line Height | Letter Spacing |
-|---|---|---|---|---|---|
-| Display / H1 | Playfair Display | 800 | clamp(52px, 6vw, 88px) | 1.05 | — |
-| Section H2 | Playfair Display | 800 | clamp(36px, 3.5vw, 56px) | 1.08–1.1 | — |
-| Card H3 | Playfair Display | 700 | 20–26px | — | — |
-| Eyebrow label | Outfit | 600 | 11–12px | — | 0.22–0.24em |
-| Body / paragraph | Outfit | 400 | 15–17px | 1.7–1.8 | — |
-| Nav links | Outfit | 400 | 14px | — | 0.04em |
-| CTA Button text | Outfit | 600–700 | 13–14px | — | 0.06–0.08em |
-| Stat number | Playfair Display | 800 | 32px | — | — |
-| Stat label | Outfit | 400 | 12px | — | 0.08em |
-| Card ghost number | Playfair Display | 800 | 48px | 1 | — |
-| Footer column heading | Outfit | 600 | 11px | — | 0.22em |
-| Footer body links | Outfit | 400 | 14px | — | — |
-| Legal / copyright | Outfit | 400 | 13px | — | — |
+| Role | Font | Weight | Size (mobile → desktop) | Notes |
+|---|---|---|---|---|
+| **All headings h1–h6** | Montserrat | 600 (semibold) | Varies per component | Applied globally via CSS `h1–h6` rule |
+| Hero display | Montserrat | 600 | `2.5rem` → `6rem` (2xl) | Responsive via custom bracket sizes |
+| Section heading (large) | Montserrat | 600 | `text-3xl` → `text-5xl` / `text-7xl` | Per section |
+| Body / paragraph | EB Garamond | 400 | `text-sm` → `text-base` / `text-xl` | Serif — applied to body globally |
+| Eyebrow label | Montserrat | 700 | `text-xs` | Uppercase, wide tracking, amber or white |
+| Stat number | Montserrat | 600 | `text-4xl` → `text-5xl` | Amber colour |
+| Button text | EB Garamond / Montserrat | 400–600 | `text-md` / `text-sm` | Inherits from context |
+| Nav links | EB Garamond | 400 | `text-sm` | Light zinc, hover amber or white |
 
-**Italic rule:** `<em>` elements on headings use `color: brand-red` or `color: brand-yellow` to create typographic emphasis without bolding.
+**Italic rule:** Heading accent spans (`<span>`) use amber or red colour classes with `italic` to create typographic emphasis. Pattern: `<h2>Main text <span className="text-amber-400 italic">Accent</span></h2>`.
 
-**Eyebrow labels** are always uppercase, `brand-red` or `brand-yellow` depending on section background, and sit 14–20px above the heading.
+**Mobile line-break rule:** For long centred headings, a `<br className="sm:hidden" />` is inserted between the primary and accent spans so mobile gets a controlled two-line layout while desktop stays single-line.
+
+**Font loading:** Both fonts are loaded via `next/font/google` in `src/lib/fonts.ts` and applied through CSS variables (`--font-montserrat`, `--font-garamond`). Montserrat is registered as a CSS variable on `<body>` and applied to `h1–h6` in `globals.css`. EB Garamond is applied via `className` on `<body>` in `layout.tsx`.
 
 ---
 
 ## 3. Spacing & Layout
 
-### 3.1 Grid
+### 3.1 Responsive Container
 
-- **Page min-width:** 1100px
-- **Horizontal page padding:** 80px (all sections)
-- **Nav horizontal padding:** 48px
+```
+max-w-[1400px]  mx-auto  px-4 (mobile) → px-6 (sm) → px-8 (lg)
+```
+
+No fixed min-width. The design is fully fluid from 375px up.
 
 ### 3.2 Section Vertical Padding
 
-| Section | Top | Bottom |
-|---|---|---|
-| Hero | — (full viewport) | — |
-| About | 112px | 112px |
-| Clients Strip | 64px | 64px |
-| Services | 112px | 112px |
-| Core Values | 112px | 112px |
-| Projects | 112px | 112px |
-| CTA | 100px | 100px |
-| Footer | 80px | 40px |
+| Section | Tailwind Classes |
+|---|---|
+| Hero | Full viewport height (`min-h-screen`) |
+| Most content sections | `py-16` → `py-24` → `py-32` (responsive) |
+| OurClients strip | `py-20` |
+| Investment section | Varies (~`py-20`) |
+| Footer | `py-10` (top) + `safe-footer-bottom` utility |
 
-### 3.3 Internal Spacing
+### 3.3 Key Internal Spacing
 
-- Section heading-to-content gap: 56–64px
-- Card grid gap: 16–20px
-- Service row gap: 4px (between rows)
-- Stat items gap: 48px
-- Nav link gap: 36px
-- Button group gap: 16px
-- Footer column gap: 56px
-- Footer social icon gap: 10px
+- Card grid gaps: `gap-8` → `gap-12` → `gap-14`
+- Stat item gaps: `gap-8` / divided by `divide-amber-400`
+- Button group gap: `gap-5`
+- Section heading-to-content: `mt-10` → `mt-14` → `mt-16`
+- Hero heading `mb-5`, subtext `mb-0` (hidden on mobile), button group `mt-10`
 
 ---
 
 ## 4. Component Specifications
 
-### 4.1 Navigation
+### 4.1 Navigation (`Header.tsx`)
 
-**Layout:** Fixed, full-width, flex row, `space-between`, height `72px`, padding `0 48px`.
+**Layout:** Sticky, full-width. Height implicit from padding. Horizontal padding `px-4` → `px-8`.
 
-**States:**
-- **Default (top of page):** Transparent background, no border.
-- **Scrolled (> 40px):** Background `rgba(17,17,16,0.96)`, `backdrop-filter: blur(12px)`, bottom border `1px solid rgba(255,255,255,0.06)`.
-- Transition: `background 0.4s`, `backdrop-filter 0.4s`.
+**Scroll behaviour:** Uses scroll-direction detection — header is always visible in the first `~50rem` of page. Below that: hides on scroll down, reappears on scroll up.
 
-**Logo mark:** 36×36px, `border-radius: 8px`, `background: brand-red`. "Q" in Playfair Display, weight 800, 18px, white.  
-**Logo text:** "QUANTUM" in Outfit, weight 600, 16px, white, `letter-spacing: 0.06em`.
+**Mobile:** Hamburger menu opens a slide-in drawer with full nav links + services sub-list. Controlled by `useState`.
 
-**Nav links:** Outfit, 14px, weight 400, `rgba(255,255,255,0.7)` default. Hover: `brand-yellow`. Transition: `color 0.2s`.
+**Logo:** "Q" mark (red background, white letter) + "QUANTUM HOMES" wordmark in Montserrat, weight 600.
 
-**CTA Button:** `background: brand-red`, white text, `border-radius: 40px`, padding `10px 24px`, 13px, weight 600, `letter-spacing: 0.08em`.
+**Services dropdown:** Click-triggered dropdown listing 4 sub-services with links. On mobile, expands inline within the drawer.
+
+**CTA button:** "Talk to Us" → links to `/contact`. Red background, white text, `rounded-xl`.
 
 ---
 
-### 4.2 Hero Section
+### 4.2 Hero Section (`Hero.tsx`)
 
-**Layout:** `position: relative`, `height: 100vh`, `min-height: 700px`, `overflow: hidden`, `background: #111110`.
+**Layout:** `position: relative`, `min-h-screen`, `overflow: hidden`.
 
-**Background image:** Absolute fill, `object-fit: cover`, `opacity: 0.38`.
+**Background:** MP4 video (`/videos/quantum-v.mp4`) with Unsplash fallback image. Video fades in via `opacity` transition once the `canplaythrough` event fires. Dark gradient overlay (`from-transparent via-zinc-950/50 to-zinc-950`) applied over both.
 
-**Decorative overlays:**
-- Red diagonal: right side, width 38%, `background: linear-gradient(135deg, transparent 30%, #D0211C22 100%)`.
-- Yellow left bar: `position: absolute`, `top: 72px`, `left: 0`, `width: 4px`, `height: 120px`, `background: brand-yellow`.
+**Content alignment:** Centred vertically on desktop (`md:items-center`). Pinned to bottom on mobile (`items-end pb-[6rem]`).
 
-**Content container:** `padding: 0 80px`, `max-width: 900px`, vertically centred.
+**Eyebrow label:** Hidden on mobile (`hidden sm:flex`). "PREMIUM REAL ESTATE · IBADAN" in Montserrat, amber, `text-xs`, `tracking-widest`. Left horizontal rule in brand-red.
 
-**Eyebrow:** Outfit 600, 12px, `brand-yellow`, `letter-spacing: 0.22em`, uppercase. Margin-bottom `20px`.
+**Heading "A Call To Your Dream Home":**
+- Mobile: `text-[2.5rem]` / `leading-[2.8rem]` / `max-w-[26rem]` / centred
+- sm: `text-[4rem]` / `leading-[4.5rem]` / left-aligned
+- xl: `text-[5.2rem]` / `leading-[6rem]`
+- 2xl: `text-[6rem]` / `leading-[7.5rem]`
+- "Dream Home" in `text-amber-400`, same weight
 
-**H1:** Playfair Display 800, `clamp(52px, 6vw, 88px)`, white, `line-height: 1.05`. Italic `<em>` in `brand-yellow`. Margin-bottom `24px`.
+**Sub-paragraph:** Hidden on mobile (`hidden md:block`). `text-[15px]`, zinc-200, max-width `50rem` → `40rem` → `35rem`.
 
-**Subheading paragraph:** Outfit 400, 17px, `rgba(255,255,255,0.62)`, `line-height: 1.7`, `max-width: 480px`. Margin-bottom `40px`.
+**Buttons (mobile: stacked column, sm+: row, gap-5):**
+- "Explore projects": Red bg, zinc-100, `rounded-xl`. Padding mobile `px-3 py-2`, sm+ `px-8 py-3`.
+- "Our services": Transparent, `border border-zinc-200/60`, zinc-200. Same padding.
+- Container: `w-[70%] mx-auto` on mobile, `md:w-full` on desktop.
 
-**Primary button:** `background: brand-red`, white text, `border-radius: 40px`, padding `14px 34px`, 14px, weight 600.  
-**Secondary button:** Transparent background, white text, `border: 1.5px solid rgba(255,255,255,0.3)`, same sizing.
-
-**Stats row:** Flex, gap `48px`, margin-top `56px`. Each stat: number in Playfair 800, 32px, white; label in Outfit 400, 12px, `rgba(255,255,255,0.45)`, `letter-spacing: 0.08em`.
-
-**Scroll cue:** Centred at bottom `36px`. Vertical line `1px wide`, `48px tall`, `linear-gradient(transparent → brand-yellow)`. Label below: Outfit 10px, `rgba(255,255,255,0.4)`, `letter-spacing: 0.16em`, uppercase.
-
----
-
-### 4.3 About / Philosophy Section
-
-**Background:** `#F4F2EC` (stone).  
-**Layout:** `display: grid`, `grid-template-columns: 1fr 1fr`, gap `80px`, items centred.
-
-**Left column:**
-- Eyebrow: Outfit 600, 11px, `brand-red`, `letter-spacing: 0.24em`, uppercase.
-- H2: Playfair 800, `clamp(36px, 3.5vw, 54px)`, `#111110`, `line-height: 1.1`. Italic `<em>` in `brand-red`.
-- Body paragraphs: Outfit 400, 16px, `#555`, `line-height: 1.8`.
-- CTA button: `background: #111110`, white text, `border-radius: 40px`, padding `13px 30px`, 13px, weight 600.
-
-**Right column — photo mosaic:**
-- Grid: `grid-template-columns: 1fr 1fr`, gap `16px`.
-- Large image (left): spans 2 rows, height `240px`, `border-radius: 16px`, `object-fit: cover`.
-- Small image (top-right): height `112px`, `border-radius: 12px`.
-- Stat tile (bottom-right): height `112px`, `background: brand-red`, `border-radius: 12px`. Number: Playfair 800, 36px, white. Label: Outfit 400, 12px, `rgba(255,255,255,0.8)`, `letter-spacing: 0.1em`.
+**Stats row:** Hidden on mobile (`hidden sm:flex`). Three amber numbers (58+, 17+, 2+) with zinc-200/60 labels. Divided by `divide-amber-400`.
 
 ---
 
-### 4.4 Clients Strip
+### 4.3 Introduction Section (`Introduction.tsx`)
 
-**Background:** `brand-red`. Padding `64px 80px`.
-
-**Eyebrow:** Outfit 600, 11px, `brand-yellow`, `letter-spacing: 0.24em`, uppercase, centred.  
-**H2:** Playfair 800, 36px, white, centred. Margin-bottom `40px`.
-
-**Image strip:** `display: flex`, `gap: 12px`, `overflow-x: auto`. Images: `180×110px`, `border-radius: 10px`, `object-fit: cover`, `opacity: 0.85`, `flex-shrink: 0`.
+Dark background (`bg-zinc-900`). Two-column grid on desktop. Brand story with FadeLeft/FadeRight animations on the two columns.
 
 ---
 
-### 4.5 Services Section
+### 4.4 Our Services (`OurServices.tsx`)
 
-**Background:** `#1A1916`. Padding `112px 80px`.  
-**Layout:** `display: grid`, `grid-template-columns: 1fr 1.4fr`, gap `80px`, aligned to start.
-
-**Left editorial column:**
-- Eyebrow: `brand-yellow`.
-- H2: Playfair 800, `clamp(36px, 3.2vw, 52px)`, white. Italic `<em>` in `brand-red`.
-- Body: Outfit 400, 15px, `rgba(255,255,255,0.5)`, `line-height: 1.8`.
-- Image: full-width, height `220px`, `border-radius: 16px`, `opacity: 0.7`.
-
-**Service row (repeated x4):**
-- Layout: `display: flex`, `gap: 20px`, `align-items: center`, padding `28px 24px`, `border-radius: 12px`.
-- Default border: `1px solid rgba(255,255,255,0.06)`.
-- Hover state: `background: rgba(255,255,255,0.04)`, `border-color: #D0211C66`.
-- Transition: `background 0.25s`, `border-color 0.25s`.
-- Icon box: `48×48px`, `background: #D0211C22`, `border-radius: 12px`, icon at 22px, `color: brand-red`.
-- Title: Playfair 700, 20px, white.
-- Description: Outfit 400, 14px, `rgba(255,255,255,0.5)`, `line-height: 1.65`.
-- Arrow: `brand-yellow`, 20px, `margin-left: auto`.
+Grid of 4 service cards: Land Sales, Legal Support, Construction & Development, Real Estate Investment Advisory. Each card has icon, title, short description, and a "Learn more" link. Expandable/accordion behaviour on desktop; always visible on mobile.
 
 ---
 
-### 4.6 Core Values Section
+### 4.5 Core Values (`CoreValues.tsx`)
 
-**Background:** `#F4F2EC` (stone). Padding `112px 80px`.
-
-**Section header:** Flex row, `space-between`, aligned to flex-end, margin-bottom `64px`.
-- Left: Eyebrow (`brand-red`) + H2 (Playfair 800, `clamp(36px, 3.5vw, 56px)`, `#111110`).
-- Right: Outfit 400, 15px, `#777`, `max-width: 360px`, `line-height: 1.75`, right-aligned.
-
-**Value card grid:** `repeat(4, 1fr)`, gap `20px`.
-
-**Value card:**
-- Background: white. `border-radius: 16px`. Padding `36px 28px`. Border `1px solid #E0DDD4`.
-- Top accent bar: `position: absolute`, `top: 0`, full-width, height `4px`, `background: linear-gradient(90deg, brand-red, brand-yellow)`.
-- Ghost number: Playfair 800, 48px, `#F0ECE4`, `line-height: 1`.
-- Title: Playfair 700, 24px, `#111110`, margin-top `12px`.
-- Body: Outfit 400, 14px, `#777`, `line-height: 1.7`.
-- Hover: `translateY(-6px)`, `box-shadow: 0 20px 40px rgba(208,33,28,0.12)`. Transition `0.3s`.
-
-**Discipline tags (below grid):**
-- `display: flex`, `gap: 12px`, `flex-wrap: wrap`, margin-top `40px`.
-- Each tag: Outfit 500, 13px, `#111110`, padding `8px 20px`, `border-radius: 40px`, `border: 1.5px solid #C8C4BA`. Red dot `7×7px` inside.
-
-**Quote bar:**
-- margin-top `48px`, `border-radius: 16px`, height `180px`, `background: #111110`.
-- Background image at `opacity: 0.28`.
-- Quote text: Playfair italic, `clamp(20px, 2.5vw, 34px)`, white, centred.
+Stone background (`bg-[#F4F2EC]`). Three red value cards (Transparency, Integrity, Reliability) in a responsive grid. Each card: red background, white text, icon, title (Montserrat), body (EB Garamond). FadeUp animation. Heading left-aligned: `text-3xl` (mobile) → `text-5xl` (lg).
 
 ---
 
-### 4.7 Projects Section
+### 4.6 Investment Section (`Investment.tsx`)
 
-**Background:** `#111110`. Padding `112px 80px`.
-
-**Section header:** Flex row, `space-between`, aligned to flex-end, margin-bottom `56px`.
-- Left: Eyebrow (`brand-yellow`) + H2 (Playfair 800, white).
-- Right: Ghost button — transparent background, `border: 1.5px solid rgba(255,255,255,0.2)`, white text, `border-radius: 40px`, padding `12px 28px`, 13px, weight 600, uppercase. Hover: `border-color: brand-red`, `background: brand-red`.
-
-**Grid layout:**
-- Top row: `grid-template-columns: 1fr 1fr`, gap `16px`, margin-bottom `16px`. Card height: `380px`.
-- Bottom row: `grid-template-columns: 1fr 1fr 1fr`, gap `16px`. Card height: `260px`.
-
-**Project card:**
-- `border-radius: 16px`, `overflow: hidden`. Background image fills 100%.
-- Image zoom on hover: `scale(1.07)`. Transition: `0.6s cubic-bezier(.25,.46,.45,.94)`.
-- Dark overlay default: `linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.04) 50%)`.
-- Dark overlay hover: `linear-gradient(to top, rgba(0,0,0,0.90) 0%, rgba(0,0,0,0.15) 55%)`. Transition `0.4s`.
-- Tag badge: top-left `16px` inset. `background: brand-red`, white, Outfit 600, 11px, `letter-spacing: 0.12em`, uppercase, `border-radius: 40px`, padding `4px 14px`.
-- Meta line: Outfit 400, 11px, `rgba(255,255,255,0.5)`, `letter-spacing: 0.12em`.
-- Card title: Playfair 700, 20px (wide: 26px), white.
-- Card subtype: Outfit 400, 13px, `rgba(255,255,255,0.6)`.
-- "View Project →": appears only on hover. Outfit 700, 12px, `brand-yellow`, `letter-spacing: 0.1em`, uppercase.
+Red background (`bg-red-700`). Centred heading: **"A piece of land is more than gold."** — Montserrat semibold, `text-4xl` → `text-6xl`, white with amber italic accent. Already has `<br />` between lines. Body copy + CTA button.
 
 ---
 
-### 4.8 CTA Section
+### 4.7 Our Clients (`OurClients.tsx`)
 
-**Background:** `brand-red`. Padding `100px 80px`.
+Red background. Section heading: **"Esteemed Clients Over the Years"** — Montserrat semibold, `text-3xl` → `text-5xl`, centred, white. `<br className="sm:hidden" />` between "Esteemed Clients" and "Over the Years" for mobile line control.
 
-**Decorative ghost text:** "GOLD" — Playfair 800, `clamp(120px, 16vw, 220px)`, `rgba(0,0,0,0.1)`, positioned `bottom: -40px`, `right: -40px`. Non-interactive.
-
-**Yellow left bar:** `position: absolute`, `top: 0`, `left: 0`, `width: 6px`, full height, `background: brand-yellow`.
-
-**Content (max-width: 720px):**
-- Eyebrow: Outfit 600, 11px, `brand-yellow`, `letter-spacing: 0.24em`, uppercase.
-- H2: Playfair 800, `clamp(40px, 5vw, 72px)`, white, `line-height: 1.05`.
-- Body: Outfit 400, 17px, `rgba(255,255,255,0.75)`, `line-height: 1.75`, `max-width: 520px`.
-- Primary button: `background: white`, `color: brand-red`, `border-radius: 40px`, padding `14px 34px`, 14px, weight 700.
-- Secondary button: transparent, white text, `border: 2px solid rgba(255,255,255,0.45)`, same sizing.
+**Infinite marquee:** CSS `animate-marquee` class (`translateX(-50%)` over 20s linear infinite). 36 logo items (12 unique × 3 copies). Container: `h-[110px]`. Each `<li>`: `w-[230px]`. Each `<img>`: `w-[220px]`, `grayscale`, `opacity-60`, hover transitions to full colour and full opacity.
 
 ---
 
-### 4.9 Footer
+### 4.8 Projects Section (`Projects.tsx` / `Properties.tsx`)
 
-**Background:** `#0D0D0C`. Padding `80px 80px 40px`.
+Stone background. Left-aligned heading `text-3xl` → `text-5xl`. Grid of featured project cards. "See more" link to `/projects`.
 
-**Main grid:** `grid-template-columns: 1.6fr 1fr 1fr 1fr`, gap `56px`. Bottom border `1px solid rgba(255,255,255,0.07)`, `padding-bottom: 56px`.
+**Project cards** (`ProjectCard.tsx`): Image with Swiper slideshow on click, project meta (title, type, location, year), modal overlay for full gallery. Status tag badge (Ongoing / Completed / Incoming) in red.
 
-**Brand column:**
-- Logo mark + wordmark (same spec as nav).
-- Tagline: Outfit 400, 14px, `rgba(255,255,255,0.4)`, `line-height: 1.75`, `max-width: 280px`.
-- Social icons: `36×36px`, `border-radius: 50%`, `border: 1px solid rgba(255,255,255,0.12)`. Default: `rgba(255,255,255,0.45)`. Hover: `color: brand-yellow`, `border-color: brand-yellow`. Transition `0.2s`. Gap `10px`.
+---
 
-**Link columns (Company / Projects / Contact):**
-- Column heading: Outfit 600, 11px, `brand-yellow`, `letter-spacing: 0.22em`, uppercase. Margin-bottom `20px`.
-- Links: Outfit 400, 14px, `rgba(255,255,255,0.4)`. Hover: white. Transition `color 0.2s`. Row gap `12px`.
+### 4.9 FAQ (`FAQ.tsx`)
 
-**Bottom bar:**
-- `display: flex`, `justify-content: space-between`, `align-items: center`, `padding-top: 28px`.
-- Copyright: Outfit 400, 13px, `rgba(255,255,255,0.25)`.
-- Legal links: Outfit 400, 13px, `rgba(255,255,255,0.25)`. Gap `28px`.
+Stone background. Accordion of 6 items. Chevron icon rotates on open. Smooth height animation. Left-aligned heading `text-3xl` → `text-5xl`.
+
+---
+
+### 4.10 Page Hero (`PageHero.tsx`)
+
+Red background. Used on inner pages (About, Contact, Services sub-pages). Accepts `CTAMain` + `CTAAccent` heading props and array of body paragraphs. Amber vertical divider bar between heading and paragraphs.
+
+---
+
+### 4.11 Hero Banner (`HeroBanner.tsx`)
+
+Used at the top of inner pages (About, Services, Projects, Properties, Contact). Full-width image with dark overlay. Centred heading: `title` (white) + `titleAccent` (amber italic). Current page titles: "About Us", "Our Services", "Our Projects", "Contact Us".
+
+---
+
+### 4.12 Team Grid (`TeamGrid.tsx`)
+
+Stone-ish background. Circular avatar images with red border ring. Member name (Montserrat) + role (EB Garamond). Centred heading: **"Meet Our Team"**.
+
+---
+
+### 4.13 Service Pages
+
+Each service page (`land-sales`, `legal-support`, `construction-and-development`, `real-estate-investment-advisory`) uses:
+- `HeroBanner` — page top image
+- `ServiceHero` — large text + subtext hero block
+- `ServiceSectionHeading` — two-part centred heading (white + amber), always-on `<br />` between parts, font scales `text-4xl` → `text-7xl`
+- `ServiceIntro` — image + text paired layout
+- `FeatureCard` — feature list with gradient border
+- `ServiceCTA` — red call-to-action strip at bottom
+
+---
+
+### 4.14 Contact Page (`contact/page.tsx`)
+
+Two office tabs (Mokola / New Ife Road) with underline animation. Contact details per office. Contact form with:
+- Fields: Name, Email, Phone, Message
+- reCAPTCHA Enterprise validation (score threshold 0.5)
+- Submits to `/api/contact` (POST)
+- API uses Mailjet to send formatted HTML email
+
+---
+
+### 4.15 Footer (`Footer.tsx`)
+
+Dark background (`bg-zinc-900` or similar). Multi-column: brand + tagline + social icons / Company links / Services links / Contact info. Social icons with hover amber effect. Copyright bar at bottom.
+
+Safe-area bottom padding utility (`.safe-footer-bottom`) for notch/Dynamic Island devices.
 
 ---
 
 ## 5. Motion & Animation
 
-### 5.1 Scroll Reveal
+All scroll-triggered animations are powered by **Framer Motion** via wrapper components in `src/ui/`:
 
-All major content blocks use an `IntersectionObserver` with `threshold: 0.12`. On intersection:
+| Component | Behaviour |
+|---|---|
+| `FadeUp` | `opacity: 0, y: 100` → `opacity: 1, y: 0` |
+| `FadeLeft` | Fades in from left |
+| `FadeRight` | Fades in from right |
+| `ZoomOut` | Zoom-out reveal |
 
-- **From:** `opacity: 0`, `translateY(32px)`
-- **To:** `opacity: 1`, `translateY(0)`
-- **Duration:** `0.7s ease`
-- **Stagger:** Sibling elements delayed by `80–150ms` increments (e.g., value cards use `index × 90ms`, service rows use `index × 100ms`, project cards use `index × 100ms`).
+Animations trigger once on scroll into view. Used throughout on headings, cards, stat blocks, and image sections.
 
-Once triggered, the observer disconnects — animations do not repeat on scroll-back.
+### Hover Transitions
 
-### 5.2 Hover Transitions
-
-| Element | Property | Duration | Easing |
-|---|---|---|---|
-| Nav links | `color` | 0.2s | ease |
-| Service rows | `background`, `border-color` | 0.25s | ease |
-| Value cards | `transform`, `box-shadow` | 0.3s | ease |
-| Project cards — image | `transform (scale)` | 0.6s | cubic-bezier(.25,.46,.45,.94) |
-| Project cards — overlay | `background` | 0.4s | ease |
-| Ghost button (Projects) | `border-color`, `background` | 0.2s | ease |
-| Footer social icons | `color`, `border-color` | 0.2s | ease |
-| Footer links | `color` | 0.2s | ease |
-
-### 5.3 Navigation Scroll Transition
-
-Triggered at `window.scrollY > 40`. Background and `backdrop-filter` transition at `0.4s ease`.
+| Element | Property | Duration |
+|---|---|---|
+| Nav header visibility | `transform` (translateY) | Scroll-triggered, `0.3s` |
+| Buttons | `background`, `color`, `border-color` | `0.15s–0.3s ease-in-out` |
+| Project cards — image | `scale` | `0.5–0.6s` |
+| Client logos | `filter (grayscale)`, `opacity` | `0.5s ease-in-out` |
+| FAQ accordion | `height`, chevron `rotate` | Framer Motion layout animation |
 
 ---
 
-## 6. Page Section Map
+## 6. Page Map
 
-| Order | Section | Background | Key Layout |
-|---|---|---|---|
-| 1 | Navigation | Transparent → `rgba(17,17,16,0.96)` | Fixed, flex row |
-| 2 | Hero | `#111110` | Full viewport, absolute positioned layers |
-| 3 | About / Philosophy | `#F4F2EC` | 2-column grid, 1:1 |
-| 4 | Clients Strip | `#D0211C` (brand red) | Horizontal scroll image strip |
-| 5 | Services | `#1A1916` | 2-column grid, 1:1.4 |
-| 6 | Core Values | `#F4F2EC` | 4-column card grid |
-| 7 | Projects | `#111110` | 2+3 masonry image grid |
-| 8 | CTA | `#D0211C` (brand red) | Editorial single-column, max 720px |
-| 9 | Footer | `#0D0D0C` | 4-column grid |
+| Route | Component File | Purpose |
+|---|---|---|
+| `/` | `app/(pages)/page.tsx` | Home — full marketing landing page |
+| `/about` | `app/about/page.tsx` | Company story, team, stats, mission/vision |
+| `/services` | `app/services/page.tsx` | All 4 services overview |
+| `/services/land-sales` | `app/services/land-sales/page.tsx` | Land Sales detail page |
+| `/services/legal-support` | `app/services/legal-support/page.tsx` | Legal Support detail page |
+| `/services/construction-and-development` | `app/services/construction-and-development/page.tsx` | Construction detail page |
+| `/services/real-estate-investment-advisory` | `app/services/real-estate-investment-advisory/page.tsx` | Investment Advisory detail page |
+| `/projects` | `app/projects/page.tsx` | Filterable project grid |
+| `/properties` | `app/properties/page.tsx` | Properties alternate view |
+| `/contact` | `app/contact/page.tsx` | Contact form + office details |
 
 ---
 
@@ -336,30 +270,32 @@ Triggered at `window.scrollY > 40`. Background and `backdrop-filter` transition 
 
 ### 7.1 Typefaces
 
-Loaded via Google Fonts CDN:
+Loaded via `next/font/google` in `src/lib/fonts.ts`:
 
-```
-https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Outfit:wght@300;400;500;600&display=swap
-```
+| Family | Role | Weights | CSS Variable |
+|---|---|---|---|
+| **Montserrat** | All headings (h1–h6), eyebrow labels, stat numbers, buttons | 100–900 | `--font-montserrat` |
+| **EB Garamond** | Body copy, paragraphs, nav links | 400, 500, 600, 700, 800 | `--font-garamond` |
 
-| Family | Role | Weights Used |
-|---|---|---|
-| Playfair Display | Display / headings / stats | 700, 800 (+ italic 700) |
-| Outfit | Body, UI labels, buttons, nav | 300, 400, 500, 600 |
+### 7.2 Media
 
-### 7.2 Photography
-
-All photography sourced from Unsplash. Categories used: architectural exteriors, luxury residential properties, construction/blueprint imagery. Images delivered at `800px` width minimum, `object-fit: cover` at all usage points.
+- **Hero video:** `/videos/quantum-v.mp4` (autoplay, muted, loop, playsInline)
+- **Hero fallback:** Unsplash architecture photo (hardcoded URL)
+- **Client logos:** `/clients/client_1.png` through `client_12.png`
+- **Project images:** `/projects/` directory, referenced in `src/data/projects.ts`
+- **Team photos:** `/team/` and `/agents/` directories
+- **Decorative watermarks:** `/wallpapers/dwg_img_2.png`, `/wallpapers/planners.png`, etc.
 
 ---
 
-## 8. Accessibility Notes
+## 8. Accessibility & Mobile
 
-- All interactive elements (`<button>`, `<a>`) are focusable natively.
-- Colour contrast: white text on `brand-red` meets WCAG AA at standard body sizes.
-- Background images are decorative — no critical information is conveyed through images alone.
-- Nav and Footer links use semantic `<a>` tags.
-- `pointer-events: none` and `user-select: none` applied to all purely decorative elements (ghost text, overlays).
+- All interactive elements use semantic `<a>` and `<button>` tags.
+- Safe-area CSS utilities (`.safe-nav-top`, `.safe-footer-bottom`) handle notch/Dynamic Island devices via `env(safe-area-inset-*)`.
+- Viewport meta: `width=device-width, initial-scale=1, viewportFit=cover`.
+- Background images and video are decorative — no critical information conveyed through media alone.
+- Colour contrast: white text on brand-red (`#b91c1c`) meets WCAG AA at standard body sizes.
+- Mobile nav: hamburger drawer — no horizontal overflow.
 
 ---
 

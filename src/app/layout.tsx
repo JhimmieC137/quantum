@@ -25,4 +25,7 @@ export default function RootLayout({
       <body className={`${garamond.className} ${montserrat.variable} antialiased w-full`}>
         {children}
         <Toaster position="bottom-right" richColors />
-      </body
+      </body>
+    </html>
+  );
+}

@@ -182,3 +182,4 @@ export default function About() {
             <InvestmentSection />
         </MainLayout>
     )
+}

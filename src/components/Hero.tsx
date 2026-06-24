@@ -138,4 +138,8 @@ export default function Hero() {
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
         >
           <ChevronDown size={16} className="text-zinc-500" />
-       
+        </motion.div>
+      </motion.div>
+    </div>
+  )
+}

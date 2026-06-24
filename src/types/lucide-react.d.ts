@@ -21,7 +21,8 @@ declare module 'lucide-react' {
   export const Send: LucideIcon;
   export const LayoutGrid: LucideIcon;
   export const LayoutTemplate: LucideIcon;
-  export const Road: LucideIcon;
+  export const Construction: LucideIcon;
+  export const Network: LucideIcon;
   export const Trees: LucideIcon;
   export const Zap: LucideIcon;
   export const ShieldCheck: LucideIcon;

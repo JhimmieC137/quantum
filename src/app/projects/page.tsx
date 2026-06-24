@@ -6,7 +6,7 @@ import InvestmentSection from "@/components/Investment"
 import ProjectGrid from "@/sections/projects/ProjectGrid"
 import { availableProjects, projectCategories } from "@/data/projects"
 import { layout } from "@/lib/constants"
-import { LayoutTemplate, Road, Trees, Zap, ShieldCheck, MapPin, TrendingUp, Building2, FileCheck } from "lucide-react"
+import { LayoutTemplate, Construction, Network, Trees, Zap, ShieldCheck, MapPin, TrendingUp, Building2, FileCheck } from "lucide-react"
 import ServiceSectionHeading from "@/sections/services/ServiceSectionHeading"
 import FeatureCard from "@/sections/services/FeatureCard"
 import ServiceCTA from "@/sections/services/ServiceCTA"
@@ -22,7 +22,7 @@ const residentialFeatures = [
         description: "Professionally designed estate layouts with defined plots, roads, and green areas for a complete community experience.",
     },
     {
-        icon: <Road />,
+        icon: <Construction />,
         titleWhite: "Basic",
         titleAmber: "Infrastructure",
         description: "Provision of access roads, perimeter fencing, drainage systems, and water supply points.",
@@ -73,7 +73,7 @@ const commercialFeatures = [
         description: "Located in areas with rising commercial activity, guaranteeing fast appreciation and excellent income opportunities.",
     },
     {
-        icon: <Road />,
+        icon: <Network />,
         titleWhite: "Infrastructure",
         titleAmber: "Readiness",
         description: "Availability of access roads, drainage, electricity, and water supply ensuring smooth commencement of construction.",

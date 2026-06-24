@@ -12,7 +12,32 @@
       "Bash(node verify.js)",
       "Bash(npm root *)",
       "Read(//c/Users/oluda.DESKTOP-7B82R6B/.npm/**)",
-      "Read(//c/Users/oluda.DESKTOP-7B82R6B/AppData/Local/npm-cache/_npx/**)"
+      "Read(//c/Users/oluda.DESKTOP-7B82R6B/AppData/Local/npm-cache/_npx/**)",
+      "Bash(node -e \"const lr = require\\('lucide-react'\\); console.log\\(Object.keys\\(lr\\).includes\\('Road'\\), Object.keys\\(lr\\).includes\\('RoadHorizontal'\\), Object.keys\\(lr\\).includes\\('Route'\\), Object.keys\\(lr\\).includes\\('Milestone'\\)\\)\")",
+      "Bash(node -e \"const pkg = require\\('./node_modules/lucide-react/package.json'\\); console.log\\(pkg.version\\)\")",
+      "Bash(node -e \"const lr = require\\('lucide-react'\\); const keys = Object.keys\\(lr\\).filter\\(k => /route|road|path|highway|street|lane|way/i.test\\(k\\)\\); console.log\\(keys\\)\")",
+      "Bash(node -e \"const lr = require\\('lucide-react'\\); const keys = Object.keys\\(lr\\).filter\\(k => /construct|build|crane|wrench|hard|tool|infra/i.test\\(k\\)\\); console.log\\(keys\\)\")",
+      "Bash(node -e \"const lr = require\\('lucide-react'\\); const keys = Object.keys\\(lr\\).filter\\(k => /network|grid|layer|connect/i.test\\(k\\)\\); console.log\\(keys.slice\\(0,20\\)\\)\")",
+      "Bash(node -e \"const lr = require\\('lucide-react'\\); console.log\\(Object.keys\\(lr\\).length\\); console.log\\(Object.keys\\(lr\\).slice\\(0,50\\)\\)\")",
+      "Bash(node -e \"import\\('lucide-react'\\).then\\(lr => { console.log\\(Object.keys\\(lr\\).filter\\(k => /artery|way|path|trace|arrow/i.test\\(k\\)\\).slice\\(0,20\\)\\); }\\)\")",
+      "Bash(node -e \"import\\('lucide-react'\\).then\\(lr => { const keys = Object.keys\\(lr\\).filter\\(k => !k.endsWith\\('Icon'\\)\\); console.log\\(keys.filter\\(k => /cable|pipe|drain|water|lane|street|access|gate|fence/i.test\\(k\\)\\)\\); }\\)\")",
+      "Bash(node -e \"import\\('lucide-react'\\).then\\(lr => { console.log\\(['Network','Layers','Workflow','GitBranch','Wrench','Construction','HardHat','Shovel','Pickaxe','Ruler','Cable','Fence','Milestone','Navigation'].map\\(k => k + ':' + \\(k in lr\\)\\)\\); }\\)\")",
+      "Bash(node -e ' *)",
+      "PowerShell(cd \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\"; $content = Get-Content \"node_modules/lucide-react/dist/cjs/lucide-react.js\" -Raw; $hasConstruction = $content -match 'Construction'; Write-Host \"Construction in CJS: $hasConstruction\"; $pos = $content.IndexOf\\('Construction'\\); Write-Host \"Position: $pos\"; if \\($pos -gt 0\\) { Write-Host $content.Substring\\([Math]::Max\\(0,$pos-20\\), 60\\) })",
+      "PowerShell(cd \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\"; $content = Get-Content \"node_modules/lucide-react/dist/cjs/lucide-react.js\" -Raw; $exportMatch = $content | Select-String -Pattern 'exports\\\\.Construction' -AllMatches; Write-Host \"Exports.Construction found: $\\($exportMatch.Matches.Count\\)\")",
+      "PowerShell(cd \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\"; $esm = Get-Content \"node_modules/lucide-react/dist/esm/lucide-react.js\" -Raw; Write-Host \"ESM file size: $\\($esm.Length\\)\"; $pos = $esm.IndexOf\\('Construction'\\); Write-Host \"Construction at position: $pos\"; if \\($pos -gt 0\\) { Write-Host $esm.Substring\\([Math]::Max\\(0,$pos-10\\), 80\\) })",
+      "PowerShell(cd \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\"; $pkg = Get-Content \"node_modules/lucide-react/package.json\" -Raw | ConvertFrom-Json; $pkg.exports | ConvertTo-Json -Depth 10)",
+      "PowerShell(ls \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\\\\node_modules\\\\lucide-react\\\\dist\\\\esm\\\\icons\\\\\" | Where-Object { $_.Name -match \"construct|network|wrench|hard-hat|shovel\" })",
+      "PowerShell(ls \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\\\\node_modules\\\\lucide-react\\\\dist\\\\icons\\\\\" | Where-Object { $_.Name -match \"construct|network\" })",
+      "PowerShell(cd \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\"; $content = Get-Content \"node_modules/lucide-react/dist/lucide-react.d.ts\" -Raw; Write-Host \"declare module count: $\\(\\($content | Select-String 'declare module' -AllMatches\\).Matches.Count\\)\"; $exportBlocks = \\($content | Select-String 'export \\\\{' -AllMatches\\).Matches.Count; Write-Host \"export blocks: $exportBlocks\"; # Check if there's a single big export or multiple $firstLine = $content.Substring\\(0, 200\\); Write-Host \"First 200 chars: $firstLine\")",
+      "PowerShell(cd \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\"; $pkg = Get-Content \"node_modules/lucide-react/package.json\" -Raw | ConvertFrom-Json; Write-Host \"types: $\\($pkg.types\\)\"; Write-Host \"typings: $\\($pkg.typings\\)\"; Write-Host \"main: $\\($pkg.main\\)\")",
+      "Bash(python3 -c \"import sys; line = sys.stdin.read\\(\\); parts = line.strip\\('export { }'\\).split\\(','\\); names = [p.split\\(' as '\\)[-1].strip\\(\\) for p in parts]; print\\('Construction' in names\\); print\\('Network' in names\\); print\\('Road' in names\\)\")",
+      "PowerShell(cd \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\"; $lastLine = Get-Content \"node_modules/lucide-react/dist/lucide-react.d.ts\" -Tail 1; $hasConstruction = $lastLine -match '\\\\bConstruction\\\\b'; $hasNetwork = $lastLine -match '\\\\bNetwork\\\\b'; $hasRoad = $lastLine -match '\\\\bRoad\\\\b'; Write-Host \"Final export has Construction: $hasConstruction, Network: $hasNetwork, Road: $hasRoad\")",
+      "PowerShell(ls \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\\\\node_modules\\\\@types\\\\\" | Where-Object { $_.Name -match \"lucide\" })",
+      "PowerShell(cd \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\"; $nextPkg = Get-Content \"node_modules/next/package.json\" -Raw | ConvertFrom-Json; Write-Host \"next version: $\\($nextPkg.version\\)\"; if \\($nextPkg.dependencies.'lucide-react'\\) { Write-Host \"dep: $\\($nextPkg.dependencies.'lucide-react'\\)\" } else { Write-Host \"lucide-react NOT in next.js deps\" })",
+      "Bash(xargs grep -l \"lucide-react\")",
+      "PowerShell($nextPkg = Get-Content \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\\\\node_modules\\\\next\\\\package.json\" -Raw | ConvertFrom-Json; Write-Host \"types: $\\($nextPkg.types\\)\"; Write-Host \"typings: $\\($nextPkg.typings\\)\")",
+      "Bash(git stash *)"
     ]
   }
 }

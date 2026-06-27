@@ -1,20 +1,131 @@
 'use client'
 
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "motion/react"
 import MainLayout from "../(pages)/layout"
 import InvestmentSection from "@/components/Investment"
 import HeroBanner from "@/components/HeroBanner"
 import PageHero from "@/components/PageHero"
 import FAQAccordion from "@/components/FAQ"
+import FadeUp from "@/ui/FadeUp"
 import { montserrat, garamond } from "@/lib/fonts"
+import { pageRoutes } from "@/data/routes"
+import { HiArrowRight } from "react-icons/hi"
+
+const services = [
+    {
+        image: "/services/land_sales_narrow.jpg",
+        title: "Land Sales",
+        accentTitle: "Land",
+        accent: "Sales",
+        description:
+            "Our land sales service focuses on providing clients with genuine, well-verified lands in both prime and fast-developing locations. We ensure every property is authentic, secure, and properly documented.",
+        href: pageRoutes.services.landSales,
+        flip: false,
+    },
+    {
+        image: "/services/signing-papers.jpg",
+        title: "Title Documentation & Legal Support",
+        accentTitle: "Title Documentation &",
+        accent: "Legal Support",
+        description:
+            "Our Title Documentation & Legal Support service is designed to protect our clients by ensuring that every property acquired is authentic, legally compliant, and properly registered.",
+        href: pageRoutes.services.legalSupport,
+        flip: true,
+    },
+    {
+        image: "/services/new-building.jpg",
+        title: "Construction and Development",
+        accentTitle: "Construction and",
+        accent: "Development",
+        description:
+            "Our Construction and Development service is tailored for individuals, families, investors, and organizations who want to bring their real estate visions to life with precision and excellence.",
+        href: pageRoutes.services.construction,
+        flip: false,
+    },
+    {
+        image: "/services/agents-in-meeting.jpg",
+        title: "Real Estate Investment Advisory",
+        accentTitle: "Real Estate",
+        accent: "Investment Advisory",
+        description:
+            "Our Investment Advisory service guides individuals, families, and corporate organizations in identifying, analyzing, and investing in high-value real estate opportunities that yield long-term returns.",
+        href: pageRoutes.services.realEstateAdvisory,
+        flip: true,
+    },
+]
+
+function ServiceBlock({ svc, index }: { svc: typeof services[0]; index: number }) {
+    const ref = useRef<HTMLDivElement>(null)
+    const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] })
+    const imgY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"])
+
+    return (
+        <div
+            ref={ref}
+            className={`flex ${svc.flip ? "lg:flex-row-reverse" : "lg:flex-row"} flex-col w-full lg:min-h-[28rem] gap-0`}
+        >
+            {/* Image side */}
+            <div className="lg:w-1/2 w-full relative overflow-hidden">
+                <motion.div className="absolute inset-0 w-full h-full" style={{ y: imgY }}>
+                    <img
+                        className="w-full h-full object-cover scale-110"
+                        src={svc.image}
+                        alt={svc.title}
+                    />
+                </motion.div>
+                {/* Overlay tint */}
+                <div className="absolute inset-0 bg-[#1F2A44]/40" />
+                {/* Number badge */}
+                <div className="absolute bottom-6 left-6 z-10">
+                    <span className={`${montserrat.className} text-[5rem] font-extrabold leading-none text-white/10 select-none`}>
+                        {String(index + 1).padStart(2, "0")}
+                    </span>
+                </div>
+            </div>
+
+            {/* Text side */}
+            <div className={`lg:w-1/2 w-full flex flex-col justify-center py-20 px-10 xl:px-16
+                ${index % 2 === 0 ? "bg-[#1F2A44]" : "bg-[#0e1520]"}
+            `}>
+                <motion.div
+                    initial={{ opacity: 0, x: svc.flip ? 40 : -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.7 }}
+                >
+                    <div className="flex items-center gap-3 mb-5">
+                        <div className="h-px w-8 bg-[#C9A84C]" />
+                        <p className={`${montserrat.className} text-[10px] font-bold text-[#C9A84C] tracking-[0.22em] uppercase`}>
+                            Service {String(index + 1).padStart(2, "0")}
+                        </p>
+                    </div>
+
+                    <h2 className={`${montserrat.className} text-zinc-100 text-4xl xl:text-5xl font-semibold mb-6 leading-tight`}>
+                        {svc.accentTitle} <em className="not-italic text-gradient-gold">{svc.accent}</em>
+                    </h2>
+
+                    <p className={`${garamond.className} text-zinc-400 text-lg leading-relaxed mb-10`}>
+                        {svc.description}
+                    </p>
+
+                    <a
+                        href={svc.href}
+                        className="group inline-flex items-center gap-3 btn-shimmer text-white py-3 px-7 rounded-full text-sm font-semibold tracking-wide w-fit shadow-lg"
+                    >
+                        Learn More
+                        <HiArrowRight className="size-4 group-hover:translate-x-1 transition-transform duration-200" />
+                    </a>
+                </motion.div>
+            </div>
+        </div>
+    )
+}
 
 export default function Services() {
-    const paragraphList=[
-        "\
-            We deliver end-to-end real estate and construction solutions from architectural design to final handover built on precision, integrity, and a relentless commitment to exceeding every client's expectations.\
-        ",
-        "\
-            Every structure we raise is a statement of purpose. We blend intelligent design with durable craftsmanship to create spaces that serve communities, stand the test of time, and define skylines.\
-        ",
+    const paragraphList = [
+        "We deliver end-to-end real estate and construction solutions — from architectural design to final handover — built on precision, integrity, and a relentless commitment to exceeding every client's expectations.",
+        "Every structure we raise is a statement of purpose. We blend intelligent design with durable craftsmanship to create spaces that serve communities, stand the test of time, and define skylines.",
     ]
 
     return (
@@ -26,144 +137,18 @@ export default function Services() {
             />
 
             <PageHero
-                CTAMain="Innovative Designs "
+                CTAMain="Innovative Designs,"
                 CTAAccent="Urban Excellence"
                 paragraphs={paragraphList}
             />
 
-            <div className="bg-zinc-950">
-                <div className="bg-zinc-950">
-                    <div className="max-w-7xl m-auto py-16 sm:py-24 lg:py-32 px-6">
-                        <div className="flex lg:flex-row flex-col w-full lg:min-h-[25rem] gap-y-8 lg:gap-y-0 lg:gap-x-20">
+            {/* Service blocks */}
+            <section className="w-full">
+                {services.map((svc, i) => (
+                    <ServiceBlock key={svc.title} svc={svc} index={i} />
+                ))}
+            </section>
 
-                        {/* Image side */}
-                        <div className="lg:w-1/2 w-full relative pt-3 pr-3">
-                            <div className="bg-[#b91c1c] absolute top-0 right-0 bottom-3 left-3 rounded-sm z-0" />
-                            <div className="rounded-sm overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
-                            <img className="absolute inset-0 object-cover size-full" src="/services/land_sales_narrow.jpg" alt="Land Sales" />
-                            <div className="absolute bg-[#b91c1c]/10 inset-0" />
-                            </div>
-                        </div>
-
-                        {/* Text side */}
-                        <div className="lg:w-1/2 w-full flex flex-col justify-center">
-                            <p className={`${montserrat.className} text-zinc-200 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
-                            Land <span className="text-amber-400 italic">Sales</span>
-                            </p>
-                            <p className={`${garamond.className} text-zinc-400 text-base sm:text-lg xl:text-xl`}>
-                            Our land sales service focuses on providing clients with genuine,
-                            well-verified lands in both prime and fast-developing locations.
-                            </p>
-                            <a href="/services/land-sales">
-                            <div className={`${montserrat.className} mt-8 py-3 px-8 bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-sm transition-colors duration-200 cursor-pointer w-fit text-[10px] tracking-[0.25em] uppercase font-semibold`}>
-                                Learn more
-                            </div>
-                            </a>
-                        </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div className="bg-zinc-900 relative overflow-hidden">
-                    <div className="max-w-7xl m-auto py-16 sm:py-24 lg:py-32 px-6 relative">
-                        <div className="flex lg:flex-row-reverse flex-col w-full lg:min-h-[25rem] gap-y-12 lg:gap-y-0 lg:gap-x-20">
-
-                        {/* Image side */}
-                        <div className="lg:w-1/2 w-full relative">
-                            <div className="rounded-sm overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
-                            <img className="absolute inset-0 object-cover size-full" src="/services/signing-papers.jpg" alt="Legal Support" />
-                            <div className="absolute bg-[#b91c1c]/10 inset-0 z-10" />
-                            </div>
-                        </div>
-
-                        {/* Text side */}
-                        <div className="lg:w-1/2 w-full flex flex-col justify-center">
-                            <p className={`${montserrat.className} text-zinc-200 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
-                            Title Documentation and <span className="text-amber-400 italic">Legal Support</span>
-                            </p>
-                            <p className={`${garamond.className} text-base sm:text-lg xl:text-xl text-zinc-400`}>
-                            Our Title Documentation &amp; Legal Support service is designed to protect our clients by ensuring
-                            that every property acquired is authentic, legally compliant, and properly registered.
-                            </p>
-                            <a href="/services/legal-support">
-                            <div className={`${montserrat.className} mt-8 py-3 px-8 bg-white/5 border border-white/20 hover:bg-white/10 text-zinc-200 rounded-sm transition-colors duration-200 cursor-pointer w-fit text-[10px] tracking-[0.25em] uppercase font-semibold`}>
-                                Learn more
-                            </div>
-                            </a>
-                        </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div className="bg-zinc-950">
-                    <div className="max-w-7xl m-auto py-16 sm:py-24 lg:py-32 px-6">
-                        <div className="flex lg:flex-row flex-col w-full lg:min-h-[25rem] gap-y-8 lg:gap-y-0 lg:gap-x-20">
-
-                        {/* Image side */}
-                        <div className="lg:w-1/2 w-full relative pt-3 pr-3">
-                            <div className="bg-[#b91c1c] absolute top-0 right-0 bottom-3 left-3 rounded-sm z-0" />
-                            <div className="rounded-sm overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
-                            <img className="absolute inset-0 object-cover size-full" src="/services/new-building.jpg" alt="Construction" />
-                            <div className="absolute bg-[#b91c1c]/10 inset-0" />
-                            </div>
-                        </div>
-
-                        {/* Text side */}
-                        <div className="lg:w-1/2 w-full flex flex-col justify-center">
-                            <p className={`${montserrat.className} text-zinc-200 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
-                            Construction and <span className="text-amber-400 italic">Development</span>
-                            </p>
-                            <p className={`${garamond.className} text-zinc-400 text-base sm:text-lg xl:text-xl`}>
-                            Our Construction and Development service is tailored for individuals, families, investors,
-                            and organizations who want to bring their real estate visions to life.
-                            </p>
-                            <a href="/services/construction-and-development">
-                            <div className={`${montserrat.className} mt-8 py-3 px-8 bg-[#b91c1c] hover:bg-[#dc2626] text-white rounded-sm transition-colors duration-200 cursor-pointer w-fit text-[10px] tracking-[0.25em] uppercase font-semibold`}>
-                                Learn more
-                            </div>
-                            </a>
-                        </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div className="bg-zinc-900 relative overflow-hidden">
-                    <div className="max-w-7xl m-auto py-16 sm:py-24 lg:py-32 px-6 relative">
-                        <div className="flex lg:flex-row-reverse flex-col w-full lg:min-h-[25rem] gap-y-12 lg:gap-y-0 lg:gap-x-20">
-
-                        {/* Image side */}
-                        <div className="lg:w-[47%] w-full relative">
-                            <div className="rounded-sm overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
-                            <img className="absolute inset-0 object-cover size-full" src="/services/agents-in-meeting.jpg" alt="Investment Advisory" />
-                            <div className="absolute bg-[#b91c1c]/10 inset-0 z-10" />
-                            </div>
-                        </div>
-
-                        {/* Text side */}
-                        <div className="lg:w-1/2 w-full flex flex-col justify-center">
-                            <p className={`${montserrat.className} text-zinc-200 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
-                            Real Estate <span className="text-amber-400 italic">Investment Advisory</span>
-                            </p>
-                            <p className={`${garamond.className} text-base sm:text-lg xl:text-xl text-zinc-400`}>
-                            Our Investment Advisory service is designed to guide individuals, families, and corporate
-                            organizations in identifying, analyzing, and investing in high-value real estate opportunities
-                            that yield long-term returns.
-                            </p>
-                            <a href="/services/real-estate-investment-advisory">
-                            <div className={`${montserrat.className} mt-8 py-3 px-8 bg-white/5 border border-white/20 hover:bg-white/10 text-zinc-200 rounded-sm transition-colors duration-200 cursor-pointer w-fit text-[10px] tracking-[0.25em] uppercase font-semibold`}>
-                                Learn more
-                            </div>
-                            </a>
-                        </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
             <FAQAccordion />
             <InvestmentSection />
         </MainLayout>

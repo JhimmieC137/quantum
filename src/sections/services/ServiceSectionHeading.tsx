@@ -14,7 +14,7 @@ export default function ServiceSectionHeading({
         <div className="w-full mt-16 sm:mt-20 lg:mt-28 px-4 sm:px-6 lg:px-8">
             <p className={`${montserrat.className} text-center text-zinc-200 text-4xl sm:text-5xl lg:text-7xl font-semibold max-w-[50rem] m-auto leading-tight`}>
                 {white}<br/>
-                <span className="text-amber-400 italic">{amber}</span>
+                <em className="not-italic text-gradient-gold">{amber}</em>
             </p>
         </div>
     )

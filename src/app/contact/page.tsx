@@ -99,7 +99,7 @@ export default function ContactUs() {
                     <div className="lg:w-1/2 w-full flex flex-col">
                         <FadeUp>
                             <div className={`${montserrat.className} flex justify-start gap-4 items-center mb-2 pl-1`}>
-                                <div className="h-px w-16 bg-[#b91c1c]" />
+                                <div className="h-px w-16 bg-[#6B7A3A]" />
                                 <p className={`text-[10px] font-bold text-amber-500 tracking-[0.3em] uppercase`}>GET IN TOUCH</p>
                             </div>
                         </FadeUp>
@@ -123,7 +123,7 @@ export default function ContactUs() {
                                     {o.label}
                                     {/* Animated underline */}
                                     <span
-                                        className={`absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#b91c1c] transition-all duration-300 ease-in-out
+                                        className={`absolute bottom-0 left-0 right-0 h-[2.5px] bg-[#6B7A3A] transition-all duration-300 ease-in-out
                                             ${activeTab === o.id ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"}`}
                                         style={{ transformOrigin: "left" }}
                                     />
@@ -199,7 +199,7 @@ export default function ContactUs() {
                     {/* ── Contact form ──────────────────────────────── */}
                     <form
                         onSubmit={handleSubmit}
-                        className={`lg:w-1/2 w-full p-8 sm:p-10 lg:p-12 bg-zinc-900 rounded-sm overflow-hidden relative flex flex-col border border-white/5`}
+                        className={`lg:w-1/2 w-full p-8 sm:p-10 lg:p-12 glass-dark rounded-2xl overflow-hidden relative flex flex-col border border-white/10`}
                     >
                         <div className="flex-1 flex flex-col">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-4">
@@ -247,7 +247,7 @@ export default function ContactUs() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className={`${montserrat.className} relative rounded-sm p-3 z-20 bg-[#b91c1c] hover:bg-[#dc2626] text-white w-full flex justify-center items-center gap-2 transition-colors duration-200 text-[10px] tracking-[0.25em] uppercase font-semibold cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-auto`}
+                            className={`${montserrat.className} relative rounded-full p-3 z-20 btn-shimmer text-white w-full flex justify-center items-center gap-2 transition-colors duration-200 text-[10px] tracking-[0.25em] uppercase font-semibold cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-auto`}
                         >
                             {loading ? 'Sending...' : 'Send Message'}
                             <Send size={14} />

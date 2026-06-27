@@ -14,12 +14,12 @@ export default function Home() {
     <div className="w-full">
       <Hero />
       <Introduction />
-      <OurClients />
       <OurServices />
       <CoreValues />
-      <Projects />
-      <FAQAccordion />
       <InvestmentSection />
+      <Projects />
+      <OurClients />
+      <FAQAccordion />
     </div>
   );
 }

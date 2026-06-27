@@ -13,16 +13,17 @@ export default function ServiceIntro({
     return (
         <div className="max-w-7xl m-auto flex lg:flex-row flex-col gap-y-8 lg:gap-x-20 relative px-4 sm:px-6 lg:px-8">
             {/* Image side */}
-            <div className="lg:w-1/2 w-full relative pt-3 pr-3">
-                <div className="bg-[#b91c1c] absolute top-0 right-0 bottom-3 left-3 rounded-sm z-0" />
-                <div className="rounded-sm overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[28rem]">
+            <div className="lg:w-1/2 w-full relative">
+                <div className="rounded-2xl overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[28rem] img-zoom-wrap ring-1 ring-[#6B7A3A]/30">
                     <img
                         src={image}
                         className="absolute inset-0 object-cover size-full"
                         alt=""
                     />
-                    <div className="absolute bg-[#b91c1c]/20 inset-0"/>
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#1F2A44]/40 to-transparent" />
                 </div>
+                {/* Gold accent corner */}
+                <div className="absolute -bottom-3 -right-3 w-16 h-16 rounded-2xl bg-gradient-to-br from-[#6B7A3A] to-[#C9A84C] opacity-70 -z-10" />
             </div>
 
             {/* Text side */}

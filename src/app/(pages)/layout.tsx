@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header"
 import ScreenLoader from "@/ui/ScreenLoader";
+import WhatsAppFAB from "@/components/WhatsAppFAB";
 import { useEffect, useState } from "react";
 
 
@@ -26,6 +27,7 @@ export default function MainLayout({ children }: {children: React.ReactNode}) {
                 </div>
                 {children}
                 <Footer />
+                <WhatsAppFAB />
             </div>
             
             {/* <div className="w-full md:px-24">

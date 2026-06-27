@@ -1,16 +1,4 @@
 {
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/session-start.sh"
-          }
-        ]
-      }
-    ]
-  },
   "permissions": {
     "allow": [
       "Bash(node -e \"console.log\\(Object.keys\\(require\\('next/font/google'\\)\\).filter\\(k=>/garamond/i.test\\(k\\)\\)\\)\")",
@@ -49,7 +37,21 @@
       "PowerShell(cd \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\"; $nextPkg = Get-Content \"node_modules/next/package.json\" -Raw | ConvertFrom-Json; Write-Host \"next version: $\\($nextPkg.version\\)\"; if \\($nextPkg.dependencies.'lucide-react'\\) { Write-Host \"dep: $\\($nextPkg.dependencies.'lucide-react'\\)\" } else { Write-Host \"lucide-react NOT in next.js deps\" })",
       "Bash(xargs grep -l \"lucide-react\")",
       "PowerShell($nextPkg = Get-Content \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\\\\node_modules\\\\next\\\\package.json\" -Raw | ConvertFrom-Json; Write-Host \"types: $\\($nextPkg.types\\)\"; Write-Host \"typings: $\\($nextPkg.typings\\)\")",
-      "Bash(git stash *)"
+      "Bash(git stash *)",
+      "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"premium real estate luxury property Nigeria\" --design-system -p \"Quantum Homes\" -f markdown)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"premium real estate luxury property Nigeria\" --design-system -p \"Quantum Homes\" -f markdown)"
+    ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/session-start.sh"
+          }
+        ]
+      }
     ]
   }
 }

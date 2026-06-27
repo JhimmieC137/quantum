@@ -127,14 +127,14 @@ export default function Projects() {
                     <div className={`${layout.container} flex lg:flex-row flex-col gap-y-8 lg:gap-x-20`}>
                         {/* Image side */}
                         <div className="lg:w-1/2 w-full relative pt-3 pr-3">
-                            <div className="bg-[#b91c1c] absolute top-0 right-0 bottom-3 left-3 rounded-sm z-0" />
+                            <div className="bg-[#6B7A3A] absolute top-0 right-0 bottom-3 left-3 rounded-sm z-0" />
                             <div className="rounded-sm overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[28rem]">
                                 <img
                                     src="/services/residential_estate.png"
                                     className="absolute inset-0 object-cover size-full"
                                     alt="Residential estate"
                                 />
-                                <div className="absolute inset-0 bg-[#b91c1c]/20 z-20" />
+                                <div className="absolute inset-0 bg-[#6B7A3A]/20 z-20" />
                             </div>
                         </div>
 
@@ -171,14 +171,14 @@ export default function Projects() {
                     <div className={`${layout.container} flex lg:flex-row-reverse flex-col gap-y-8 lg:gap-x-20`}>
                         {/* Image side */}
                         <div className="lg:w-1/2 w-full relative pt-3 pl-3">
-                            <div className="bg-[#b91c1c] absolute top-0 left-0 bottom-3 right-3 rounded-sm z-0" />
+                            <div className="bg-[#6B7A3A] absolute top-0 left-0 bottom-3 right-3 rounded-sm z-0" />
                             <div className="rounded-sm overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[28rem]">
                                 <img
                                     src="/services/commercial_estate.png"
                                     className="absolute inset-0 object-cover size-full"
                                     alt="Commercial estate"
                                 />
-                                <div className="absolute inset-0 bg-[#b91c1c]/20 z-20" />
+                                <div className="absolute inset-0 bg-[#6B7A3A]/20 z-20" />
                             </div>
                         </div>
 

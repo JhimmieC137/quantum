@@ -47,7 +47,7 @@ export default function ProjectGrid({ categories, projects }: { categories: Cate
                                 onClick={() => setSelectedCategory(el.name)}
                                 className={`flex-shrink-0 px-4 py-2 border-b-2 transition-all duration-200 whitespace-nowrap
                                     ${el.name === selectedCategory
-                                        ? "border-[#b91c1c] text-zinc-100"
+                                        ? "border-[#6B7A3A] text-zinc-100"
                                         : "border-transparent text-zinc-500 hover:text-zinc-300"
                                     }`}
                             >

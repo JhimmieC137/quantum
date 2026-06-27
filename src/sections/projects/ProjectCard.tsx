@@ -125,7 +125,7 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
 
                                     <a
                                         href="/contact"
-                                        className={`${montserrat.className} mt-6 sm:mt-8 py-3 px-6 bg-[#b91c1c] hover:bg-[#dc2626] text-zinc-100 rounded-sm text-[10px] tracking-[0.25em] uppercase font-semibold text-center transition-colors duration-200 shrink-0 w-full sm:w-4/5`}
+                                        className={`${montserrat.className} mt-6 sm:mt-8 py-3 px-6 btn-shimmer text-white rounded-full text-[10px] tracking-[0.25em] uppercase font-semibold text-center transition-colors duration-200 shrink-0 w-full sm:w-4/5`}
                                     >
                                         Contact Us
                                     </a>

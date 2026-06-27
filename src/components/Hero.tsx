@@ -2,147 +2,158 @@
 
 import { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
-import FadeUp from "@/ui/FadeUp";
+import { montserrat, garamond } from "@/lib/fonts";
 import { pageRoutes } from "@/data/routes";
-import { montserrat } from "@/lib/fonts";
+
+const stats = [
+    { value: "58+", label: "Land plots sold" },
+    { value: "17+", label: "Structures built" },
+    { value: "2+",  label: "Years experience" },
+]
 
 export default function Hero() {
     const [videoReady, setVideoReady] = useState(false);
-    const videoRef = useRef<HTMLVideoElement>(null);
+    const videoRef   = useRef<HTMLVideoElement>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
 
-    // Parallax scroll
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ["start start", "end start"],
-    });
-    const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-    const textY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
-    const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+    const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
+    const bgY      = useTransform(scrollYProgress, [0, 1], ["0%", "28%"]);
+    const textY    = useTransform(scrollYProgress, [0, 1], ["0%", "14%"]);
+    const headingY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+    const opacity  = useTransform(scrollYProgress, [0, 0.65], [1, 0]);
 
     useEffect(() => {
-        const video = videoRef.current;
-        if (!video) return;
-        if (video.readyState >= 4) {
-            setVideoReady(true);
-        } else {
-            video.addEventListener('canplaythrough', () => setVideoReady(true), { once: true });
-        }
+        const v = videoRef.current;
+        if (!v) return;
+        if (v.readyState >= 4) setVideoReady(true);
+        else v.addEventListener("canplaythrough", () => setVideoReady(true), { once: true });
     }, []);
 
-    const stats = [
-        { value: "58+", label: "Land plots sold" },
-        { value: "17+", label: "Structures built" },
-        { value: "2+",  label: "Years experience" },
-    ];
-
     return (
-        <div ref={sectionRef} className="max-w-screen min-h-screen w-full relative overflow-hidden bg-[#0e1520]">
+        <section ref={sectionRef} className="relative w-full bg-[#FAF9F6] overflow-hidden">
 
-            {/* Parallax background layer */}
-            <motion.div className="absolute inset-0 will-change-transform" style={{ y: bgY }}>
-                {/* Fallback image */}
-                <div
-                    className="absolute inset-0 bg-cover bg-center scale-110 transition-opacity duration-1000"
-                    style={{
-                        backgroundImage: "url('/wallpapers/mansion_a.png')",
-                        opacity: videoReady ? 0 : 0.45,
-                    }}
-                />
+            {/* ── Full-bleed image / video panel ─────────────────────── */}
+            <div className="relative w-full h-[90vh] min-h-[560px] overflow-hidden">
 
-                {/* Video */}
-                <video
-                    ref={videoRef}
-                    className="absolute inset-0 w-full h-full object-cover scale-110 transition-opacity duration-1000"
-                    style={{ opacity: videoReady ? 0.42 : 0 }}
-                    src="/videos/quantum-v.mp4"
-                    autoPlay muted loop playsInline preload="auto"
-                />
-            </motion.div>
+                <motion.div className="absolute inset-0 w-full h-full scale-110" style={{ y: bgY }}>
+                    {/* Fallback image */}
+                    <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{
+                            backgroundImage: "url('/wallpapers/mansion_a.png')",
+                            opacity: videoReady ? 0 : 1,
+                            transition: "opacity 1.2s ease",
+                        }}
+                    />
+                    {/* Video */}
+                    <video
+                        ref={videoRef}
+                        className="absolute inset-0 w-full h-full object-cover"
+                        style={{ opacity: videoReady ? 1 : 0, transition: "opacity 1.2s ease" }}
+                        src="/videos/quantum-v.mp4"
+                        autoPlay muted loop playsInline preload="auto"
+                    />
+                </motion.div>
 
-            {/* Gradient overlays */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#0e1520]/90 via-[#1F2A44]/70 to-[#0e1520]/80" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0e1520] via-transparent to-transparent" />
+                {/* Gradient overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111110]/85 via-[#111110]/25 to-[#111110]/30" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#111110]/40 to-transparent" />
 
-            {/* Decorative orbs */}
-            <div className="orb absolute -top-20 -right-20 w-[500px] h-[500px] bg-[#6B7A3A]/20 opacity-60" />
-            <div className="orb absolute bottom-10 -left-10 w-[300px] h-[300px] bg-[#C9A84C]/10 opacity-40" style={{ animationDelay: '3s' }} />
+                {/* Eyebrow label */}
+                <motion.div
+                    className="absolute top-32 sm:top-36 left-0 right-0 flex justify-center z-10"
+                    style={{ opacity }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                    <div className={`${montserrat.className} flex items-center gap-4`}>
+                        <div className="w-8 h-px bg-[#b91c1c]" />
+                        <span className="section-label text-[#b91c1c]">
+                            (Premium Real Estate · Ibadan)
+                        </span>
+                        <div className="w-8 h-px bg-[#b91c1c]" />
+                    </div>
+                </motion.div>
 
-            {/* Vertical gold accent bar */}
-            <div className="absolute left-0 top-24 w-[3px] h-28 bg-gradient-to-b from-transparent via-[#C9A84C] to-transparent" />
+                {/* Big editorial headline — overlaps image + cream */}
+                <motion.div
+                    className="absolute bottom-0 left-0 right-0 z-10 px-5 sm:px-10 lg:px-16 pb-10 sm:pb-16"
+                    style={{ y: headingY, opacity }}
+                >
+                    <motion.h1
+                        className={`${garamond.className} text-white leading-none font-normal tracking-tight`}
+                        style={{ fontSize: "clamp(3.4rem, 8.5vw, 9.5rem)" }}
+                        initial={{ opacity: 0, y: 40 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, delay: 0.15 }}
+                    >
+                        A Call To<br />
+                        Your{" "}
+                        <em className="italic text-[#b91c1c]">Dream Home</em>
+                    </motion.h1>
+                </motion.div>
 
-            {/* Content */}
+                {/* Scroll indicator */}
+                <div className="absolute bottom-6 right-8 z-10 hidden md:flex flex-col items-center gap-2">
+                    <div className="w-px h-12 bg-gradient-to-b from-white/60 to-transparent" />
+                    <p className={`${montserrat.className} text-[9px] text-white/50 tracking-[0.28em] uppercase`}>Scroll</p>
+                </div>
+            </div>
+
+            {/* ── Cream band — sub-copy + stats + CTAs ───────────────── */}
             <motion.div
-                className="relative z-10 min-h-screen flex justify-center md:items-center md:pb-0 items-end pb-[5rem]"
-                style={{ y: textY, opacity }}
+                className="bg-[#FAF9F6] relative z-10"
+                style={{ y: textY }}
             >
-                <div className="xl:max-w-[1200px] 2xl:max-w-[1400px] lg:max-w-[1000px] px-5 w-full">
+                {/* Red top accent line */}
+                <div className="rule-red w-24 mx-auto" style={{ marginTop: "-1px" }} />
 
-                    <FadeUp>
-                        <div className={`${montserrat.className} flex items-center gap-4 mb-6 sm:flex hidden`}>
-                            <div className="h-px w-12 bg-[#C9A84C]" />
-                            <p className="text-xs font-bold text-[#C9A84C] tracking-[0.22em] uppercase">
-                                Premium Real Estate · Ibadan
+                <div className="max-w-[1400px] mx-auto px-5 sm:px-10 lg:px-16 py-14 md:py-20">
+                    <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-12 lg:gap-0">
+
+                        {/* Left: para + CTAs */}
+                        <motion.div
+                            className="lg:w-[50%]"
+                            initial={{ opacity: 0, y: 24 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.5 }}
+                        >
+                            <p className={`${garamond.className} text-[#555550] text-xl md:text-2xl leading-[1.7] mb-10 max-w-[40rem]`}>
+                                We develop verified, well-located estates across Ibadan&apos;s fastest-growing corridors.
+                                Every property is properly documented and built to deliver real, lasting value.
                             </p>
-                        </div>
-                    </FadeUp>
+                            <div className="flex flex-wrap gap-4">
+                                <a href={pageRoutes.projects}      className={`${montserrat.className} btn-red py-3 px-8 rounded-full text-[11px] font-bold tracking-widest uppercase`}>
+                                    Explore Projects
+                                </a>
+                                <a href={pageRoutes.services.base} className={`${montserrat.className} btn-ghost py-3 px-8 rounded-full text-[11px] font-bold tracking-widest uppercase`}>
+                                    Our Services
+                                </a>
+                            </div>
+                        </motion.div>
 
-                    <FadeUp>
-                        <h1 className={`${montserrat.className} 2xl:text-[5.8rem] xl:text-[5rem] sm:text-[3.8rem] text-[2.4rem] 2xl:leading-[6.8rem] xl:leading-[5.8rem] sm:leading-[4.4rem] leading-[2.8rem] font-semibold text-zinc-100 mb-6 sm:text-left text-center`}>
-                            A Call To Your{" "}
-                            <em className="not-italic text-gradient-gold font-bold">Dream Home</em>
-                        </h1>
-                    </FadeUp>
-
-                    <FadeUp>
-                        <p className="hidden md:block text-[15px] xl:max-w-[46rem] lg:max-w-[38rem] text-zinc-300/80 leading-relaxed mb-10">
-                            We develop verified, well-located estates across Ibadan's
-                            fastest-growing corridors. Every property is properly documented
-                            and built to deliver real, lasting value.
-                        </p>
-                    </FadeUp>
-
-                    <FadeUp>
-                        <div className="flex gap-4 mt-8 sm:flex-row flex-col sm:w-auto w-[72%] mx-auto sm:mx-0">
-                            <a
-                                href={pageRoutes.projects}
-                                className="btn-shimmer text-white py-3 px-8 rounded-full font-semibold text-sm tracking-wide text-center shadow-lg"
-                            >
-                                Explore Projects
-                            </a>
-                            <a
-                                href={pageRoutes.services.base}
-                                className="py-3 px-8 border border-white/25 rounded-full text-zinc-200 hover:border-[#C9A84C] hover:text-[#C9A84C] text-sm font-medium transition-all duration-300 text-center backdrop-blur-sm"
-                            >
-                                Our Services
-                            </a>
-                        </div>
-                    </FadeUp>
-
-                    {/* Stats */}
-                    <FadeUp>
-                        <div className="hidden sm:flex gap-0 mt-14">
-                            {stats.map((s, i) => (
-                                <div
-                                    key={s.label}
-                                    className={`pr-10 ${i > 0 ? 'pl-10 border-l border-[#C9A84C]/30' : ''}`}
-                                >
-                                    <p className={`${montserrat.className} xl:text-5xl text-4xl font-bold text-gradient-gold mb-1`}>
-                                        {s.value}
-                                    </p>
-                                    <p className="text-xs text-zinc-400 tracking-[0.1em] uppercase">{s.label}</p>
+                        {/* Right: Stats */}
+                        <motion.div
+                            className="lg:w-[44%] grid grid-cols-3 divide-x divide-[#111110]/12"
+                            initial={{ opacity: 0, y: 24 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.7 }}
+                        >
+                            {stats.map((s) => (
+                                <div key={s.label} className="px-4 sm:px-7 first:pl-0 last:pr-0 flex flex-col justify-end">
+                                    <p className={`stat-num text-[#b91c1c] mb-1`}>{s.value}</p>
+                                    <p className={`${montserrat.className} text-[10px] text-[#888880] tracking-[0.14em] uppercase`}>{s.label}</p>
                                 </div>
                             ))}
-                        </div>
-                    </FadeUp>
-                </div>
-            </motion.div>
+                        </motion.div>
 
-            {/* Scroll cue */}
-            <div className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
-                <div className="w-px h-12 bg-gradient-to-b from-transparent to-[#C9A84C]" />
-                <p className="text-[9px] text-zinc-500 tracking-[0.18em] uppercase">scroll</p>
-            </div>
-        </div>
+                    </div>
+                </div>
+
+                {/* Bottom thin rule */}
+                <div className="rule max-w-[1400px] mx-auto" />
+            </motion.div>
+        </section>
     )
 }

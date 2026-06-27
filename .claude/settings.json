@@ -39,7 +39,8 @@
       "PowerShell($nextPkg = Get-Content \"C:\\\\Users\\\\oluda.DESKTOP-7B82R6B\\\\Desktop\\\\STAY_OUT\\\\Tower\\\\quantum\\\\node_modules\\\\next\\\\package.json\" -Raw | ConvertFrom-Json; Write-Host \"types: $\\($nextPkg.types\\)\"; Write-Host \"typings: $\\($nextPkg.typings\\)\")",
       "Bash(git stash *)",
       "Bash(python3 .claude/skills/ui-ux-pro-max/scripts/search.py \"premium real estate luxury property Nigeria\" --design-system -p \"Quantum Homes\" -f markdown)",
-      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"premium real estate luxury property Nigeria\" --design-system -p \"Quantum Homes\" -f markdown)"
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"premium real estate luxury property Nigeria\" --design-system -p \"Quantum Homes\" -f markdown)",
+      "WebFetch(domain:elyse-residence-dev.webflow.io)"
     ]
   },
   "hooks": {

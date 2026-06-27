@@ -1,77 +1,103 @@
 'use client'
 
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { montserrat, garamond } from "@/lib/fonts";
 import FadeUp from "@/ui/FadeUp";
 import FadeLeft from "@/ui/FadeLeft";
-import { montserrat } from "@/lib/fonts";
+
+const stats = [
+    { value: "9+",   label: "Active estates" },
+    { value: "58+",  label: "Plots sold" },
+    { value: "5K+",  label: "Happy clients" },
+    { value: "100%", label: "Verified titles" },
+]
 
 export default function Introduction() {
+    const ref = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+    const imgY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+
     return (
-        <section className="w-full py-28 bg-[#1F2A44] relative overflow-hidden">
+        <section ref={ref} className="w-full bg-[#FAF9F6] overflow-hidden">
 
-            {/* Decorative background orb */}
-            <div className="orb absolute top-0 right-0 w-[600px] h-[600px] bg-[#6B7A3A]/10 pointer-events-none" />
-            <div className="orb absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-[#C9A84C]/8 pointer-events-none" style={{ animationDelay: '2s' }} />
+            <div className="max-w-[1400px] mx-auto px-5 sm:px-10 lg:px-16 py-24 lg:py-32">
 
-            {/* Blueprint watermark */}
-            <img
-                src="/wallpapers/dwg_img.svg"
-                className="absolute opacity-[0.04] -top-1/4 -right-1/4 w-[60%] pointer-events-none select-none"
-                aria-hidden
-            />
-
-            <div className="w-full 2xl:max-w-[1400px] xl:max-w-[1200px] lg:max-w-[1000px] px-5 m-auto relative z-10">
-
-                {/* Divider line */}
+                {/* Section label */}
                 <FadeUp>
-                    <div className="divider-olive w-full mb-16" />
+                    <p className={`${montserrat.className} section-label mb-16`}>(About)</p>
                 </FadeUp>
 
-                <div className="flex lg:flex-row flex-col justify-between items-start gap-16">
+                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
 
-                    {/* Left: large quote */}
-                    <div className="lg:w-[52%] w-full">
+                    {/* Left: large editorial quote */}
+                    <div className="lg:w-[55%]">
                         <FadeLeft>
-                            <p className={`${montserrat.className} text-zinc-300/90 2xl:text-4xl xl:text-3xl md:text-3xl text-2xl font-medium 2xl:leading-relaxed xl:leading-[3rem] leading-relaxed`}>
-                                There is something unforgettable about watching a vision rise from the ground up.
-                                <br /><br />
-                                The excitement of possibility. The beauty of thoughtful design. The confidence that comes from knowing every detail was created with intention.
-                                <br /><br />
-                                That feeling is what defines{" "}
-                                <span className="text-gradient-gold font-bold">QUANTUM HOMES & PROPERTY.</span>
-                            </p>
+                            <h2
+                                className={`${garamond.className} text-[#111110] font-normal leading-[1.12] tracking-tight`}
+                                style={{ fontSize: "clamp(2rem, 3.8vw, 4rem)" }}
+                            >
+                                There is something unforgettable about watching a vision rise from the ground up — the excitement of possibility, the beauty of thoughtful design, the confidence that comes from knowing every detail was created with intention.
+                            </h2>
                         </FadeLeft>
+
+                        {/* Image with parallax */}
+                        <FadeUp>
+                            <div className="mt-14 relative overflow-hidden rounded-2xl img-zoom h-[320px] sm:h-[380px]">
+                                <motion.img
+                                    src="/wallpapers/planners.png"
+                                    alt="Quantum Homes team at work"
+                                    className="w-full h-full object-cover"
+                                    style={{ y: imgY }}
+                                />
+                                {/* Red corner accent */}
+                                <div className="absolute bottom-0 left-0 w-32 h-1 bg-[#b91c1c]" />
+                            </div>
+                        </FadeUp>
                     </div>
 
-                    {/* Right: body copy + glass card */}
-                    <div className="lg:w-[43%] w-full lg:mt-0 mt-4">
+                    {/* Right: copy + stats */}
+                    <div className="lg:w-[45%] lg:pt-10 flex flex-col gap-12">
+
                         <FadeUp>
-                            <p className="text-zinc-400/90 text-lg leading-relaxed mb-10">
-                                We believe exceptional real estate should do more than fill spaces — it should spark emotion, create opportunity, and leave a lasting impression.
+                            <p className={`${garamond.className} text-[#555550] text-xl leading-[1.8]`}>
+                                That feeling is what defines <strong className="text-[#111110]">Quantum Homes &amp; Property.</strong>
                                 <br /><br />
-                                From beautifully crafted homes to high-value investment properties, every development is designed to feel timeless, refined, and deeply connected to modern living.
+                                We believe exceptional real estate should do more than fill spaces — it should spark emotion, create opportunity, and leave a lasting impression on Ibadan&apos;s skyline and in the lives of our clients.
                             </p>
                         </FadeUp>
 
-                        {/* Glass stat card */}
+                        {/* Stats grid */}
                         <FadeUp>
-                            <div className="glass rounded-2xl p-6 flex gap-6">
-                                <div className="flex-1 text-center border-r border-white/10 pr-6">
-                                    <p className={`${montserrat.className} text-4xl font-bold text-gradient-gold`}>9+</p>
-                                    <p className="text-xs text-zinc-400 tracking-widest uppercase mt-1">Estates</p>
-                                </div>
-                                <div className="flex-1 text-center border-r border-white/10 pr-6">
-                                    <p className={`${montserrat.className} text-4xl font-bold text-gradient-gold`}>58+</p>
-                                    <p className="text-xs text-zinc-400 tracking-widest uppercase mt-1">Plots Sold</p>
-                                </div>
-                                <div className="flex-1 text-center">
-                                    <p className={`${montserrat.className} text-4xl font-bold text-gradient-gold`}>100%</p>
-                                    <p className="text-xs text-zinc-400 tracking-widest uppercase mt-1">Verified</p>
-                                </div>
+                            <div className="grid grid-cols-2 gap-0">
+                                {stats.map((s, i) => (
+                                    <div
+                                        key={s.label}
+                                        className={`py-8 ${i % 2 === 0 ? "pr-8 border-r border-[#111110]/10" : "pl-8"} ${i < 2 ? "border-b border-[#111110]/10" : ""}`}
+                                    >
+                                        <p className={`${montserrat.className} stat-num text-[#b91c1c] mb-1`}>{s.value}</p>
+                                        <p className={`${montserrat.className} text-[10px] text-[#888880] tracking-[0.16em] uppercase mt-1`}>{s.label}</p>
+                                    </div>
+                                ))}
                             </div>
+                        </FadeUp>
+
+                        {/* CTA link */}
+                        <FadeUp>
+                            <a
+                                href="/about"
+                                className={`${montserrat.className} inline-flex items-center gap-3 text-[11px] font-bold tracking-widest uppercase text-[#b91c1c] group`}
+                            >
+                                Our Story
+                                <span className="w-8 h-px bg-[#b91c1c] group-hover:w-14 transition-all duration-300" />
+                            </a>
                         </FadeUp>
                     </div>
                 </div>
             </div>
+
+            {/* Bottom rule */}
+            <div className="rule max-w-[1400px] mx-auto" />
         </section>
     )
 }

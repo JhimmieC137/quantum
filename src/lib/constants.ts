@@ -2,59 +2,59 @@
 
 export const brand = {
     // Backgrounds
+    redBg:          'bg-[#b91c1c]',
+    redDarkBg:      'bg-[#991b1b]',
+    creamBg:        'bg-[#FAF9F6]',
+    warmBg:         'bg-[#F0EDE6]',
+    darkBg:         'bg-[#111110]',
     oliveBg:        'bg-[#6B7A3A]',
-    oliveDarkBg:    'bg-[#556030]',
     navyBg:         'bg-[#1F2A44]',
-    navyDarkBg:     'bg-[#151d30]',
-    pageBg:         'bg-[#F5F3ED]',
-    darkBg:         'bg-[#0e1520]',
 
     // Text
+    redText:        'text-[#b91c1c]',
+    creamText:      'text-[#FAF9F6]',
+    darkText:       'text-[#111110]',
+    midText:        'text-[#555550]',
+    mutedText:      'text-[#888880]',
     oliveText:      'text-[#6B7A3A]',
-    oliveLightText: 'text-[#8a9c4a]',
-    navyText:       'text-[#1F2A44]',
     goldText:       'text-[#C9A84C]',
-    goldLightText:  'text-[#e0c06a]',
 
-    // Legacy aliases (keep for components not yet updated)
-    redBg:          'bg-[#6B7A3A]',
-    redBgHover:     'hover:bg-[#556030]',
-    amberBg:        'bg-[#C9A84C]',
-    redText:        'text-[#6B7A3A]',
+    // Legacy aliases
+    redBgHover:     'hover:bg-[#dc2626]',
     amberText:      'text-[#C9A84C]',
     amberAltText:   'text-[#C9A84C]',
     amberLightText: 'text-[#e0c06a]',
-    redBorder:      'border-[#6B7A3A]',
     amberDivide:    'divide-[#C9A84C]',
+    pageBg:         'bg-[#FAF9F6]',
 
     // Hex values
     hex: {
-        olive:      '#6B7A3A',
-        oliveDark:  '#556030',
-        oliveLight: '#8a9c4a',
-        navy:       '#1F2A44',
-        navyDark:   '#151d30',
-        gold:       '#C9A84C',
-        goldLight:  '#e0c06a',
-        cream:      '#F5F3ED',
-        dark:       '#0e1520',
+        red:       '#b91c1c',
+        redDark:   '#991b1b',
+        redLight:  '#dc2626',
+        olive:     '#6B7A3A',
+        navy:      '#1F2A44',
+        gold:      '#C9A84C',
+        cream:     '#FAF9F6',
+        warm:      '#F0EDE6',
+        dark:      '#111110',
     },
 } as const;
 
 // ─── Typography ──────────────────────────────────────────────────────────────
 
 export const typography = {
-    heroHeading:    'text-4xl sm:text-5xl lg:text-7xl font-semibold leading-tight',
-    sectionHeading: 'text-4xl sm:text-5xl font-semibold',
+    heroHeading:    'text-4xl sm:text-6xl lg:text-8xl font-semibold leading-none tracking-tight',
+    sectionHeading: 'text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight',
     cardHeading:    'text-2xl sm:text-3xl font-semibold',
-    bodyLg:         'text-base sm:text-lg',
-    bodySm:         'text-sm sm:text-base',
-    eyebrow:        'text-xs font-bold tracking-widest uppercase',
+    bodyLg:         'text-lg sm:text-xl leading-relaxed',
+    bodySm:         'text-base sm:text-lg leading-relaxed',
+    eyebrow:        'section-label',
 } as const;
 
 // ─── Layout ──────────────────────────────────────────────────────────────────
 
 export const layout = {
-    container: 'max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8',
-    sectionPy: 'py-16 sm:py-24 lg:py-32',
+    container: 'max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12',
+    sectionPy: 'py-20 sm:py-28 lg:py-36',
 } as const;

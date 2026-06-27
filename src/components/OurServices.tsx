@@ -1,142 +1,166 @@
 'use client'
 
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "motion/react"
-import FadeLeft from "@/ui/FadeLeft"
-import FadeUp from "@/ui/FadeUp"
-import { montserrat } from "@/lib/fonts"
-import { pageRoutes } from "@/data/routes"
-import { CiEdit } from "react-icons/ci"
-import { GrUserManager } from "react-icons/gr"
-import { HiOutlineBuildingOffice } from "react-icons/hi2"
-import { LuLandPlot } from "react-icons/lu"
-import { HiArrowRight } from "react-icons/hi"
+import { useState, useRef } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "motion/react";
+import { montserrat, garamond } from "@/lib/fonts";
+import { pageRoutes } from "@/data/routes";
+import { HiArrowRight } from "react-icons/hi";
+import FadeUp from "@/ui/FadeUp";
 
 const services = [
     {
-        image: "/services/land_sales_narrow.jpg",
+        num: "01",
         title: "Land Sales",
-        icon: LuLandPlot,
-        description: "Our land sales service focuses on providing clients with genuine, well-verified lands in both prime and fast-developing locations.",
-        link: pageRoutes.services.landSales,
+        short: "Verified plots in prime Ibadan corridors",
+        description: "Genuine, well-documented lands in both prime and fast-developing locations — every property authenticated, every title clean.",
+        image: "/services/land_sales_narrow.jpg",
+        href: pageRoutes.services.landSales,
     },
     {
-        image: "/services/signing-papers.jpg",
+        num: "02",
         title: "Title Documentation & Legal Support",
-        icon: CiEdit,
-        description: "Our Title Documentation & Legal Support service is designed to protect our clients by ensuring that every property acquired is authentic, legally compliant, and properly registered.",
-        link: pageRoutes.services.legalSupport,
+        short: "Complete legal protection for your property",
+        description: "End-to-end documentation ensuring every acquisition is authentic, legally compliant, and properly registered.",
+        image: "/services/signing-papers.jpg",
+        href: pageRoutes.services.legalSupport,
     },
     {
-        image: "/services/new-building.jpg",
+        num: "03",
         title: "Construction & Development",
-        icon: HiOutlineBuildingOffice,
-        description: "Our Construction and Development service is tailored for individuals, families, investors, and organizations who want to bring their real estate visions to life.",
-        link: pageRoutes.services.construction,
+        short: "From concept to keys, built to last",
+        description: "Turning architectural dreams into durable realities — bespoke builds for individuals, families, investors, and organisations.",
+        image: "/services/new-building.jpg",
+        href: pageRoutes.services.construction,
     },
     {
-        image: "/services/agents-in-meeting.jpg",
+        num: "04",
         title: "Real Estate Investment Advisory",
-        icon: GrUserManager,
-        description: "Our Investment Advisory service guides individuals, families, and corporate organizations in identifying, analyzing, and investing in high-value real estate opportunities.",
-        link: pageRoutes.services.realEstateAdvisory,
+        short: "Data-led guidance for long-term returns",
+        description: "Identifying, analysing, and securing high-value real estate opportunities that yield compounding long-term returns.",
+        image: "/services/agents-in-meeting.jpg",
+        href: pageRoutes.services.realEstateAdvisory,
     },
 ]
 
-function ServiceCard({ svc, index }: { svc: typeof services[0], index: number }) {
-    const Icon = svc.icon
-    return (
-        <motion.a
-            href={svc.link}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="group flex items-start gap-5 p-6 rounded-2xl border border-white/8 hover:border-[#6B7A3A]/50 hover:bg-white/5 transition-all duration-300 cursor-pointer"
-        >
-            {/* Icon box */}
-            <div className="shrink-0 w-12 h-12 rounded-xl bg-[#6B7A3A]/20 flex items-center justify-center group-hover:bg-[#6B7A3A]/35 transition-colors duration-300">
-                <Icon className="size-5 text-[#8a9c4a]" />
-            </div>
-
-            {/* Text */}
-            <div className="flex-1 min-w-0">
-                <h3 className={`${montserrat.className} text-zinc-100 font-semibold text-lg mb-2 group-hover:text-[#C9A84C] transition-colors duration-200`}>
-                    {svc.title}
-                </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{svc.description}</p>
-            </div>
-
-            {/* Arrow */}
-            <HiArrowRight className="shrink-0 size-5 text-[#C9A84C] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 mt-1" />
-        </motion.a>
-    )
-}
-
 export default function OurServices() {
-    const sectionRef = useRef<HTMLDivElement>(null)
-    const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] })
-    const imgY = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"])
+    const [activeIndex, setActiveIndex] = useState(0);
+    const sectionRef = useRef<HTMLElement>(null);
+    const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+    const imgY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
     return (
-        <section ref={sectionRef} className="w-full bg-[#151d30] relative overflow-hidden">
+        <section ref={sectionRef} className="w-full bg-[#111110] overflow-hidden">
 
-            {/* Parallax decorative image */}
-            <motion.div
-                className="absolute inset-0 pointer-events-none"
-                style={{ y: imgY }}
-            >
-                <img
-                    src="/wallpapers/dwg_img_2.png"
-                    className="absolute opacity-[0.04] -top-1/3 -right-1/4 w-[65%] select-none"
-                    aria-hidden
-                />
-            </motion.div>
+            <div className="max-w-[1400px] mx-auto px-5 sm:px-10 lg:px-16 py-24 lg:py-32">
 
-            {/* Gradient accent */}
-            <div className="absolute top-0 left-0 w-[4px] h-full bg-gradient-to-b from-transparent via-[#6B7A3A] to-transparent opacity-60" />
-
-            <div className="w-full 2xl:max-w-[1400px] lg:max-w-[1200px] m-auto px-5 py-24 relative z-10">
-
-                {/* Section header */}
-                <div className="flex xl:flex-row flex-col gap-8 mb-16">
-                    <div className="xl:w-[38%] w-full">
-                        <FadeLeft>
-                            <div className="flex items-center gap-3 mb-5">
-                                <div className="h-px w-10 bg-[#C9A84C]" />
-                                <p className={`${montserrat.className} text-[11px] font-bold text-[#C9A84C] tracking-[0.22em] uppercase`}>
-                                    What We Do
-                                </p>
-                            </div>
-                        </FadeLeft>
-                        <FadeLeft>
-                            <h2 className={`${montserrat.className} text-zinc-100 text-4xl xl:text-5xl font-semibold leading-tight mb-6`}>
-                                Our <em className="not-italic text-gradient-olive">Services</em>
-                            </h2>
-                        </FadeLeft>
+                {/* Header row */}
+                <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16 lg:mb-20">
+                    <div>
                         <FadeUp>
-                            <p className="text-zinc-400 text-sm leading-relaxed xl:max-w-[28rem]">
-                                We handle the full lifecycle — from the first survey peg in the ground to the final key handover. Our teams bring deep technical expertise to every discipline.
-                            </p>
+                            <p className={`${montserrat.className} section-label mb-6`}>(What We Do)</p>
                         </FadeUp>
-
-                        {/* Parallax feature image */}
                         <FadeUp>
-                            <div className="mt-10 rounded-2xl overflow-hidden img-zoom-wrap">
-                                <img
-                                    src="/services/professionals-preparing-presentation.jpg"
-                                    alt="Our team"
-                                    className="w-full h-52 object-cover"
-                                />
-                            </div>
+                            <h2
+                                className={`${garamond.className} text-white font-normal leading-none tracking-tight`}
+                                style={{ fontSize: "clamp(2.6rem, 5vw, 5.5rem)" }}
+                            >
+                                Our <em className="italic text-[#b91c1c]">Services</em>
+                            </h2>
                         </FadeUp>
                     </div>
+                    <FadeUp>
+                        <p className={`${garamond.className} text-zinc-400 text-lg leading-relaxed lg:max-w-[32rem]`}>
+                            We handle the full lifecycle — from the first survey peg to the final key handover.
+                        </p>
+                    </FadeUp>
+                </div>
 
-                    {/* Services list */}
-                    <div className="xl:w-[62%] w-full flex flex-col gap-3">
+                {/* Two-column: list + image */}
+                <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+
+                    {/* Service list */}
+                    <div className="lg:w-[55%] w-full">
                         {services.map((svc, i) => (
-                            <ServiceCard key={svc.title} svc={svc} index={i} />
+                            <motion.div
+                                key={svc.num}
+                                className="service-row group cursor-pointer"
+                                onClick={() => setActiveIndex(i)}
+                                onHoverStart={() => setActiveIndex(i)}
+                            >
+                                <div className="flex items-start gap-6 py-7 px-2">
+                                    {/* Number */}
+                                    <span className={`${montserrat.className} text-[12px] font-bold tracking-widest mt-1 transition-colors duration-300 ${activeIndex === i ? "text-[#b91c1c]" : "text-zinc-600"}`}>
+                                        {svc.num}
+                                    </span>
+
+                                    {/* Content */}
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex items-center justify-between gap-4">
+                                            <h3 className={`${montserrat.className} font-semibold text-lg sm:text-xl transition-colors duration-300 ${activeIndex === i ? "text-white" : "text-zinc-400 group-hover:text-zinc-200"}`}>
+                                                {svc.title}
+                                            </h3>
+                                            <HiArrowRight className={`size-4 shrink-0 transition-all duration-300 ${activeIndex === i ? "text-[#b91c1c] translate-x-0" : "text-zinc-700 -translate-x-1 opacity-0 group-hover:opacity-60 group-hover:translate-x-0"}`} />
+                                        </div>
+                                        <AnimatePresence>
+                                            {activeIndex === i && (
+                                                <motion.div
+                                                    initial={{ opacity: 0, height: 0 }}
+                                                    animate={{ opacity: 1, height: "auto" }}
+                                                    exit={{ opacity: 0, height: 0 }}
+                                                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                                                    className="overflow-hidden"
+                                                >
+                                                    <p className={`${garamond.className} text-zinc-400 text-base leading-relaxed mt-3 mb-4`}>
+                                                        {svc.description}
+                                                    </p>
+                                                    <a
+                                                        href={svc.href}
+                                                        className={`${montserrat.className} inline-flex items-center gap-2 text-[10px] font-bold tracking-widest uppercase text-[#b91c1c] group/link`}
+                                                    >
+                                                        Learn More
+                                                        <span className="w-5 h-px bg-[#b91c1c] group-hover/link:w-8 transition-all duration-300" />
+                                                    </a>
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                </div>
+                            </motion.div>
                         ))}
+                    </div>
+
+                    {/* Featured image panel — updates on hover */}
+                    <div className="lg:w-[45%] w-full lg:sticky lg:top-32">
+                        <div className="relative overflow-hidden rounded-2xl h-[320px] sm:h-[400px] lg:h-[540px]">
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={activeIndex}
+                                    className="absolute inset-0"
+                                    initial={{ opacity: 0, scale: 1.04 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.5, ease: "easeOut" }}
+                                >
+                                    <motion.img
+                                        src={services[activeIndex].image}
+                                        alt={services[activeIndex].title}
+                                        className="w-full h-full object-cover"
+                                        style={{ y: imgY }}
+                                    />
+                                </motion.div>
+                            </AnimatePresence>
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#111110]/70 to-transparent" />
+
+                            {/* Service label overlay */}
+                            <div className="absolute bottom-6 left-6">
+                                <span className={`${montserrat.className} text-[10px] font-bold tracking-widest uppercase text-white/60`}>
+                                    {services[activeIndex].short}
+                                </span>
+                            </div>
+
+                            {/* Red accent corner */}
+                            <div className="absolute top-0 right-0 w-12 h-12 bg-[#b91c1c]" />
+                        </div>
                     </div>
                 </div>
             </div>

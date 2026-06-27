@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"console.log\\(Object.keys\\(require\\('next/font/google'\\)\\).filter\\(k=>/garamond/i.test\\(k\\)\\)\\)\")",
+      "Bash(node -e \"const m = require\\('next/font/google'\\); console.log\\(Object.keys\\(m\\).filter\\(k=>/garamond/i.test\\(k\\)\\)\\)\")",
+      "Bash(xargs grep -l -i \"garamond\")",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(node -e \"try{require.resolve\\('playwright'\\)}catch\\(e\\){console.log\\('no playwright'\\)}\")",
+      "Bash(node -e \"try{require.resolve\\('puppeteer'\\)}catch\\(e\\){console.log\\('no puppeteer'\\)}\")",
+      "Bash(npx --yes playwright node verify.js)",
+      "Bash(node verify.js)",
+      "Bash(npm root *)",
+      "Read(//c/Users/oluda.DESKTOP-7B82R6B/.npm/**)",
+      "Read(//c/Users/oluda.DESKTOP-7B82R6B/AppData/Local/npm-cache/_npx/**)"
+    ]
+  }
+}

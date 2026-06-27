@@ -1,55 +1,92 @@
-import FadeUp from "@/ui/FadeUp";
-import React from "react";
-import { montserrat, garamond } from "@/lib/fonts";
+'use client'
 
-type Props = {};
+import { useRef } from "react"
+import { motion, useScroll, useTransform } from "motion/react"
+import FadeUp from "@/ui/FadeUp"
+import { montserrat } from "@/lib/fonts"
 
-const InvestmentSection: React.FC<Props> = () => {
+export default function InvestmentSection() {
+    const sectionRef = useRef<HTMLElement>(null)
+    const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] })
+    const bgY = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"])
 
-  return (
-    <section className="relative overflow-hidden bg-zinc-900 xl:p-20 md:p-5 p-2 w-full">
-      <FadeUp>
-        <div className="max-w-7xl m-auto xl:px-20 md:px-10 px-5 py-11 my-20 glass rounded-sm overflow-hidden relative">
+    return (
+        <section ref={sectionRef} className="relative overflow-hidden bg-[#F5F3ED] px-4 sm:px-8 xl:px-20 py-16">
 
-            {/* Content */}
-            <div className="relative w-full">
-                <div>
-                {/* Subtitle */}
-                    <FadeUp>
-                        <div className="w-fit m-auto flex gap-x-1.5 justify-center items-center p-2 border border-white/20 rounded-sm bg-transparent shadow-md">
-                            <p className={`${montserrat.className} text-zinc-300/80 text-[10px] tracking-[0.2em] uppercase`}>Investment Philosophy</p>
+            <FadeUp>
+                <div className="max-w-[1400px] m-auto">
+                    <div className="relative rounded-3xl overflow-hidden">
+
+                        {/* Parallax background image */}
+                        <motion.div className="absolute inset-0" style={{ y: bgY }}>
+                            <img
+                                src="/wallpapers/mansion_b.png"
+                                alt=""
+                                className="w-full h-full object-cover scale-110 opacity-20"
+                            />
+                        </motion.div>
+
+                        {/* Navy overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#1F2A44] via-[#1F2A44]/95 to-[#151d30]" />
+
+                        {/* Decorative logo watermarks */}
+                        <img src="/quantum_logo.png" className="absolute opacity-[0.06] lg:-bottom-[32%] -bottom-[50%] lg:-right-[10%] -right-[30%] -rotate-[38deg] w-[33rem] pointer-events-none select-none" aria-hidden />
+                        <img src="/quantum_logo.png" className="absolute opacity-[0.06] lg:-top-[28%] -top-[35%] lg:-left-[18%] -left-[34%] rotate-[138deg] w-[33rem] pointer-events-none select-none" aria-hidden />
+
+                        {/* Orb accent */}
+                        <div className="orb absolute top-0 right-0 w-[350px] h-[350px] bg-[#6B7A3A]/20 pointer-events-none" />
+
+                        {/* Gold vertical accent */}
+                        <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-gradient-to-b from-transparent via-[#C9A84C] to-transparent" />
+
+                        {/* Content */}
+                        <div className="relative z-10 xl:px-20 md:px-12 px-6 py-16 md:py-20">
+
+                            <FadeUp>
+                                <div className="flex items-center justify-center gap-3 mb-6">
+                                    <div className="h-px w-10 bg-[#C9A84C]" />
+                                    <p className={`${montserrat.className} text-[11px] font-bold text-[#C9A84C] tracking-[0.22em] uppercase`}>
+                                        Investment Philosophy
+                                    </p>
+                                    <div className="h-px w-10 bg-[#C9A84C]" />
+                                </div>
+                            </FadeUp>
+
+                            <FadeUp>
+                                <h2 className={`${montserrat.className} text-center text-white font-semibold leading-[1.05] text-4xl md:text-5xl lg:text-6xl mb-6`}>
+                                    A piece of land is<br />
+                                    more <em className="not-italic text-gradient-gold">than gold.</em>
+                                </h2>
+                            </FadeUp>
+
+                            <FadeUp>
+                                <p className="mb-12 xl:max-w-[60%] max-w-[90%] mx-auto text-center text-zinc-400 text-sm md:text-base leading-[1.75]">
+                                    Real estate isn't just property — it's legacy. We help you invest in
+                                    spaces that appreciate in value, culture, and meaning for generations
+                                    to come.
+                                </p>
+                            </FadeUp>
+
+                            <FadeUp>
+                                <div className="flex gap-4 justify-center flex-wrap">
+                                    <a
+                                        href="/contact"
+                                        className="btn-shimmer text-white py-3 px-8 rounded-full font-semibold text-sm tracking-wide shadow-lg"
+                                    >
+                                        Start Your Journey
+                                    </a>
+                                    <a
+                                        href="/projects"
+                                        className="py-3 px-8 border border-white/20 text-zinc-200 hover:border-[#C9A84C] hover:text-[#C9A84C] rounded-full text-sm font-medium transition-all duration-300"
+                                    >
+                                        View Projects
+                                    </a>
+                                </div>
+                            </FadeUp>
                         </div>
-                    </FadeUp>
-
-                {/* Heading */}
-                <h2 className={`my-6 ${montserrat.className} text-center lg:text-6xl md:text-5xl text-4xl font-semibold leading-[1.05] text-zinc-100`}>
-                    A piece of land is
-                    <br />
-                    more<span className="text-amber-300 italic"> than gold.</span>
-                </h2>
-
-                {/* Description */}
-                <p className={`${garamond.className} mb-11 xl:max-w-[70%] max-w-[90%] m-auto md:text-lg text-base text-center md:leading-[1.65] text-zinc-400`}>
-                    Real estate isn&apos;t just property — it&apos;s legacy. We help you invest in
-                    spaces that appreciate in value, culture, and meaning for generations
-                    to come.
-                </p>
-
-                {/* Button */}
-                <div className="flex gap-4">
-                    <a
-                        href="/contact"
-                        className={`${montserrat.className} max-w-fit m-auto py-3 px-6 rounded-sm border border-transparent bg-[#b91c1c] hover:bg-[#dc2626] text-white text-[10px] tracking-[0.25em] uppercase font-semibold transition-colors duration-200 cursor-pointer`}
-                    >
-                        Start Your Journey
-                    </a>
+                    </div>
                 </div>
-                </div>
-            </div>
-        </div>
-      </FadeUp>
-    </section>
-  );
-};
-
-export default InvestmentSection;
+            </FadeUp>
+        </section>
+    )
+}

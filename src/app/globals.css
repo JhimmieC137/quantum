@@ -3,10 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --background: #09090b;
-  --foreground: #e4e4e7;
-  --primary: #b91c1c;
-  --secondary: #fbbf24;
+  --background: #F5F3ED;
+  --foreground: #1F2A44;
+  --primary: #C9A84C;
+  --secondary: #6B7A3A;
+
+  --olive:       #6B7A3A;
+  --olive-dark:  #556030;
+  --olive-light: #8a9c4a;
+  --navy:        #1F2A44;
+  --navy-dark:   #151d30;
+  --gold:        #C9A84C;
+  --cream:       #F5F3ED;
+
   --safe-top:    env(safe-area-inset-top,    0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left:   env(safe-area-inset-left,   0px);
@@ -15,10 +24,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #09090b;
-    --foreground: #e4e4e7;
-    --primary: #b91c1c;
-    --secondary: #fbbf24;
+    --background: #F5F3ED;
+    --foreground: #1F2A44;
+    --primary: #C9A84C;
+    --secondary: #6B7A3A;
   }
 }
 
@@ -26,7 +35,6 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: "EB Garamond", Georgia, serif;
-  /* Push page content clear of the home-indicator bar at the bottom */
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
@@ -34,57 +42,148 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-montserrat), Montserrat, sans-serif;
 }
 
-/* Stable safe-area top padding for the fixed nav — pure CSS so it
-   never flickers during React re-renders caused by scroll events. */
+/* ── Safe-area helpers ───────────────────────────────────────────────── */
 .safe-nav-top {
   padding-top: max(12px, env(safe-area-inset-top, 0px));
   padding-bottom: 12px;
 }
 
-/* Stable safe-area bottom padding for the footer */
 .safe-footer-bottom {
   padding-bottom: max(40px, calc(40px + env(safe-area-inset-bottom, 0px)));
 }
 
-
-.glass {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  background: linear-gradient(135deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
-  border: 1px solid rgba(255,255,255,0.12);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 16px 48px rgba(0,0,0,0.5);
-}
-.glass-hover {
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.glass-hover:hover {
-  border-color: rgba(255,255,255,0.20);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 20px 60px rgba(0,0,0,0.6);
-}
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #18181b; }
-::-webkit-scrollbar-thumb { background: #b91c1c; border-radius: 3px; }
-
+/* ── Nav underline hover ─────────────────────────────────────────────── */
 .link-underline {
   border-bottom-width: 0;
-  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#C9A84C, #C9A84C);
   background-size: 0 2px;
   background-position: 0 100%;
   background-repeat: no-repeat;
   transition: background-size .2s ease-in-out;
 }
 
-.link-underline-black {
-  background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(255, 208, 0), rgb(255, 208, 0))
-}
-
 .link-underline:hover {
   background-size: 100% 2px;
-  background-position: 0 100%
+  background-position: 0 100%;
 }
 
-.preloader-animation{
-  background: #080808;
+/* ── Parallax container ──────────────────────────────────────────────── */
+.parallax-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.parallax-img {
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* ── Glass morphism ──────────────────────────────────────────────────── */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.glass-dark {
+  background: rgba(21, 29, 48, 0.65);
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-olive {
+  background: rgba(107, 122, 58, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(107, 122, 58, 0.3);
+}
+
+/* ── Gradient text ───────────────────────────────────────────────────── */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #C9A84C, #e0c06a, #C9A84C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-olive {
+  background: linear-gradient(135deg, #6B7A3A, #8a9c4a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Shimmer button ──────────────────────────────────────────────────── */
+.btn-shimmer {
+  background: linear-gradient(90deg, var(--olive) 0%, var(--olive-light) 50%, var(--olive) 100%);
+  background-size: 200% auto;
+  transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-shimmer:hover {
+  background-position: right center;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(107,122,58,0.4);
+}
+
+/* ── Scroll-reveal base ──────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Card hover lift ─────────────────────────────────────────────────── */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(31, 42, 68, 0.18);
+}
+
+/* ── Image zoom on hover (project cards) ────────────────────────────── */
+.img-zoom-wrap {
+  overflow: hidden;
+  border-radius: inherit;
+}
+.img-zoom-wrap img,
+.img-zoom-wrap .bg-img {
+  transition: transform 0.65s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.img-zoom-wrap:hover img,
+.img-zoom-wrap:hover .bg-img {
+  transform: scale(1.07);
+}
+
+/* ── Marquee ─────────────────────────────────────────────────────────── */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 24s linear infinite;
+}
+
+.highway-barrier::before,
+.highway-barrier::after {
+  content: " ";
+  position: absolute;
+  z-index: 9;
+  width: 160px;
+  height: 100%;
+}
+.highway-barrier::before { top: 0; left: 0; }
+.highway-barrier::after  { top: 0; right: 0; }
+
+/* ── Preloader ───────────────────────────────────────────────────────── */
+.preloader-animation {
+  background: #0e1520;
   position: absolute;
   z-index: 999;
   height: 100vh;
@@ -95,115 +194,45 @@ h1, h2, h3, h4, h5, h6 {
   margin: auto;
 }
 
-/* Use this instead of animate-bounce — avoids flex conflict */
 @keyframes loader-bounce {
-  0%, 100% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: translateY(20px);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
+  0%, 100% { transform: translateY(0); animation-timing-function: cubic-bezier(0.8,0,1,1); }
+  50%       { transform: translateY(20px); animation-timing-function: cubic-bezier(0,0,0.2,1); }
+}
+.loader-bounce  { animation: loader-bounce 1s infinite; will-change: transform; }
+.loaded         { display: none; }
+.disappear      { visibility: hidden; opacity: 0; transition: visibility 1s, opacity 1s linear; }
+
+/* ── Toast ───────────────────────────────────────────────────────────── */
+.toast[data-state="open"]   { animation: slide-in 200ms ease; }
+.toast[data-state="closed"] { animation: slide-out 200ms ease; }
+
+@keyframes slide-in  { from { transform: translateY(100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes slide-out { from { transform: translateY(0); opacity: 1; }   to { transform: translateY(100%); opacity: 0; } }
+
+/* ── Floating accent orbs ────────────────────────────────────────────── */
+.orb {
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: floatY 8s ease-in-out infinite;
+}
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-18px); }
 }
 
-.loader-bounce {
-  animation: loader-bounce 1s infinite;
-  will-change: transform;
+/* ── Section divider line ─────────────────────────────────────────────── */
+.divider-olive {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #6B7A3A55, transparent);
 }
 
-.loaded{
-  display: none;
+/* ── Accordion (radix) ───────────────────────────────────────────────── */
+@keyframes slideDown {
+  from { height: 0px; }
+  to   { height: var(--radix-accordion-content-height); }
 }
-
-.disappear{
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 1s, opacity 1s linear;
-}
-
-.blob {
-  background: transparent;
-  width: 100%;
-
-  transform: scale(1);
-  animation: pulse 4s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-  }
-
-  50% {
-      transform: scale(1);
-      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-  }
-
-  100% {
-      transform: scale(0.95);
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-  }
-}
-
-.toast[data-state="open"] {
-  animation: slide-in 200ms ease;
-}
-
-.toast[data-state="closed"] {
-  animation: slide-out 200ms ease;
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slide-out {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-}
-
-@keyframes translateinfinite {
-  100% { transform: translateX(calc(-180px * 12)); }
-}
-
-@keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-.animate-marquee {
-  animation: marquee 20s linear infinite;
-}
-
-/* Fade edge overlays */
-.highway-barrier::before,
-.highway-barrier::after {
-  content: " ";
-  position: absolute;
-  z-index: 9;
-  width: 200px;
-  height: 100%;
-}
-.highway-barrier::before {
-  top: 0; 
-  left: 0;
-}
-.highway-barrier::after {
-  top: 0; 
-  right: 0;
+@keyframes slideUp {
+  from { height: var(--radix-accordion-content-height); }
+  to   { height: 0px; }
 }

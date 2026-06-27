@@ -1,36 +1,60 @@
+// ─── Brand Colors ────────────────────────────────────────────────────────────
+
 export const brand = {
-  redBg:          'bg-[#b91c1c]',
-  redBgHover:     'hover:bg-[#dc2626]',
-  pageBg:         'bg-zinc-950',
-  redText:        'text-[#b91c1c]',
-  amberText:      'text-amber-400',
-  amberAltText:   'text-amber-500',
-  amberLightText: 'text-amber-300',
-  redBorder:      'border-[#b91c1c]',
-  amberDivide:    'divide-amber-400',
-  hex: {
-    red:      '#b91c1c',
-    redHover: '#dc2626',
-    amber:    '#fbbf24',
-    amberAlt: '#f59e0b',
-    olive:    '#6B7A3A',
-    navy:     '#1F2A44',
-    bg950:    '#09090b',
-    bg900:    '#18181b',
-    bg800:    '#27272a',
-  },
+    // Backgrounds
+    oliveBg:        'bg-[#6B7A3A]',
+    oliveDarkBg:    'bg-[#556030]',
+    navyBg:         'bg-[#1F2A44]',
+    navyDarkBg:     'bg-[#151d30]',
+    pageBg:         'bg-[#F5F3ED]',
+    darkBg:         'bg-[#0e1520]',
+
+    // Text
+    oliveText:      'text-[#6B7A3A]',
+    oliveLightText: 'text-[#8a9c4a]',
+    navyText:       'text-[#1F2A44]',
+    goldText:       'text-[#C9A84C]',
+    goldLightText:  'text-[#e0c06a]',
+
+    // Legacy aliases (keep for components not yet updated)
+    redBg:          'bg-[#6B7A3A]',
+    redBgHover:     'hover:bg-[#556030]',
+    amberBg:        'bg-[#C9A84C]',
+    redText:        'text-[#6B7A3A]',
+    amberText:      'text-[#C9A84C]',
+    amberAltText:   'text-[#C9A84C]',
+    amberLightText: 'text-[#e0c06a]',
+    redBorder:      'border-[#6B7A3A]',
+    amberDivide:    'divide-[#C9A84C]',
+
+    // Hex values
+    hex: {
+        olive:      '#6B7A3A',
+        oliveDark:  '#556030',
+        oliveLight: '#8a9c4a',
+        navy:       '#1F2A44',
+        navyDark:   '#151d30',
+        gold:       '#C9A84C',
+        goldLight:  '#e0c06a',
+        cream:      '#F5F3ED',
+        dark:       '#0e1520',
+    },
 } as const;
+
+// ─── Typography ──────────────────────────────────────────────────────────────
 
 export const typography = {
-  heroHeading:    'text-4xl sm:text-6xl lg:text-7xl font-semibold leading-tight',
-  sectionHeading: 'text-3xl sm:text-4xl lg:text-5xl font-semibold',
-  cardHeading:    'text-xl sm:text-2xl font-semibold',
-  bodyLg:         'text-base sm:text-lg',
-  bodySm:         'text-sm sm:text-base',
-  eyebrow:        'text-[10px] font-bold tracking-[0.3em] uppercase',
+    heroHeading:    'text-4xl sm:text-5xl lg:text-7xl font-semibold leading-tight',
+    sectionHeading: 'text-4xl sm:text-5xl font-semibold',
+    cardHeading:    'text-2xl sm:text-3xl font-semibold',
+    bodyLg:         'text-base sm:text-lg',
+    bodySm:         'text-sm sm:text-base',
+    eyebrow:        'text-xs font-bold tracking-widest uppercase',
 } as const;
 
+// ─── Layout ──────────────────────────────────────────────────────────────────
+
 export const layout = {
-  container: 'max-w-7xl mx-auto px-6',
-  sectionPy: 'py-24 lg:py-32',
+    container: 'max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8',
+    sectionPy: 'py-16 sm:py-24 lg:py-32',
 } as const;

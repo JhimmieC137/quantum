@@ -1,145 +1,148 @@
 'use client'
-import { useRef } from "react"
-import { motion, useScroll, useTransform } from "motion/react"
-import { montserrat, garamond } from "@/lib/fonts"
-import { ChevronDown } from "lucide-react"
-import { pageRoutes } from "@/data/routes"
+
+import { useState, useRef, useEffect } from "react";
+import { motion, useScroll, useTransform } from "motion/react";
+import FadeUp from "@/ui/FadeUp";
+import { pageRoutes } from "@/data/routes";
+import { montserrat } from "@/lib/fonts";
 
 export default function Hero() {
-  const ref = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] })
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "45%"])
-  const midY = useTransform(scrollYProgress, [0, 1], ["0%", "28%"])
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"])
+    const [videoReady, setVideoReady] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const sectionRef = useRef<HTMLDivElement>(null);
 
-  return (
-    <div ref={ref} className="relative min-h-screen w-full overflow-hidden bg-zinc-950">
-      {/* Layer 1: Background image — parallax */}
-      <motion.div
-        className="absolute inset-0 w-full h-[145%] -top-[22%]"
-        style={{ y: bgY }}
-      >
-        <img
-          src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80"
-          className="w-full h-full object-cover"
-          alt=""
-        />
-        <div className="absolute inset-0 bg-zinc-950/78" />
-      </motion.div>
+    // Parallax scroll
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start start", "end start"],
+    });
+    const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+    const textY = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+    const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
-      {/* Layer 2: Mid depth overlay */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/20 to-zinc-950"
-        style={{ y: midY }}
-      />
+    useEffect(() => {
+        const video = videoRef.current;
+        if (!video) return;
+        if (video.readyState >= 4) {
+            setVideoReady(true);
+        } else {
+            video.addEventListener('canplaythrough', () => setVideoReady(true), { once: true });
+        }
+    }, []);
 
-      {/* Vertical accent lines */}
-      <motion.div
-        className="hidden lg:block absolute left-8 top-32 w-px bg-white/10"
-        initial={{ scaleY: 0, originY: 0 }}
-        animate={{ scaleY: 1 }}
-        transition={{ duration: 1.4, delay: 0.8, ease: "easeOut" }}
-        style={{ height: "40%" }}
-      />
-      <motion.div
-        className="hidden lg:block absolute right-8 top-48 w-px bg-white/10"
-        initial={{ scaleY: 0, originY: 0 }}
-        animate={{ scaleY: 1 }}
-        transition={{ duration: 1.4, delay: 1.1, ease: "easeOut" }}
-        style={{ height: "30%" }}
-      />
+    const stats = [
+        { value: "58+", label: "Land plots sold" },
+        { value: "17+", label: "Structures built" },
+        { value: "2+",  label: "Years experience" },
+    ];
 
-      {/* Layer 3: Content */}
-      <motion.div
-        className="relative z-10 min-h-screen flex flex-col justify-center px-6 max-w-7xl mx-auto"
-        style={{ y: textY }}
-      >
-        {/* Eyebrow */}
-        <motion.p
-          className={`${montserrat.className} text-amber-400 text-[10px] tracking-[0.3em] uppercase font-bold mb-8`}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
-        >
-          Premium Real Estate · Ibadan
-        </motion.p>
+    return (
+        <div ref={sectionRef} className="max-w-screen min-h-screen w-full relative overflow-hidden bg-[#0e1520]">
 
-        {/* Headline — 3 staggered lines */}
-        <div className="overflow-hidden mb-2">
-          <motion.h1
-            className={`${montserrat.className} text-zinc-100 font-semibold text-6xl sm:text-7xl lg:text-[6.5rem] xl:text-[7.5rem] leading-none`}
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          >
-            A Call To
-          </motion.h1>
-        </div>
-        <div className="overflow-hidden mb-2">
-          <motion.h1
-            className={`${montserrat.className} text-zinc-100 font-semibold text-6xl sm:text-7xl lg:text-[6.5rem] xl:text-[7.5rem] leading-none`}
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Your Dream
-          </motion.h1>
-        </div>
-        <div className="overflow-hidden mb-10">
-          <motion.h1
-            className={`${montserrat.className} text-[#b91c1c] font-semibold text-6xl sm:text-7xl lg:text-[6.5rem] xl:text-[7.5rem] leading-none`}
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.0, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          >
-            Home.
-          </motion.h1>
-        </div>
+            {/* Parallax background layer */}
+            <motion.div className="absolute inset-0 will-change-transform" style={{ y: bgY }}>
+                {/* Fallback image */}
+                <div
+                    className="absolute inset-0 bg-cover bg-center scale-110 transition-opacity duration-1000"
+                    style={{
+                        backgroundImage: "url('/wallpapers/mansion_a.png')",
+                        opacity: videoReady ? 0 : 0.45,
+                    }}
+                />
 
-        {/* Glass CTA panel */}
-        <motion.div
-          className="glass rounded-sm p-6 sm:p-8 max-w-lg"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 1.2, ease: "easeOut" }}
-        >
-          <p className={`${garamond.className} text-zinc-300 text-base sm:text-lg leading-relaxed mb-6`}>
-            We develop verified, well-located estates across Ibadan&apos;s
-            fastest-growing corridors. Every property is properly documented
-            and built to deliver real, lasting value.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href={pageRoutes.projects}
-              className={`${montserrat.className} bg-[#b91c1c] hover:bg-[#dc2626] text-white text-[10px] tracking-[0.25em] uppercase font-semibold px-6 py-3 rounded-sm transition-colors duration-200`}
+                {/* Video */}
+                <video
+                    ref={videoRef}
+                    className="absolute inset-0 w-full h-full object-cover scale-110 transition-opacity duration-1000"
+                    style={{ opacity: videoReady ? 0.42 : 0 }}
+                    src="/videos/quantum-v.mp4"
+                    autoPlay muted loop playsInline preload="auto"
+                />
+            </motion.div>
+
+            {/* Gradient overlays */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0e1520]/90 via-[#1F2A44]/70 to-[#0e1520]/80" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0e1520] via-transparent to-transparent" />
+
+            {/* Decorative orbs */}
+            <div className="orb absolute -top-20 -right-20 w-[500px] h-[500px] bg-[#6B7A3A]/20 opacity-60" />
+            <div className="orb absolute bottom-10 -left-10 w-[300px] h-[300px] bg-[#C9A84C]/10 opacity-40" style={{ animationDelay: '3s' }} />
+
+            {/* Vertical gold accent bar */}
+            <div className="absolute left-0 top-24 w-[3px] h-28 bg-gradient-to-b from-transparent via-[#C9A84C] to-transparent" />
+
+            {/* Content */}
+            <motion.div
+                className="relative z-10 min-h-screen flex justify-center md:items-center md:pb-0 items-end pb-[5rem]"
+                style={{ y: textY, opacity }}
             >
-              Explore Projects
-            </a>
-            <a
-              href={pageRoutes.services.base}
-              className={`${montserrat.className} bg-white/5 border border-white/20 hover:bg-white/10 text-zinc-200 text-[10px] tracking-[0.25em] uppercase font-semibold px-6 py-3 rounded-sm transition-colors duration-200`}
-            >
-              Our Services
-            </a>
-          </div>
-        </motion.div>
-      </motion.div>
+                <div className="xl:max-w-[1200px] 2xl:max-w-[1400px] lg:max-w-[1000px] px-5 w-full">
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.0, delay: 2.2, ease: "easeOut" }}
-      >
-        <span className={`${montserrat.className} text-zinc-500 text-[9px] tracking-[0.3em] uppercase`}>Scroll</span>
-        <motion.div
-          animate={{ y: [0, 7, 0] }}
-          transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown size={16} className="text-zinc-500" />
-        </motion.div>
-      </motion.div>
-    </div>
-  )
+                    <FadeUp>
+                        <div className={`${montserrat.className} flex items-center gap-4 mb-6 sm:flex hidden`}>
+                            <div className="h-px w-12 bg-[#C9A84C]" />
+                            <p className="text-xs font-bold text-[#C9A84C] tracking-[0.22em] uppercase">
+                                Premium Real Estate · Ibadan
+                            </p>
+                        </div>
+                    </FadeUp>
+
+                    <FadeUp>
+                        <h1 className={`${montserrat.className} 2xl:text-[5.8rem] xl:text-[5rem] sm:text-[3.8rem] text-[2.4rem] 2xl:leading-[6.8rem] xl:leading-[5.8rem] sm:leading-[4.4rem] leading-[2.8rem] font-semibold text-zinc-100 mb-6 sm:text-left text-center`}>
+                            A Call To Your{" "}
+                            <em className="not-italic text-gradient-gold font-bold">Dream Home</em>
+                        </h1>
+                    </FadeUp>
+
+                    <FadeUp>
+                        <p className="hidden md:block text-[15px] xl:max-w-[46rem] lg:max-w-[38rem] text-zinc-300/80 leading-relaxed mb-10">
+                            We develop verified, well-located estates across Ibadan's
+                            fastest-growing corridors. Every property is properly documented
+                            and built to deliver real, lasting value.
+                        </p>
+                    </FadeUp>
+
+                    <FadeUp>
+                        <div className="flex gap-4 mt-8 sm:flex-row flex-col sm:w-auto w-[72%] mx-auto sm:mx-0">
+                            <a
+                                href={pageRoutes.projects}
+                                className="btn-shimmer text-white py-3 px-8 rounded-full font-semibold text-sm tracking-wide text-center shadow-lg"
+                            >
+                                Explore Projects
+                            </a>
+                            <a
+                                href={pageRoutes.services.base}
+                                className="py-3 px-8 border border-white/25 rounded-full text-zinc-200 hover:border-[#C9A84C] hover:text-[#C9A84C] text-sm font-medium transition-all duration-300 text-center backdrop-blur-sm"
+                            >
+                                Our Services
+                            </a>
+                        </div>
+                    </FadeUp>
+
+                    {/* Stats */}
+                    <FadeUp>
+                        <div className="hidden sm:flex gap-0 mt-14">
+                            {stats.map((s, i) => (
+                                <div
+                                    key={s.label}
+                                    className={`pr-10 ${i > 0 ? 'pl-10 border-l border-[#C9A84C]/30' : ''}`}
+                                >
+                                    <p className={`${montserrat.className} xl:text-5xl text-4xl font-bold text-gradient-gold mb-1`}>
+                                        {s.value}
+                                    </p>
+                                    <p className="text-xs text-zinc-400 tracking-[0.1em] uppercase">{s.label}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </FadeUp>
+                </div>
+            </motion.div>
+
+            {/* Scroll cue */}
+            <div className="absolute bottom-9 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20">
+                <div className="w-px h-12 bg-gradient-to-b from-transparent to-[#C9A84C]" />
+                <p className="text-[9px] text-zinc-500 tracking-[0.18em] uppercase">scroll</p>
+            </div>
+        </div>
+    )
 }

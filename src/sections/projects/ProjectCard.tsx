@@ -27,9 +27,9 @@ type ProjCardProps = {
 
 function getStatusBorderColor(tag: string): string {
     if (tag === "Completed") return brand.hex.olive;
-    if (tag === "Ongoing") return brand.hex.red;
+    if (tag === "Ongoing") return brand.hex.olive;
     if (tag === "Incoming") return brand.hex.navy;
-    return brand.hex.red;
+    return brand.hex.olive;
 }
 
 const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {

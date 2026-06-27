@@ -66,19 +66,22 @@ const Footer: React.FC = () => {
     ]
 
     return (
-        <footer className="bg-zinc-950 pt-20 safe-footer-bottom border-t border-white/5">
+        <footer className="bg-[#0e1520] pt-20 safe-footer-bottom border-t border-white/5 relative overflow-hidden">
+            {/* Decorative orb */}
+            <div className="orb absolute -top-20 right-0 w-[400px] h-[400px] bg-[#6B7A3A]/8 pointer-events-none" />
+
             {/* Top Section */}
-            <div className="max-w-7xl mx-auto px-6 pb-16 border-b border-white/5">
+            <div className="max-w-7xl mx-auto px-6 pb-16 border-b border-white/8">
                 <div className="flex md:flex-row flex-col gap-12">
                     {/* Brand */}
                     <div className="md:w-1/4 w-full">
                         <div className="flex items-center gap-3 mb-4">
-                            <div className="w-8 h-8 bg-[#b91c1c] flex items-center justify-center rounded-sm flex-shrink-0">
+                            <div className="w-8 h-8 bg-[#6B7A3A] flex items-center justify-center rounded-sm flex-shrink-0">
                                 <span className={`${montserrat.className} text-white font-bold text-[10px] tracking-wider`}>QH</span>
                             </div>
                             <div className="flex flex-col leading-none">
                                 <span className={`${montserrat.className} text-zinc-100 font-semibold text-sm tracking-wide`}>Quantum Homes</span>
-                                <span className={`${garamond.className} text-amber-400 text-xs`}>&amp; Property</span>
+                                <span className={`${garamond.className} text-[#C9A84C] text-xs`}>&amp; Property</span>
                             </div>
                         </div>
                         <p className={`${garamond.className} text-zinc-400 text-sm leading-relaxed mb-6`}>
@@ -93,7 +96,7 @@ const Footer: React.FC = () => {
                                     target={s.link.startsWith("mailto") ? "_self" : "_blank"}
                                     rel="noopener noreferrer"
                                     aria-label={s.label}
-                                    className="hover:text-amber-400 transition-colors duration-200"
+                                    className="hover:text-[#C9A84C] transition-colors duration-200"
                                 >
                                     {s.icon}
                                 </a>
@@ -105,7 +108,7 @@ const Footer: React.FC = () => {
                     <div className="md:w-3/4 w-full grid sm:grid-cols-4 grid-cols-2 gap-8">
                         {columns.map((col) => (
                             <div key={col.label}>
-                                <p className={`${montserrat.className} text-[10px] font-semibold tracking-[0.25em] text-zinc-500 uppercase mb-5`}>
+                                <p className={`${montserrat.className} text-[10px] font-semibold tracking-[0.25em] text-[#C9A84C] uppercase mb-5`}>
                                     {col.label}
                                 </p>
                                 <ul className="flex flex-col gap-3">
@@ -129,7 +132,7 @@ const Footer: React.FC = () => {
             </div>
 
             {/* Bottom Bar */}
-            <div className="bg-white/[0.02] backdrop-blur-sm border-t border-white/5">
+            <div className="bg-white/[0.02] backdrop-blur-sm border-t border-white/8">
                 <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-3">
                     <p className={`${montserrat.className} text-zinc-600 text-[11px] tracking-wide text-center`}>
                         &copy; {new Date().getFullYear()} Quantum Homes &amp; Property. All rights reserved.
@@ -142,7 +145,7 @@ const Footer: React.FC = () => {
                                 target={s.link.startsWith("mailto") ? "_self" : "_blank"}
                                 rel="noopener noreferrer"
                                 aria-label={s.label}
-                                className="hover:text-amber-400 transition-colors duration-200"
+                                className="hover:text-[#C9A84C] transition-colors duration-200"
                             >
                                 {s.icon}
                             </a>

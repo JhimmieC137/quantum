@@ -73,19 +73,19 @@ function FAQRow({
 }) {
   return (
     <div>
-      <div className="h-px bg-zinc-800 w-full" />
+      <div className="h-px bg-zinc-300 w-full" />
       <button
         onClick={onToggle}
         className="w-full flex items-center gap-5 sm:gap-8 py-5 sm:py-6 text-left group cursor-pointer"
         aria-expanded={open}
       >
-        <span className={`${montserrat.className} text-xs text-zinc-600 min-w-[2rem] tabular-nums font-medium shrink-0`}>
+        <span className={`${montserrat.className} text-xs text-zinc-400 min-w-[2rem] tabular-nums font-medium shrink-0`}>
           {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="flex-1 text-zinc-400 text-sm sm:text-base lg:text-lg group-hover:text-zinc-200 transition-colors duration-200">
+        <span className="flex-1 text-zinc-600 text-sm sm:text-base lg:text-lg group-hover:text-zinc-900 transition-colors duration-200">
           {item.question}
         </span>
-        <span className="size-8 sm:size-9 flex items-center justify-center rounded-full border border-zinc-700 text-zinc-500 group-hover:border-zinc-500 group-hover:text-zinc-300 transition-all duration-200 shrink-0">
+        <span className="size-8 sm:size-9 flex items-center justify-center rounded-full border border-zinc-300 text-zinc-500 group-hover:border-zinc-500 group-hover:text-zinc-800 transition-all duration-200 shrink-0">
           <ChevronIcon open={open} />
         </span>
       </button>
@@ -95,7 +95,7 @@ function FAQRow({
           open ? "max-h-64 pb-6" : "max-h-0"
         }`}
       >
-        <p className="text-zinc-500 text-sm sm:text-base leading-relaxed pl-[3.25rem] sm:pl-[4.25rem] pr-12 sm:pr-16">
+        <p className="text-zinc-600 text-sm sm:text-base leading-relaxed pl-[3.25rem] sm:pl-[4.25rem] pr-12 sm:pr-16">
           {item.answer}
         </p>
       </div>
@@ -109,30 +109,20 @@ export default function FAQAccordion() {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="w-full bg-zinc-950 py-20 sm:py-28 lg:py-36 px-4 sm:px-8">
+    <section className="w-full py-20 sm:py-28 lg:py-36 px-4 sm:px-8">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 xl:gap-28">
 
           {/* Left column */}
           <div className="lg:w-[36%] shrink-0 lg:pt-1">
-            <p className={`${montserrat.className} text-red-600 text-[11px] font-semibold tracking-[0.18em] uppercase mb-8`}>
-              (FAQ)
-            </p>
-            <h2 className={`${garamond.className} text-white text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] mb-7`}>
+            <h2 className={`${garamond.className} text-zinc-900 text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] mb-7`}>
               Frequently<br />Asked<br />
               <span className="text-red-600 italic">Questions</span>
             </h2>
-            <p className="text-zinc-500 text-sm leading-relaxed max-w-[22rem] mb-10">
+            <p className="text-zinc-600 text-sm leading-relaxed max-w-[22rem]">
               Answers to common questions about our process, properties,
               timelines, and expertise.
             </p>
-            <a
-              href="/contact"
-              className={`${montserrat.className} inline-flex items-center gap-3 text-red-600 text-[11px] font-semibold tracking-[0.16em] uppercase hover:text-red-500 transition-colors duration-200 group`}
-            >
-              ASK US DIRECTLY
-              <span className="h-px w-8 bg-red-600 group-hover:w-12 group-hover:bg-red-500 transition-all duration-300" />
-            </a>
           </div>
 
           {/* Right column */}
@@ -146,7 +136,7 @@ export default function FAQAccordion() {
                 onToggle={() => toggle(i)}
               />
             ))}
-            <div className="h-px bg-zinc-800 w-full" />
+            <div className="h-px bg-zinc-300 w-full" />
           </div>
 
         </div>

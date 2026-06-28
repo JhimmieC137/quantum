@@ -36,7 +36,7 @@ export default function ServiceCTA({
 
                 <div className="w-full sm:w-auto flex sm:justify-end">
                     <a href={href}>
-                        <div className="w-fit py-2 px-5 rounded-lg border border-transparent bg-zinc-200 text-red-700 text-sm sm:text-base hover:text-zinc-200 hover:bg-transparent hover:border-zinc-200/40 duration-150 ease-in-out hover:shadow-xl cursor-pointer shadow-lg">
+                        <div className={`${montserrat.className} w-fit py-2 px-5 rounded-lg border border-transparent bg-zinc-200 text-red-700 text-sm sm:text-base hover:text-zinc-200 hover:bg-transparent hover:border-zinc-200/40 duration-150 ease-in-out hover:shadow-xl cursor-pointer shadow-lg`}>
                             {buttonLabel}
                         </div>
                     </a>

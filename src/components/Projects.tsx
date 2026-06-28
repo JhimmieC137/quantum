@@ -56,9 +56,9 @@ export default function Projects()  {
             <div className={`w-full 2xl:max-w-[1400px] xl:max-w-[1200px] lg:max-w-[1000px] m-auto px-2`}>
                 {/* Top row (2 columns, wide cards) */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mb-10">
-                    <ProjCard p={availableProjects[0]} wide />
-                    <ProjCard p={availableProjects[1]} wide />
-                    <ProjCard p={availableProjects[2]} wide/>
+                    <ProjCard p={availableProjects[0]} wide hideTag />
+                    <ProjCard p={availableProjects[1]} wide hideTag />
+                    <ProjCard p={availableProjects[2]} wide hideTag />
                 </div>
 
                 {/* Bottom row (3 columns) */}

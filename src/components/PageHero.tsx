@@ -38,7 +38,7 @@ export default function PageHero({
             {paragraphs.map((text, i) => (
               <p
                 key={i}
-                className="text-zinc-200/90 lg:text-3xl md:text-2xl text-md lg:pr-10 p-0 mb-5 max-w-[80rem]"
+                className={`${montserrat.className} text-zinc-200/90 lg:text-3xl md:text-2xl text-md lg:pr-10 p-0 mb-5 max-w-[80rem]`}
               >
                 {text}
               </p>

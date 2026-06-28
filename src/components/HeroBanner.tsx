@@ -1,6 +1,7 @@
 'use client'
 
 import { brand } from "@/lib/constants";
+import { montserrat } from "@/lib/fonts";
 
 interface HeroBannerProps {
   /** Background image path e.g. "/wallpapers/construction_1.jpg" */
@@ -26,7 +27,7 @@ export default function HeroBanner({
                 alt={`${title} ${titleAccent}`}
                 className="absolute inset-0 object-cover object-center w-full h-full"
             />
-            <p className="absolute inset-0 flex items-center justify-center text-zinc-200 text-5xl sm:text-7xl lg:text-[7.5rem] font-semibold z-20">
+            <p className={`${montserrat.className} absolute inset-0 flex items-center justify-center text-zinc-200 text-5xl sm:text-7xl lg:text-[7.5rem] font-semibold z-20`}>
                 {title}
                 <span className={`${brand.amberAltText} italic ml-4`}>{titleAccent}</span>
             </p>

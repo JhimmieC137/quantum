@@ -200,7 +200,7 @@ export default function ContactUs() {
                     {/* ── Contact form ──────────────────────────────── */}
                     <form
                         onSubmit={handleSubmit}
-                        className={`lg:w-1/2 w-full p-8 sm:p-10 lg:p-12 ${brand.redBg} rounded-2xl overflow-hidden relative flex flex-col`}
+                        className={`lg:w-1/2 w-full p-8 sm:p-10 lg:p-12 bg-zinc-950 rounded-2xl overflow-hidden relative flex flex-col`}
                     >
                         <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[32%] -right-[17%] -rotate-[38deg] w-[33rem] z-0 pointer-events-none" />
 

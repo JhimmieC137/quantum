@@ -16,7 +16,7 @@ export default function PageHero({
   paragraphs,
 }: PageHeroProps) {
   return (
-    <div className={brand.redBg}>
+    <div className="bg-zinc-950">
 
       {/* ── Body content ────────────────────────────────────────── */}
       <div className="xl:max-w-[1400px] lg:max-w-[1200px] md:max-w-full m-auto py-20 px-2">

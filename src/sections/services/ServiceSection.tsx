@@ -37,7 +37,7 @@ export default function SeviceSection(props: {
                 // transform: "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
                 // transformStyle: "preserve-3d",
             }}
-            className="w-full cursor-pointer hover:bg-zinc-950/10 border-t border-zinc-950/20 py-14 transition-all ease-in-out duration-300"
+            className="w-full cursor-pointer hover:bg-white/5 border-t border-zinc-200/10 py-14 transition-all ease-in-out duration-300"
         >
             <div className={`flex lg:flex-row flex-col items-center justify-between gap-7 xl:max-w-[1400px] lg:max-w-[1000px] m-auto ${isOpen ? 'max-h-[40rem]' : 'max-h-[6rem]'} transition-all ease-in-out duration-300 h-full px-5`}>
                 <div className={`${isOpen ? "sm:flex flex" : "sm:flex hidden" } xl:justify-end lg:justify-start items-center w-full`}>

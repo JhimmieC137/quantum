@@ -37,7 +37,7 @@ export default function Services() {
                 paragraphs={paragraphList}
             />
 
-            <div className="bg-red-700">
+            <div>
                 <div className="bg-[#F4F2EC]">
                     <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2">
                         <div className="flex lg:flex-row flex-col w-full lg:min-h-[25rem] gap-y-8 lg:gap-y-0 lg:gap-x-20">
@@ -71,7 +71,7 @@ export default function Services() {
                     </div>
                     </div>
 
-                    <div className="bg-red-700 relative overflow-hidden">
+                    <div className="bg-zinc-950 relative overflow-hidden">
                     <img src="/quantum_logo.png" className="absolute opacity-10 -top-[2%] -right-[12%] rotate-[228deg] w-[33rem]" />
                     <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[20%] -left-[8%] rotate-[38deg] w-[33rem]" />
                     <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2 relative">
@@ -79,10 +79,8 @@ export default function Services() {
 
                         {/* Image side */}
                         <div className="lg:w-1/2 w-full relative">
-                            {/* <div className="bg-zinc-200/20 absolute top-0 left-0 bottom-3 right-3 rounded-[1.7rem] z-0" /> */}
                             <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
                             <img className="absolute inset-0 object-cover size-full" src="/services/signing-papers.jpg" />
-                            <div className="absolute bg-red-800/10 inset-0 z-10" />
                             </div>
                         </div>
 
@@ -96,7 +94,7 @@ export default function Services() {
                             that every property acquired is authentic, legally compliant, and properly registered.
                             </p>
                             <a href="/services/legal-support">
-                            <div className="mt-8 py-3 px-8 bg-zinc-200 border border-transparent text-red-700 hover:border-zinc-200/50 hover:bg-transparent hover:text-zinc-200 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
+                            <div className="mt-8 py-3 px-8 bg-zinc-200 border border-transparent text-zinc-900 hover:border-zinc-200/50 hover:bg-transparent hover:text-zinc-200 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
                                 <p className={`${montserrat.className} text-base sm:text-lg text-center`}>Learn more</p>
                             </div>
                             </a>
@@ -139,7 +137,7 @@ export default function Services() {
                     </div>
                     </div>
 
-                    <div className="bg-red-700 relative overflow-hidden">
+                    <div className="bg-zinc-950 relative overflow-hidden">
                     <img src="/quantum_logo.png" className="absolute opacity-10 -top-[2%] -right-[12%] rotate-[228deg] w-[33rem]" />
                     <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[20%] -left-[8%] rotate-[38deg] w-[33rem]" />
                     <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2 relative">
@@ -147,10 +145,8 @@ export default function Services() {
 
                         {/* Image side */}
                         <div className="lg:w-[47%] w-full relative">
-                            {/* <div className="bg-zinc-200/30 absolute top-0 left-0 bottom-3 right-3 rounded-[1.7rem] z-0" /> */}
                             <div className="rounded-[1.6rem] overflow-hidden relative z-10 w-full h-[18rem] sm:h-[24rem] lg:h-full lg:min-h-[25rem]">
                             <img className="absolute inset-0 object-cover size-full" src="/services/agents-in-meeting.jpg" />
-                            <div className="absolute bg-red-700/10 inset-0 z-10" />
                             </div>
                         </div>
 
@@ -165,7 +161,7 @@ export default function Services() {
                             that yield long-term returns.
                             </p>
                             <a href="/services/real-estate-investment-advisory">
-                            <div className="mt-8 py-3 px-8 bg-zinc-200 border border-transparent text-red-700 hover:border-zinc-200/50 hover:bg-transparent hover:text-zinc-200 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
+                            <div className="mt-8 py-3 px-8 bg-zinc-200 border border-transparent text-zinc-900 hover:border-zinc-200/50 hover:bg-transparent hover:text-zinc-200 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
                                 <p className={`${montserrat.className} text-base sm:text-lg text-center`}>Learn more</p>
                             </div>
                             </a>

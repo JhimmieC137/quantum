@@ -12,7 +12,7 @@ export default function OurClients() {
 
 
     return (
-        <div className={`w-full relative py-20 ${brand.redBg}`}>
+        <div className="w-full relative py-20 bg-zinc-950">
             <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-md m-auto">
                 <CgMenuGridO className="size-4 text-zinc-200"/>
                 <p className="text-zinc-100/80 text-sm">Our Clients</p>

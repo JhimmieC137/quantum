@@ -46,15 +46,15 @@ const ProjCard: React.FC<ProjCardProps> = ({ p, wide = false }) => {
                     <img
                         src={p?.img}
                         alt={p?.title}
-                        className={`w-full h-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(.25,.46,.45,.94)] group-hover:scale-105 ${p?.tag === "Completed" ? "grayscale" : ""}`}
+                        className={`w-full h-full object-cover transition-transform duration-[600ms] ease-[cubic-bezier(.25,.46,.45,.94)] group-hover:scale-105 ${p?.tag === "Sold Out" ? "grayscale" : ""}`}
                     />
                     <div className="absolute inset-0 transition-all duration-300 bg-gradient-to-t from-black/75 via-black/20 to-black/5 group-hover:from-black/90 group-hover:via-black/40 group-hover:to-black/15" />
 
                     {/* Tag badge */}
                     <div className="absolute top-4 left-4">
                         <span className={`text-[11px] font-semibold tracking-[0.12em] uppercase px-3.5 py-1 rounded-full ${montserrat.className} ${
-                            p?.tag === "Completed" ? "bg-emerald-500 text-white" :
-                            p?.tag === "Ongoing"   ? "bg-amber-400 text-zinc-900" :
+                            p?.tag === "Sold Out"  ? "bg-emerald-500 text-white" :
+                            p?.tag === "Available" ? "bg-amber-400 text-zinc-900" :
                             p?.tag === "Incoming"  ? "bg-blue-500 text-white" :
                             "bg-red-700 text-white"
                         }`}>

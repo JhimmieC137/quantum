@@ -6,12 +6,12 @@ export const projectCategories = [
     },
     {
         id: 2,
-        name: "Ongoing",
+        name: "Available",
         description: "Plots currently available for purchase"
     },
     {
         id: 3,
-        name: "Completed",
+        name: "Sold Out",
         description: "All plots have been sold"
     },
     {
@@ -28,7 +28,7 @@ export const availableProjects = [
         type: "Buy & Build Estate",
         location: "Olorunda Amuloko, Ibadan",
         year: "2024",
-        tag: "Ongoing",
+        tag: "Available",
         img: "/vienna/slide_01.png",
         slideShow: [
             "/vienna/slide_01.png",
@@ -42,7 +42,7 @@ export const availableProjects = [
         type: "Residential Estate",
         location: "Moniya, Ijaye, Ibadan",
         year: "2024",
-        tag: "Ongoing",
+        tag: "Available",
         img: "/atlanta1/slide_01.png",
         slideShow: [
             "/atlanta1/slide_01.png",
@@ -57,7 +57,7 @@ export const availableProjects = [
         type: "Residential Estate",
         location: "Moniya, Ijaye, Ibadan",
         year: "2025",
-        tag: "Ongoing",
+        tag: "Available",
         img: "/atlanta2/slide_01.png",
         slideShow: [
             "/atlanta2/slide_01.png",
@@ -72,7 +72,7 @@ export const availableProjects = [
         type: "Land Banking Estate",
         location: "Akanran, Ibadan",
         year: "2024",
-        tag: "Ongoing",
+        tag: "Available",
         img: "/bidemi/slide_01.png",
         slideShow: [
             "/bidemi/slide_01.png",
@@ -87,7 +87,7 @@ export const availableProjects = [
         type: "Land Banking Estate",
         location: "Akanran, Ibadan",
         year: "2025",
-        tag: "Ongoing",
+        tag: "Available",
         img: "/bidemi2/slide_01.png",
         slideShow: [
             "/bidemi2/slide_01.png",
@@ -102,7 +102,7 @@ export const availableProjects = [
         type: "Residential Estate",
         location: "Ayegun Olomi, Oluyole, Ibadan",
         year: "2024",
-        tag: "Ongoing",
+        tag: "Available",
         img: "/moon1/slide_01.png",
         slideShow: [
             "/moon1/slide_01.png",
@@ -117,7 +117,7 @@ export const availableProjects = [
         type: "Residential Estate",
         location: "Ayegun Olomi, Oluyole, Ibadan",
         year: "2025",
-        tag: "Ongoing",
+        tag: "Available",
         img: "/moon2/slide_01.png",
         slideShow: [
             "/moon2/slide_01.png",
@@ -132,7 +132,7 @@ export const availableProjects = [
         type: "Buy & Build Estate",
         location: "Ido–Eruwa Expressway, Oyo State",
         year: "2025",
-        tag: "Ongoing",
+        tag: "Available",
         img: "/belarus/slide_01.png",
         slideShow: [
             "/belarus/slide_01.png",
@@ -145,7 +145,7 @@ export const availableProjects = [
         type: "Residential Estate",
         location: "Egbeda Ajia, Ibadan",
         year: "2024",
-        tag: "Completed",
+        tag: "Sold Out",
         img: "/oreofe/slide_01.png",
         slideShow: [
             "/oreofe/slide_01.png",

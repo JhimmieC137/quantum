@@ -48,31 +48,14 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent md:from-zinc-950/50 via-zinc-950/50 md:via-zinc-950/70 to-zinc-950 md:to-zinc-950" />
 
             {/* Content */}
-            <div className="relative z-10 min-h-screen flex justify-center md:items-center md:pb-0 items-end pb-[6rem]">
+            <div className="relative z-10 min-h-screen flex justify-center md:items-center md:pb-0 items-end pb-[3rem]">
                 <div className="xl:max-w-[1200px] 2xl:max-w-[1400px] lg:max-w-[1000px] px-2 w-full">
                     <div className="flex">
                         <div className="w-full">
                             <FadeUp>
-                                <div className={`${montserrat.className} sm:flex justify-start gap-4 items-center mb-5 pl-1 hidden `}>
-                                    <div className="h-px xl:w-16 lg:w-10 sm:w-7 w-0 bg-[#C4161C]"/>
-                                    <p className={`${montserrat.className} text-xs font-bold ${brand.amberText} tracking-widest`}>PREMIUM REAL ESTATE · IBADAN</p>
-                                </div>
-                            </FadeUp>
-
-                            <FadeUp>
                                 <p className={`${montserrat.className} 2xl:text-[6rem] xl:text-[5.2rem] sm:text-[4rem] text-[2.5rem] 2xl:leading-[7.5rem] xl:leading-[6rem] sm:leading-[4.5rem] leading-[2.8rem] font-semibold 2xl:max-w-[55rem] xl:max-w-[42rem] lg:max-w-[36rem] max-w-[26rem] text-zinc-200 mb-5 sm:text-left text-center sm:m-0 m-auto`}>
                                     A Call To Your <span className={`${brand.amberText} `}>Dream Home</span>
                                 </p>
-                            </FadeUp>
-
-                            <FadeUp>
-                                <div className="text-left items-end hidden md:block">
-                                    <p className="sm:text-[15px] text-sm xl:max-w-[50rem] lg:max-w-[40rem] max-w-[35rem] sm:m-0 m-auto text-zinc-200 sm:text-left text-center">
-                                        We develop verified, well-located estates across Ibadan's
-                                        fastest-growing corridors. Every property is properly documented
-                                        and built to deliver real, lasting value.
-                                    </p>
-                                </div>
                             </FadeUp>
 
                             <FadeUp>

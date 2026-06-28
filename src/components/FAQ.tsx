@@ -77,10 +77,10 @@ function FAQRow({
         className="w-full flex items-center gap-5 sm:gap-6 py-5 sm:py-6 text-left group cursor-pointer"
         aria-expanded={open}
       >
-        <span className="flex-1 text-amber-500 text-sm sm:text-base lg:text-lg group-hover:text-amber-400 transition-colors duration-200">
+        <span className="flex-1 text-amber-600 text-sm sm:text-base lg:text-lg group-hover:text-amber-500 transition-colors duration-200">
           {item.question}
         </span>
-        <span className="size-8 sm:size-9 flex items-center justify-center rounded-full border border-amber-500 text-amber-500 group-hover:border-amber-400 group-hover:text-amber-400 transition-all duration-200 shrink-0">
+        <span className="size-8 sm:size-9 flex items-center justify-center rounded-full border border-amber-600 text-amber-600 group-hover:border-amber-500 group-hover:text-amber-500 transition-all duration-200 shrink-0">
           <ChevronIcon open={open} />
         </span>
       </button>
@@ -106,18 +106,19 @@ export default function FAQAccordion() {
   return (
     <section className="w-full py-20 sm:py-28 lg:py-36 px-4 sm:px-8">
       <div className="max-w-[1400px] mx-auto">
-        <div className="flex flex-col lg:flex-row gap-14 lg:gap-20 xl:gap-28">
+        <div className="flex flex-col">
 
-          {/* Left column */}
-          <div className="lg:w-[36%] shrink-0 lg:pt-1">
-            <h2 className={`${montserrat.className} text-zinc-900 text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05]`}>
-              Frequently<br />Asked<br />
-              <span className="text-amber-400 italic">Questions</span>
-            </h2>
+          {/* Header */}
+          <div className={`${montserrat.className} flex justify-start gap-4 items-center mb-2 pl-1`}>
+            <div className="h-px xl:w-16 lg:w-10 w-7 bg-red-500" />
+            <p className={`${montserrat.className} text-xs font-bold text-amber-500 tracking-widest`}>FAQ</p>
           </div>
+          <p className={`${montserrat.className} text-zinc-900 text-left lg:text-5xl text-3xl font-semibold my-3 mb-10`}>
+            Frequently Asked <span className="text-amber-500 italic">Questions</span>
+          </p>
 
-          {/* Right column */}
-          <div className="flex-1 min-w-0">
+          {/* Accordion */}
+          <div className="w-full">
             {faqs.map((item, i) => (
               <FAQRow
                 key={i}

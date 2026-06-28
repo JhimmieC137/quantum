@@ -7,16 +7,7 @@ import { HiMenu, HiX, HiChevronDown } from "react-icons/hi";
 
 const headerLinks = [
     { name: 'About', link: pageRoutes.aboutUs },
-    {
-        name: 'Services',
-        link: pageRoutes.services.base,
-        children: [
-            { name: 'Land Sales', link: pageRoutes.services.landSales},
-            { name: 'Legal Support', link: pageRoutes.services.legalSupport },
-            { name: 'Construction & Development', link: pageRoutes.services.construction},
-            { name: 'Investment Advisory', link: pageRoutes.services.realEstateAdvisory},
-        ]
-    },
+    { name: 'Services', link: pageRoutes.services.base },
     { name: 'Our Projects', link: pageRoutes.projects},
 ]
 
@@ -59,7 +50,7 @@ export default function Header() {
                 <div className="max-w-[600px] mx-auto">
 
                     {/* Main pill */}
-                    <div className="bg-black rounded-full px-4 sm:px-2 py-2 flex justify-between items-center shadow-xl">
+                    <div className="bg-black/70 backdrop-blur-md rounded-full px-4 sm:px-2 py-2 flex justify-between items-center shadow-xl">
 
                         {/* Logo */}
                         <a href="/" className="text-zinc-100 font-bold text-lg shrink-0">

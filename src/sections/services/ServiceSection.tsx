@@ -53,7 +53,7 @@ export default function SeviceSection(props: {
                     <div className="w-full cursor-pointer flex justify-between items-center sm:flex-row flex-col h-full">
                         <div className="flex flex-col justify-center items-left w-full cursor-pointer">
                             {props.icon}
-                            <p className={`${montserrat.className} text-zinc-900 lg:text-xl text-md font-semibold my-3`}>
+                            <p className={`${montserrat.className} text-[#1F2A44] lg:text-xl text-md font-semibold my-3`}>
                                 {props.headerWhite} <span className={`${brand.amberAltText} italic`}>{props.headerAmber}</span>
                             </p>
                             <div

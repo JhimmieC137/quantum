@@ -28,7 +28,7 @@ export default function OurServices() {
 
                     <div className="xl:w-1/2 lg:w-[80%] w-full">
                         <FadeUp>
-                            <p className={`${montserrat.className} text-zinc-900 text-left xl:text-5xl text-4xl font-semibold lg:m-0 mt-3 leading-9`}>
+                            <p className={`${montserrat.className} text-[#1F2A44] text-left xl:text-5xl text-4xl font-semibold lg:m-0 mt-3 leading-9`}>
                                 Our <span className={`${brand.amberAltText} italic`}>Services</span>
                             </p>
                         </FadeUp>

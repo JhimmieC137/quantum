@@ -72,7 +72,7 @@ export default function Header() {
                         {/* Desktop CTA */}
                         <a
                             href="/contact"
-                            className={`${montserrat.className} hidden md:flex items-center gap-2 bg-zinc-300 text-[#1F2A44] hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-1.5 rounded-full text-sm lg:text-base font-medium shrink-0`}
+                            className={`${montserrat.className} hidden md:flex items-center gap-2 bg-zinc-300 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-1.5 rounded-full text-sm lg:text-base font-medium shrink-0`}
                         >
                             Contact Us
                         </a>
@@ -105,7 +105,7 @@ export default function Header() {
                             <a
                                 href="/contact"
                                 onClick={() => setMobileOpen(false)}
-                                className={`${montserrat.className} mt-3 flex items-center justify-center gap-2 bg-zinc-100 text-[#1F2A44] hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-2.5 rounded-full text-sm font-medium`}
+                                className={`${montserrat.className} mt-3 flex items-center justify-center gap-2 bg-zinc-100 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-2.5 rounded-full text-sm font-medium`}
                             >
                                 Contact Us
                             </a>

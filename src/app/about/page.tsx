@@ -141,7 +141,7 @@ export default function About() {
                             </p>
 
                             <a href={pageRoutes.projects} className="mt-8 py-4 px-10 bg-red-700 text-zinc-200 rounded-2xl hover:bg-red-600 hover:shadow-xl ease-in-out duration-300 cursor-pointer w-fit">
-                                <p className="text-xl text-center">Explore projects</p>
+                                <p className={`${montserrat.className} text-xl text-center`}>Explore projects</p>
                             </a>
                         </div>
                     </div>

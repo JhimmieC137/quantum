@@ -250,7 +250,7 @@ export default function ContactUs() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className="relative rounded-lg p-3 z-20 text-red-700 border border-transparent bg-white w-full flex justify-center items-center gap-2 hover:bg-transparent hover:text-zinc-200 hover:border-zinc-200/60 ease-in-out duration-300 font-medium cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-auto"
+                            className={`${montserrat.className} relative rounded-lg p-3 z-20 text-red-700 border border-transparent bg-white w-full flex justify-center items-center gap-2 hover:bg-transparent hover:text-zinc-200 hover:border-zinc-200/60 ease-in-out duration-300 font-medium cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-auto`}
                         >
                             {loading ? 'Sending...' : 'Send Message'}
                             <FiSend className="size-4" />

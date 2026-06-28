@@ -44,7 +44,7 @@ export default function Projects()  {
                     </div>
                     <div className="lg:w-[20%] w-full flex items-end lg:justify-end justify-start ">
                         <a href="/projects" className="max-w-fit lg:py-2 lg:px-4 px-2 py-2 rounded-lg bg-red-700 text-white lg:text-md text-[0.85rem] hover:bg-red-600 hover:shadow-xl hover:text-zinc-200 duration-150 ease-in-out cursor-pointer shadow-lg">
-                            <p>
+                            <p className={montserrat.className}>
                                 See more
                             </p>
                         </a>

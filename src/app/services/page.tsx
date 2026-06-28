@@ -62,7 +62,7 @@ export default function Services() {
                             </p>
                             <a href="/services/land-sales">
                             <div className="mt-8 py-3 px-8 bg-red-700 text-zinc-100 shadow-md hover:bg-red-600 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
-                                <p className="text-base sm:text-lg text-center">Learn more</p>
+                                <p className={`${montserrat.className} text-base sm:text-lg text-center`}>Learn more</p>
                             </div>
                             </a>
                         </div>
@@ -97,7 +97,7 @@ export default function Services() {
                             </p>
                             <a href="/services/legal-support">
                             <div className="mt-8 py-3 px-8 bg-zinc-200 border border-transparent text-red-700 hover:border-zinc-200/50 hover:bg-transparent hover:text-zinc-200 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
-                                <p className="text-base sm:text-lg text-center">Learn more</p>
+                                <p className={`${montserrat.className} text-base sm:text-lg text-center`}>Learn more</p>
                             </div>
                             </a>
                         </div>
@@ -130,7 +130,7 @@ export default function Services() {
                             </p>
                             <a href="/services/construction-and-development">
                             <div className="mt-8 py-3 px-8 bg-red-700 text-zinc-100 shadow-md hover:bg-red-600 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
-                                <p className="text-base sm:text-lg text-center">Learn more</p>
+                                <p className={`${montserrat.className} text-base sm:text-lg text-center`}>Learn more</p>
                             </div>
                             </a>
                         </div>
@@ -166,7 +166,7 @@ export default function Services() {
                             </p>
                             <a href="/services/real-estate-investment-advisory">
                             <div className="mt-8 py-3 px-8 bg-zinc-200 border border-transparent text-red-700 hover:border-zinc-200/50 hover:bg-transparent hover:text-zinc-200 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
-                                <p className="text-base sm:text-lg text-center">Learn more</p>
+                                <p className={`${montserrat.className} text-base sm:text-lg text-center`}>Learn more</p>
                             </div>
                             </a>
                         </div>

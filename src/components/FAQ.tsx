@@ -87,10 +87,10 @@ function FAQRow({
 
       <div
         className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          open ? "max-h-64 pb-6" : "max-h-0"
+          open ? "max-h-[500px] pb-6" : "max-h-0"
         }`}
       >
-        <p className="text-zinc-600 text-sm sm:text-base leading-relaxed pr-12 sm:pr-16">
+        <p className="text-zinc-600 text-sm sm:text-base leading-relaxed pr-4 sm:pr-10 lg:pr-16">
           {item.answer}
         </p>
       </div>
@@ -104,7 +104,7 @@ export default function FAQAccordion() {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <section className="w-full py-20 sm:py-28 lg:py-36 px-4 sm:px-8">
+    <section className="w-full py-12 sm:py-20 lg:py-28 px-4 sm:px-8">
       <div className="max-w-[1400px] mx-auto">
         <div className="flex flex-col">
 
@@ -113,7 +113,7 @@ export default function FAQAccordion() {
             <div className="h-px xl:w-16 lg:w-10 w-7 bg-red-500" />
             <p className={`${montserrat.className} text-xs font-bold text-amber-500 tracking-widest`}>FAQ</p>
           </div>
-          <p className={`${montserrat.className} text-zinc-900 text-left lg:text-5xl text-3xl font-semibold my-3 mb-10`}>
+          <p className={`${montserrat.className} text-zinc-900 text-left text-2xl sm:text-3xl lg:text-5xl font-semibold my-3 mb-8 sm:mb-10`}>
             Frequently Asked <span className="text-amber-500 italic">Questions</span>
           </p>
 

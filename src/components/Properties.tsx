@@ -38,7 +38,7 @@ export default function Properties()  {
                         
                         <FadeUp>
                             <p className="text-zinc-900 text-left text-md lg:pr-10 pr-5 my-5 xl:max-w-[60rem] lg:max-w-[60rem] w-full">
-                                Step into our finest real estate offerings, where each property reflects superior construction standards, contemporary design, and carefully chosen locations, creating spaces that support quality living while delivering consistent long-term investment returns.
+                                Step into our finest real estate offerings, where each property reflects superior construction standards, contemporary design, and carefully chosen locations.
                             </p>
                         </FadeUp>
                     </div>

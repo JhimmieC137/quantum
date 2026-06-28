@@ -77,10 +77,10 @@ function FAQRow({
         className="w-full flex items-center gap-5 sm:gap-6 py-5 sm:py-6 text-left group cursor-pointer"
         aria-expanded={open}
       >
-        <span className="flex-1 text-amber-600 text-sm sm:text-base lg:text-lg group-hover:text-amber-500 transition-colors duration-200">
+        <span className="flex-1 text-zinc-700 text-sm sm:text-base lg:text-lg group-hover:text-zinc-900 transition-colors duration-200">
           {item.question}
         </span>
-        <span className="size-8 sm:size-9 flex items-center justify-center rounded-full border border-amber-600 text-amber-600 group-hover:border-amber-500 group-hover:text-amber-500 transition-all duration-200 shrink-0">
+        <span className="size-8 sm:size-9 flex items-center justify-center rounded-full border border-zinc-400 text-zinc-500 group-hover:border-zinc-600 group-hover:text-zinc-700 transition-all duration-200 shrink-0">
           <ChevronIcon open={open} />
         </span>
       </button>

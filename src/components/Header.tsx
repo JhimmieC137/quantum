@@ -3,41 +3,29 @@
 import { pageRoutes } from "@/data/routes";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { HiMenu, HiX, HiChevronDown } from "react-icons/hi";
+import { HiMenu, HiX } from "react-icons/hi";
+import { montserrat } from "@/lib/fonts";
 
 const headerLinks = [
     { name: 'About', link: pageRoutes.aboutUs },
-    {
-        name: 'Services',
-        link: pageRoutes.services.base,
-        children: [
-            { name: 'Land Sales', link: pageRoutes.services.landSales},
-            { name: 'Legal Support', link: pageRoutes.services.legalSupport },
-            { name: 'Construction & Development', link: pageRoutes.services.construction},
-            { name: 'Investment Advisory', link: pageRoutes.services.realEstateAdvisory},
-        ]
-    },
-    { name: 'Our Projects', link: pageRoutes.projects},
+    { name: 'Services', link: pageRoutes.services.base },
+    { name: 'Our Projects', link: pageRoutes.projects },
 ]
 
 export default function Header() {
     const [mobileOpen, setMobileOpen] = useState(false)
-    const [openDropdown, setOpenDropdown] = useState<string | null>(null)
     const [visible, setVisible] = useState(true)
     const lastScrollY = useRef(0)
 
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY
-            
+
             if (currentScrollY < 2400) {
-                // Always show within first ~50rem
                 setVisible(true)
             } else if (currentScrollY < lastScrollY.current) {
-                // Scrolling up — show
                 setVisible(true)
             } else {
-                // Scrolling down — hide
                 setVisible(false)
                 setMobileOpen(false)
             }
@@ -59,57 +47,33 @@ export default function Header() {
                 <div className="max-w-[600px] mx-auto">
 
                     {/* Main pill */}
-                    <div className="bg-black rounded-full px-4 sm:px-2 py-2 flex justify-between items-center shadow-xl">
+                    <div className="bg-black/70 backdrop-blur-md rounded-full px-4 sm:px-2 py-2 flex justify-between items-center shadow-xl">
 
                         {/* Logo */}
                         <a href="/" className="text-zinc-100 font-bold text-lg shrink-0">
                             <div className="bg-red-700 rounded-full p-[2px]">
                                 <img src="/quantum_logo.png" className="max-w-[2rem] rounded-lg" alt="Logo" />
                             </div>
-                            {/* <img src="/logo.jpg" className="md:hidden max-w-[6rem] rounded-[20%]" alt="Logo" /> */}
                         </a>
 
                         {/* Desktop links */}
                         <div className="hidden md:flex items-center gap-10 lg:gap-16">
                             {headerLinks.map((link) => (
-                                <div
+                                <Link
                                     key={link.name}
-                                    className="relative"
-                                    onMouseEnter={() => link.children && setOpenDropdown(link.name)}
-                                    onMouseLeave={() => setOpenDropdown(null)}
+                                    href={link.link}
+                                    className={`${montserrat.className} text-sm lg:text-base text-zinc-100 link-underline link-underline-black ease-in-out duration-150`}
                                 >
-                                    <Link
-                                        href={link.link}
-                                        className="flex items-center gap-3 text-sm lg:text-base text-zinc-100 link-underline link-underline-black ease-in-out duration-150"
-                                    >
-                                        {link.name}
-                                    </Link>
-
-                                    {link.children && openDropdown === link.name && (
-                                        <div className="absolute top-full left-0 pt-2 z-50">
-                                            <div className="bg-zinc-900/70 border border-zinc-800 rounded-2xl py-2 min-w-[14rem] shadow-xl">
-                                                {link.children.map((child) => (
-                                                    <Link
-                                                        key={child.name}
-                                                        href={child.link}
-                                                        className="block px-4 py-2.5 text-sm text-zinc-200 hover:text-zinc-100 hover:bg-zinc-800 ease-in-out duration-150"
-                                                    >
-                                                        {child.name}
-                                                    </Link>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    )}
-                                </div>
+                                    {link.name}
+                                </Link>
                             ))}
                         </div>
 
                         {/* Desktop CTA */}
                         <a
                             href="/contact"
-                            className="hidden md:flex items-center gap-2 bg-zinc-300 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-1.5 rounded-full text-sm lg:text-base font-medium shrink-0"
+                            className={`${montserrat.className} hidden md:flex items-center gap-2 bg-zinc-300 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-1.5 rounded-full text-sm lg:text-base font-medium shrink-0`}
                         >
-                            {/* <div className="size-2 bg-amber-400 rounded-full border-3 border-amber-300/80 pr-2 text-zinc-900/80" /> */}
                             Contact Us
                         </a>
 
@@ -129,20 +93,19 @@ export default function Header() {
                     }`}>
                         <div className="bg-zinc-900 rounded-2xl px-4 py-4 flex flex-col gap-1">
                             {headerLinks.map((link) => (
-                                <div key={link.name}>
-                                    <Link
-                                        href={link.link}
-                                        onClick={() => setMobileOpen(false)}
-                                        className="block text-sm text-center font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 px-3 py-3 rounded-xl ease-in-out duration-150"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </div>
+                                <Link
+                                    key={link.name}
+                                    href={link.link}
+                                    onClick={() => setMobileOpen(false)}
+                                    className={`${montserrat.className} block text-sm text-center font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 px-3 py-3 rounded-xl ease-in-out duration-150`}
+                                >
+                                    {link.name}
+                                </Link>
                             ))}
                             <a
                                 href="/contact"
                                 onClick={() => setMobileOpen(false)}
-                                className="mt-3 flex items-center justify-center gap-2 bg-zinc-100 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-2.5 rounded-full text-sm font-medium"
+                                className={`${montserrat.className} mt-3 flex items-center justify-center gap-2 bg-zinc-100 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-2.5 rounded-full text-sm font-medium`}
                             >
                                 Contact Us
                             </a>

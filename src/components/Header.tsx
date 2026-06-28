@@ -4,6 +4,7 @@ import { pageRoutes } from "@/data/routes";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { HiMenu, HiX, HiChevronDown } from "react-icons/hi";
+import { montserrat } from "@/lib/fonts";
 
 const headerLinks = [
     { name: 'About', link: pageRoutes.aboutUs },
@@ -80,7 +81,7 @@ export default function Header() {
                                 >
                                     <Link
                                         href={link.link}
-                                        className="flex items-center gap-3 text-sm lg:text-base text-zinc-100 link-underline link-underline-black ease-in-out duration-150"
+                                        className={`${montserrat.className} flex items-center gap-3 text-sm lg:text-base text-zinc-100 link-underline link-underline-black ease-in-out duration-150`}
                                     >
                                         {link.name}
                                     </Link>
@@ -92,7 +93,7 @@ export default function Header() {
                                                     <Link
                                                         key={child.name}
                                                         href={child.link}
-                                                        className="block px-4 py-2.5 text-sm text-zinc-200 hover:text-zinc-100 hover:bg-zinc-800 ease-in-out duration-150"
+                                                        className={`${montserrat.className} block px-4 py-2.5 text-sm text-zinc-200 hover:text-zinc-100 hover:bg-zinc-800 ease-in-out duration-150`}
                                                     >
                                                         {child.name}
                                                     </Link>
@@ -107,7 +108,7 @@ export default function Header() {
                         {/* Desktop CTA */}
                         <a
                             href="/contact"
-                            className="hidden md:flex items-center gap-2 bg-zinc-300 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-1.5 rounded-full text-sm lg:text-base font-medium shrink-0"
+                            className={`${montserrat.className} hidden md:flex items-center gap-2 bg-zinc-300 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-1.5 rounded-full text-sm lg:text-base font-medium shrink-0`}
                         >
                             {/* <div className="size-2 bg-amber-400 rounded-full border-3 border-amber-300/80 pr-2 text-zinc-900/80" /> */}
                             Contact Us
@@ -133,7 +134,7 @@ export default function Header() {
                                     <Link
                                         href={link.link}
                                         onClick={() => setMobileOpen(false)}
-                                        className="block text-sm text-center font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 px-3 py-3 rounded-xl ease-in-out duration-150"
+                                        className={`${montserrat.className} block text-sm text-center font-medium text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800 px-3 py-3 rounded-xl ease-in-out duration-150`}
                                     >
                                         {link.name}
                                     </Link>
@@ -142,7 +143,7 @@ export default function Header() {
                             <a
                                 href="/contact"
                                 onClick={() => setMobileOpen(false)}
-                                className="mt-3 flex items-center justify-center gap-2 bg-zinc-100 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-2.5 rounded-full text-sm font-medium"
+                                className={`${montserrat.className} mt-3 flex items-center justify-center gap-2 bg-zinc-100 text-zinc-900 hover:bg-red-700 hover:text-zinc-100 ease-in-out duration-300 px-4 py-2.5 rounded-full text-sm font-medium`}
                             >
                                 Contact Us
                             </a>

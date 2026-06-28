@@ -12,15 +12,15 @@ export default function OurClients() {
 
 
     return (
-        <div className="w-full relative py-20 bg-zinc-950">
-            <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-md m-auto">
-                <CgMenuGridO className="size-4 text-zinc-200"/>
-                <p className="text-zinc-100/80 text-sm">Our Clients</p>
+        <div className="w-full relative py-20 bg-white">
+            <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-300 rounded-lg bg-transparent shadow-sm m-auto">
+                <CgMenuGridO className="size-4 text-zinc-500"/>
+                <p className="text-zinc-600 text-sm">Our Clients</p>
             </div>
 
             <FadeUp>
-                <p className={`${montserrat.className} text-zinc-200 text-center text-3xl sm:text-4xl md:text-5xl lg:max-w-full px-2 lg:m-0 m-auto font-semibold lg:my-7 my-3`}>
-                    Esteemed Clients<br className="sm:hidden" /> <span className={`${brand.amberLightText} italic`}>Over the Years</span>
+                <p className={`${montserrat.className} text-zinc-900 text-center text-3xl sm:text-4xl md:text-5xl lg:max-w-full px-2 lg:m-0 m-auto font-semibold lg:my-7 my-3`}>
+                    Esteemed Clients<br className="sm:hidden" /> <span className={`${brand.amberAltText} italic`}>Over the Years</span>
                 </p>
             </FadeUp>
 

@@ -1,6 +1,5 @@
 import FadeRight from "@/ui/FadeRight";
 import FadeUp from "@/ui/FadeUp";
-import { CgMenuGridO } from "react-icons/cg";
 import { montserrat } from "@/lib/fonts";
 import { brand } from "@/lib/constants";
 
@@ -16,7 +15,7 @@ export default function PageHero({
   paragraphs,
 }: PageHeroProps) {
   return (
-    <div className="bg-zinc-950">
+    <div className="bg-white">
 
       {/* ── Body content ────────────────────────────────────────── */}
       <div className="xl:max-w-[1400px] lg:max-w-[1200px] md:max-w-full m-auto py-20 px-2">
@@ -24,8 +23,8 @@ export default function PageHero({
         {
             (CTAMain || CTAAccent ) &&
             <FadeUp>
-                <p className={`${montserrat.className} text-zinc-200 text-4xl lg:text-5xl font-semibold md:my-7 my-px`}>
-                  {CTAMain} <span className={`${brand.amberLightText} italic`}>{CTAAccent}</span>
+                <p className={`${montserrat.className} text-zinc-900 text-4xl lg:text-5xl font-semibold md:my-7 my-px`}>
+                  {CTAMain} <span className={`${brand.amberAltText} italic`}>{CTAAccent}</span>
                 </p>
             </FadeUp>
         }
@@ -38,7 +37,7 @@ export default function PageHero({
             {paragraphs.map((text, i) => (
               <p
                 key={i}
-                className={`${montserrat.className} text-zinc-200/90 lg:text-3xl md:text-2xl text-md lg:pr-10 p-0 mb-5 max-w-[80rem]`}
+                className={`${montserrat.className} text-zinc-700 lg:text-3xl md:text-2xl text-md lg:pr-10 p-0 mb-5 max-w-[80rem]`}
               >
                 {text}
               </p>

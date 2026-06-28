@@ -71,9 +71,7 @@ export default function Services() {
                     </div>
                     </div>
 
-                    <div className="bg-zinc-950 relative overflow-hidden">
-                    <img src="/quantum_logo.png" className="absolute opacity-10 -top-[2%] -right-[12%] rotate-[228deg] w-[33rem]" />
-                    <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[20%] -left-[8%] rotate-[38deg] w-[33rem]" />
+                    <div className="bg-white relative overflow-hidden">
                     <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2 relative">
                         <div className="flex lg:flex-row-reverse flex-col w-full lg:min-h-[25rem] gap-y-12 lg:gap-y-0 lg:gap-x-20">
 
@@ -86,15 +84,15 @@ export default function Services() {
 
                         {/* Text side */}
                         <div className="lg:w-1/2 w-full flex flex-col justify-center">
-                            <p className={`${montserrat.className} text-zinc-200 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
-                            Title Documentation and <span className="text-amber-300">Legal Support</span>
+                            <p className={`${montserrat.className} text-zinc-900 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
+                            Title Documentation and <span className="text-amber-500">Legal Support</span>
                             </p>
-                            <p className="text-base sm:text-lg xl:text-xl text-zinc-200">
+                            <p className="text-base sm:text-lg xl:text-xl text-zinc-600">
                             Our Title Documentation & Legal Support service is designed to protect our clients by ensuring
                             that every property acquired is authentic, legally compliant, and properly registered.
                             </p>
                             <a href="/services/legal-support">
-                            <div className="mt-8 py-3 px-8 bg-zinc-200 border border-transparent text-zinc-900 hover:border-zinc-200/50 hover:bg-transparent hover:text-zinc-200 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
+                            <div className="mt-8 py-3 px-8 bg-zinc-900 text-zinc-100 hover:bg-zinc-700 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
                                 <p className={`${montserrat.className} text-base sm:text-lg text-center`}>Learn more</p>
                             </div>
                             </a>
@@ -137,9 +135,7 @@ export default function Services() {
                     </div>
                     </div>
 
-                    <div className="bg-zinc-950 relative overflow-hidden">
-                    <img src="/quantum_logo.png" className="absolute opacity-10 -top-[2%] -right-[12%] rotate-[228deg] w-[33rem]" />
-                    <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[20%] -left-[8%] rotate-[38deg] w-[33rem]" />
+                    <div className="bg-white relative overflow-hidden">
                     <div className="max-w-[1400px] m-auto py-16 sm:py-24 lg:py-32 px-2 relative">
                         <div className="flex lg:flex-row-reverse flex-col w-full lg:min-h-[25rem] gap-y-12 lg:gap-y-0 lg:gap-x-20">
 
@@ -152,16 +148,16 @@ export default function Services() {
 
                         {/* Text side */}
                         <div className="lg:w-1/2 w-full flex flex-col justify-center">
-                            <p className={`${montserrat.className} text-zinc-200 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
-                            Real Estate <span className="text-amber-400 italic">Investment Advisory</span>
+                            <p className={`${montserrat.className} text-zinc-900 text-4xl sm:text-5xl xl:text-6xl font-semibold mb-4`}>
+                            Real Estate <span className="text-amber-500 italic">Investment Advisory</span>
                             </p>
-                            <p className="text-base sm:text-lg xl:text-xl text-zinc-200">
+                            <p className="text-base sm:text-lg xl:text-xl text-zinc-600">
                             Our Investment Advisory service is designed to guide individuals, families, and corporate
                             organizations in identifying, analyzing, and investing in high-value real estate opportunities
                             that yield long-term returns.
                             </p>
                             <a href="/services/real-estate-investment-advisory">
-                            <div className="mt-8 py-3 px-8 bg-zinc-200 border border-transparent text-zinc-900 hover:border-zinc-200/50 hover:bg-transparent hover:text-zinc-200 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
+                            <div className="mt-8 py-3 px-8 bg-zinc-900 text-zinc-100 hover:bg-zinc-700 hover:shadow-xl rounded-2xl ease-in-out duration-300 cursor-pointer w-fit">
                                 <p className={`${montserrat.className} text-base sm:text-lg text-center`}>Learn more</p>
                             </div>
                             </a>

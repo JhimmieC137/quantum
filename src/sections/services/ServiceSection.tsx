@@ -34,10 +34,8 @@ export default function SeviceSection(props: {
             style={{
                 maxHeight: isOpen ? "70rem" : "14rem",
                 transitionDuration: "0.5s",
-                // transform: "translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)",
-                // transformStyle: "preserve-3d",
             }}
-            className="w-full cursor-pointer hover:bg-white/5 border-t border-zinc-200/10 py-14 transition-all ease-in-out duration-300"
+            className="w-full cursor-pointer hover:bg-zinc-50 border-t border-zinc-200 py-14 transition-all ease-in-out duration-300"
         >
             <div className={`flex lg:flex-row flex-col items-center justify-between gap-7 xl:max-w-[1400px] lg:max-w-[1000px] m-auto ${isOpen ? 'max-h-[40rem]' : 'max-h-[6rem]'} transition-all ease-in-out duration-300 h-full px-5`}>
                 <div className={`${isOpen ? "sm:flex flex" : "sm:flex hidden" } xl:justify-end lg:justify-start items-center w-full`}>
@@ -55,8 +53,8 @@ export default function SeviceSection(props: {
                     <div className="w-full cursor-pointer flex justify-between items-center sm:flex-row flex-col h-full">
                         <div className="flex flex-col justify-center items-left w-full cursor-pointer">
                             {props.icon}
-                            <p className={`${montserrat.className} text-zinc-200 lg:text-xl text-md font-semibold my-3`}>
-                                {props.headerWhite} <span className={`${brand.amberLightText} italic`}>{props.headerAmber}</span>
+                            <p className={`${montserrat.className} text-zinc-900 lg:text-xl text-md font-semibold my-3`}>
+                                {props.headerWhite} <span className={`${brand.amberAltText} italic`}>{props.headerAmber}</span>
                             </p>
                             <div
                                 style={{
@@ -66,7 +64,7 @@ export default function SeviceSection(props: {
                                 }}
                                 className="transition-all ease-in-out duration-300"
                             >
-                                <p className="text-zinc-200/80 lg:text-md text-sm p-0 m-0 w-full">
+                                <p className="text-zinc-600 lg:text-md text-sm p-0 m-0 w-full">
                                     {props.description}
                                 </p>
                             </div>
@@ -82,9 +80,9 @@ export default function SeviceSection(props: {
                                         opacity: isOpen ? 1 : 0,
                                         transitionDuration: "0.8s"
                                     }}
-                                    className="bg-zinc-200 lg:size-16 size-12 flex items-center justify-center rounded-full border border-transparent transition-all ease-out duration-75 group hover:shadow-xl"
+                                    className="bg-zinc-900 lg:size-16 size-12 flex items-center justify-center rounded-full border border-transparent transition-all ease-out duration-75 group hover:shadow-xl hover:bg-zinc-700"
                                 >
-                                    <HiArrowRight className={`lg:size-7 size-5 ${brand.redText} -rotate-45`}/>
+                                    <HiArrowRight className="lg:size-7 size-5 text-zinc-100 -rotate-45"/>
                                 </div>
                             </a>
                         </div>

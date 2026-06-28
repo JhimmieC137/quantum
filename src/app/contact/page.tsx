@@ -200,48 +200,46 @@ export default function ContactUs() {
                     {/* ── Contact form ──────────────────────────────── */}
                     <form
                         onSubmit={handleSubmit}
-                        className={`lg:w-1/2 w-full p-8 sm:p-10 lg:p-12 bg-zinc-950 rounded-2xl overflow-hidden relative flex flex-col`}
+                        className="lg:w-1/2 w-full p-8 sm:p-10 lg:p-12 bg-white border border-zinc-200 rounded-2xl overflow-hidden relative flex flex-col"
                     >
-                        <img src="/quantum_logo.png" className="absolute opacity-10 -bottom-[32%] -right-[17%] -rotate-[38deg] w-[33rem] z-0 pointer-events-none" />
-
                         <div className="flex-1 flex flex-col">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-4">
                             <div className="flex flex-col gap-y-[2px]">
-                                <label className="text-zinc-200 text-sm sm:text-base" htmlFor="name">Full Name</label>
+                                <label className="text-zinc-700 text-sm sm:text-base" htmlFor="name">Full Name</label>
                                 <input
                                     id="name" name="name" type="text" placeholder="John Doe"
                                     value={form.name} onChange={handleChange} required
-                                    className="bg-transparent placeholder:text-zinc-200/30 text-zinc-200 p-3 border border-zinc-200/50 rounded-lg outline-none focus:border-zinc-200 ease-in-out duration-300 text-sm sm:text-base"
+                                    className="bg-transparent placeholder:text-zinc-400 text-zinc-800 p-3 border border-zinc-300 rounded-lg outline-none focus:border-zinc-700 ease-in-out duration-300 text-sm sm:text-base"
                                 />
                             </div>
                             <div className="flex flex-col gap-y-[2px]">
-                                <label className="text-zinc-200 text-sm sm:text-base" htmlFor="email">Email</label>
+                                <label className="text-zinc-700 text-sm sm:text-base" htmlFor="email">Email</label>
                                 <input
                                     id="email" name="email" type="email" placeholder="example@mail.com"
                                     value={form.email} onChange={handleChange} required
-                                    className="bg-transparent placeholder:text-zinc-200/30 text-zinc-200 p-3 border border-zinc-200/50 rounded-lg outline-none focus:border-zinc-200 ease-in-out duration-300 text-sm sm:text-base"
+                                    className="bg-transparent placeholder:text-zinc-400 text-zinc-800 p-3 border border-zinc-300 rounded-lg outline-none focus:border-zinc-700 ease-in-out duration-300 text-sm sm:text-base"
                                 />
                             </div>
                         </div>
 
                         <div className="mb-4">
                             <div className="flex flex-col gap-y-[2px]">
-                                <label className="text-zinc-200 text-sm sm:text-base" htmlFor="phone">Phone No.</label>
+                                <label className="text-zinc-700 text-sm sm:text-base" htmlFor="phone">Phone No.</label>
                                 <input
                                     id="phone" name="phone" type="tel" placeholder="+234 70400000000"
                                     value={form.phone} onChange={handleChange}
-                                    className="bg-transparent placeholder:text-zinc-200/30 text-zinc-200 p-3 border border-zinc-200/50 rounded-lg outline-none focus:border-zinc-200 ease-in-out duration-300 text-sm sm:text-base"
+                                    className="bg-transparent placeholder:text-zinc-400 text-zinc-800 p-3 border border-zinc-300 rounded-lg outline-none focus:border-zinc-700 ease-in-out duration-300 text-sm sm:text-base"
                                 />
                             </div>
                         </div>
 
                         <div className="mb-6">
                             <div className="flex flex-col gap-y-[2px]">
-                                <label className="text-zinc-200 text-sm sm:text-base" htmlFor="message">Message</label>
+                                <label className="text-zinc-700 text-sm sm:text-base" htmlFor="message">Message</label>
                                 <textarea
                                     id="message" name="message" rows={5} placeholder="Tell us about your needs..."
                                     value={form.message} onChange={handleChange} required
-                                    className="bg-transparent text-zinc-200 placeholder:text-zinc-200/30 p-3 border border-zinc-200/50 rounded-lg outline-none focus:border-zinc-200 ease-in-out duration-300 text-sm sm:text-base resize-none"
+                                    className="bg-transparent text-zinc-800 placeholder:text-zinc-400 p-3 border border-zinc-300 rounded-lg outline-none focus:border-zinc-700 ease-in-out duration-300 text-sm sm:text-base resize-none"
                                 />
                             </div>
                         </div>
@@ -250,7 +248,7 @@ export default function ContactUs() {
                         <button
                             type="submit"
                             disabled={loading}
-                            className={`${montserrat.className} relative rounded-lg p-3 z-20 text-red-700 border border-transparent bg-white w-full flex justify-center items-center gap-2 hover:bg-transparent hover:text-zinc-200 hover:border-zinc-200/60 ease-in-out duration-300 font-medium cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-auto`}
+                            className={`${montserrat.className} relative rounded-lg p-3 z-20 text-zinc-100 bg-zinc-900 w-full flex justify-center items-center gap-2 hover:bg-zinc-700 ease-in-out duration-300 font-medium cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed mt-auto`}
                         >
                             {loading ? 'Sending...' : 'Send Message'}
                             <FiSend className="size-4" />

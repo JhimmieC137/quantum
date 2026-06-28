@@ -1,5 +1,6 @@
 import FadeUp from "@/ui/FadeUp"
 import { garamond, montserrat } from "@/lib/fonts";
+import { brand } from "@/lib/constants";
 
 export default function CoreValues() {
     const VALUES = [
@@ -29,10 +30,13 @@ export default function CoreValues() {
                 {/* Header */}
                 <FadeUp>
                     <div className="mb-16 lg:mb-24">
-                        <h2 className={`${garamond.className} text-zinc-900 text-5xl sm:text-6xl lg:text-7xl font-semibold leading-[1.05]`}>
-                            Our Core<br />
-                            <span className="text-red-700 italic">Values</span>
-                        </h2>
+                        <div className={`${montserrat.className} flex justify-start gap-4 items-center mb-2 pl-1`}>
+                            <div className="h-px xl:w-16 lg:w-10 w-7 bg-red-500" />
+                            <p className={`${montserrat.className} text-xs font-bold ${brand.amberAltText} tracking-widest`}>WHAT WE OFFER</p>
+                        </div>
+                        <p className={`${montserrat.className} text-zinc-800 text-left lg:text-5xl text-3xl font-semibold my-3`}>
+                            Our Core <span className={`${brand.amberAltText} italic`}>Values</span>
+                        </p>
                     </div>
                 </FadeUp>
 
@@ -40,11 +44,11 @@ export default function CoreValues() {
                 <FadeUp>
                     <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-zinc-300">
                         {VALUES.map((v) => (
-                            <div key={v.title} className="md:px-10 lg:px-12 first:md:pl-0 last:md:pr-0 py-10 md:py-0">
-                                <p className={`${garamond.className} text-7xl lg:text-8xl font-bold text-red-700/20 leading-none mb-4`}>
+                            <div key={v.title} className="group md:px-10 lg:px-12 first:md:pl-0 last:md:pr-0 py-10 md:py-0">
+                                <p className={`${garamond.className} text-7xl lg:text-8xl font-bold text-amber-700/30 leading-none mb-4`}>
                                     {v.num}
                                 </p>
-                                <div className="h-[2px] w-7 bg-red-600 mb-6" />
+                                <div className="h-[2px] w-7 group-hover:w-16 bg-red-700 mb-6 transition-all duration-300 ease-in-out" />
                                 <h3 className={`${montserrat.className} text-zinc-900 text-lg lg:text-xl font-bold mb-4`}>
                                     {v.title}
                                 </h3>

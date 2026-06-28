@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { garamond, montserrat } from "@/lib/fonts";
+import { montserrat } from "@/lib/fonts";
 
 interface FAQItem {
   question: string;
@@ -62,12 +62,10 @@ function ChevronIcon({ open }: { open: boolean }) {
 
 function FAQRow({
   item,
-  index,
   open,
   onToggle,
 }: {
   item: FAQItem;
-  index: number;
   open: boolean;
   onToggle: () => void;
 }) {
@@ -76,16 +74,13 @@ function FAQRow({
       <div className="h-px bg-zinc-300 w-full" />
       <button
         onClick={onToggle}
-        className="w-full flex items-center gap-5 sm:gap-8 py-5 sm:py-6 text-left group cursor-pointer"
+        className="w-full flex items-center gap-5 sm:gap-6 py-5 sm:py-6 text-left group cursor-pointer"
         aria-expanded={open}
       >
-        <span className={`${montserrat.className} text-xs text-zinc-400 min-w-[2rem] tabular-nums font-medium shrink-0`}>
-          {String(index + 1).padStart(2, "0")}
-        </span>
-        <span className="flex-1 text-zinc-600 text-sm sm:text-base lg:text-lg group-hover:text-zinc-900 transition-colors duration-200">
+        <span className="flex-1 text-amber-500 text-sm sm:text-base lg:text-lg group-hover:text-amber-400 transition-colors duration-200">
           {item.question}
         </span>
-        <span className="size-8 sm:size-9 flex items-center justify-center rounded-full border border-zinc-300 text-zinc-500 group-hover:border-zinc-500 group-hover:text-zinc-800 transition-all duration-200 shrink-0">
+        <span className="size-8 sm:size-9 flex items-center justify-center rounded-full border border-amber-500 text-amber-500 group-hover:border-amber-400 group-hover:text-amber-400 transition-all duration-200 shrink-0">
           <ChevronIcon open={open} />
         </span>
       </button>
@@ -95,7 +90,7 @@ function FAQRow({
           open ? "max-h-64 pb-6" : "max-h-0"
         }`}
       >
-        <p className="text-zinc-600 text-sm sm:text-base leading-relaxed pl-[3.25rem] sm:pl-[4.25rem] pr-12 sm:pr-16">
+        <p className="text-zinc-600 text-sm sm:text-base leading-relaxed pr-12 sm:pr-16">
           {item.answer}
         </p>
       </div>
@@ -115,14 +110,10 @@ export default function FAQAccordion() {
 
           {/* Left column */}
           <div className="lg:w-[36%] shrink-0 lg:pt-1">
-            <h2 className={`${garamond.className} text-zinc-900 text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05] mb-7`}>
+            <h2 className={`${montserrat.className} text-zinc-900 text-5xl sm:text-6xl lg:text-6xl xl:text-7xl font-semibold leading-[1.05]`}>
               Frequently<br />Asked<br />
-              <span className="text-red-600 italic">Questions</span>
+              <span className="text-amber-400 italic">Questions</span>
             </h2>
-            <p className="text-zinc-600 text-sm leading-relaxed max-w-[22rem]">
-              Answers to common questions about our process, properties,
-              timelines, and expertise.
-            </p>
           </div>
 
           {/* Right column */}
@@ -131,7 +122,6 @@ export default function FAQAccordion() {
               <FAQRow
                 key={i}
                 item={item}
-                index={i}
                 open={openIndex === i}
                 onToggle={() => toggle(i)}
               />

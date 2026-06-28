@@ -33,7 +33,7 @@ export default function ServiceHero({
                 <div className="w-full max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-10 pb-[8%]">
                     <div className="w-fit flex gap-x-1.5 justify-center items-center p-2 border border-zinc-200/40 rounded-lg bg-transparent shadow-md mb-4">
                         <CgMenuGridO className="size-4 text-zinc-200"/>
-                        <p className="text-zinc-100/80 text-xs sm:text-sm">{category}</p>
+                        <p className={`${montserrat.className} text-zinc-100/80 text-xs sm:text-sm`}>{category}</p>
                     </div>
 
                     <FadeUp>
@@ -46,7 +46,7 @@ export default function ServiceHero({
                     <div className="flex gap-x-5">
                         <div className={`${brand.amberBg} p-[3px] max-w-[10px] shrink-0 z-20`}/>
                         <FadeRight>
-                            <p className="text-zinc-200/90 text-sm sm:text-base lg:text-lg mb-5 max-w-[45rem]">
+                            <p className={`${montserrat.className} text-zinc-200/90 text-sm sm:text-base lg:text-lg mb-5 max-w-[45rem]`}>
                                 {description}
                             </p>
                         </FadeRight>

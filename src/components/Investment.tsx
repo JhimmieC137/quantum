@@ -41,13 +41,6 @@ const InvestmentSection: React.FC<Props> = () => {
                     more<span className={`${brand.amberLightText} italic`}>than gold.</span>
                 </h2>
 
-                {/* Description */}
-                <p className="mb-11 xl:max-w-[70%] max-w-[90%] m-auto md:text-md text-sm text-center md:leading-[1.65] text-white/75">
-                    Real estate isn't just property. it's legacy. We help you invest in
-                    spaces that appreciate in value, culture, and meaning for generations
-                    to come.
-                </p>
-
                 {/* Buttons */}
                 <div className="flex gap-4">
                     <a href="/contact" className={`max-w-fit m-auto py-2 px-4 rounded-lg border border-transparent bg-zinc-200 ${brand.redText} text-md hover:bg-transparent hover:border-zinc-200/20 hover:text-zinc-200 duration-150 ease-in-out hover:shadow-xl cursor-pointer shadow-lg`}>

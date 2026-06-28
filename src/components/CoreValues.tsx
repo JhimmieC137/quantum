@@ -22,7 +22,7 @@ export default function CoreValues() {
     ];
 
     return (
-        <div className="w-full py-20 lg:py-28 relative overflow-hidden">
+        <div className="w-full py-20 lg:py-28 relative">
             <img src="/wallpapers/dwg_img_2.png" className="absolute opacity-[0.04] -top-[60%] -left-[10%] pointer-events-none" />
 
             <div className="w-full 2xl:max-w-[1400px] xl:max-w-[1200px] lg:max-w-[1000px] relative z-10 m-auto px-4 sm:px-6 lg:px-2">
@@ -45,7 +45,7 @@ export default function CoreValues() {
                     <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-zinc-300">
                         {VALUES.map((v) => (
                             <div key={v.title} className="group md:px-10 lg:px-12 first:md:pl-0 last:md:pr-0 py-10 md:py-0">
-                                <p className={`${garamond.className} text-7xl lg:text-8xl font-bold text-amber-700/30 leading-none mb-4`}>
+                                <p className={`${garamond.className} text-7xl lg:text-8xl font-bold text-amber-600/30 leading-none mb-4`}>
                                     {v.num}
                                 </p>
                                 <div className="h-[2px] w-7 group-hover:w-16 bg-red-700 mb-6 transition-all duration-300 ease-in-out" />
